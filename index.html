@@ -22,19 +22,9 @@
     </nav>
 
     <div class="container-fluid">
-      <div id="detector" class="col-xs-3" ng-controller="DetectorController as dc">
-        <canvas id="detector-core" width="400" height="400">
-          Your detector. Click on it to generate events.
-        </canvas>
-        <canvas ng-click="dc.click()" id="detector-events" width="400" height="400">
-          Your detector. Click on it to generate events.
-        </canvas>
-      </div>
-
-      <div class="scrollable col-xs-3" id="Research" ng-controller="ResearchController as rc">
+      <div class="col-xs-3" id="Research" ng-controller="ResearchController as rc">
         <h1>Research</h1>
         <hr>
-        <div id="ResearchHist"></div>
         <ul class="media-list">
           <li class="media" ng-repeat="r in rc.research" ng-show="r.is_visible()">
               <img class="pull-left" class="media-object" src="{{ r.image }}" alt="">
@@ -47,12 +37,24 @@
         </ul>
       </div>
 
-      <div class="scrollable col-xs-3" id="HR" ng-controller="HRController as hrc">
-        <h1>HR Department</h1>
+      <div class="col-xs-5" ng-controller="DetectorController as dc">
+        <div id="detector">
+          <canvas id="detector-core" width="400" height="400">
+            Your detector. Click on it to generate events.
+          </canvas>
+          <canvas ng-click="dc.click()" id="detector-events" width="400" height="400">
+            Your detector. Click on it to generate events.
+          </canvas>
+        </div>
+        <div id="ResearchHist"></div>
+      </div>
+
+      <div class="col-xs-2" id="HR" ng-controller="HRController as hrc">
+        <h1>HR Dept</h1>
         <hr>
         <ul class="media-list">
           <li class="media" ng-repeat="w in hrc.workers" ng-show="w.is_visible()">
-            <img class="pull-left" class="media-object" src="{{ w.image }}" alt="">
+            <img style="display: none" class="pull-left" class="media-object" src="{{ w.image }}" alt="">
             <div class="media-body">
               <h4 class="media-heading">{{ w.name }} <span ng-show="w.hired > 0" class="badge">{{ w.hired }}</span></h4>
               <p ng-show="w.hired > 0">{{ w.description }} They produce {{ w.rate }} data per second.</p>
@@ -62,11 +64,19 @@
         </ul>
       </div>
 
-      <div class="scrollable col-xs-3" id="Upgrades" ng-controller="UpgradesController as uc">
+      <div class="col-xs-2" id="Upgrades" ng-controller="UpgradesController as uc">
         <h1>Upgrades</h1>
         <hr>
-        <a href="#" class="thumbnail" ng-repeat="u in uc.upgrades" ng-show="u.is_visible()" ng-disabled="!u.is_available()" ng-click="u.buy()">
-          <img src="{{ u.image }}" alt="{{ u.name }}">
+        <a href="#"
+           class="thumbnail"
+           ng-repeat="u in uc.upgrades"
+           ng-show="u.is_visible()"
+           ng-disabled="!u.is_available()"
+           ng-click="u.buy()"
+           data-toggle="tooltip"
+           data-placement="bottom"
+           title="{{ u.name }}: {{ u.description }} ">
+           <img src="{{ u.image }}" alt="{{ u.name }}"> <small>{{ u.cost | currency }}</small>
         </a>
       </div>
 

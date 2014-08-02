@@ -9,29 +9,20 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-        <nav class="navbar navbar-default navbar-fixed-top" ng-controller="LabController as lc">
-          <div class="container-fluid">
-            <div class="navbar-header">
-              <span class="navbar-brand" contenteditable="true" strip-br="true" ng-model="lc.lab.name">{{ lc.lab.name }}</span>
-            </div>
-            <p class="navbar-text">Data: <strong>{{ lc.lab.data }}</strong></p>
-            <p class="navbar-text"><span data-toggle="tooltip" data-placement="left" title="Tooltip on left">Reputation</span>: <strong>{{ lc.lab.reputation }}</strong></p>
-            <p class="navbar-text">Money: <strong>{{ lc.lab.money | currency }}</strong></p>
-            <p class="navbar-text navbar-right"><a href="https://github.com/ibab/particle-clicker/"><img src="assets/github.png" alt="GitHub" width="16"></a></p> 
-          </div>
-        </nav>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-          </ul>
-          
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
+    <nav class="navbar navbar-default navbar-fixed-top" ng-controller="LabController as lc">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <span class="navbar-brand" contenteditable="true" strip-br="true" ng-model="lc.lab.name">{{ lc.lab.name }}</span>
+        </div>
+        <p class="navbar-text">Data: <strong>{{ lc.lab.data | number:0 }}</strong></p>
+        <p class="navbar-text">Reputation: <strong>{{ lc.lab.reputation | number:0 }}</strong></p>
+        <p class="navbar-text">Money: <strong>{{ lc.lab.money | currency }}</strong></p>
+        <p class="navbar-text navbar-right"><a href="https://github.com/ibab/particle-clicker/"><img src="assets/github.png" alt="GitHub" width="16"></a></p> 
+      </div>
     </nav>
 
     <div class="container-fluid">
-      <div id="detector" class="col-xs-6" ng-controller="DetectorController as dc">
+      <div id="detector" class="col-xs-3" ng-controller="DetectorController as dc">
         <canvas id="detector-core" width="400" height="400">
           Your detector. Click on it to generate events.
         </canvas>
@@ -69,6 +60,16 @@
             </div>
           </li>
         </ul>
+      </div>
+
+      <div class="scrollable col-xs-3" id="Upgrades" ng-controller="UpgradesController as uc">
+        <h1>Upgrades</h1>
+        <hr>
+        <a href="#" class="thumbnail" ng-repeat="u in uc.upgrades" ng-show="u.is_visible()" ng-disabled="!u.is_available()" ng-click="u.buy()">
+          <img data-src="{{ u.image }}" alt="{{ u.name }}">
+        </a>
+      </div>
+
     </div>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>

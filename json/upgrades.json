@@ -2,12 +2,13 @@
   {
     "name": "Free beer",
     "description": "The work is easier when the worker is happy.",
-    "type": "hr", // "hr" || "detector" || "research"
-    "reciever": "PhD Students", // name of the object
     "cost": 100,
     "used": false,
+    "type": "hr",
+    "receiver": "PhD Students",
+    "property": "rate",
     "factor": 1.2,
     "constant": 0,
-   //"image":
+    "image": "assets/beer.png"
   }
-}
+]

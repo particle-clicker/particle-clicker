@@ -136,7 +136,6 @@ var detector =
         var cy = detector.height / 2;
 
         ctx.clearRect(0, 0, 400, 400);
-        ctx.strokeRect(0, 0, 400, 400);
 
         var muSplit = 2/12;
         for (var k = 3; k >= 1; k--) {

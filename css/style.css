@@ -1,12 +1,22 @@
-body {
-  padding: 80px 0;
+h1 br {
+  display: none;
+}
+
+#InfoBox {
+  color: #666;
+  position: fixed;
+  right: 40px;
+  bottom: 0;
+  padding: 5px;
+  max-width: 200px;
 }
 
 #detector {
   cursor: pointer;
   margin: 0 auto;
   position: relative;
-  width: 400px; height: 400px;
+  width: 400px;
+  height: 400px;
 }
 
 #detector canvas {
@@ -41,6 +51,5 @@ body {
 }
 
 .scrollable {
-  height: 50%;
   overflow: auto;
 }

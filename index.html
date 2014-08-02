@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <nav class="navbar navbar-default navbar-fixed-top" ng-controller="LabController as lc">
+    <!--<nav class="navbar navbar-default navbar-fixed-top" ng-controller="LabController as lc">
       <div class="container-fluid">
         <div class="navbar-header">
           <span class="navbar-brand" contenteditable="true" strip-br="true" ng-model="lc.lab.name">{{ lc.lab.name }}</span>
@@ -19,10 +19,10 @@
         <p class="navbar-text">Money: <strong>{{ lc.lab.money | currency }}</strong></p>
         <p class="navbar-text navbar-right"><a href="https://github.com/ibab/particle-clicker/"><img src="assets/github.png" alt="GitHub" width="16"></a></p> 
       </div>
-    </nav>
+    </nav>-->
 
     <div class="container-fluid">
-      <div class="col-xs-3" id="Research" ng-controller="ResearchController as rc">
+      <div class="col-xs-3 scrollable" id="Research" ng-controller="ResearchController as rc">
         <h1>Research</h1>
         <hr>
         <ul class="media-list">
@@ -37,8 +37,10 @@
         </ul>
       </div>
 
-      <div class="col-xs-5" ng-controller="DetectorController as dc">
-        <div id="detector">
+      <div class="col-xs-5 scrollable">
+        <h1 contenteditable ng-controller="LabController as lc">{{ lc.lab.name }}</h1>
+        <hr>
+        <div id="detector" ng-controller="DetectorController as dc">
           <canvas id="detector-core" width="400" height="400">
             Your detector. Click on it to generate events.
           </canvas>
@@ -46,10 +48,15 @@
             Your detector. Click on it to generate events.
           </canvas>
         </div>
+        <div class="row lead bg-warning" ng-controller="LabController as lc">
+          <p class="col-xs-4 text-center"><strong>Data</strong><br>{{ lc.lab.data | number:0 }}</p>
+          <p class="col-xs-4 text-center"><strong>Reputation</strong><br>{{ lc.lab.reputation | number:0 }}</p>
+          <p class="col-xs-4 text-center"><strong>Money</strong><br> {{ lc.lab.money | currency }}</p>
+        </div>
         <div id="ResearchHist"></div>
       </div>
 
-      <div class="col-xs-2" id="HR" ng-controller="HRController as hrc">
+      <div class="col-xs-2 scrollable" id="HR" ng-controller="HRController as hrc">
         <h1>HR Dept</h1>
         <hr>
         <ul class="media-list">
@@ -64,7 +71,7 @@
         </ul>
       </div>
 
-      <div class="col-xs-2" id="Upgrades" ng-controller="UpgradesController as uc">
+      <div class="col-xs-2 scrollable" id="Upgrades" ng-controller="UpgradesController as uc">
         <h1>Upgrades</h1>
         <hr>
         <a href="#"
@@ -79,7 +86,10 @@
            <img src="{{ u.image }}" alt="{{ u.name }}"> <small>{{ u.cost | currency }}</small>
         </a>
       </div>
+    </div>
 
+    <div id="InfoBox">
+      Particle Clicker <a href="https://github.com/ibab/particle-clicker/"><img src="assets/github.png" alt="GitHub"></a>
     </div>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -90,5 +100,6 @@
     <script src="js/detector.js"></script>
     <script src="js/histogram.js"></script>
     <script src="js/game.js"></script>
+    <script src="js/ui.js"></script>
   </body>
 </html>

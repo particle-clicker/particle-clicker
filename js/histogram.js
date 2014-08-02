@@ -116,20 +116,20 @@ function draw_hist(ident, vals) {
 
 function Histogram(ident) {
     // TODO: Allow for arbitrary numbers of events
-    this.values = d3.range(1000).map(d3.random.normal(0, 1));
-    this.counter = 0;
+    this.values = [];
     draw_hist(ident, []);
 
     this.add_events = function(num) {
+        var new_vals = d3.range(num).map(d3.random.normal(0, 1));
+        this.values = $.merge(this.values, new_vals);
         d3.select(ident).select("svg").remove();
-        draw_hist(ident, this.values.slice(0, this.counter+num));
-        this.counter += num;
+        draw_hist(ident, this.values);
     }
 
     this.clear = function() {
         d3.select(ident).select("svg").remove();
+        this.values = [];
         draw_hist(ident, []);
-        this.counter = 0;
     }
 }
 

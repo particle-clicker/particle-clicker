@@ -37,8 +37,8 @@
         </ul>
       </div>
 
-      <div class="col-xs-5 scrollable">
-        <h1 contenteditable ng-controller="LabController as lc">{{ lc.lab.name }}</h1>
+      <div class="col-xs-5 scrollable" ng-controller="LabController as lc">
+        <h1 contenteditable>{{ lc.lab.name }}</h1>
         <hr>
         <div id="detector" ng-controller="DetectorController as dc">
           <canvas id="detector-core" width="400" height="400">
@@ -48,7 +48,7 @@
             Your detector. Click on it to generate events.
           </canvas>
         </div>
-        <div class="row lead bg-warning" ng-controller="LabController as lc">
+        <div class="row lead bg-warning">
           <p class="col-xs-4 text-center"><strong>Data</strong><br>{{ lc.lab.data | number:0 }}</p>
           <p class="col-xs-4 text-center"><strong>Reputation</strong><br>{{ lc.lab.reputation | number:0 }}</p>
           <p class="col-xs-4 text-center"><strong>Money</strong><br> {{ lc.lab.money | currency }}</p>

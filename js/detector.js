@@ -55,6 +55,24 @@ var detector =
         mucalDark: 18
     },
 
+    tracks:
+    [
+        {
+            name: 'electron',
+            color: '#0016EA'
+        },
+
+        {
+            name: 'jet',
+            color: '#0B7700'
+        },
+        
+        {
+            name: 'muon',
+            color: '#775400'
+        }
+    ],
+
     animate: function()
     {
         requestAnimFrame(detector.animate);
@@ -240,7 +258,8 @@ var detector =
 
     addEvent: function()
     {
-        var event = new ParticleEvent('electron')
+        var index = Math.round(Math.random() * (detector.tracks.length - 1));
+        var event = new ParticleEvent(detector.tracks[index]);
 
         detector.events.list.push(event);
     },
@@ -249,13 +268,17 @@ var detector =
     {
         detector.events.ctx.clearRect(0, 0, 400, 400);
 
-        var del = 0;
+        var del = -1;
         for (var e in detector.events.list) {
             if (detector.events.list[e].alpha > 0) {
                 detector.events.list[e].draw();
             } else {
                 del = e;
             }
+        }
+
+        if (del >= 0) {
+            detector.events.list.splice(0, del + 1);
         }
     }
 };

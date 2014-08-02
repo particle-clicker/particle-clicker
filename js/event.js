@@ -6,12 +6,22 @@ function ParticleEvent(type)
     this.direction = 0;
     this.alpha = 1;
 
-    switch (this.type)
+    switch (this.type.name)
     {
         case 'electron':
             this.length = detector.radius.siliconSpace + Math.round((detector.radius.ecal - detector.radius.siliconSpace) * Math.random());
             this.direction = Math.random() * Math.PI * 2;
             this.radius = 20 + Math.round((100 - 20) * Math.random());
+            break;
+        case 'jet':
+            this.length = detector.radius.ecal + Math.round((detector.radius.mucal - detector.radius.ecal) * Math.random());
+            this.direction = Math.random() * Math.PI * 2;
+            this.radius = 40 + Math.round((200 - 40) * Math.random());
+            break;
+        case 'muon':
+            this.length = detector.radius.mucal + 3 * detector.radius.mucalDark + Math.round((4 * detector.radius.mucalLight + 2 * detector.radius.mucalDark) * Math.random());
+            this.direction = Math.random() * Math.PI * 2;
+            this.radius = 200 + Math.round((600 - 200) * Math.random());
             break;
     }
 
@@ -29,15 +39,15 @@ ParticleEvent.prototype.draw = function(init)
     ctx.save();
 
     ctx.globalAlpha = this.alpha;
-    ctx.strokeStyle = "#000000";
-    ctx.fillStyle = "#000000";
+    ctx.strokeStyle = this.type.color;
+    ctx.fillStyle = this.type.color;
 
     ctx.translate(cx, cy);
     ctx.rotate(this.direction);
     ctx.translate(-cx, -cy);
 
     ctx.beginPath();
-    ctx.arc(cx + this.length / 2, cy + Math.round(Math.sqrt(this.radius * this.radius - this.length * this.length / 4)), this.radius, -Math.PI / 2 - Math.asin(this.length / (2 * this.radius)), -Math.PI / 2 +  Math.asin(this.length / (2 * this.radius)), false);
+    ctx.arc(cx + this.length / 2, cy + Math.round(Math.sqrt(Math.abs(this.radius * this.radius - this.length * this.length / 4))), this.radius, -Math.PI / 2 - Math.asin(this.length / (2 * this.radius)), -Math.PI / 2 +  Math.asin(this.length / (2 * this.radius)), false);
     ctx.stroke();
 
     ctx.restore();
@@ -45,6 +55,4 @@ ParticleEvent.prototype.draw = function(init)
     if (!init) {
         this.alpha -= 0.02;
     }
-
-    console.log(this.alpha);
 };

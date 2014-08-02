@@ -109,5 +109,11 @@ function Histogram(ident) {
         draw_hist(ident, this.values.slice(0, this.counter+num));
         this.counter += num;
     }
+
+    this.clear = function() {
+        d3.select(ident).select("svg").remove();
+        draw_hist(ident, []);
+        this.counter = 0;
+    }
 }
 

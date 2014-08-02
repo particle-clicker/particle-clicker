@@ -1,0 +1,9 @@
+body {
+  padding-top: 100px;
+}
+
+#Detector img {
+  border-radius: 10px;
+  cursor: pointer;
+  width: 200px;
+}

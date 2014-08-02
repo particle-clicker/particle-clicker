@@ -1,7 +1,4 @@
 'use strict';
-
-var DEBUG = true;
-
 (function () {
   var loadJsonFile = function(filename) {
     var res;
@@ -53,26 +50,35 @@ var DEBUG = true;
   var research = loadJsonFile('json/research.json');
   research.map(function (item) {  // define additional stuff on the objects
     item.level = 0;
+    item.is_visible = function () {
+      return this.level > 0 || lab.data >= this.cost * .9;
+    };
     item.is_available = function () {
-      return this.level > 0 || lab.data > item.cost * .9;
+      return lab.data >= this.cost;
     };
     item.research = function () {
       if (lab.research(this.cost, this.reputation)) {
         this.level++;
       }
-    }
+    };
   });
-  if (DEBUG) console.log(research);
 
   var workers = loadJsonFile('json/workers.json');
   workers.map(function (worker) {
     worker.hired = 0;
+    worker.is_visible = function () {
+      return this.hired > 0 || lab.money >= this.cost * .9;
+    };
+    worker.is_available = function () {
+      return lab.money >= this.cost;
+    };
     worker.hire = function() {
       if (lab.buy(this.cost)) {
         this.hired++;
       }
     };
   });
+
 
   var app = angular.module('particleClicker', []);
 

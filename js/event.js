@@ -1,15 +1,17 @@
-function ParticleEvent(type)
+function ParticleEvent(type, count)
 {
     this.type = type;
     this.length = 0;
     this.radius = 0;
     this.direction = 0;
+    this.sign = (Math.random() - 0.5 >= 0) ? 1 : -1;
     this.alpha = 1;
+    this.count = count;
 
     switch (this.type.name)
     {
         case 'electron':
-            this.length = detector.radius.siliconSpace + Math.round((detector.radius.ecal - detector.radius.siliconSpace) * Math.random());
+            this.length = detector.radius.siliconSpace + Math.round((detector.radius.ecal + 10 - detector.radius.siliconSpace) * Math.random());
             this.direction = Math.random() * Math.PI * 2;
             this.radius = 20 + Math.round((100 - 20) * Math.random());
             break;
@@ -41,13 +43,14 @@ ParticleEvent.prototype.draw = function(init)
     ctx.globalAlpha = this.alpha;
     ctx.strokeStyle = this.type.color;
     ctx.fillStyle = this.type.color;
+    ctx.lineWidth = 2;
 
     ctx.translate(cx, cy);
     ctx.rotate(this.direction);
     ctx.translate(-cx, -cy);
 
     ctx.beginPath();
-    ctx.arc(cx + this.length / 2, cy + Math.round(Math.sqrt(Math.abs(this.radius * this.radius - this.length * this.length / 4))), this.radius, -Math.PI / 2 - Math.asin(this.length / (2 * this.radius)), -Math.PI / 2 +  Math.asin(this.length / (2 * this.radius)), false);
+    ctx.arc(cx + this.length / 2, cy + this.sign * Math.round(Math.sqrt(Math.abs(this.radius * this.radius - this.length * this.length / 4))), this.radius, - this.sign * Math.PI / 2 - Math.asin(this.length / (2 * this.radius)), - this.sign * Math.PI / 2 +  Math.asin(this.length / (2 * this.radius)), false);
     ctx.stroke();
 
     ctx.restore();

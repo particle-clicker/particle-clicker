@@ -258,10 +258,15 @@ var detector =
 
     addEvent: function()
     {
-        var index = Math.round(Math.random() * (detector.tracks.length - 1));
-        var event = new ParticleEvent(detector.tracks[index]);
+        var num = Math.ceil(10 * Math.random());
 
-        detector.events.list.push(event);
+        console.log(num);
+
+        for (var i = 0; i < num; i++) {
+            var index = Math.round(Math.random() * (detector.tracks.length - 1));
+            var event = new ParticleEvent(detector.tracks[index], num);
+            detector.events.list.push(event);
+        }
     },
 
     draw: function()
@@ -273,12 +278,12 @@ var detector =
             if (detector.events.list[e].alpha > 0) {
                 detector.events.list[e].draw();
             } else {
-                del = e;
+                del = detector.events.list[e].count;
             }
         }
 
         if (del >= 0) {
-            detector.events.list.splice(0, del + 1);
+            detector.events.list.splice(0, del);
         }
     }
 };

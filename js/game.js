@@ -22,7 +22,7 @@
     money: 0,
     researchHistogram: new Histogram('#ResearchHist'),
     getGrant: function () {
-      this.money += this.reputation * 10;  // TODO: adjust factor
+      this.money += this.reputation * 5;  // TODO: adjust factor
     },
     acquire: function (amount) {
       this.data += amount;
@@ -56,7 +56,7 @@
   research.map(function (item) {  // define additional stuff on the objects
     item.level = 0;
     item.is_visible = function () {
-      return this.level > 0 || lab.data >= this.cost * .9;
+      return this.level > 0 || lab.data >= this.cost * .7;
     };
     item.is_available = function () {
       return lab.data >= this.cost;
@@ -73,7 +73,7 @@
   workers.map(function (worker) {
     worker.hired = 0;
     worker.is_visible = function () {
-      return this.hired > 0 || lab.money >= this.cost * .9;
+      return this.hired > 0 || lab.money >= this.cost * .7;
     };
     worker.is_available = function () {
       return lab.money >= this.cost;
@@ -117,7 +117,7 @@
       return false;
     };
     upgrade.is_visible = function () {
-      return !this.used && this.hasReceiver() && lab.money >= this.cost * .9;
+      return !this.used && this.hasReceiver() && lab.money >= this.cost * .7;
     };
     upgrade.is_available = function () {
       return !this.used && this.hasReceiver() && lab.money >= this.cost;

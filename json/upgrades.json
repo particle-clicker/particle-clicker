@@ -14,7 +14,7 @@
   {
     "name": "Free coffee",
     "description": "Sleeping is the coffee of the weaks.",
-    "cost": 1000,
+    "cost": 1500,
     "used": false,
     "type": "hr",
     "receiver": "PhD Students",
@@ -23,10 +23,37 @@
     "constant": 1,
     "image": "assets/coffee.png"
   },
+
+  {
+    "name": "Free beer",
+    "description": "The work is easier when the worker is happy.",
+    "cost": 5000,
+    "used": false,
+    "type": "hr",
+    "receiver": "Postdocs",
+    "property": "rate",
+    "factor": 1.2,
+    "constant": 5,
+    "image": "assets/beer.png"
+  },
+  {
+    "name": "Free coffee",
+    "description": "Sleeping is the coffee of the weaks.",
+    "cost": 20000,
+    "used": false,
+    "type": "hr",
+    "receiver": "Postdocs",
+    "property": "rate",
+    "factor": 1.2,
+    "constant": 5,
+    "image": "assets/coffee.png"
+  },
+
+
   {
     "name": "Detector upgrade",
     "description": "More efficient detector.",
-    "cost": 100,
+    "cost": 1000,
     "used": false,
     "type": "detector",
     "receiver": "",
@@ -38,10 +65,58 @@
   {
     "name": "Propaganda",
     "description": "Makes your weird science popular (?).",
-    "cost": 100,
+    "cost": 1000,
     "used": false,
     "type": "research",
     "receiver": "W-Boson",
+    "property": "reputation",
+    "factor": 1.2,
+    "constant": 1,
+    "image": "assets/propaganda.png"
+  },
+  {
+    "name": "Propaganda",
+    "description": "Makes your weird science popular (?).",
+    "cost": 5000,
+    "used": false,
+    "type": "research",
+    "receiver": "Z-Boson",
+    "property": "reputation",
+    "factor": 1.2,
+    "constant": 5,
+    "image": "assets/propaganda.png"
+  },
+  {
+    "name": "Propaganda",
+    "description": "Makes your weird science popular (?).",
+    "cost": 100000,
+    "used": false,
+    "type": "research",
+    "receiver": "top-Quark",
+    "property": "reputation",
+    "factor": 1.2,
+    "constant": 100,
+    "image": "assets/propaganda.png"
+  },
+  {
+    "name": "Propaganda",
+    "description": "Makes your weird science popular (?).",
+    "cost": 500000,
+    "used": false,
+    "type": "research",
+    "receiver": "Higgs-Boson",
+    "property": "reputation",
+    "factor": 1.2,
+    "constant": 1000,
+    "image": "assets/propaganda.png"
+  },
+  {
+    "name": "Propaganda",
+    "description": "Makes your weird science popular (?).",
+    "cost": 5000000,
+    "used": false,
+    "type": "research",
+    "receiver": "MSSM",
     "property": "reputation",
     "factor": 1.2,
     "constant": 1,

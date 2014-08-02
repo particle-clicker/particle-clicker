@@ -4,39 +4,47 @@
     "description": "The W-Boson is the carrier boson of the weak force.",
     "reputation": 1,
     "cost": 10,
-    "cost_increase": 1.2,
+    "cost_increase": 1.3,
     "image": "assets/W.png"
   },
   {
     "name": "Z-Boson",
     "description": "The Z-Boson.",
     "reputation": 5,
-    "cost": 50,
-    "cost_increase": 1.2,
+    "cost": 100,
+    "cost_increase": 1.3,
     "image": "assets/Z.png"
   },
   {
     "name": "top-Quark",
     "description": "The top-Quark.",
-    "reputation": 100,
-    "cost": 1000,
-    "cost_increase": 1.2,
+    "reputation": 50,
+    "cost": 2000,
+    "cost_increase": 1.3,
     "image": "assets/t.png"
   },
   {
     "name": "Higgs-Boson",
     "description": "The Higgs-Boson...",
-    "reputation": 1000,
-    "cost": 10000,
-    "cost_increase": 1.2,
+    "reputation": 200,
+    "cost": 50000,
+    "cost_increase": 1.3,
     "image": "assets/H.png"
   },
   {
     "name": "MSSM",
     "description": "You somehow managed to find proof for the Minimal Supersymmetric Standard Model. Wow!",
-    "reputation": 100000,
-    "cost": 1000000,
+    "reputation": 1000,
+    "cost": 2000000,
     "cost_increase": 2,
     "image": "assets/chitilde.png"
+  },
+  {
+    "name": "Dark matter",
+    "description": "You've found some dark matter... in your fridge, behind that strange, green slime, that was your milk.",
+    "reputation": 5000,
+    "cost": 50000000,
+    "cost_increase": 2.5,
+    "image": "assets/darkmatter.png"
   }
 ]

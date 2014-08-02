@@ -48,10 +48,6 @@
     }
   };
 
-  /* Construct research object from json file.
-   * Additional attribute level keeps track of the current upgrade status.
-   * Also add functionality to research each item.
-   */
   var research = loadJsonFile('json/research.json');
   research.map(function (item) {  // define additional stuff on the objects
     item.level = 0;

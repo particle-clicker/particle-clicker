@@ -66,7 +66,7 @@
         <h1>Upgrades</h1>
         <hr>
         <a href="#" class="thumbnail" ng-repeat="u in uc.upgrades" ng-show="u.is_visible()" ng-disabled="!u.is_available()" ng-click="u.buy()">
-          <img data-src="{{ u.image }}" alt="{{ u.name }}">
+          <img src="{{ u.image }}" alt="{{ u.name }}">
         </a>
       </div>
 

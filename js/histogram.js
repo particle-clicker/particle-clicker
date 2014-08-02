@@ -2,9 +2,9 @@
 function draw_hist(ident, vals) {
 
     // A formatter for counts.
-    var formatCount = d3.format(",.0f");
+    var formatCount = d3.format(",0d");
 
-    var margin = {top: 10, right: 30, bottom: 30, left: 30},
+    var margin = {top: 10, right: 30, bottom: 30, left: 40},
         width = 200 - margin.left - margin.right,
         height = 100 - margin.top - margin.bottom;
 
@@ -23,7 +23,7 @@ function draw_hist(ident, vals) {
 
     var xAxis = d3.svg.axis()
         .scale(x)
-        .ticks(5)
+        .ticks(3)
         .tickFormat(function(d) { return '';})
         .orient("bottom");
 
@@ -90,10 +90,26 @@ function draw_hist(ident, vals) {
         .attr("transform", "translate(0," + (height ) + ")")
         .call(xAxis);
 
+    svg.append("text")
+        .attr("class", "x label")
+        .attr("text-anchor", "end")
+        .attr("x", width)
+        .attr("y", height + 20)
+        .text("m (GeV)");
+
     svg.append("g")
         .attr("class", "y axis")
         .attr("transform", "translate(0, 0)")
         .call(yAxis);
+
+    svg.append("text")
+        .attr("class", "y label")
+        .attr("text-anchor", "end")
+        .attr("y", -20)
+        .attr("dy", "-1em")
+        .attr("dx", "-0.5em")
+        .attr("transform", "rotate(-90)")
+        .text("events");
 
     return svg;
 }

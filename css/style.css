@@ -1,9 +1,10 @@
 body {
-  padding-top: 100px;
+  padding: 80px 0;
 }
 
 #detector {
   cursor: pointer;
+  margin: 0 auto;
 }
 
 .bar rect {

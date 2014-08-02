@@ -87,6 +87,14 @@
 
   var app = angular.module('particleClicker', []);
 
+  app.filter("currency", ["$filter", function($filter) {
+    return function(input) {
+      input = Math.round(input) + ".";
+      input = input.replace(/(\d)(?=(\d{3})+\.)/g, "$1,");
+      return "JTN " + input.substring(0, input.length-1);
+    };
+  }]);
+
   app.controller('DetectorController', function () {
     this.click = function () {
       lab.acquire(1);

@@ -259,8 +259,6 @@ var detector =
     {
         var num = Math.ceil(10 * Math.random());
 
-        console.log(num);
-
         for (var i = 0; i < num; i++) {
             var index = Math.round(Math.random() * (detector.tracks.length - 1));
             var event = new ParticleEvent(detector.tracks[index], num);

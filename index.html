@@ -15,7 +15,7 @@
               <span class="navbar-brand" contenteditable="true" strip-br="true" ng-model="lc.lab.name">{{ lc.lab.name }}</span>
             </div>
             <p class="navbar-text">Data: <strong>{{ lc.lab.data }}</strong></p>
-            <p class="navbar-text">Reputation: <strong>{{ lc.lab.reputation }}</strong></p>
+            <p class="navbar-text"><span data-toggle="tooltip" data-placement="left" title="Tooltip on left">Reputation</span>: <strong>{{ lc.lab.reputation }}</strong></p>
             <p class="navbar-text">Money: <strong>{{ lc.lab.money | currency }}</strong></p>
             <p class="navbar-text navbar-right"><a href="https://github.com/ibab/particle-clicker/"><img src="assets/github.png" alt="GitHub" width="16"></a></p> 
           </div>
@@ -74,6 +74,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.17/angular.min.js"></script>
     <script src="//d3js.org/d3.v3.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script src="js/event.js"></script>
     <script src="js/detector.js"></script>
     <script src="js/histogram.js"></script>

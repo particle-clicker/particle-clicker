@@ -30,5 +30,13 @@
     "cost_increase": 1.6,
     "rate": 1000,
     "image": "http://placekitten.com/64/64"
+  },
+  {
+    "name": "Nobel Prize Winners",
+    "description": "Hell Yeah.",
+    "cost": 1000000,
+    "cost_increase": 1.8,
+    "rate": 10000,
+    "image": "http://placekitten.com/64/64"
   }
 ]

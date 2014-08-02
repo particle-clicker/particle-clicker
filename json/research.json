@@ -30,5 +30,13 @@
     "cost": 10000,
     "cost_increase": 1.2,
     "image": "assets/H.png"
+  },
+  {
+    "name": "MSSM",
+    "description": "You somehow managed to find proof for the Minimal Supersymmetric Standard Model. Wow!",
+    "reputation": 100000,
+    "cost": 1000000,
+    "cost_increase": 2,
+    "image": "assets/chitilde.png"
   }
 ]

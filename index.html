@@ -4,8 +4,45 @@
     <title>Particle Clicker</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+      #Detector img {
+        border-radius: 10px;
+        cursor: pointer;
+        width: 200px;
+      }
+    </style>
   </head>
   <body>
+
+  <div id="Detector" ng-controller="DetectorController as dc">
+    <img ng-click="dc.click()" src="assets/detector.png" alt="Your detector. Click on it to generate events.">
+  </div>
+
+  <div id="Lab" ng-controller="LabController as lc">
+    <h1>{{ lc.lab.name }}</h1>
+    <p>Data: {{ lc.lab.data }}</p>
+    <p>Reputation: {{ lc.lab.reputation }}</p>
+    <p>Money: {{ lc.lab.money }}</p>
+  </div>
+  
+  <div id="Research" ng-controller="ResearchController as rc">
+    <h1>Research</h1>
+    <div class="research-item" ng-repeat="r in rc.research" ng-show="r.is_available()">
+      <h2>{{ r.name }}</h2>
+      <p ng-show="r.level > 0">{{ r.description }} Level: {{ r.level }}</p>
+      <button ng-click="r.research()">Research ({{ r.cost }})</button>
+    </div>
+  </div>
+
+  <div id="HR" ng-controller="HRController as hrc">
+    <h1>HR Department</h1>
+    <div class="hr-item" ng-repeat="w in hrc.workers">
+      <h2>{{ w.name }}</h2>
+      <p ng-show="w.hired > 0">{{ w.description }} You have {{ w.hired }} of them working for you.</p>
+      <button ng-click="w.hire()">Hire ({{ w.cost }})</button>
+    </div>
+  </div>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.17/angular.min.js"></script>

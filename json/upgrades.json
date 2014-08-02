@@ -8,7 +8,43 @@
     "receiver": "PhD Students",
     "property": "rate",
     "factor": 1.2,
-    "constant": 0,
+    "constant": 1,
     "image": "assets/beer.png"
+  },
+  {
+    "name": "Free coffee",
+    "description": "Sleeping is the coffee of the weaks.",
+    "cost": 1000,
+    "used": false,
+    "type": "hr",
+    "receiver": "PhD Students",
+    "property": "rate",
+    "factor": 1.2,
+    "constant": 1,
+    "image": "assets/coffee.png"
+  },
+  {
+    "name": "Detector upgrade",
+    "description": "More efficient detector.",
+    "cost": 100,
+    "used": false,
+    "type": "detector",
+    "receiver": "",
+    "property": "rate",
+    "factor": 1,
+    "constant": 1,
+    "image": "assets/efficiency.png"
+  },
+  {
+    "name": "Propaganda",
+    "description": "Makes your weird science popular (?).",
+    "cost": 100,
+    "used": false,
+    "type": "research",
+    "receiver": "W-Boson",
+    "property": "reputation",
+    "factor": 1.2,
+    "constant": 1,
+    "image": "assets/propaganda.png"
   }
 ]

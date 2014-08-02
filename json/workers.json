@@ -1,8 +1,16 @@
 [
   {
-    "name": "PhD Student",
-    "description": "Basically a slave just with fewer rights.",
-    "loan": 100,
+    "name": "PhD Students",
+    "description": "Basically slaves, just with fewer rights.",
+    "cost": 100,
+    "sell": 80,
     "rate": 1
+  },
+  {
+    "name": "Postdocs",
+    "description": "Can get shit done for you.",
+    "cost": 1000,
+    "sell": 700,
+    "rate": 10
   }
 ]

@@ -1,0 +1,16 @@
+[
+  {
+    "name": "W-Boson",
+    "description": "The W-Boson is the carrier boson of the weak force.",
+    "reputation": 1,
+    "cost": 10,
+    "histogram": {}
+  },
+  {
+    "name": "Higgs-Boson",
+    "description": "The Higgs-Boson...",
+    "reputation": 100,
+    "cost": 1000,
+    "histogram": {}
+  }
+]

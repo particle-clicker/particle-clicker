@@ -37,9 +37,21 @@
           </canvas>
         </div>
         <div class="row lead bg-warning">
-          <p class="col-xs-4 text-center"><strong>Data</strong><br>{{ lc.lab.data | number:0 }}</p>
-          <p class="col-xs-4 text-center"><strong>Reputation</strong><br>{{ lc.lab.reputation | number:0 }}</p>
-          <p class="col-xs-4 text-center"><strong>Money</strong><br> {{ lc.lab.money | currency }}</p>
+          <p class="col-xs-4 text-center">
+            <strong>Data</strong>
+            <br>
+            {{ lc.lab.data | niceNumber }}
+          </p>
+          <p class="col-xs-4 text-center">
+            <strong>Reputation</strong>
+            <br>
+            {{ lc.lab.reputation | niceNumber }}
+          </p>
+          <p class="col-xs-4 text-center">
+            <strong>Money</strong>
+            <br>
+            {{ lc.lab.money | currency }}
+          </p>
         </div>
         <div id="ResearchHist"></div>
       </div>
@@ -64,7 +76,7 @@
         <hr>
         <ul class="media-list">
           <li class="media" ng-repeat="u in uc.upgrades" ng-show="u.is_visible()">
-            <img class="pull-left media-object visible-lg-*" src="{{ u.image }}" alt="">
+            <img style="display: none;" class="pull-left media-object visible-lg-*" src="{{ u.image }}" alt="">
             <div class="media-body">
               <h4 class="media-heading">{{ u.name }}</h4>
               <p>{{ u.description }}</p>
@@ -76,7 +88,39 @@
     </div>
 
     <div id="InfoBox">
-      Particle Clicker <a href="https://github.com/ibab/particle-clicker/"><img src="assets/github.png" alt="GitHub"></a>
+      <a href="#" data-toggle="modal" data-target="#myModal">Particle Clicker</a> <a href="https://github.com/ibab/particle-clicker/"><img src="assets/github.png" alt="GitHub"></a>
+    </div>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title" id="myModalLabel">Particle Clicker</h4>
+          </div>
+          <div class="modal-body">
+            <h5>About</h5>
+            <p>Particle Clicker is a game that was made during the <a href="https://webfest.web.cern.ch">CERN Webfest 2014</a>. The idea is borrowed from <a href="http://orteil.dashnet.org/cookieclicker/">Cookie Clicker</a>, an amazing and addictive cookie-themed game.</p>
+            <img class="pull-right" width="200" src="http://www.citizencyberscience.net/wiki/images/1/1b/Cernwebfest.png" alt="">
+            <h5>Libraries</h5>
+            <p>This game is realised using a few libraries. Those are</p>
+            <ul>
+              <li><a href="http://jquery.com">jQuery</a></li>
+              <li><a href="http://angularjs.org">AngularJS</a></li>
+              <li><a href="http://d3js.org/">D3.js</a></li>
+              <li><a href="http://getbootstrap.com/">Bootstrap</a></li>
+              <li><a href="http://imulus.github.io/retinajs/">retina.js</a></li>
+            </ul>
+            <h5>Authors</h5>
+            <ul>
+              <li><a href="https://github.com/gbiro">Gabor Biro</a></li>
+              <li><a href="https://github.com/ibab">Igor Babuschkin</a></li>
+              <li><a href="https://github.com/kdungs">Kevin Dungs</a></li>
+              <li><a href="https://github.com/ntadej">Tadej Novak</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>

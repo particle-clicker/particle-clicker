@@ -136,11 +136,27 @@
 
   var app = angular.module('particleClicker', []);
 
-  app.filter("currency", ["$filter", function($filter) {
-    return function(input) {
-      input = Math.round(input) + ".";
-      input = input.replace(/(\d)(?=(\d{3})+\.)/g, "$1,");
-      return "JTN " + input.substring(0, input.length-1);
+  app.filter('currency', ['$filter', function ($filter) {
+    return function (input) {
+      return 'JTN ' + $filter('niceNumber')(input);
+    };
+  }]);
+
+  app.filter('niceNumber', ['$filter', function ($filter) {
+    return function (number) {
+      var abs = Math.abs(number);
+      if (abs >= Math.pow(10, 12)) {
+        number = (number / Math.pow(10, 12)).toFixed(3) + "T";
+      } else if (abs >= Math.pow(10, 9)) {
+        number = (number / Math.pow(10, 9)).toFixed(3) + "B";
+      } else if (abs >= Math.pow(10, 6)) {
+        number = (number / Math.pow(10, 6)).toFixed(3) + "M";
+      } else if (abs >= Math.pow(10, 3)) {
+        number = (number / Math.pow(10, 3)).toFixed(3) + "k";
+      } else {
+        number = number.toFixed(0);
+      }
+      return number; 
     };
   }]);
 

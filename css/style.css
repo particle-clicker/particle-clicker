@@ -7,6 +7,7 @@ h1 br {
 }
 
 #InfoBox {
+  background: rgba(255, 255, 255, .5);
   color: #666;
   position: fixed;
   right: 40px;
@@ -58,4 +59,16 @@ h1 br {
 
 .scrollable {
   overflow: auto;
+}
+
+#HR .media-object,
+#Upgrades .media-object {
+  display: none;
+}
+
+@media screen and (min-width: 1400px) {
+  #HR .media-object,
+  #Upgrades .media-object {
+    display: block;
+  }
 }

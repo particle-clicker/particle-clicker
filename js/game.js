@@ -62,6 +62,7 @@
     item.research = function () {
       if (lab.research(this.cost, this.reputation)) {
         this.level++;
+        this.cost = Math.round(this.cost * this.cost_increase);
       }
     };
   });
@@ -78,6 +79,7 @@
     worker.hire = function() {
       if (lab.buy(this.cost)) {
         this.hired++;
+        this.cost = Math.round(this.cost * this.cost_increase);
       }
     };
   });

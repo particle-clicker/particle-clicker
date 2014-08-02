@@ -4,6 +4,7 @@
     "description": "The W-Boson is the carrier boson of the weak force.",
     "reputation": 1,
     "cost": 10,
+    "cost_increase": 1.2,
     "histogram": {}
   },
   {
@@ -11,6 +12,7 @@
     "description": "The Higgs-Boson...",
     "reputation": 100,
     "cost": 1000,
+    "cost_increase": 1.2,
     "histogram": {}
   }
 ]

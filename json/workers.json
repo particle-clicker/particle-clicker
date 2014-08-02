@@ -3,14 +3,14 @@
     "name": "PhD Students",
     "description": "Basically slaves, just with fewer rights.",
     "cost": 100,
-    "sell": 80,
+    "cost_increase": 1.4,
     "rate": 1
   },
   {
     "name": "Postdocs",
     "description": "Can get shit done for you.",
     "cost": 1000,
-    "sell": 700,
+    "cost_increase": 1.4,
     "rate": 10
   }
 ]

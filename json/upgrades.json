@@ -1,0 +1,13 @@
+[
+  {
+    "name": "Free beer",
+    "description": "The work is easier when the worker is happy.",
+    "type": "hr", // "hr" || "detector" || "research"
+    "reciever": "PhD Students", // name of the object
+    "cost": 100,
+    "used": false,
+    "factor": 1.2,
+    "constant": 0,
+   //"image":
+  }
+}

@@ -4,9 +4,9 @@ function draw_hist(ident, vals) {
     // A formatter for counts.
     var formatCount = d3.format(",0d");
 
-    var margin = {top: 10, right: 30, bottom: 30, left: 40},
-        width = 200 - margin.left - margin.right,
-        height = 100 - margin.top - margin.bottom;
+    var margin = {top: 10, right: 30, bottom: 30, left: 30},
+        width = 400 - margin.left - margin.right,
+        height = 200 - margin.top - margin.bottom;
 
     var x = d3.scale.linear()
         .domain([-5, 5])
@@ -20,6 +20,8 @@ function draw_hist(ident, vals) {
     var y = d3.scale.linear()
         .domain([0, d3.max(data, function(d) { return d.y + Math.sqrt(d.y); })])
         .range([height, 0]);
+
+    correction = y(0);
 
     var xAxis = d3.svg.axis()
         .scale(x)
@@ -52,8 +54,8 @@ function draw_hist(ident, vals) {
         .enter().append("svg:line")
         .attr("x1", 0)
         .attr("x2", 0)
-        .attr("y1", function(d) { return y(Math.sqrt(d.y))-60; })
-        .attr("y2", function(d) { return -y(Math.sqrt(d.y))+60; })
+        .attr("y1", function(d) { return y(Math.sqrt(d.y))-correction; })
+        .attr("y2", function(d) { return -y(Math.sqrt(d.y))+correction; })
         .attr("transform", function(d) { return "translate(" + x(d.x) + "," + y(d.y) + ")"; })
         .attr("stroke", "black")
         .attr("stroke-width", 1)
@@ -63,8 +65,8 @@ function draw_hist(ident, vals) {
         .enter().append("svg:line")
         .attr("x1", -2)
         .attr("x2", 2)
-        .attr("y1", function(d) { return y(Math.sqrt(d.y))-60; })
-        .attr("y2", function(d) { return y(Math.sqrt(d.y))-60; })
+        .attr("y1", function(d) { return y(Math.sqrt(d.y))-correction; })
+        .attr("y2", function(d) { return y(Math.sqrt(d.y))-correction; })
         .attr("transform", function(d) { return "translate(" + x(d.x) + "," + y(d.y) + ")"; })
         .attr("stroke", "black")
         .attr("stroke-width", 1)
@@ -74,8 +76,8 @@ function draw_hist(ident, vals) {
         .enter().append("svg:line")
         .attr("x1", -2)
         .attr("x2", 2)
-        .attr("y1", function(d) { return -y(Math.sqrt(d.y))+60; })
-        .attr("y2", function(d) { return -y(Math.sqrt(d.y))+60; })
+        .attr("y1", function(d) { return -y(Math.sqrt(d.y))+correction; })
+        .attr("y2", function(d) { return -y(Math.sqrt(d.y))+correction; })
         .attr("transform", function(d) { return "translate(" + x(d.x) + "," + y(d.y) + ")"; })
         .attr("stroke", "black")
         .attr("stroke-width", 1)

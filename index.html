@@ -36,7 +36,7 @@
 
     <div class="container-fluid">
       <div class="col-xs-4">
-        <div id="Detector" ng-controller="DetectorController as dc">
+        <div ng-controller="DetectorController as dc">
           <canvas ng-click="dc.click()" id="detector" width="200" height="200">
             Your detector. Click on it to generate events.
           </canvas>
@@ -52,6 +52,7 @@
       
       <div class="col-xs-4" id="Research" ng-controller="ResearchController as rc">
         <h1>Research</h1>
+        <div id="ResearchHist"></div>
         <div class="research-item" ng-repeat="r in rc.research" ng-show="r.is_visible()">
           <h2>{{ r.name }} <small ng-show="r.level > 0"> Level: {{ r.level }}</small></h2>
           <p ng-show="r.level > 0">{{ r.description }}</p>
@@ -71,7 +72,9 @@
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.17/angular.min.js"></script>
-    <script src="js/game.js"></script>
+    <script src="//d3js.org/d3.v3.min.js"></script>
     <script src="js/detector.js"></script>
+    <script src="js/histogram.js"></script>
+    <script src="js/game.js"></script>
   </body>
 </html>

@@ -2,10 +2,8 @@ body {
   padding-top: 100px;
 }
 
-#Detector img {
-  border-radius: 10px;
+#detector {
   cursor: pointer;
-  width: 200px;
 }
 
 .bar rect {

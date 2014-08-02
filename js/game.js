@@ -227,7 +227,18 @@
     this.upgrades = upgrades;
   });
 
-  app.controller('AchievementsController', function () {
-    this.achievements = achievements.list;
+  app.controller('AchievementsController', function ($scope) {
+    $scope.achievements = achievements.list;
+
+    $scope.displayAchievements = function(){
+      // newachievements = [ac for (ac in this.achievements) if (ac.completed == true && ac.displayed == false)];
+      for (var i=0;i<$scope.achievements.length;i++){
+        if ($scope.achievements[i].completed == true && $scope.achievements[i].displayed == false){
+          alert("Yo!");
+          alert($scope.achievements[i].description);
+          $scope.achievements[i].displayed = true;
+        }
+      }
+    }
   });
 })();

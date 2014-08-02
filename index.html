@@ -138,6 +138,23 @@
       </div>
     </div>
 
+    <div class="modal fade" id="Achievements" role="dialog" tabindex="-1" ng-controller="AchievementsController as ac">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <p>Yo! You Have A New Achievement!</p>
+          </div>
+          <div class="modal-body">
+            <ul>
+              <li ng-repeat="acc in ac.achievements">
+                  <p ng-show="!(!acc.completed || acc.displayed)">{{acc.description}}</p>
+              </li>
+          </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.17/angular.min.js"></script>
     <script src="//d3js.org/d3.v3.min.js"></script>

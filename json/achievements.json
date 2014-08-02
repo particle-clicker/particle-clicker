@@ -6,6 +6,7 @@
     "type": "research",
     "target": "Z-Boson",
     "threshold": 1,
+    "displayed": false,
     "image": "assets/Z.png"
   },
   {
@@ -15,15 +16,27 @@
     "type": "research",
     "target": "top-Quark",
     "threshold": 1,
+    "displayed": false,
     "image": "assets/t.png"
   },
   {
-    "name": "Hired First Nobel Prize Winner",
-    "description": "Achievement: Yo! You have hired your first nobel prize winner!",
+    "name": "Hired First PhD",
+    "description": "Achievement: Yo! You have hired your first PhD!",
     "difficulty": "5",
     "type": "workers",
     "target": "PhD Students",
     "threshold": 1,
+    "displayed": false,
+    "image": "assets/W.png"
+  },
+  {
+    "name": "Hired First Posdoc",
+    "description": "Achievement: Yo! You have hired your first POST DOC!",
+    "difficulty": "5",
+    "type": "workers",
+    "target": "Postdocs",
+    "threshold": 1,
+    "displayed": false,
     "image": "assets/W.png"
   }
 ]

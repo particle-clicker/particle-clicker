@@ -50,6 +50,15 @@ var achievements =
                 achievements.list[i].completed = true;
             }
         }
+
+        $('#Achievements').scope().displayAchievements();
+    },
+
+    // i'm a bit sleepy now, so not thinking about relation between add** functions and update
+    // so this function might not be necessary
+    pureUpdate: function()
+    {
+        $('#Achievements').scope().displayAchievements();
     }
 };
 

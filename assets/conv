@@ -1,0 +1,4 @@
+#!/bin/bash
+convert $1 -resize 128x128 $2@2x.png
+convert $2@2x.png -resize 64x64 $2.png
+rm $1

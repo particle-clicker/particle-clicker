@@ -10,33 +10,41 @@
   {
     "name": "Postdocs",
     "description": "Can get shit done for you.",
-    "cost": 1000,
+    "cost": 2000,
     "cost_increase": 1.4,
-    "rate": 10,
+    "rate": 5,
     "image": "http://placekitten.com/64/64"
   },
   {
     "name": "Fellows",
     "description": "You pay them a lot. They work a lot.",
-    "cost": 10000,
+    "cost": 50000,
     "cost_increase": 1.5,
-    "rate": 100,
+    "rate": 50,
     "image": "http://placekitten.com/64/64"
   },
   {
     "name": "Tenured Professors",
     "description": "They bring their own group along and are able to get a lot of work done.",
-    "cost": 100000,
+    "cost": 1000000,
     "cost_increase": 1.6,
-    "rate": 1000,
+    "rate": 100,
     "image": "http://placekitten.com/64/64"
   },
   {
     "name": "Nobel Prize Winners",
     "description": "Hell Yeah.",
-    "cost": 1000000,
+    "cost": 50000000,
     "cost_increase": 1.8,
-    "rate": 10000,
+    "rate": 500,
+    "image": "http://placekitten.com/64/64"
+  },
+  {
+    "name": "Summer Students",
+    "description": "They are AWESOME. They best ideas come between two parties.",
+    "cost": 99999999,
+    "cost_increase": 3,
+    "rate": 1000,
     "image": "http://placekitten.com/64/64"
   }
 ]

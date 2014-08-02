@@ -22,7 +22,7 @@
     money: 0,
     researchHistogram: new Histogram('#ResearchHist'),
     getGrant: function () {
-      this.money += this.reputation * 5;  // TODO: adjust factor
+      this.money += this.reputation * 5;  // TODO: adjust factor, 5
     },
     acquire: function (amount) {
       this.data += amount;

@@ -98,6 +98,8 @@
   app.controller('DetectorController', function () {
     this.click = function () {
       lab.acquire(1);
+
+      detector.addEvent();
     };
   });
 

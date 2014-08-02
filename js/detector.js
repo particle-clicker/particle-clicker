@@ -1,7 +1,20 @@
 var detector =
 {
-    canvas: {},
-    ctx: {},
+    core:
+    {
+        canvas: null,
+        ctx: null
+    },
+
+    events:
+    {
+        canvas: null,
+        ctx: null,
+        list: [],
+    },
+
+    width: 400,
+    height: 400,
 
     ratio: 1,
 
@@ -26,68 +39,86 @@ var detector =
 
     radius:
     {
-        siliconInner: 5,
-        silicon: 25,
-        siliconSpace: 30,
-        ecal: 40,
-        hcal: 70,
-        darkRing1: 73,
-        darkRing1Space: 78,
-        lightRing: 90,
-        lightRingSpace: 92,
-        darkRing2: 95,
+        siliconInner: 10,
+        silicon: 30,
+        siliconSpace: 35,
+        ecal: 50,
+        hcal: 80,
+        darkRing1: 83,
+        darkRing1Space: 86,
+        lightRing: 92,
+        lightRingSpace: 94,
+        darkRing2: 100,
 
-        mucal: 105,
-        mucalLight: 10,
-        mucalDark: 20
+        mucal: 107,
+        mucalLight: 8,
+        mucalDark: 18
+    },
+
+    animate: function()
+    {
+        requestAnimFrame(detector.animate);
+        detector.draw();
     },
 
     init: function()
     {
-        detector.canvas = document.getElementById('detector');
-        detector.ctx = detector.canvas.getContext('2d');
+        detector.core.canvas = document.getElementById('detector-core');
+        detector.core.ctx = detector.core.canvas.getContext('2d');
+
+        detector.events.canvas = document.getElementById('detector-events');
+        detector.events.ctx = detector.events.canvas.getContext('2d');
 
         var devicePixelRatio = window.devicePixelRatio || 1;
-        var backingStoreRatio = detector.ctx.webkitBackingStorePixelRatio ||
-                                detector.ctx.mozBackingStorePixelRatio ||
-                                detector.ctx.msBackingStorePixelRatio ||
-                                detector.ctx.oBackingStorePixelRatio ||
-                                detector.ctx.backingStorePixelRatio || 1;
+        var backingStoreRatio = detector.core.ctx.webkitBackingStorePixelRatio ||
+                                detector.core.ctx.mozBackingStorePixelRatio ||
+                                detector.core.ctx.msBackingStorePixelRatio ||
+                                detector.core.ctx.oBackingStorePixelRatio ||
+                                detector.core.ctx.backingStorePixelRatio || 1;
 
         var ratio = devicePixelRatio / backingStoreRatio;
 
-        detector.ratio = detector.canvas.width / 400;
+        detector.ratio = detector.core.canvas.width / 400;
+
+        detector.width = detector.core.canvas.width;
+        detector.height = detector.core.canvas.height;
 
         if (devicePixelRatio !== backingStoreRatio) {
-            var oldWidth = detector.canvas.width;
-            var oldHeight = detector.canvas.height;
+            var oldWidth = detector.core.canvas.width;
+            var oldHeight = detector.core.canvas.height;
 
-            detector.canvas.width = oldWidth * ratio;
-            detector.canvas.height = oldHeight * ratio;
+            detector.core.canvas.width = oldWidth * ratio;
+            detector.core.canvas.height = oldHeight * ratio;
+            detector.core.canvas.style.width = oldWidth + 'px';
+            detector.core.canvas.style.height = oldHeight + 'px';
 
-            detector.canvas.style.width = oldWidth + 'px';
-            detector.canvas.style.height = oldHeight + 'px';
+            detector.events.canvas.width = oldWidth * ratio;
+            detector.events.canvas.height = oldHeight * ratio;
+            detector.events.canvas.style.width = oldWidth + 'px';
+            detector.events.canvas.style.height = oldHeight + 'px';
 
             // now scale the context to counter
             // the fact that we've manually scaled
             // our canvas element
-            detector.ctx.scale(ratio, ratio);
+            detector.core.ctx.scale(ratio, ratio);
+            detector.events.ctx.scale(ratio, ratio);
         }
 
-        detector.ctx.scale(detector.ratio, detector.ratio);        
+        detector.core.ctx.scale(detector.ratio, detector.ratio);
+        detector.events.ctx.scale(detector.ratio, detector.ratio);
 
-        detector.draw();
+        detector.coreDraw();
+        detector.animate();
     },
 
-    draw: function()
+    coreDraw: function()
     {
-        var ctx = detector.ctx;
-        var cx = 200;
-        var cy = 200;
+        var ctx = detector.core.ctx;
+        var cx = detector.width / 2;
+        var cy = detector.height / 2;
 
-        //ctx.scale(2,2);
-
-        ctx.strokeRect(0,0,400,400);
+        ctx.clearRect(0, 0, 400, 400);
+        ctx.strokeRect(0, 0, 400, 400);
 
         var muSplit = 2/12;
         for (var k = 3; k >= 1; k--) {
@@ -205,7 +236,39 @@ var detector =
         ctx.arc(cx, cy, detector.radius.siliconInner, 0, Math.PI * 2, true);
         ctx.fill();
         ctx.stroke();
+    },
+
+    addEvent: function()
+    {
+        var event = new ParticleEvent('electron')
+
+        detector.events.list.push(event);
+    },
+
+    draw: function()
+    {
+        detector.events.ctx.clearRect(0, 0, 400, 400);
+
+        var del = 0;
+        for (var e in detector.events.list) {
+            if (detector.events.list[e].alpha > 0) {
+                detector.events.list[e].draw();
+            } else {
+                del = e;
+            }
+        }
     }
 };
+
+window.requestAnimFrame = (function(){
+    return window.requestAnimationFrame       || 
+           window.webkitRequestAnimationFrame || 
+           window.mozRequestAnimationFrame    || 
+           window.oRequestAnimationFrame      || 
+           window.msRequestAnimationFrame     || 
+           function(/* function */ callback, /* DOMElement */ element){
+               window.setTimeout(callback, 1000 / 60);
+           };
+})();
 
 (function() { detector.init(); })();

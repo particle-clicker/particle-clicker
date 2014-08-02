@@ -5,6 +5,20 @@ body {
 #detector {
   cursor: pointer;
   margin: 0 auto;
+  position: relative;
+  width: 400px; height: 400px;
+}
+
+#detector canvas {
+  position: absolute; left: 0; top: 0;
+}
+
+#detector-core {
+   z-index: 0;
+}
+
+#detector-events {
+   z-index: 1;
 }
 
 .bar rect {

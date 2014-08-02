@@ -18,7 +18,7 @@ function draw_hist(ident, vals) {
         (vals);
 
     var y = d3.scale.linear()
-        .domain([0, d3.max(data, function(d) { return d.y; })])
+        .domain([0, d3.max(data, function(d) { return d.y + Math.sqrt(d.y); })])
         .range([height, 0]);
 
     var xAxis = d3.svg.axis()

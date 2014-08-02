@@ -4,13 +4,31 @@
     "description": "Basically slaves, just with fewer rights.",
     "cost": 100,
     "cost_increase": 1.4,
-    "rate": 1
+    "rate": 1,
+    "image": "http://placekitten.com/64/64"
   },
   {
     "name": "Postdocs",
     "description": "Can get shit done for you.",
     "cost": 1000,
     "cost_increase": 1.4,
-    "rate": 10
+    "rate": 10,
+    "image": "http://placekitten.com/64/64"
+  },
+  {
+    "name": "Fellows",
+    "description": "You pay them a lot. They work a lot.",
+    "cost": 10000,
+    "cost_increase": 1.5,
+    "rate": 100,
+    "image": "http://placekitten.com/64/64"
+  },
+  {
+    "name": "Tenured Professors",
+    "description": "They bring their own group along and are able to get a lot of work done.",
+    "cost": 100000,
+    "cost_increase": 1.6,
+    "rate": 1000,
+    "image": "http://placekitten.com/64/64"
   }
 ]

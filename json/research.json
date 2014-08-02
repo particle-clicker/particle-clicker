@@ -5,14 +5,30 @@
     "reputation": 1,
     "cost": 10,
     "cost_increase": 1.2,
-    "histogram": {}
+    "image": "assets/W.png"
+  },
+  {
+    "name": "Z-Boson",
+    "description": "The Z-Boson.",
+    "reputation": 5,
+    "cost": 50,
+    "cost_increase": 1.2,
+    "image": "assets/Z.png"
+  },
+  {
+    "name": "top-Quark",
+    "description": "The top-Quark.",
+    "reputation": 100,
+    "cost": 1000,
+    "cost_increase": 1.2,
+    "image": "assets/t.png"
   },
   {
     "name": "Higgs-Boson",
     "description": "The Higgs-Boson...",
-    "reputation": 100,
-    "cost": 1000,
+    "reputation": 1000,
+    "cost": 10000,
     "cost_increase": 1.2,
-    "histogram": {}
+    "image": "assets/H.png"
   }
 ]

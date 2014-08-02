@@ -21,3 +21,8 @@ body {
   stroke: #000;
   shape-rendering: crispEdges;
 }
+
+.scrollable {
+  height: 50%;
+  overflow: auto;
+}

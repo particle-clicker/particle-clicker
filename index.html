@@ -37,15 +37,13 @@
         </canvas>
       </div>
 
-      <div class="col-xs-3" id="Research" ng-controller="ResearchController as rc">
+      <div class="scrollable col-xs-3" id="Research" ng-controller="ResearchController as rc">
         <h1>Research</h1>
         <hr>
         <div id="ResearchHist"></div>
         <ul class="media-list">
           <li class="media" ng-repeat="r in rc.research" ng-show="r.is_visible()">
-            <a class="pull-left" href="#">
-              <img class="media-object" src="http://placekitten.com/64/64" alt="...">
-            </a>
+              <img class="pull-left" class="media-object" src="{{ r.image }}" alt="">
             <div class="media-body">
               <h4 class="media-heading">{{ r.name }} <span ng-show="r.level > 0" class="badge">Level {{ r.level }}</span></h4>
               <p ng-show="r.level > 0">{{ r.description }} Researching it will give you {{ r.reputation }} reputation.</p>
@@ -55,14 +53,12 @@
         </ul>
       </div>
 
-      <div class="col-xs-3" id="HR" ng-controller="HRController as hrc">
+      <div class="scrollable col-xs-3" id="HR" ng-controller="HRController as hrc">
         <h1>HR Department</h1>
         <hr>
         <ul class="media-list">
           <li class="media" ng-repeat="w in hrc.workers" ng-show="w.is_visible()">
-            <a class="pull-left" href="#">
-              <img class="media-object" src="http://placekitten.com/64/64" alt="...">
-            </a>
+            <img class="pull-left" class="media-object" src="{{ w.image }}" alt="">
             <div class="media-body">
               <h4 class="media-heading">{{ w.name }} <span ng-show="w.hired > 0" class="badge">{{ w.hired }}</span></h4>
               <p ng-show="w.hired > 0">{{ w.description }} They produce {{ w.rate }} data per second.</p>

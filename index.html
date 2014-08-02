@@ -37,7 +37,9 @@
     <div class="container-fluid">
       <div class="col-xs-4">
         <div id="Detector" ng-controller="DetectorController as dc">
-          <img ng-click="dc.click()" src="assets/detector.png" alt="Your detector. Click on it to generate events.">
+          <canvas ng-click="dc.click()" id="detector" width="200" height="200">
+            Your detector. Click on it to generate events.
+          </canvas>
         </div>
 
         <div id="Lab" ng-controller="LabController as lc">
@@ -70,5 +72,6 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.17/angular.min.js"></script>
     <script src="js/game.js"></script>
+    <script src="js/detector.js"></script>
   </body>
 </html>

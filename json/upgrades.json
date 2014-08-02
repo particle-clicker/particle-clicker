@@ -1,7 +1,7 @@
 [
   {
     "name": "Free beer",
-    "description": "The work is easier when the worker is happy.",
+    "description": "The work is easier when the worker is happy. Upgrades your slav... I mean your PhD Students.",
     "cost": 100,
     "used": false,
     "type": "hr",
@@ -13,7 +13,7 @@
   },
   {
     "name": "Free coffee",
-    "description": "Sleeping is the coffee of the weaks.",
+    "description": "Sleeping is the coffee of the weaks. Upgrades your slav... I mean you PhD Students.",
     "cost": 1500,
     "used": false,
     "type": "hr",
@@ -26,7 +26,7 @@
 
   {
     "name": "Free beer",
-    "description": "The work is easier when the worker is happy.",
+    "description": "The work is easier when the worker is happy. Upgrades your Postdocs.",
     "cost": 5000,
     "used": false,
     "type": "hr",
@@ -38,7 +38,7 @@
   },
   {
     "name": "Free coffee",
-    "description": "Sleeping is the coffee of the weaks.",
+    "description": "Sleeping is the coffee of the weaks. Upgrades your Postdocs.",
     "cost": 20000,
     "used": false,
     "type": "hr",
@@ -52,7 +52,7 @@
 
   {
     "name": "Detector upgrade",
-    "description": "More efficient detector.",
+    "description": "Increases the luminosity (you get more data with clicks).",
     "cost": 1000,
     "used": false,
     "type": "detector",
@@ -64,7 +64,7 @@
   },
   {
     "name": "Propaganda",
-    "description": "Makes your weird science popular (?).",
+    "description": "Makes your weird science (W-Boson) more popular (?).",
     "cost": 1000,
     "used": false,
     "type": "research",
@@ -76,7 +76,7 @@
   },
   {
     "name": "Propaganda",
-    "description": "Makes your weird science popular (?).",
+    "description": "Makes your weird science (Z-Boson) more popular (?).",
     "cost": 5000,
     "used": false,
     "type": "research",
@@ -88,7 +88,7 @@
   },
   {
     "name": "Propaganda",
-    "description": "Makes your weird science popular (?).",
+    "description": "Makes your weird science (top-Quark) more popular (?).",
     "cost": 100000,
     "used": false,
     "type": "research",
@@ -100,7 +100,7 @@
   },
   {
     "name": "Propaganda",
-    "description": "Makes your weird science popular (?).",
+    "description": "Makes your weird science (Higgs-Boson) more popular (?).",
     "cost": 500000,
     "used": false,
     "type": "research",
@@ -112,7 +112,7 @@
   },
   {
     "name": "Propaganda",
-    "description": "Makes your weird science popular (?).",
+    "description": "Makes your weird science (MSSM) more popular (?).",
     "cost": 5000000,
     "used": false,
     "type": "research",

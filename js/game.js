@@ -31,10 +31,13 @@
     reputation: 0,
     money: 0,
     getGrant: function () {
-      this.money += this.reputation * this.factor.rate;  // TODO: adjust factor, 5
+      var addition = this.reputation * this.factor.rate;  // TODO: adjust factor
+      this.money += addition;
+      achievements.count.money += addition;
     },
     acquire: function(amount) {
       this.data += amount;
+      achievements.count.data += amount;
     },
     research: function(cost, reputation) {
       if (this.data >= cost) {
@@ -55,8 +58,11 @@
       this.money += cost;
     }
   };
+ 
+  achievements.setList(loadFile('json/achievements.json'));
 
   var research = loadFile('json/research.json');
+  achievements.addResearch(research);
   research.map(function(item) {
     item.level = 0;
     item.is_visible = function() {
@@ -69,6 +75,7 @@
       if (lab.research(this.cost, this.reputation)) {
         this.level++;
         this.cost = Math.round(this.cost * this.cost_increase);
+        achievements.research[this.name]++;
       }
     };
     item.getInfo = function() {
@@ -83,6 +90,7 @@
   });
 
   var workers = loadFile('json/workers.json');
+  achievements.addWorkers(workers);
   workers.map(function(worker) {
     worker.hired = 0;
     worker.is_visible = function() {
@@ -95,6 +103,7 @@
       if (lab.buy(this.cost)) {
         this.hired++;
         this.cost = Math.round(this.cost * this.cost_increase);
+        achievements.update('workers', this.name, 1);
       }
     };
   });
@@ -183,6 +192,7 @@
     this.click = function() {
       lab.acquire(lab.detector.rate);
       detector.addEvent();
+      achievements.count.clicks += 1;
       return false;
     };
   });
@@ -215,5 +225,9 @@
 
   app.controller('UpgradesController', function() {
     this.upgrades = upgrades;
+  });
+
+  app.controller('AchievementsController', function () {
+    this.achievements = achievements.list;
   });
 })();

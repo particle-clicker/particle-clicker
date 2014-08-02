@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Discovered Z-Boson",
+    "description": "Achievement: You just discoverd Z-Boson!",
+    "difficulty": "1",
+    "type": "research",
+    "target": "Z-Boson",
+    "threshold": 1,
+    "image": "assets/Z.png"
+  },
+  {
+    "name": "Discovered top-Quark",
+    "description": "Achievement: You just discovered top-Quark",
+    "difficulty": "2",
+    "type": "research",
+    "target": "top-Quark",
+    "threshold": 1,
+    "image": "assets/t.png"
+  },
+  {
+    "name": "Hired First Nobel Prize Winner",
+    "description": "Achievement: Yo! You have hired your first nobel prize winner!",
+    "difficulty": "5",
+    "type": "workers",
+    "target": "PhD Students",
+    "threshold": 1,
+    "image": "assets/W.png"
+  }
+]

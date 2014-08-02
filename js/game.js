@@ -148,6 +148,7 @@
     this.click = function () {
       lab.acquire(lab.detector.rate);
       detector.addEvent();
+      return false;
     };
   });
 

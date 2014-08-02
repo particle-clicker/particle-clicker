@@ -16,7 +16,7 @@
     "image": "http://placekitten.com/64/64"
   },
   {
-    "name": "Fellows",
+    "name": "Research Fellows",
     "description": "You pay them a lot. They work a lot.",
     "cost": 50000,
     "cost_increase": 1.5,

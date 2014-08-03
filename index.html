@@ -15,7 +15,8 @@
         <hr>
         <ul class="media-list">
           <li class="media" ng-repeat="r in rc.research" ng-show="r.is_visible()">
-            <img class="pull-left" class="media-object" src="{{ r.level > 0 ? r.image : 'assets/unknown.png' }}" alt="">
+            <img ng-show="r.level > 0" class="pull-left" class="media-object" src="{{ r.image }}" alt="">
+            <img ng-hide="r.level > 0" class="pull-left" class="media-object" src="assets/unknown.png" alt="">
             <div class="media-body">
               <h4 class="media-heading">{{ r.level > 0 ? r.name : '?????' }} <span ng-show="r.level > 0" class="badge">Level {{ r.level }}</span></h4>
               <p ng-show="r.level > 0">{{ r.description }} Researching it will give you {{ r.reputation }} reputation.</p>
@@ -146,7 +147,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.17/angular.min.js"></script>
     <script src="//d3js.org/d3.v3.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script src="js/external/retina.min.js"></script>
+    <script src="js/external/retina.js"></script>
 
     <script src="js/event.js"></script>
     <script src="js/detector.js"></script>

@@ -16,7 +16,7 @@
         <ul class="media-list">
           <li class="media" ng-repeat="r in rc.research" ng-show="r.is_visible()">
             <img ng-show="r.level > 0" class="pull-left" class="media-object" src="{{ r.image }}" alt="">
-            <img ng-hide="r.level > 0" class="pull-left" class="media-object" src="assets/unknown.png" alt="">
+            <img ng-hide="r.level > 0" class="pull-left" class="media-object" src="assets/icons/png/unknown.png" alt="">
             <div class="media-body">
               <h4 class="media-heading">{{ r.level > 0 ? r.name : '?????' }} <span ng-show="r.level > 0" class="badge">Level {{ r.level }}</span></h4>
               <p ng-show="r.level > 0">{{ r.description }} Researching it will give you {{ r.reputation }} reputation.</p>

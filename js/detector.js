@@ -13,6 +13,8 @@ var detector =
         list: [],
     },
 
+    visible: true,
+
     width: 400,
     height: 400,
 
@@ -268,6 +270,10 @@ var detector =
 
     addEventExternal: function()
     {
+        if (!detector.visible) {
+            return;
+        }
+
         var num = Math.min(30 * achievements.count.workers / 10, 30);
 
         for (var i = 0; i < num; i++) {

@@ -6,9 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#" data-toggle="modal" data-target="#myModal">Particle Clicker</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="https://github.com/ibab/particle-clicker/" target="_blank"><i class="fa fa-github"></i> GitHub</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Share <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#"><i class="fa fa-facebook"></i> Facebook</a></li>
+              <li><a href="#"><i class="fa fa-twitter"></i> Twitter</a></li>
+              <li><a href="#"><i class="fa fa-google-plus"></i> Google+</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+
     <div class="container-fluid">
       <div class="col-xs-3 scrollable" id="Research" ng-controller="ResearchController as rc">
         <h3><span class="glyphicon glyphicon-cog"></span> Research</h3>
@@ -126,10 +147,6 @@
 
     <div id="achievements-container" class="col-xs-3"></div>
 
-    <div id="InfoBox">
-      <a href="#" data-toggle="modal" data-target="#myModal">Particle Clicker</a> <a href="https://github.com/ibab/particle-clicker/" target="_blank"><img src="assets/github.png" alt="GitHub"></a>
-    </div>
-
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -144,17 +161,20 @@
             <h5>Libraries</h5>
             <p>This game is realised using a few libraries. Those are</p>
             <ul>
-              <li><a href="http://jquery.com">jQuery</a></li>
               <li><a href="http://angularjs.org">AngularJS</a></li>
               <li><a href="http://getbootstrap.com/">Bootstrap</a></li>
+              <li><a href="http://fortawesome.github.io/">Fontawesome</a></li>
+              <li><a href="http://jquery.com">jQuery</a></li>
               <li><a href="http://imulus.github.io/retinajs/">retina.js</a></li>
             </ul>
             <h5>Authors</h5>
+            <p>Feel free to get in touch with us via GitHub or by shooting us an email. Our addresses all follow the pattern name.surname@cern.ch.</p>
             <ul>
               <li><a href="https://github.com/gbiro">Gabor Biro</a></li>
               <li><a href="https://github.com/ibab">Igor Babuschkin</a></li>
               <li><a href="https://github.com/kdungs">Kevin Dungs</a></li>
               <li><a href="https://github.com/ntadej">Tadej Novak</a></li>
+              <li><a href="https://github.com/zhangjiannan">Jiannan Zhang</a></li>
             </ul>
           </div>
         </div>

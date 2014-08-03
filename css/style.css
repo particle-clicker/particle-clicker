@@ -6,16 +6,6 @@ h1 br {
   display: none;
 }
 
-#InfoBox {
-  color: #666;
-  position: fixed;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  padding: 5px;
-  text-align: center;
-}
-
 #detector {
   cursor: pointer;
   margin: 0 auto;
@@ -59,6 +49,7 @@ h1 br {
 
 .scrollable {
   overflow: auto;
+  padding-top: 50px;
 }
 
 #achievements-container {

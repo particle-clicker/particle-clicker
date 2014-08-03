@@ -1,10 +1,10 @@
 $(function() {
   var h = $(window).height();
-  $('.scrollable').height(h + 'px');
+  $('.scrollable').height(h - 50 + 'px');
 
   $(window).resize(function() {
     var h = $(window).height();
-    $('.scrollable').height(h + 'px');
+    $('.scrollable').height(h - 50 + 'px');
   });
 });
 

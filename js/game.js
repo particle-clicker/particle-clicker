@@ -33,21 +33,21 @@
     getGrant: function () {
       var addition = this.reputation * this.factor.rate;  // TODO: adjust factor
       this.money += addition;
-      showUpdateValue("#update-funding", addition);
+      showUpdateValue("#update-funding", formatNiceNumber(addition));
       achievements.update('count', 'money', addition);
     },
     acquire: function(amount) {
       this.data += amount;
       achievements.update('count', 'data', amount);
-      showUpdateValue("#update-data", amount);
+      showUpdateValue("#update-data", formatNiceNumber(amount));
     },
     research: function(cost, reputation) {
       if (this.data >= cost) {
         this.data -= cost;
         this.reputation += reputation;
         achievements.update('count', 'reputation', reputation);
-        showUpdateValue("#update-data", -cost);
-        showUpdateValue("#update-reputation", reputation);
+        showUpdateValue("#update-data", formatNiceNumber(-cost));
+        showUpdateValue("#update-reputation", formatNiceNumber(reputation));
         return true;
       }
       return false;
@@ -55,7 +55,7 @@
     buy: function(cost) {
       if (this.money >= cost) {
         this.money -= cost;
-        showUpdateValue("#update-funding", -cost);
+        showUpdateValue("#update-funding", formatNiceNumber(-cost));
         return true;
       }
       return false;
@@ -177,8 +177,8 @@
     };
   }]);
 
-  app.filter('niceNumber', ['$filter', function($filter) {
-    return function(number) {
+
+  function formatNiceNumber(number) {
       var abs = Math.abs(number);
       if (abs >= Math.pow(10, 12)) {
         number = (number / Math.pow(10, 12)).toFixed(1) + "T";
@@ -192,7 +192,10 @@
         number = number.toFixed(0);
       }
       return number; 
-    };
+  }
+
+  app.filter('niceNumber', ['$filter', function($filter) {
+    return formatNiceNumber;
   }]);
 
   app.controller('DetectorController', function() {

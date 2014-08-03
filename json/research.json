@@ -10,7 +10,7 @@
   },
   {
     "name": "J/ψ",
-    "description": "The J/ψ is a meson consisting of two c quarks.",
+    "description": "The J/ψ meson consists a c and an anti-c quark.",
     "reputation": 5,
     "cost": 100,
     "cost_increase": 1.45,
@@ -55,7 +55,7 @@
   },
   {
     "name": "Antihydrogen",
-    "description": "Proper anti-matter!",
+    "description": "The lightest anti-atom, it consists and antiproton and a positron.",
     "reputation": 5000,
     "cost": 10000000,
     "cost_increase": 2.5,
@@ -66,7 +66,7 @@
     "name": "B oscillations",
     "description": "B mesons turn into their antiparticles and vice versa!",
     "reputation": 5000,
-    "cost": 10000000,
+    "cost": 50000000,
     "cost_increase": 2.5,
     "image": "assets/icons/png/BBbar.png",
     "info": "html/BBbar.html"
@@ -75,8 +75,8 @@
     "name": "Higgs boson",
     "description": "Spontaneous symmetry breaking and Goldstone bosons sound familiar to you, right?",
     "reputation": 10000,
-    "cost": 50000000,
-    "cost_increase": 2.5,
+    "cost": 72500000,
+    "cost_increase": 3,
     "image": "assets/icons/png/H.png",
     "info": "html/H.html"
   }

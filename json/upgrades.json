@@ -1,7 +1,7 @@
 [
   {
     "name": "Free beer",
-    "description": "The work is easier when the worker is happy. Your slav... I mean your PhD Students will produce +2 data.",
+    "description": "The work is easier when the worker is happy. Your PhD Students will produce +2 data.",
     "cost": 1000,
     "used": false,
     "type": "hr",
@@ -12,7 +12,7 @@
   },
   {
     "name": "Extra coffee",
-    "description": "Sleeping is the coffee of the weaks. Your slav... I mean your PhD Students will produce 1.3 times more data.",
+    "description": "Sleeping is the coffee of the weaks. Your PhD Students will produce 1.3 times more data.",
     "cost": 3000,
     "used": false,
     "type": "hr",
@@ -23,7 +23,7 @@
   },
   {
     "name": "Motivation",
-    "description": "There are other, you know... more diligent Students... Your slav... I mean your PhD Students will produce 2 times more data.",
+    "description": "There are other, you know... more diligent Students... Your PhD Students will produce 2 times more data.",
     "cost": 10000,
     "used": false,
     "type": "hr",
@@ -34,7 +34,7 @@
   },
   {
     "name": "Division of labor",
-    "description": "Teamwork between PhD Students is a great invention. Your slav... I mean your PhD Students will produce much more data.",
+    "description": "Teamwork between PhD Students is a great invention. Your PhD Students will produce much more data.",
     "cost": 175000,
     "used": false,
     "type": "hr",
@@ -66,6 +66,7 @@
     "factor": 1.5,
     "constant": 0
   },
+
   {
     "name": "Motivation",
     "description": "There are other, you know... more diligent Postdocs... Your Postdocs will produce 2 times more data.",
@@ -77,6 +78,7 @@
     "factor": 2,
     "constant": 0
   },
+
   {
     "name": "Division of labor",
     "description": "Teamwork between Postdocs is a great invention. Your Postdocs will produce much more data.",
@@ -88,6 +90,7 @@
     "factor": 1.5,
     "constant": 18
   },
+
   {
     "name": "Increased budget",
     "description": "Your Research Fellows get a little more money. They will produce +25 more data.",
@@ -99,9 +102,10 @@
     "factor": 1,
     "constant": 25
   },
+
   {
     "name": "New gadgets",
-    "description": "Your Research Fellows get new techs. They will produce 1.2 times more data.",
+    "description": "Your Research Fellows receive new techs. They will produce 1.2 times more data.",
     "cost": 800000,
     "used": false,
     "type": "hr",
@@ -146,6 +150,7 @@
     "factor": 3,
     "constant": 0
   },
+
   {
     "name": "Accelerator upgrade 2",
     "description": "Increases the luminosity (you get 3 times more data with clicks).",
@@ -157,6 +162,7 @@
     "factor": 3,
     "constant": 0
   },
+
   {
     "name": "Accelerator upgrade 3",
     "description": "Increases the luminosity (you get 3 times more data with clicks).",
@@ -180,6 +186,7 @@
     "factor": 1,
     "constant": 4
   },
+
   {
     "name": "Detector upgrade 2",
     "description": "Your amazing detector works with better efficiency (you get +12 data with clicks).",
@@ -191,6 +198,7 @@
     "factor": 1,
     "constant": 12
   },
+
   {
     "name": "Detector upgrade 3",
     "description": "Your amazing detector works with better efficiency (you get +42 data with clicks).",
@@ -202,7 +210,8 @@
     "factor": 0,
     "constant": 42
   },
-    {
+
+  {
     "name": "Public Relations, lvl 1",
     "description": "Mainstream press writes about your research of the CP violation. Future research yields 1.2 times more reputation.",
     "cost": 5000,
@@ -213,10 +222,11 @@
     "factor": 1.2,
     "constant": 1
   },
+
   {
     "name": "Science is cool!! lvl 1",
     "description": "Because your science is so popular, you get 1.1 times more money for your reputation.",
-    "cost": 1000,
+    "cost": 700,
     "used": false,
     "type": "reputation",
     "receiver": "",
@@ -224,6 +234,7 @@
     "factor": 1.2,
     "constant": 0
   },
+
   {
     "name": "Science is cool!! lvl 2",
     "description": "Because your science is so popular, you get 1.1 times more money for your reputation.",
@@ -235,6 +246,7 @@
     "factor": 1.18,
     "constant": 0
   },
+
   {
     "name": "Science is cool!! lvl 3",
     "description": "Because your science is so popular, you get 1.1 times more money for your reputation.",
@@ -246,6 +258,7 @@
     "factor": 1.16,
     "constant": 0
   },
+
   {
     "name": "Science is cool!! lvl 4",
     "description": "Because your science is so popular, you get 1.1 times more money for your reputation.",
@@ -257,6 +270,7 @@
     "factor": 1.14,
     "constant": 0
   },
+
   {
     "name": "Science is cool!! lvl 5",
     "description": "Because your science is so popular, you get 1.1 times more money for your reputation.",
@@ -268,6 +282,7 @@
     "factor": 1.12,
     "constant": 0
   },
+
   {
     "name": "Science is cool!! lvl 6",
     "description": "Because your science is so popular, you get 1.1 times more money for your reputation.",
@@ -279,6 +294,7 @@
     "factor": 1.12,
     "constant": 0
   },
+
   {
     "name": "Science is cool!! lvl 7",
     "description": "Because your science is so popular, you get 1.1 times more money for your reputation.",
@@ -290,6 +306,7 @@
     "factor": 1.12,
     "constant": 0
   },
+
   {
     "name": "Science is cool!! lvl 8",
     "description": "Because your science is so popular, you get 1.1 times more money for your reputation.",
@@ -301,7 +318,8 @@
     "factor": 1.12,
     "constant": 0
   },
-    {
+
+  {
     "name": "Public Relations, lvl 1",
     "description": "Mainstream press writes about your research of the CP violation. Future research yields 1.2 times more reputation.",
     "cost": 5000,
@@ -312,6 +330,7 @@
     "factor": 1.2,
     "constant": 1
   },
+
   {
     "name": "Public Relations, lvl 2",
     "description": "Mainstream press writes about your research of the CP violation. Future research yields 1.2 times more reputation.",
@@ -323,6 +342,7 @@
     "factor": 1.2,
     "constant": 1
   },
+
   {
     "name": "Public Relations, lvl 1",
     "description": "Your research on J/ψ is featured on national television. Future research yields 1.2 times more reputation.",
@@ -334,6 +354,7 @@
     "factor": 1.2,
     "constant": 1
   },
+
   {
     "name": "Public Relations, lvl 2",
     "description": "Your research on J/ψ is featured on national television. Future research yields 1.2 times more reputation.",
@@ -345,9 +366,10 @@
     "factor": 1.2,
     "constant": 1
   },
+
   {
     "name": "Public Relations, lvl 1",
-    "description": "You (almost) discovered the Faster-Then-Light neutrinos. Future research yields 1.2 times more reputation.",
+    "description": "In a scientific documentary you speak about the τ lepton. Future research yields 1.2 times more reputation.",
     "cost": 100000,
     "used": false,
     "type": "research",
@@ -356,9 +378,10 @@
     "factor": 1.2,
     "constant": 1
   },
+
   {
     "name": "Public Relations, lvl 2",
-    "description": "You (almost) discovered the Faster-Then-Light neutrinos. Future research yields 1.2 times more reputation.",
+    "description": "In a scientific documentary you speak about the τ lepton. Future research yields 1.2 times more reputation.",
     "cost": 250000,
     "used": false,
     "type": "research",
@@ -367,20 +390,10 @@
     "factor": 1.2,
     "constant": 1
   },
+
   {
     "name": "Public Relations, lvl 1",
-    "description": "You just discovered the most beautiful quark ever! Future research yields 1.1 times more reputation.",
-    "cost": 100000,
-    "used": false,
-    "type": "research",
-    "receiver": "Beauty quark",
-    "property": "reputation",
-    "factor": 1.1,
-    "constant": 1
-  },
-  {
-    "name": "Public Relations, lvl 1",
-    "description": "You discovered the most beautiful quark ever! Future research yields 1.2 times more reputation.",
+    "description": "You just discovered the most beautiful quark ever! Future research yields 1.2 times more reputation.",
     "cost": 100000,
     "used": false,
     "type": "research",
@@ -389,46 +402,109 @@
     "factor": 1.2,
     "constant": 1
   },
+
   {
-    "name": "Public Relations, lvl 1",
-    "description": "Hollywood makes a movie about the Higgs-Boson. Your future research yields 1.2 times more reputation.",
+    "name": "Public Relations, lvl 2",
+    "description": "You discovered the most beautiful quark ever! Future research yields 1.2 times more reputation.",
     "cost": 500000,
     "used": false,
     "type": "research",
-    "receiver": "Higgs boson",
+    "receiver": "Beauty quark",
     "property": "reputation",
     "factor": 1.2,
     "constant": 1
   },
+
+  {
+    "name": "Public Relations, lvl 1",
+    "description": "You give lectures about this very important part of the Standard modell! Future research yields 1.2 times more reputation.",
+    "cost": 250000,
+    "used": false,
+    "type": "research",
+    "receiver": "W and Z boson",
+    "property": "reputation",
+    "factor": 1.2,
+    "constant": 1
+  },
+
   {
     "name": "Public Relations, lvl 2",
-    "description": "Hollywood makes a movie about the Higgs-Boson. Your future research yields 1.2 times more reputation.",
+    "description": "You give lectures about this very important part of the Standard modell! Future research yields 1.2 times more reputation.",
     "cost": 1000000,
     "used": false,
     "type": "research",
-    "receiver": "Higgs boson",
+    "receiver": "W and Z boson",
     "property": "reputation",
     "factor": 1.2,
     "constant": 1
   },
+
   {
     "name": "Public Relations, lvl 1",
-    "description": "Your little daughter writes about your research on W and Z boson in her homework. Future research yields 1.2 times more reputation.",
-    "cost": 4000000,
+    "description": "This is the top your career! Future research yields 1.2 times more reputation.",
+    "cost": 5000000,
     "used": false,
     "type": "research",
-    "receiver": "W and Z boson",
+    "receiver": "Top quark",
     "property": "reputation",
     "factor": 1.2,
     "constant": 1
   },
   {
     "name": "Public Relations, lvl 2",
-    "description": "Your little daughter writes about your research on W and Z boson in her homework. Future research yields 1.2 times more reputation.",
-    "cost": 8500000,
+    "description": "This is the top your career! Future research yields 1.2 times more reputation.",
+    "cost": 7500000,
     "used": false,
     "type": "research",
-    "receiver": "W and Z boson",
+    "receiver": "Top quark",
+    "property": "reputation",
+    "factor": 1.2,
+    "constant": 1
+  },
+
+  {
+    "name": "Public Relations, lvl 1",
+    "description": "Hollywood makes a movie about the antihydrogen. Your future research yields 1.2 times more reputation.",
+    "cost": 22500000,
+    "used": false,
+    "type": "research",
+    "receiver": "Antihydrogen",
+    "property": "reputation",
+    "factor": 1.2,
+    "constant": 1
+  },
+
+  {
+    "name": "Public Relations, lvl 2",
+    "description": "Hollywood makes a movie about the antihydrogen. Your future research yields 1.2 times more reputation.",
+    "cost": 40000000,
+    "used": false,
+    "type": "research",
+    "receiver": "Antihydrogen",
+    "property": "reputation",
+    "factor": 1.2,
+    "constant": 1
+  },
+
+  {
+    "name": "Public Relations, lvl 1",
+    "description": "Your little daughter writes about your research on B oscillations in her homework. Future research yields 1.2 times more reputation.",
+    "cost": 75000000,
+    "used": false,
+    "type": "research",
+    "receiver": "B oscillations",
+    "property": "reputation",
+    "factor": 1.2,
+    "constant": 1
+  },
+
+  {
+    "name": "Public Relations, lvl 2",
+    "description": "Your little daughter writes about your research on B oscillations in her homework. Future research yields 1.2 times more reputation.",
+    "cost": 90000000,
+    "used": false,
+    "type": "research",
+    "receiver": "B oscillations",
     "property": "reputation",
     "factor": 1.2,
     "constant": 1
@@ -457,35 +533,24 @@
   },
   {
     "name": "Public Relations, lvl 1",
-    "description": "Antihydrogen is actual anti-matter!! Future research yields 1.1 times more reputation.",
-    "cost": 120000000,
+    "description": "You've found the last missing element of the Standard Modell! Future research yields 1.2 times more reputation.",
+    "cost": 90000000,
     "used": false,
     "type": "research",
-    "receiver": "Antihydrogen",
-    "property": "reputation",
-    "factor": 1.1,
-    "constant": 1
-  },
-  {
-    "name": "Public Relations, lvl 2",
-    "description": "Antihydrogen is actual anti-matter!! Future research yields 1.2 times more reputation.",
-    "cost": 120000000,
-    "used": false,
-    "type": "research",
-    "receiver": "Antihydrogen",
+    "receiver": "Higgs boson",
     "property": "reputation",
     "factor": 1.2,
     "constant": 1
   },
   {
-    "name": "Public Relations, lvl 1",
-    "description": "This is the most weird thing you found. Future research yields 1.1 times more reputation.",
-    "cost": 120000000,
+    "name": "Public Relations, lvl 2",
+    "description": "You've found the last missing element of the Standard Modell! Future research yields 1.2 times more reputation.",
+    "cost": 110000000,
     "used": false,
     "type": "research",
-    "receiver": "B oscillations",
+    "receiver": "Higgs boson",
     "property": "reputation",
-    "factor": 1.1,
+    "factor": 1.2,
     "constant": 1
   }
 ]

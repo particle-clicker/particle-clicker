@@ -1,14 +1,14 @@
 [
   {
     "name": "PhD Students",
-    "description": "Basically slaves, just with fewer rights.",
+    "description": "Cheap and enthusiastic manpower, they can save you a lot of work.",
     "cost": 100,
     "cost_increase": 1.4,
     "rate": 1
   },
   {
     "name": "Postdocs",
-    "description": "Can get shit done for you.",
+    "description": "These brilliant minds are here only to serve your needs.",
     "cost": 2000,
     "cost_increase": 1.4,
     "rate": 5
@@ -29,9 +29,9 @@
   },
   {
     "name": "Nobel Prize Winners",
-    "description": "Hell Yeah.",
+    "description": "They received their prize with reason... Why don't you give them more money?.",
     "cost": 50000000,
-    "cost_increase": 1.8,
+    "cost_increase": 2,
     "rate": 500
   },
   {

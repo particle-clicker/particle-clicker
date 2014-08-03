@@ -12,6 +12,13 @@
     return res;
   }
 
+  var showModal = function(title, text) {
+    var $modal = $('#infoBox');
+    $modal.find('#infoBoxLabel').html(title);
+    $modal.find('.modal-body').html(text);
+    $modal.modal({show: true});
+  };
+
   var lab = {
     name: 'My Awesome Lab',
     detector: {
@@ -71,11 +78,7 @@
       return this._info;
     },
     item.showInfo = function() {
-      // Display a bootstrap modal with the info.
-      var $modal = $('#infoBox');
-      $modal.find('#infoBoxLabel').html(this.name);
-      $modal.find('.modal-body').html(this.getInfo());
-      $modal.modal({show: true});
+      showModal(this.name, this.getInfo());
     };
   });
 
@@ -186,6 +189,12 @@
 
   app.controller('LabController', ['$interval', function($interval) {
     this.lab = lab;
+    this.showDetectorInfo = function() {
+      if (!this._detectorInfo) {
+        this._detectorInfo = loadFile('html/detector.html');
+      }
+      showModal('Detector', this._detectorInfo);
+    };
     $interval(function() {  // one tick
       lab.getGrant();
       var sum = 0;

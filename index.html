@@ -15,9 +15,10 @@
         <hr>
         <ul class="media-list">
           <li class="media" ng-repeat="r in rc.research" ng-show="r.is_visible()">
-              <img class="pull-left" class="media-object" src="{{ r.image }}" alt="">
+            <img ng-show="r.level > 0" class="pull-left" class="media-object" src="{{ r.image }}" alt="">
+            <img ng-hide="r.level > 0" class="pull-left" class="media-object" src="assets/unknown.png" alt="">
             <div class="media-body">
-              <h4 class="media-heading">{{ r.name }} <span ng-show="r.level > 0" class="badge">Level {{ r.level }}</span></h4>
+              <h4 class="media-heading">{{ r.level > 0 ? r.name : '?????' }} <span ng-show="r.level > 0" class="badge">Level {{ r.level }}</span></h4>
               <p ng-show="r.level > 0">{{ r.description }} Researching it will give you {{ r.reputation }} reputation.</p>
               <div class="btn-group">
               <button class="btn btn-primary" ng-disabled="!r.is_available()" ng-click="r.research()">Research <small>({{ r.cost }} data)</small></button>
@@ -31,6 +32,7 @@
       <div class="col-xs-5 scrollable" ng-controller="LabController as lc">
         <h3 contenteditable>{{ lc.lab.name }} <small>Click here to change the name</small></h3>
         <hr>
+        <button class="pull-right btn btn-info" ng-click="lc.showDetectorInfo()"><span class="glyphicon glyphicon-info-sign"></span></button>
         <div id="detector" ng-controller="DetectorController as dc">
           <canvas id="detector-core" width="400" height="400">
             Your detector. Click on it to generate events.
@@ -65,7 +67,7 @@
           <li class="media" ng-repeat="w in hrc.workers" ng-show="w.is_visible()">
             <img style="display: none" class="pull-left media-object" src="{{ w.image }}" alt="">
             <div class="media-body">
-              <h4 class="media-heading">{{ w.name }} <span ng-show="w.hired > 0" class="badge">{{ w.hired }}</span></h4>
+              <h4 class="media-heading">{{ w.name }} <span ng-show="w.hired > 0" class="badge">{{ w.hired | niceNumber }}</span></h4>
               <p ng-show="w.hired > 0">{{ w.description }} They produce {{ w.rate }} data per second.</p>
               <button class="btn btn-primary" ng-disabled="!w.is_available()" ng-click="w.hire()">Hire <small>({{ w.cost | currency }})</small></button>
             </div>

@@ -41,22 +41,22 @@
             Your detector. Click on it to generate events.
           </canvas>
         </div>
-        <div class="row lead bg-warning">
-          <p class="col-xs-4 text-center">
+        <div class="row" id="Status">
+          <div class="col-xs-4 text-center">
             <strong>Data</strong>
             <br>
             {{ lc.lab.data | niceNumber }}
-          </p>
-          <p class="col-xs-4 text-center">
+          </div>
+          <div class="col-xs-4 text-center">
             <strong>Reputation</strong>
             <br>
             {{ lc.lab.reputation | niceNumber }}
-          </p>
-          <p class="col-xs-4 text-center">
-            <strong>Money</strong>
+          </div>
+          <div class="col-xs-4 text-center">
+            <strong>Funding</strong>
             <br>
             {{ lc.lab.money | currency }}
-          </p>
+          </div>
         </div>
       </div>
 

@@ -72,3 +72,11 @@ h1 br {
     display: block;
   }
 }
+
+#Status {
+  font-size: x-large;
+}
+
+#Status strong {
+  color: #666;
+}

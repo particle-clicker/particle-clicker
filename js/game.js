@@ -49,7 +49,7 @@
   };
 
   var research = loadJsonFile('json/research.json');
-  research.map(function(item) {  // define additional stuff on the objects
+  research.map(function(item) {
     item.level = 0;
     item.is_visible = function() {
       return this.level > 0 || lab.data >= this.cost * .7;
@@ -188,5 +188,3 @@
     this.upgrades = upgrades;
   });
 })();
-
-

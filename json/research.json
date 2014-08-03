@@ -1,74 +1,83 @@
 [
   {
     "name": "CP violation",
-    "description": ":",
+    "description": "",
     "reputation": 1,
-    "cost": 1,
+    "cost": 10,
     "cost_increase": 1.4,
     "image": "assets/CPV.png",
     "info": "html/CPV.html"
   },
   {
-    "name": "W-Boson",
-    "description": "The W-Boson is the carrier boson of the weak force.",
-    "reputation": 1,
-    "cost": 10,
-    "cost_increase": 1.4,
-    "image": "assets/W.png",
-    "info": "html/W.html"
-  },
-  {
-    "name": "Z-Boson",
-    "description": "The Z-Boson.",
+    "name": "J/ψ",
+    "description": "The J/ψ particle consists of two c quarks.",
     "reputation": 5,
     "cost": 100,
     "cost_increase": 1.45,
-    "image": "assets/Z.png",
-    "info": "html/Z.html"
+    "image": "assets/Jspi.png",
+    "info": "html/Jpsi.html"
   },
   {
-    "name": "top-Quark",
-    "description": "The top-Quark.",
+    "name": "τ lepton",
+    "description": "The third generation lepton.",
     "reputation": 50,
     "cost": 2000,
     "cost_increase": 1.5,
-    "image": "assets/t.png",
-    "info": "html/t.html"
+    "image": "assets/tau.png",
+    "info": "html/tau.html"
   },
   {
-    "name": "Oscillating neutrinos",
-    "description": "They are slightly slower than speed (yes, really...), and on top of that they're oscillating.",
+    "name": "Beauty quark",
+    "description": "The third generation down-type quark.",
     "reputation": 100,
     "cost": 25000,
     "cost_increase": 1.55,
-    "image": "assets/nu.png",
-    "info": "html/nu.html"
+    "image": "assets/b.png",
+    "info": "html/b.html"
   },
   {
-    "name": "Higgs-Boson",
-    "description": "The Higgs-Boson...",
+    "name": "W and Z boson",
+    "description": "The carrier particles of the weak force.",
     "reputation": 200,
     "cost": 50000,
     "cost_increase": 1.6,
-    "image": "assets/H.png",
-    "info": "html/H.html"
+    "image": "assets/weak.png",
+    "info": "html/weak.html"
   },
   {
-    "name": "MSSM",
-    "description": "You somehow managed to find proof for the Minimal Supersymmetric Standard Model. Wow!",
+    "name": "Top quark",
+    "description": "The third generation up-type quark.",
     "reputation": 1000,
     "cost": 2000000,
     "cost_increase": 2,
-    "image": "assets/chitilde.png",
-    "info": "html/mssm.html"
+    "image": "assets/top.png",
+    "info": "html/top.html"
   },
   {
-    "name": "Dark matter",
-    "description": "You've found some dark matter... in your fridge, behind that strange, green slime, that was your milk.",
+    "name": "Antihydrogen",
+    "description": "Actual anti-matter.",
     "reputation": 5000,
     "cost": 10000000,
     "cost_increase": 2.5,
-    "image": "assets/darkmatter.png",
-    "info": "html/darkmatter.html"
+    "image": "assets/antihydrogen.png",
+    "info": "html/antihydrogen.html"
+  },
+  {
+    "name": "B oscillations"
+    "description": "Oscillating B mesons.",
+    "reputation": 5000,
+    "cost": 10000000,
+    "cost_increase": 2.5,
+    "image": "assets/B.png",
+    "info": "html/B.html"
+  },
+  {
+    "name": "Higgs boson",
+    "description": "Spontaeneous symmetry breaking and Goldstone bosons sound familiar to you, right?",
+    "reputation": 10000,
+    "cost": 50000000,
+    "cost_increase": 2.5,
+    "image": "assets/H.png",
+    "info": "html/H.html"
   }
 ]

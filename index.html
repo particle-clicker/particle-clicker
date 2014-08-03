@@ -19,7 +19,10 @@
             <div class="media-body">
               <h4 class="media-heading">{{ r.name }} <span ng-show="r.level > 0" class="badge">Level {{ r.level }}</span></h4>
               <p ng-show="r.level > 0">{{ r.description }} Researching it will give you {{ r.reputation }} reputation.</p>
-              <button class="btn" ng-disabled="!r.is_available()" ng-click="r.research()">Research <small>({{ r.cost }} data)</small></button>
+              <div class="btn-group">
+              <button class="btn btn-primary" ng-disabled="!r.is_available()" ng-click="r.research()">Research <small>({{ r.cost }} data)</small></button>
+              <button class="btn btn-info" ng-show="r.level > 0" ng-click="r.showInfo()"><span class="glyphicon glyphicon-exclamation-sign"></span></button>
+            </div>
             </div>
           </li>
         </ul>
@@ -64,7 +67,7 @@
             <div class="media-body">
               <h4 class="media-heading">{{ w.name }} <span ng-show="w.hired > 0" class="badge">{{ w.hired }}</span></h4>
               <p ng-show="w.hired > 0">{{ w.description }} They produce {{ w.rate }} data per second.</p>
-              <button class="btn" ng-disabled="!w.is_available()" ng-click="w.hire()">Hire <small>({{ w.cost | currency }})</small></button>
+              <button class="btn btn-primary" ng-disabled="!w.is_available()" ng-click="w.hire()">Hire <small>({{ w.cost | currency }})</small></button>
             </div>
           </li>
         </ul>
@@ -79,10 +82,22 @@
             <div class="media-body">
               <h4 class="media-heading">{{ u.name }}</h4>
               <p>{{ u.description }}</p>
-              <button class="btn" ng-disabled="!u.is_available()" ng-click="u.buy()">Buy <small>({{ u.cost | currency }})</small></button>
+              <button class="btn btn-primary" ng-disabled="!u.is_available()" ng-click="u.buy()">Buy <small>({{ u.cost | currency }})</small></button>
             </div>
           </li>
         </ul>
+      </div>
+    </div>
+
+    <div class="modal fade" id="infoBox" tabindex="-1" role="dialog" aria-labelledby="infoBoxLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title" id="infoBoxLabel"></h4>
+          </div>
+          <div class="modal-body"></div>
+        </div>
       </div>
     </div>
 

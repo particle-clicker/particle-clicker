@@ -1,6 +1,6 @@
 'use strict';
 (function() {
-  var loadJsonFile = function(filename) {
+  var loadFile = function(filename) {
     var res;
     $.ajax({
       async: false,
@@ -49,7 +49,7 @@
     }
   };
 
-  var research = loadJsonFile('json/research.json');
+  var research = loadFile('json/research.json');
   research.map(function(item) {
     item.level = 0;
     item.is_visible = function() {
@@ -64,9 +64,22 @@
         this.cost = Math.round(this.cost * this.cost_increase);
       }
     };
+    item.getInfo = function() {
+      if (!this._info) {
+        this._info = loadFile(this.info);
+      }
+      return this._info;
+    },
+    item.showInfo = function() {
+      // Display a bootstrap modal with the info.
+      var $modal = $('#infoBox');
+      $modal.find('#infoBoxLabel').html(this.name);
+      $modal.find('.modal-body').html(this.getInfo());
+      $modal.modal({show: true});
+    };
   });
 
-  var workers = loadJsonFile('json/workers.json');
+  var workers = loadFile('json/workers.json');
   workers.map(function(worker) {
     worker.hired = 0;
     worker.is_visible = function() {
@@ -83,7 +96,7 @@
     };
   });
 
-  var upgrades = loadJsonFile('json/upgrades.json');
+  var upgrades = loadFile('json/upgrades.json');
   upgrades.map(function(upgrade) {
     upgrade.getReceiver = function() {
       if (this.type === "detector") {
@@ -149,13 +162,13 @@
     return function(number) {
       var abs = Math.abs(number);
       if (abs >= Math.pow(10, 12)) {
-        number = (number / Math.pow(10, 12)).toFixed(3) + "T";
+        number = (number / Math.pow(10, 12)).toFixed(1) + "T";
       } else if (abs >= Math.pow(10, 9)) {
-        number = (number / Math.pow(10, 9)).toFixed(3) + "B";
+        number = (number / Math.pow(10, 9)).toFixed(1) + "B";
       } else if (abs >= Math.pow(10, 6)) {
-        number = (number / Math.pow(10, 6)).toFixed(3) + "M";
+        number = (number / Math.pow(10, 6)).toFixed(1) + "M";
       } else if (abs >= Math.pow(10, 3)) {
-        number = (number / Math.pow(10, 3)).toFixed(3) + "k";
+        number = (number / Math.pow(10, 3)).toFixed(1) + "k";
       } else {
         number = number.toFixed(0);
       }

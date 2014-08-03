@@ -38,7 +38,7 @@
   {
     "name": "Division of labor",
     "description": "Teamwork between PhD Students is a great invention. Your slav... I mean your PhD Students will produce much more data.",
-    "cost": 200000,
+    "cost": 175000,
     "used": false,
     "type": "hr",
     "receiver": "PhD Students",
@@ -223,7 +223,7 @@
   },
 
   {
-    "name": "Public Relations",
+    "name": "Public Relations, lvl 1",
     "description": "Local news stations cover your research of the W-Boson. Future research of the topic yields 1.2 times more reputation.",
     "cost": 1000,
     "used": false,
@@ -235,7 +235,19 @@
     "image": "assets/propaganda.png"
   },
   {
-    "name": "Public Relations",
+    "name": "Public Relations, lvl 2",
+    "description": "Local news stations cover your research of the W-Boson. Future research of the topic yields 1.2 times more reputation.",
+    "cost": 50000,
+    "used": false,
+    "type": "research",
+    "receiver": "W-Boson",
+    "property": "reputation",
+    "factor": 1.2,
+    "constant": 1,
+    "image": "assets/propaganda.png"
+  },
+  {
+    "name": "Public Relations, lvl 1",
     "description": "Mainstream press writes about your research of the Z-Boson. Future research yields 1.2 times more reputation.",
     "cost": 5000,
     "used": false,
@@ -247,8 +259,46 @@
     "image": "assets/propaganda.png"
   },
   {
-    "name": "Public Relations",
+    "name": "Public Relations, lvl 2",
+    "description": "Mainstream press writes about your research of the Z-Boson. Future research yields 1.2 times more reputation.",
+    "cost": 100000,
+    "used": false,
+    "type": "research",
+    "receiver": "Z-Boson",
+    "property": "reputation",
+    "factor": 1.2,
+    "constant": 1,
+    "image": "assets/propaganda.png"
+  },
+
+  {
+    "name": "Public Relations, lvl 1",
     "description": "Your research on top-Quarks is featured on national television. Future research yields 1.2 times more reputation.",
+    "cost": 40000,
+    "used": false,
+    "type": "research",
+    "receiver": "top-Quark",
+    "property": "reputation",
+    "factor": 1.2,
+    "constant": 1,
+    "image": "assets/propaganda.png"
+  },
+  {
+    "name": "Public Relations, lvl 2",
+    "description": "Your research on top-Quarks is featured on national television. Future research yields 1.2 times more reputation.",
+    "cost": 130000,
+    "used": false,
+    "type": "research",
+    "receiver": "top-Quark",
+    "property": "reputation",
+    "factor": 1.2,
+    "constant": 1,
+    "image": "assets/propaganda.png"
+  },
+
+  {
+    "name": "Public Relations, lvl 1",
+    "description": "You (almost) discovered the Faster-Then-Light neutrinos. Future research yields 1.2 times more reputation.",
     "cost": 100000,
     "used": false,
     "type": "research",
@@ -259,7 +309,19 @@
     "image": "assets/propaganda.png"
   },
   {
-    "name": "Public Relations",
+    "name": "Public Relations, lvl 2",
+    "description": "You (almost) discovered the Faster-Then-Light neutrinos. Future research yields 1.2 times more reputation.",
+    "cost": 250000,
+    "used": false,
+    "type": "research",
+    "receiver": "top-Quark",
+    "property": "reputation",
+    "factor": 1.2,
+    "constant": 1,
+    "image": "assets/propaganda.png"
+  },
+  {
+    "name": "Public Relations, lvl 1",
     "description": "Hollywood makes a movie about the Higgs-Boson. Your future research yields 1.2 times more reputation.",
     "cost": 500000,
     "used": false,
@@ -271,12 +333,60 @@
     "image": "assets/propaganda.png"
   },
   {
-    "name": "Public Relations",
+    "name": "Public Relations, lvl 2",
+    "description": "Hollywood makes a movie about the Higgs-Boson. Your future research yields 1.2 times more reputation.",
+    "cost": 1000000,
+    "used": false,
+    "type": "research",
+    "receiver": "Higgs-Boson",
+    "property": "reputation",
+    "factor": 1.2,
+    "constant": 1,
+    "image": "assets/propaganda.png"
+  },
+  {
+    "name": "Public Relations, lvl 1",
     "description": "Your little daughter writes about your research on MSSM in her homework. Future research yields 1.2 times more reputation.",
-    "cost": 5000000,
+    "cost": 4000000,
     "used": false,
     "type": "research",
     "receiver": "MSSM",
+    "property": "reputation",
+    "factor": 1.2,
+    "constant": 1,
+    "image": "assets/propaganda.png"
+  },
+  {
+    "name": "Public Relations, lvl 2",
+    "description": "Your little daughter writes about your research on MSSM in her homework. Future research yields 1.2 times more reputation.",
+    "cost": 8500000,
+    "used": false,
+    "type": "research",
+    "receiver": "MSSM",
+    "property": "reputation",
+    "factor": 1.2,
+    "constant": 1,
+    "image": "assets/propaganda.png"
+  },
+  {
+    "name": "Public Relations, lvl 1",
+    "description": "You know more about Dark matter then everybody else. Future research yields 1.2 times more reputation.",
+    "cost": 50000000,
+    "used": false,
+    "type": "research",
+    "receiver": "Dark matter",
+    "property": "reputation",
+    "factor": 1.2,
+    "constant": 1,
+    "image": "assets/propaganda.png"
+  },
+  {
+    "name": "Public Relations, lvl 2",
+    "description": "You know more about Dark matter then everybody else. Future research yields 1.2 times more reputation.",
+    "cost": 120000000,
+    "used": false,
+    "type": "research",
+    "receiver": "Dark matter",
     "property": "reputation",
     "factor": 1.2,
     "constant": 1,
@@ -290,55 +400,91 @@
     "type": "reputation",
     "receiver": "",
     "property": "rate",
-    "factor": 1.1,
+    "factor": 1.2,
     "constant": 0,
     "image": "assets/budget.png"
   },
   {
     "name": "Science is cool!! lvl 2",
     "description": "Because your science is so popular, you get 1.1 times more money for your reputation.",
-    "cost": 10000,
+    "cost": 50000,
     "used": false,
     "type": "reputation",
     "receiver": "",
     "property": "rate",
-    "factor": 1.1,
+    "factor": 1.18,
     "constant": 0,
     "image": "assets/budget.png"
   },
   {
     "name": "Science is cool!! lvl 3",
     "description": "Because your science is so popular, you get 1.1 times more money for your reputation.",
-    "cost": 100000,
+    "cost": 200000,
     "used": false,
     "type": "reputation",
     "receiver": "",
     "property": "rate",
-    "factor": 1.1,
+    "factor": 1.16,
     "constant": 0,
     "image": "assets/budget.png"
   },
   {
     "name": "Science is cool!! lvl 4",
     "description": "Because your science is so popular, you get 1.1 times more money for your reputation.",
-    "cost": 1000000,
+    "cost": 800000,
     "used": false,
     "type": "reputation",
     "receiver": "",
     "property": "rate",
-    "factor": 1.1,
+    "factor": 1.14,
     "constant": 0,
     "image": "assets/budget.png"
   },
   {
     "name": "Science is cool!! lvl 5",
     "description": "Because your science is so popular, you get 1.1 times more money for your reputation.",
+    "cost": 1200000,
+    "used": false,
+    "type": "reputation",
+    "receiver": "",
+    "property": "rate",
+    "factor": 1.12,
+    "constant": 0,
+    "image": "assets/budget.png"
+  },
+  {
+    "name": "Science is cool!! lvl 6",
+    "description": "Because your science is so popular, you get 1.1 times more money for your reputation.",
+    "cost": 1800000,
+    "used": false,
+    "type": "reputation",
+    "receiver": "",
+    "property": "rate",
+    "factor": 1.12,
+    "constant": 0,
+    "image": "assets/budget.png"
+  },
+  {
+    "name": "Science is cool!! lvl 7",
+    "description": "Because your science is so popular, you get 1.1 times more money for your reputation.",
+    "cost": 3000000,
+    "used": false,
+    "type": "reputation",
+    "receiver": "",
+    "property": "rate",
+    "factor": 1.12,
+    "constant": 0,
+    "image": "assets/budget.png"
+  },
+  {
+    "name": "Science is cool!! lvl 8",
+    "description": "Because your science is so popular, you get 1.1 times more money for your reputation.",
     "cost": 10000000,
     "used": false,
     "type": "reputation",
     "receiver": "",
     "property": "rate",
-    "factor": 1.1,
+    "factor": 1.12,
     "constant": 0,
     "image": "assets/budget.png"
   }

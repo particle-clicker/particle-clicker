@@ -51,7 +51,7 @@
     "name": "Dark matter",
     "description": "You've found some dark matter... in your fridge, behind that strange, green slime, that was your milk.",
     "reputation": 5000,
-    "cost": 50000000,
+    "cost": 10000000,
     "cost_increase": 2.5,
     "image": "assets/darkmatter.png"
   }

@@ -29,7 +29,7 @@ var achievements =
                 for (var item in achievements[list[i].type]) {
                     var a = $.extend(true, {}, list[i]);
                     a.target = item;
-                    if (list[i].type == 'workers') {
+                    if (list[i].type == 'workers' && list[i].threshold == 1) {
                         a.description = a.description.replace('${name}', item.substring(0, item.length - 1));
                     } else {
                         a.description = a.description.replace('${name}', item);
@@ -71,9 +71,11 @@ var achievements =
         for (var i = 0; i < achievements.list.length; i++) {
             if (achievements.list[i].type == type &&
                 achievements.list[i].target == subtype &&
-                achievements.list[i].threshold >= achievements[type][subtype]
+                achievements[type][subtype] >= achievements.list[i].threshold
                )
             {
+                console.log(achievements.list[i].threshold, achievements[type][subtype]);
+
                 achievements.list[i].completed = true;
                 achievements.displayAchievement(i);
             }
@@ -84,13 +86,13 @@ var achievements =
     {
         var alert = '<div class="alert alert-success alert-dismissible" role="alert">';
         alert += '<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>';
-        alert += '<span class="glyphicon glyphicon-thumbs-up alert-glyph"></span> <span class="alert-text">' + achievements.list[i].description + '</span>';
+        alert += '<span class="glyphicon ' + achievements.list[i].icon + ' alert-glyph"></span> <span class="alert-text">' + achievements.list[i].description + '</span>';
         alert += '</div>';
 
         alert = $(alert);
 
         if (achievements.list[i].completed && !achievements.list[i].alerted) {
-            $('#achievements-container').append(alert);
+            $('#achievements-container').prepend(alert);
 
             var remove = function(a)
             {
@@ -111,7 +113,7 @@ var achievements =
 
     timeFormatter: function(msec)
     {
-        var totals = Math.floor(msec / 1000);
+        var totals = Math.ceil(msec / 1000);
         var days = Math.floor(totals / (24 * 60 * 60));
         var hours = Math.floor((totals % (24 * 60 * 60)) / (60 * 60));
         var totalmin = (totals % (24 * 60 * 60)) % (60 * 60);

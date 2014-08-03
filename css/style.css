@@ -7,13 +7,13 @@ h1 br {
 }
 
 #InfoBox {
-  background: rgba(255, 255, 255, .5);
   color: #666;
   position: fixed;
-  right: 40px;
+  right: 0;
+  left: 0;
   bottom: 0;
   padding: 5px;
-  max-width: 200px;
+  text-align: center;
 }
 
 #detector {

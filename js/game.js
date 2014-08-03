@@ -20,13 +20,11 @@
     data: 0,
     reputation: 0,
     money: 0,
-    researchHistogram: new Histogram('#ResearchHist'),
-    getGrant: function() {
-      this.money += this.reputation * 5;  // TODO: adjust factor, 5
+    getGrant: function () {
+      this.money += this.reputation * 5;  // TODO: adjust factor
     },
     acquire: function(amount) {
       this.data += amount;
-      this.researchHistogram.add_events(amount);
     },
     research: function(cost, reputation) {
       if (this.data >= cost) {

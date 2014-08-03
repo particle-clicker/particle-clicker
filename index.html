@@ -11,7 +11,7 @@
   <body>
     <div class="container-fluid">
       <div class="col-xs-3 scrollable" id="Research" ng-controller="ResearchController as rc">
-        <h1>Research</h1>
+        <h3><span class="glyphicon glyphicon-cog"></span> Research</h3>
         <hr>
         <ul class="media-list">
           <li class="media" ng-repeat="r in rc.research" ng-show="r.is_visible()">
@@ -26,7 +26,7 @@
       </div>
 
       <div class="col-xs-5 scrollable" ng-controller="LabController as lc">
-        <h1 contenteditable>{{ lc.lab.name }}</h1>
+        <h3 contenteditable>{{ lc.lab.name }} <small>Click here to change the name</small></h3>
         <hr>
         <div id="detector" ng-controller="DetectorController as dc">
           <canvas id="detector-core" width="400" height="400">
@@ -56,7 +56,7 @@
       </div>
 
       <div class="col-xs-2 scrollable" id="HR" ng-controller="HRController as hrc">
-        <h1>HR Dept</h1>
+        <h3><span class="glyphicon glyphicon-user"></span> HR</h3>
         <hr>
         <ul class="media-list">
           <li class="media" ng-repeat="w in hrc.workers" ng-show="w.is_visible()">
@@ -71,7 +71,7 @@
       </div>
 
       <div class="col-xs-2 scrollable" id="Upgrades" ng-controller="UpgradesController as uc">
-        <h1>Upgrades</h1>
+        <h3><span class="glyphicon glyphicon-wrench"></span> Upgrades</h3>
         <hr>
         <ul class="media-list">
           <li class="media" ng-repeat="u in uc.upgrades" ng-show="u.is_visible()">

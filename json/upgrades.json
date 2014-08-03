@@ -99,11 +99,11 @@
 
   {
     "name": "Increased budget",
-    "description": "Your Fellows get a little more money. They will produce +25 more data.",
+    "description": "Your Research Fellows get a little more money. They will produce +25 more data.",
     "cost": 200000,
     "used": false,
     "type": "hr",
-    "receiver": "Fellows",
+    "receiver": "Research Fellows",
     "property": "rate",
     "factor": 1,
     "constant": 25,
@@ -111,11 +111,11 @@
   },
   {
     "name": "New gadgets",
-    "description": "Your Fellows get new techs. They will produce 1.4 times more data.",
+    "description": "Your Research Fellows get new techs. They will produce 1.4 times more data.",
     "cost": 800000,
     "used": false,
     "type": "hr",
-    "receiver": "Fellows",
+    "receiver": "Research Fellows",
     "property": "rate",
     "factor": 1.4,
     "constant": 0,

@@ -61,6 +61,22 @@ h1 br {
   overflow: auto;
 }
 
+#achievements-container {
+  position: fixed; bottom: 0px; left: 0px;
+}
+
+#achievements-container .alert {
+  margin-bottom: 10px; position: relative;
+}
+
+#achievements-container .alert-glyph {
+  float:left; font-size: 32px; margin-right: 10px;
+}
+
+#achievements-container .alert-text {
+  font-size: 14px; font-weight: bold;
+}
+
 #HR .media-object,
 #Upgrades .media-object {
   display: none;

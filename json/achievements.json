@@ -1,42 +1,20 @@
 [
   {
-    "name": "Discovered Z-Boson",
-    "description": "Achievement: You just discoverd Z-Boson!",
-    "difficulty": "1",
+    "description": "You have just discovered ${name}!",
     "type": "research",
-    "target": "Z-Boson",
-    "threshold": 1,
-    "displayed": false,
-    "image": "assets/Z.png"
+    "target": "research",
+    "threshold": 1
   },
   {
-    "name": "Discovered top-Quark",
-    "description": "Achievement: You just discovered top-Quark",
-    "difficulty": "2",
-    "type": "research",
-    "target": "top-Quark",
-    "threshold": 1,
-    "displayed": false,
-    "image": "assets/t.png"
-  },
-  {
-    "name": "Hired First PhD",
-    "description": "Achievement: Yo! You have hired your first PhD!",
-    "difficulty": "5",
+    "description": "You have hired your first ${name}!",
     "type": "workers",
-    "target": "PhD Students",
-    "threshold": 1,
-    "displayed": false,
-    "image": "assets/W.png"
+    "target": "workers",
+    "threshold": 1
   },
   {
-    "name": "Hired First Posdoc",
-    "description": "Achievement: Yo! You have hired your first POST DOC!",
-    "difficulty": "5",
-    "type": "workers",
-    "target": "Postdocs",
-    "threshold": 1,
-    "displayed": false,
-    "image": "assets/W.png"
+    "description": "You have just made your first click!",
+    "type": "count",
+    "target": "clicks",
+    "threshold": 1
   }
 ]

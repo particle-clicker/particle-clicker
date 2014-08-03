@@ -33,16 +33,17 @@
     getGrant: function () {
       var addition = this.reputation * this.factor.rate;  // TODO: adjust factor
       this.money += addition;
-      achievements.count.money += addition;
+      achievements.update('count', 'money', addition);
     },
     acquire: function(amount) {
       this.data += amount;
-      achievements.count.data += amount;
+      achievements.update('count', 'data', amount);
     },
     research: function(cost, reputation) {
       if (this.data >= cost) {
         this.data -= cost;
         this.reputation += reputation;
+        achievements.update('count', 'reputation', reputation);
         return true;
       }
       return false;
@@ -58,8 +59,6 @@
       this.money += cost;
     }
   };
- 
-  achievements.setList(loadFile('json/achievements.json'));
 
   var research = loadFile('json/research.json');
   achievements.addResearch(research);
@@ -73,9 +72,10 @@
     };
     item.research = function() {
       if (lab.research(this.cost, this.reputation)) {
+        achievements.update('count', 'dataSpent', this.cost);
         this.level++;
         this.cost = Math.round(this.cost * this.cost_increase);
-        achievements.research[this.name]++;
+        achievements.update('research', this.name, 1);
       }
     };
     item.getInfo = function() {
@@ -101,9 +101,11 @@
     };
     worker.hire = function() {
       if (lab.buy(this.cost)) {
+        achievements.update('count', 'moneyWorkers', this.cost);
         this.hired++;
         this.cost = Math.round(this.cost * this.cost_increase);
         achievements.update('workers', this.name, 1);
+        achievements.update('count', 'workers', 1);
       }
     };
   });
@@ -152,6 +154,7 @@
     };
     upgrade.buy = function() {
       if (!this.used && lab.buy(this.cost)) {
+        achievements.update('count', 'moneyUpgrades', this.cost);
         this.used = true;
         var rec = this.getReceiver();
         if (rec) {
@@ -160,7 +163,6 @@
       }
     };
   });
-
 
   var app = angular.module('particleClicker', []);
 
@@ -192,7 +194,7 @@
     this.click = function() {
       lab.acquire(lab.detector.rate);
       detector.addEvent();
-      achievements.count.clicks += 1;
+      achievements.update('count', 'clicks', 1);
       return false;
     };
   });
@@ -228,17 +230,8 @@
   });
 
   app.controller('AchievementsController', function ($scope) {
-    $scope.achievements = achievements.list;
-
-    $scope.displayAchievements = function(){
-      // newachievements = [ac for (ac in this.achievements) if (ac.completed == true && ac.displayed == false)];
-      for (var i=0;i<$scope.achievements.length;i++){
-        if ($scope.achievements[i].completed == true && $scope.achievements[i].displayed == false){
-          alert("Yo!");
-          alert($scope.achievements[i].description);
-          $scope.achievements[i].displayed = true;
-        }
-      }
-    }
+    scope.achievements = achievements.list;
   });
+
+  achievements.setList(loadFile('json/achievements.json'));
 })();

@@ -207,7 +207,7 @@
     "type": "detector",
     "receiver": "detector",
     "property": "rate",
-    "factor": 0,
+    "factor": 1,
     "constant": 42
   },
 

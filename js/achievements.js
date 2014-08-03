@@ -2,6 +2,9 @@ var achievements =
 {
     list: [],
     listSpecial: [],
+    listSummary: [],
+
+    startTime: new Date(),
 
     count:
     {
@@ -99,7 +102,37 @@ var achievements =
 
             window.setTimeout(remove(alert), 2000);
             achievements.list[i].alerted = true;
+
+            var a = $.extend(true, {}, achievements.list[i]);
+            a.time = achievements.timeFormatter(new Date().getTime() - achievements.startTime.getTime());
+            achievements.listSummary.push(a);
         }
+    },
+
+    timeFormatter: function(msec)
+    {
+        var totals = Math.floor(msec / 1000);
+        var days = Math.floor(totals / (24 * 60 * 60));
+        var hours = Math.floor((totals % (24 * 60 * 60)) / (60 * 60));
+        var totalmin = (totals % (24 * 60 * 60)) % (60 * 60);
+        var mins = Math.floor(totalmin / 60);
+        var secs = totalmin % 60;
+
+        var str = [];
+        if (days > 0) {
+            str.push(days + ' day' + (days % 100 == 1 ? '' : 's'));
+        }
+        if (hours > 0) {
+            str.push(hours + ' h');
+        }
+        if (mins > 0) {
+            str.push(mins + ' min');
+        }
+        if (secs > 0) {
+            str.push(secs + ' s');
+        }
+
+        return str.join(', ');
     }
 };
 

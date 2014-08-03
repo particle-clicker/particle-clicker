@@ -30,7 +30,7 @@
       </div>
 
       <div class="col-xs-5 scrollable" ng-controller="LabController as lc">
-        <h3 contenteditable>{{ lc.lab.name }} <small>Click here to change the name</small></h3>
+        <h3 id="mylab" contenteditable>{{ lc.lab.name }} <small>Click here to change the name</small></h3> <button class="pull-right btn btn-info achievements-button" data-toggle="modal" data-target="#achievements-modal"><span class="glyphicon glyphicon-thumbs-up"></span></button>
         <hr>
         <button class="pull-right btn btn-info" ng-click="lc.showDetectorInfo()"><span class="glyphicon glyphicon-info-sign"></span></button>
         <div id="detector" ng-controller="DetectorController as dc">
@@ -100,6 +100,26 @@
             <h4 class="modal-title" id="infoBoxLabel"></h4>
           </div>
           <div class="modal-body"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="achievements-modal" tabindex="-1" role="dialog" aria-labelledby="achievements-label" aria-hidden="true" ng-controller="AchievementsController as ac">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title" id="achievements-label">Achievements <span class="badge">{{ ac.achievements.length }} / {{ ac.achievementsAll.length }}</span></h4>
+          </div>
+          <div class="modal-body">
+            <ul class="list-group">
+              <li class="list-group-item" ng-repeat="a in ac.achievements | reverse">
+                <span class="glyphicon {{ a.icon }}"></span>
+                {{ a.description }}
+                <span class="badge">{{ a.time }}</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

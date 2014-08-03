@@ -1,12 +1,14 @@
 [
   {
     "description": "You have just discovered ${name}!",
+    "icon": "glyphicon-cog",
     "type": "research",
     "target": "research",
     "threshold": 1
   },
   {
     "description": "You have hired your first ${name}!",
+    "icon": "glyphicon-user",
     "type": "workers",
     "target": "workers",
     "threshold": 1

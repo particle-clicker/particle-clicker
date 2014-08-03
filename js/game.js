@@ -198,6 +198,12 @@
     return formatNiceNumber;
   }]);
 
+  app.filter('reverse', ['$filter', function($filter) {
+    return function(items) {
+      return items.slice().reverse();
+    };
+  }]);
+
   app.controller('DetectorController', function() {
     this.click = function() {
       lab.acquire(lab.detector.rate);
@@ -238,8 +244,9 @@
     this.upgrades = upgrades;
   });
 
-  app.controller('AchievementsController', function ($scope) {
-    scope.achievements = achievements.list;
+  app.controller('AchievementsController', function() {
+    this.achievements = achievements.listSummary;
+    this.achievementsAll = achievements.list;
   });
 
   achievements.setList(loadFile('json/achievements.json'));

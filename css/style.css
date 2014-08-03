@@ -77,6 +77,10 @@ h1 br {
   font-size: 14px; font-weight: bold;
 }
 
+.achievements-button {
+  margin-top: -48px;
+}
+
 #Status {
   font-size: x-large;
 }
@@ -104,4 +108,6 @@ h1 br {
   position: absolute;
 }
 
-
+#mylab {
+  margin-right: 48px;
+}

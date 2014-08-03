@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="particleClicker">
+  <head>
+    <title>Particle Clicker</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="col-xs-3 scrollable" id="Research" ng-controller="ResearchController as rc">
+        <h3><span class="glyphicon glyphicon-cog"></span> Research</h3>
+        <hr>
+        <ul class="media-list">
+          <li class="media" ng-repeat="r in rc.research" ng-show="r.is_visible()">
+            <img ng-show="r.level > 0" class="pull-left" class="media-object" src="{{ r.image }}" alt="">
+            <img ng-hide="r.level > 0" class="pull-left" class="media-object" src="assets/icons/png/unknown.png" alt="">
+            <div class="media-body">
+              <h4 class="media-heading">{{ r.level > 0 ? r.name : '?????' }} <span ng-show="r.level > 0" class="badge">Level {{ r.level }}</span></h4>
+              <p ng-show="r.level > 0">{{ r.description }} Researching it will give you {{ r.reputation }} reputation.</p>
+              <div class="btn-group">
+              <button class="btn btn-primary" ng-disabled="!r.is_available()" ng-click="r.research()">Research <small>({{ r.cost | niceNumber }} data)</small></button>
+              <button class="btn btn-info" ng-show="r.level > 0" ng-click="r.showInfo()"><span class="glyphicon glyphicon-exclamation-sign"></span></button>
+            </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-xs-5 scrollable" ng-controller="LabController as lc">
+        <h3 id="mylab" contenteditable>{{ lc.lab.name }} <small>Click here to change the name</small></h3> <button class="pull-right btn btn-info achievements-button" data-toggle="modal" data-target="#achievements-modal"><span class="glyphicon glyphicon-thumbs-up"></span></button>
+        <hr>
+        <button class="pull-right btn btn-info" ng-click="lc.showDetectorInfo()"><span class="glyphicon glyphicon-info-sign"></span></button>
+        <div id="detector" ng-controller="DetectorController as dc">
+          <canvas id="detector-core" width="400" height="400">
+            Your detector. Click on it to generate events.
+          </canvas>
+          <canvas ng-click="dc.click()" id="detector-events" width="400" height="400">
+            Your detector. Click on it to generate events.
+          </canvas>
+        </div>
+        <div class="row" id="Status">
+          <div class="col-xs-4 text-center">
+            <strong>Data</strong>
+            <br>
+            {{ lc.lab.data | niceNumber }}
+            <div class="update-value" id="update-data"></div>
+          </div>
+          <div class="col-xs-4 text-center">
+            <strong>Reputation</strong>
+            <br>
+            {{ lc.lab.reputation | niceNumber }}
+            <div class="update-value" id="update-reputation"></div>
+          </div>
+          <div class="col-xs-4">
+            <span class="text-center"><strong>Funding</strong></span>
+            <br>
+            {{ lc.lab.money | currency }}
+            <div class="update-value" id="update-funding"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-2 scrollable" id="HR" ng-controller="HRController as hrc">
+        <h3><span class="glyphicon glyphicon-user"></span> HR</h3>
+        <hr>
+        <ul class="media-list">
+          <li class="media" ng-repeat="w in hrc.workers" ng-show="w.is_visible()">
+            <div class="media-body">
+              <h4 class="media-heading">{{ w.name }} <span ng-show="w.hired > 0" class="badge">{{ w.hired | niceNumber }}</span></h4>
+              <p ng-show="w.hired > 0">{{ w.description }} They produce {{ w.rate }} data per second.</p>
+              <button class="btn btn-primary" ng-disabled="!w.is_available()" ng-click="w.hire()">Hire <small>({{ w.cost | currency }})</small></button>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-xs-2 scrollable" id="Upgrades" ng-controller="UpgradesController as uc">
+        <h3><span class="glyphicon glyphicon-wrench"></span> Upgrades</h3>
+        <hr>
+        <ul class="media-list">
+          <li class="media" ng-repeat="u in uc.upgrades" ng-show="u.is_visible()">
+            <div class="media-body">
+              <h4 class="media-heading">{{ u.name }}</h4>
+              <p>{{ u.description }}</p>
+              <button class="btn btn-primary" ng-disabled="!u.is_available()" ng-click="u.buy()">Buy <small>({{ u.cost | currency }})</small></button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="modal fade" id="infoBox" tabindex="-1" role="dialog" aria-labelledby="infoBoxLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title" id="infoBoxLabel"></h4>
+          </div>
+          <div class="modal-body"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="achievements-modal" tabindex="-1" role="dialog" aria-labelledby="achievements-label" aria-hidden="true" ng-controller="AchievementsController as ac">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title" id="achievements-label">Achievements <span class="badge">{{ ac.achievements.length }} / {{ ac.achievementsAll.length }}</span></h4>
+          </div>
+          <div class="modal-body">
+            <ul class="list-group">
+              <li class="list-group-item" ng-repeat="a in ac.achievements | reverse">
+                <span class="glyphicon {{ a.icon }}"></span>
+                {{ a.description }}
+                <span class="badge">{{ a.time }}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="InfoBox">
+      <a href="#" data-toggle="modal" data-target="#myModal">Particle Clicker</a> <a href="https://github.com/ibab/particle-clicker/"><img src="assets/github.png" alt="GitHub"></a>
+    </div>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title" id="myModalLabel">Particle Clicker</h4>
+          </div>
+          <div class="modal-body">
+            <h5>About</h5>
+            <p>Particle Clicker is a game that was made during the <a href="https://webfest.web.cern.ch">CERN Webfest 2014</a>. The idea is borrowed from <a href="http://orteil.dashnet.org/cookieclicker/">Cookie Clicker</a>, an amazing and addictive cookie-themed game.</p>
+            <img class="pull-right" width="200" src="http://www.citizencyberscience.net/wiki/images/1/1b/Cernwebfest.png" alt="">
+            <h5>Libraries</h5>
+            <p>This game is realised using a few libraries. Those are</p>
+            <ul>
+              <li><a href="http://jquery.com">jQuery</a></li>
+              <li><a href="http://angularjs.org">AngularJS</a></li>
+              <li><a href="http://getbootstrap.com/">Bootstrap</a></li>
+              <li><a href="http://imulus.github.io/retinajs/">retina.js</a></li>
+            </ul>
+            <h5>Authors</h5>
+            <ul>
+              <li><a href="https://github.com/gbiro">Gabor Biro</a></li>
+              <li><a href="https://github.com/ibab">Igor Babuschkin</a></li>
+              <li><a href="https://github.com/kdungs">Kevin Dungs</a></li>
+              <li><a href="https://github.com/ntadej">Tadej Novak</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="achievements-container" class="col-xs-3">
+
+    </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.17/angular.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="js/external/retina.js"></script>
+
+    <script src="js/event.js"></script>
+    <script src="js/detector.js"></script>
+    <script src="js/achievements.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/ui.js"></script>
+  </body>
+</html>

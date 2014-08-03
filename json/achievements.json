@@ -1,0 +1,334 @@
+[
+  {
+    "description": "${name} discovery!",
+    "icon": "glyphicon-cog",
+    "type": "research",
+    "target": "research",
+    "threshold": 1
+  },
+  {
+    "description": "${name} research level 5!",
+    "icon": "glyphicon-cog",
+    "type": "research",
+    "target": "research",
+    "threshold": 5
+  },
+  {
+    "description": "${name} research level 25!",
+    "icon": "glyphicon-cog",
+    "type": "research",
+    "target": "research",
+    "threshold": 25
+  },
+  {
+    "description": "${name} research level 50!",
+    "icon": "glyphicon-cog",
+    "type": "research",
+    "target": "research",
+    "threshold": 50
+  },
+  {
+    "description": "${name} research level 100!",
+    "icon": "glyphicon-cog",
+    "type": "research",
+    "target": "research",
+    "threshold": 100
+  },
+
+
+  {
+    "description": "The first ${name} hired!",
+    "icon": "glyphicon-user",
+    "type": "workers",
+    "target": "workers",
+    "threshold": 1
+  },
+  {
+    "description": "5 ${name} working for you!",
+    "icon": "glyphicon-user",
+    "type": "workers",
+    "target": "workers",
+    "threshold": 5
+  },
+  {
+    "description": "25 ${name} working for you!",
+    "icon": "glyphicon-user",
+    "type": "workers",
+    "target": "workers",
+    "threshold": 25
+  },
+  {
+    "description": "50 ${name} working for you!",
+    "icon": "glyphicon-user",
+    "type": "workers",
+    "target": "workers",
+    "threshold": 50
+  },
+  {
+    "description": "100 ${name} working for you!",
+    "icon": "glyphicon-user",
+    "type": "workers",
+    "target": "workers",
+    "threshold": 100
+  },
+
+
+  {
+    "description": "Your first click!",
+    "icon": "glyphicon-hand-up",
+    "type": "count",
+    "target": "clicks",
+    "threshold": 1
+  },
+  {
+    "description": "100 clicks!",
+    "icon": "glyphicon-hand-up",
+    "type": "count",
+    "target": "clicks",
+    "threshold": 100
+  },
+  {
+    "description": "1000 clicks!",
+    "icon": "glyphicon-hand-up",
+    "type": "count",
+    "target": "clicks",
+    "threshold": 1000
+  },
+  {
+    "description": "10.0k clicks!",
+    "icon": "glyphicon-hand-up",
+    "type": "count",
+    "target": "clicks",
+    "threshold": 10000
+  },
+  {
+    "description": "10.0k0 clicks!",
+    "icon": "glyphicon-hand-up",
+    "type": "count",
+    "target": "clicks",
+    "threshold": 100000
+  },
+  {
+    "description": "1.0M clicks!",
+    "icon": "glyphicon-hand-up",
+    "type": "count",
+    "target": "clicks",
+    "threshold": 1000000
+  },
+
+  {
+    "description": "100 data collected!",
+    "icon": "glyphicon-hdd",
+    "type": "count",
+    "target": "data",
+    "threshold": 100
+  },
+  {
+    "description": "10.0k data collected!",
+    "icon": "glyphicon-hdd",
+    "type": "count",
+    "target": "data",
+    "threshold": 10000
+  },
+  {
+    "description": "1.0M data collected!",
+    "icon": "glyphicon-hdd",
+    "type": "count",
+    "target": "data",
+    "threshold": 1000000
+  },
+  {
+    "description": "100.0M data collected!",
+    "icon": "glyphicon-hdd",
+    "type": "count",
+    "target": "data",
+    "threshold": 100000000
+  },
+  {
+    "description": "10.0B data collected!",
+    "icon": "glyphicon-hdd",
+    "type": "count",
+    "target": "data",
+    "threshold": 10000000000
+  },
+  {
+    "description": "10.0B data collected!",
+    "icon": "glyphicon-hdd",
+    "type": "count",
+    "target": "data",
+    "threshold": 10000000000
+  },
+
+  {
+    "description": "JTN 100 funding gathered!",
+    "icon": "glyphicon-usd",
+    "type": "count",
+    "target": "money",
+    "threshold": 100
+  },
+  {
+    "description": "JTN 10.0k funding gathered!",
+    "icon": "glyphicon-usd",
+    "type": "count",
+    "target": "money",
+    "threshold": 10000
+  },
+  {
+    "description": "JTN 1.0M funding gathered!",
+    "icon": "glyphicon-usd",
+    "type": "count",
+    "target": "money",
+    "threshold": 1000000
+  },
+  {
+    "description": "JTN 100.0M funding gathered!",
+    "icon": "glyphicon-usd",
+    "type": "count",
+    "target": "money",
+    "threshold": 100000000
+  },
+  {
+    "description": "JTN 10.0B funding gathered!",
+    "icon": "glyphicon-usd",
+    "type": "count",
+    "target": "money",
+    "threshold": 10000000000
+  },
+  {
+    "description": "JTN 10.0B funding gathered!",
+    "icon": "glyphicon-usd",
+    "type": "count",
+    "target": "money",
+    "threshold": 10000000000
+  },
+
+
+  {
+    "description": "100 data processed!",
+    "icon": "glyphicon-hdd",
+    "type": "count",
+    "target": "dataSpent",
+    "threshold": 100
+  },
+  {
+    "description": "10.0k data processed!",
+    "icon": "glyphicon-hdd",
+    "type": "count",
+    "target": "dataSpent",
+    "threshold": 10000
+  },
+  {
+    "description": "1.0M data processed!",
+    "icon": "glyphicon-hdd",
+    "type": "count",
+    "target": "dataSpent",
+    "threshold": 1000000
+  },
+  {
+    "description": "100.0M data processed!",
+    "icon": "glyphicon-hdd",
+    "type": "count",
+    "target": "dataSpent",
+    "threshold": 100000000
+  },
+  {
+    "description": "10.0B data processed!",
+    "icon": "glyphicon-hdd",
+    "type": "count",
+    "target": "dataSpent",
+    "threshold": 10000000000
+  },
+  {
+    "description": "10.0B data processed!",
+    "icon": "glyphicon-hdd",
+    "type": "count",
+    "target": "dataSpent",
+    "threshold": 10000000000
+  },
+
+  {
+    "description": "JTN 100 funding spent in HR department!",
+    "icon": "glyphicon-usd",
+    "type": "count",
+    "target": "moneyWorkers",
+    "threshold": 100
+  },
+  {
+    "description": "JTN 10.0k funding spent in HR department!",
+    "icon": "glyphicon-usd",
+    "type": "count",
+    "target": "moneyWorkers",
+    "threshold": 10000
+  },
+  {
+    "description": "JTN 1.0M funding spent in HR department!",
+    "icon": "glyphicon-usd",
+    "type": "count",
+    "target": "moneyWorkers",
+    "threshold": 1000000
+  },
+  {
+    "description": "JTN 100.0M funding spent in HR department!",
+    "icon": "glyphicon-usd",
+    "type": "count",
+    "target": "moneyWorkers",
+    "threshold": 100000000
+  },
+  {
+    "description": "JTN 10.0B funding spent in HR department!",
+    "icon": "glyphicon-usd",
+    "type": "count",
+    "target": "moneyWorkers",
+    "threshold": 10000000000
+  },
+  {
+    "description": "JTN 10.0B funding spent in HR department!",
+    "icon": "glyphicon-usd",
+    "type": "count",
+    "target": "moneyWorkers",
+    "threshold": 10000000000
+  },
+
+  {
+    "description": "JTN 100 funding spent for upgrades!",
+    "icon": "glyphicon-usd",
+    "type": "count",
+    "target": "moneyUpgrades",
+    "threshold": 100
+  },
+  {
+    "description": "JTN 10.0k funding spent for upgrades!",
+    "icon": "glyphicon-usd",
+    "type": "count",
+    "target": "moneyUpgrades",
+    "threshold": 10000
+  },
+  {
+    "description": "JTN 1.0M funding spent for upgrades!",
+    "icon": "glyphicon-usd",
+    "type": "count",
+    "target": "moneyUpgrades",
+    "threshold": 1000000
+  },
+  {
+    "description": "JTN 100.0M funding spent for upgrades!",
+    "icon": "glyphicon-usd",
+    "type": "count",
+    "target": "moneyUpgrades",
+    "threshold": 100000000
+  },
+  {
+    "description": "JTN 10.0B funding spent for upgrades!",
+    "icon": "glyphicon-usd",
+    "type": "count",
+    "target": "moneyUpgrades",
+    "threshold": 10000000000
+  },
+  {
+    "description": "JTN 10.0B funding spent for upgrades!",
+    "icon": "glyphicon-usd",
+    "type": "count",
+    "target": "moneyUpgrades",
+    "threshold": 10000000000
+  }
+]

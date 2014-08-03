@@ -1,0 +1,112 @@
+* {
+  border-radius: 0 !important;
+}
+
+h1 br {
+  display: none;
+}
+
+#InfoBox {
+  color: #666;
+  position: fixed;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  padding: 5px;
+  text-align: center;
+}
+
+#detector {
+  cursor: pointer;
+  margin: 0 auto;
+  position: relative;
+  width: 400px;
+  height: 400px;
+}
+
+#detector canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+#detector-core {
+   z-index: 0;
+}
+
+#detector-events {
+   z-index: 1;
+}
+
+#ResearchHist {
+  margin: 20px;
+}
+
+.bar rect {
+  fill: steelblue;
+  shape-rendering: crispEdges;
+}
+
+.bar text {
+  fill: #fff;
+}
+
+.axis path, .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.scrollable {
+  overflow: auto;
+}
+
+#achievements-container {
+  position: fixed; bottom: 0px; left: 0px;
+}
+
+#achievements-container .alert {
+  margin-bottom: 10px; position: relative;
+}
+
+#achievements-container .alert-glyph {
+  float:left; font-size: 20px; margin-right: 10px;
+}
+
+#achievements-container .alert-text {
+  font-size: 14px; font-weight: bold;
+}
+
+.achievements-button {
+  margin-top: -48px;
+}
+
+#Status {
+  font-size: x-large;
+}
+
+#Status strong {
+  color: #666;
+}
+
+.update-value {
+  position: relative;
+}
+
+.update-plus {
+  color: green;
+  float: left;
+  right: 5px;
+  position: absolute;
+}
+
+.update-minus {
+  color: red;
+  float: left;
+  right: 5px;
+  position: absolute;
+}
+
+#mylab {
+  margin-right: 48px;
+}

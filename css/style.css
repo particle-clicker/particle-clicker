@@ -96,3 +96,24 @@ h1 br {
 #Status strong {
   color: #666;
 }
+
+.update-value {
+  position: relative;
+  float: right;
+}
+
+.update-plus {
+  color: green;
+  float: left;
+  right: 5px;
+  position: absolute;
+}
+
+.update-minus {
+  color: red;
+  float: left;
+  right: 5px;
+  position: absolute;
+}
+
+

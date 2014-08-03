@@ -33,17 +33,21 @@
     getGrant: function () {
       var addition = this.reputation * this.factor.rate;  // TODO: adjust factor
       this.money += addition;
+      showUpdateValue("#update-funding", addition);
       achievements.update('count', 'money', addition);
     },
     acquire: function(amount) {
       this.data += amount;
       achievements.update('count', 'data', amount);
+      showUpdateValue("#update-data", amount);
     },
     research: function(cost, reputation) {
       if (this.data >= cost) {
         this.data -= cost;
         this.reputation += reputation;
         achievements.update('count', 'reputation', reputation);
+        showUpdateValue("#update-data", -cost);
+        showUpdateValue("#update-reputation", reputation);
         return true;
       }
       return false;
@@ -51,6 +55,7 @@
     buy: function(cost) {
       if (this.money >= cost) {
         this.money -= cost;
+        showUpdateValue("#update-funding", -cost);
         return true;
       }
       return false;

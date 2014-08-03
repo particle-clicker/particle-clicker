@@ -41,3 +41,30 @@ $(function() {
             detector.visible = !this[hidden];
     }
 })();
+
+function showUpdateValue(ident, num) {
+    if (num != 0) {
+        if (num > 0) {
+            insert = $("<div></div>")
+                .attr("class", "update-plus")
+                .html("+" + num);
+        } else {
+            insert = $("<div></div>")
+                .attr("class", "update-minus")
+                .html(num);
+        }
+        showUpdate(ident, insert);
+    }
+}
+
+function showUpdate(ident, insert) {
+    elem = $(ident);
+    elem.append(insert);
+    insert.animate({
+        "bottom":"+=30px",
+        "opacity": 0
+    }, { duration: 500, complete: function() {
+        $(this).remove();
+    }});
+}
+

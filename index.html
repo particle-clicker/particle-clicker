@@ -46,16 +46,19 @@
             <strong>Data</strong>
             <br>
             {{ lc.lab.data | niceNumber }}
+            <div class="update-value" id="update-data"></div>
           </div>
           <div class="col-xs-4 text-center">
             <strong>Reputation</strong>
             <br>
             {{ lc.lab.reputation | niceNumber }}
+            <div class="update-value" id="update-reputation"></div>
           </div>
-          <div class="col-xs-4 text-center">
-            <strong>Funding</strong>
+          <div class="col-xs-4">
+            <strong class="text-center">Funding</strong>
             <br>
             {{ lc.lab.money | currency }}
+            <div class="update-value" id="update-funding"></div>
           </div>
         </div>
       </div>

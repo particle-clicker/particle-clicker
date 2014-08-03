@@ -21,7 +21,7 @@
               <h4 class="media-heading">{{ r.level > 0 ? r.name : '?????' }} <span ng-show="r.level > 0" class="badge">Level {{ r.level }}</span></h4>
               <p ng-show="r.level > 0">{{ r.description }} Researching it will give you {{ r.reputation }} reputation.</p>
               <div class="btn-group">
-              <button class="btn btn-primary" ng-disabled="!r.is_available()" ng-click="r.research()">Research <small>({{ r.cost }} data)</small></button>
+              <button class="btn btn-primary" ng-disabled="!r.is_available()" ng-click="r.research()">Research <small>({{ r.cost | niceNumber }} data)</small></button>
               <button class="btn btn-info" ng-show="r.level > 0" ng-click="r.showInfo()"><span class="glyphicon glyphicon-exclamation-sign"></span></button>
             </div>
             </div>

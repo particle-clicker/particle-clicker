@@ -1,13 +1,13 @@
 'use strict';
-(function () {
+(function() {
   var loadJsonFile = function(filename) {
     var res;
     $.ajax({
-            async: false,
-            url : filename,
-            success : function(data) {
-              res = data;
-            }
+      async: false,
+      url : filename,
+      success : function(data) {
+        res = data;
+      }
     });
     return res;
   }
@@ -21,14 +21,14 @@
     reputation: 0,
     money: 0,
     researchHistogram: new Histogram('#ResearchHist'),
-    getGrant: function () {
+    getGrant: function() {
       this.money += this.reputation * 5;  // TODO: adjust factor, 5
     },
-    acquire: function (amount) {
+    acquire: function(amount) {
       this.data += amount;
       this.researchHistogram.add_events(amount);
     },
-    research: function (cost, reputation) {
+    research: function(cost, reputation) {
       if (this.data >= cost) {
         this.data -= cost;
         this.reputation += reputation;
@@ -49,15 +49,15 @@
   };
 
   var research = loadJsonFile('json/research.json');
-  research.map(function (item) {  // define additional stuff on the objects
+  research.map(function(item) {  // define additional stuff on the objects
     item.level = 0;
-    item.is_visible = function () {
+    item.is_visible = function() {
       return this.level > 0 || lab.data >= this.cost * .7;
     };
-    item.is_available = function () {
+    item.is_available = function() {
       return lab.data >= this.cost;
     };
-    item.research = function () {
+    item.research = function() {
       if (lab.research(this.cost, this.reputation)) {
         this.level++;
         this.cost = Math.round(this.cost * this.cost_increase);
@@ -66,12 +66,12 @@
   });
 
   var workers = loadJsonFile('json/workers.json');
-  workers.map(function (worker) {
+  workers.map(function(worker) {
     worker.hired = 0;
-    worker.is_visible = function () {
+    worker.is_visible = function() {
       return this.hired > 0 || lab.money >= this.cost * .7;
     };
-    worker.is_available = function () {
+    worker.is_available = function() {
       return lab.money >= this.cost;
     };
     worker.hire = function() {
@@ -83,7 +83,7 @@
   });
 
   var upgrades = loadJsonFile('json/upgrades.json');
-  upgrades.map(function (upgrade) {
+  upgrades.map(function(upgrade) {
     upgrade.getReceiver = function() {
       if (this.type === "detector") {
         return lab.detector;
@@ -100,7 +100,7 @@
         return null;
       }
     };
-    upgrade.hasReceiver = function () {
+    upgrade.hasReceiver = function() {
       if (this.type === "detector") {
         return true;
       }
@@ -112,13 +112,13 @@
       }
       return false;
     };
-    upgrade.is_visible = function () {
+    upgrade.is_visible = function() {
       return !this.used && this.hasReceiver() && lab.money >= this.cost * .7;
     };
-    upgrade.is_available = function () {
+    upgrade.is_available = function() {
       return !this.used && this.hasReceiver() && lab.money >= this.cost;
     };
-    upgrade.buy = function () {
+    upgrade.buy = function() {
       if (!this.used && lab.buy(this.cost)) {
         this.used = true;
         var rec = this.getReceiver();
@@ -132,14 +132,14 @@
 
   var app = angular.module('particleClicker', []);
 
-  app.filter('currency', ['$filter', function ($filter) {
-    return function (input) {
+  app.filter('currency', ['$filter', function($filter) {
+    return function(input) {
       return 'JTN ' + $filter('niceNumber')(input);
     };
   }]);
 
-  app.filter('niceNumber', ['$filter', function ($filter) {
-    return function (number) {
+  app.filter('niceNumber', ['$filter', function($filter) {
+    return function(number) {
       var abs = Math.abs(number);
       if (abs >= Math.pow(10, 12)) {
         number = (number / Math.pow(10, 12)).toFixed(3) + "T";
@@ -156,17 +156,17 @@
     };
   }]);
 
-  app.controller('DetectorController', function () {
-    this.click = function () {
+  app.controller('DetectorController', function() {
+    this.click = function() {
       lab.acquire(lab.detector.rate);
       detector.addEvent();
       return false;
     };
   });
 
-  app.controller('LabController', ['$interval', function ($interval) {
+  app.controller('LabController', ['$interval', function($interval) {
     this.lab = lab;
-    $interval(function () {  // one tick
+    $interval(function() {  // one tick
       lab.getGrant();
       var sum = 0;
       for (var i = 0; i < workers.length; i++) {
@@ -176,15 +176,15 @@
     }, 1000);
   }]);
 
-  app.controller('ResearchController', function () {
+  app.controller('ResearchController', function() {
     this.research = research;
   });
 
-  app.controller('HRController', function () {
+  app.controller('HRController', function() {
     this.workers = workers;
   });
 
-  app.controller('UpgradesController', function () {
+  app.controller('UpgradesController', function() {
     this.upgrades = upgrades;
   });
 })();

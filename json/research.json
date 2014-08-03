@@ -1,7 +1,7 @@
 [
   {
     "name": "CP violation",
-    "description": "",
+    "description": "CP symmetry is broken!",
     "reputation": 1,
     "cost": 10,
     "cost_increase": 1.4,
@@ -10,7 +10,7 @@
   },
   {
     "name": "J/ψ",
-    "description": "The J/ψ particle consists of two c quarks.",
+    "description": "The J/ψ is a meson consisting of two c quarks.",
     "reputation": 5,
     "cost": 100,
     "cost_increase": 1.45,
@@ -19,7 +19,7 @@
   },
   {
     "name": "τ lepton",
-    "description": "The third generation lepton.",
+    "description": "The third generation charged lepton.",
     "reputation": 50,
     "cost": 2000,
     "cost_increase": 1.5,
@@ -37,7 +37,7 @@
   },
   {
     "name": "W and Z boson",
-    "description": "The carrier particles of the weak force.",
+    "description": "The carriers of the weak force.",
     "reputation": 200,
     "cost": 50000,
     "cost_increase": 1.6,
@@ -46,7 +46,7 @@
   },
   {
     "name": "Top quark",
-    "description": "The third generation up-type quark.",
+    "description": "The heaviest of the quarks.",
     "reputation": 1000,
     "cost": 2000000,
     "cost_increase": 2,
@@ -55,7 +55,7 @@
   },
   {
     "name": "Antihydrogen",
-    "description": "Actual anti-matter.",
+    "description": "Proper anti-matter!",
     "reputation": 5000,
     "cost": 10000000,
     "cost_increase": 2.5,
@@ -64,7 +64,7 @@
   },
   {
     "name": "B oscillations",
-    "description": "Oscillating B mesons.",
+    "description": "B mesons turn into their antiparticles and vice versa!",
     "reputation": 5000,
     "cost": 10000000,
     "cost_increase": 2.5,
@@ -73,7 +73,7 @@
   },
   {
     "name": "Higgs boson",
-    "description": "Spontaeneous symmetry breaking and Goldstone bosons sound familiar to you, right?",
+    "description": "Spontaneous symmetry breaking and Goldstone bosons sound familiar to you, right?",
     "reputation": 10000,
     "cost": 50000000,
     "cost_increase": 2.5,

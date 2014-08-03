@@ -4,7 +4,7 @@
     "description": "The W-Boson is the carrier boson of the weak force.",
     "reputation": 1,
     "cost": 10,
-    "cost_increase": 1.3,
+    "cost_increase": 1.4,
     "image": "assets/W.png"
   },
   {
@@ -12,7 +12,7 @@
     "description": "The Z-Boson.",
     "reputation": 5,
     "cost": 100,
-    "cost_increase": 1.35,
+    "cost_increase": 1.45,
     "image": "assets/Z.png"
   },
   {
@@ -20,7 +20,7 @@
     "description": "The top-Quark.",
     "reputation": 50,
     "cost": 2000,
-    "cost_increase": 1.4,
+    "cost_increase": 1.5,
     "image": "assets/t.png"
   },
   {
@@ -28,7 +28,7 @@
     "description": "They are slightly slower than speed (yes, really...), and on top of that they're oscillating.",
     "reputation": 100,
     "cost": 25000,
-    "cost_increase": 1.45,
+    "cost_increase": 1.55,
     "image": "assets/nu.png"
   },
   {
@@ -36,7 +36,7 @@
     "description": "The Higgs-Boson...",
     "reputation": 200,
     "cost": 50000,
-    "cost_increase": 1.5,
+    "cost_increase": 1.6,
     "image": "assets/H.png"
   },
   {

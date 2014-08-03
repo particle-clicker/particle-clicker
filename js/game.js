@@ -17,11 +17,14 @@
     detector: {
       rate: 1
     },
+    factor: {
+      rate: 5
+    },
     data: 0,
     reputation: 0,
     money: 0,
     getGrant: function () {
-      this.money += this.reputation * 5;  // TODO: adjust factor
+      this.money += this.reputation * this.factor.rate;  // TODO: adjust factor, 5
     },
     acquire: function(amount) {
       this.data += amount;
@@ -85,7 +88,10 @@
     upgrade.getReceiver = function() {
       if (this.type === "detector") {
         return lab.detector;
-      } else {
+      } else if (this.type === "reputation"){
+        return lab.factor;
+      }
+      else {
         var context;
         if (this.type === "research") { context = research; }
         else if (this.type === "hr") { context = workers; }
@@ -100,6 +106,9 @@
     };
     upgrade.hasReceiver = function() {
       if (this.type === "detector") {
+        return true;
+      }
+      if (this.type === "reputation") {
         return true;
       }
       var rec = this.getReceiver();

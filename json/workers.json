@@ -4,47 +4,41 @@
     "description": "Basically slaves, just with fewer rights.",
     "cost": 100,
     "cost_increase": 1.4,
-    "rate": 1,
-    "image": "http://placekitten.com/64/64"
+    "rate": 1
   },
   {
     "name": "Postdocs",
     "description": "Can get shit done for you.",
     "cost": 2000,
     "cost_increase": 1.4,
-    "rate": 5,
-    "image": "http://placekitten.com/64/64"
+    "rate": 5
   },
   {
     "name": "Research Fellows",
     "description": "You pay them a lot. They work a lot.",
     "cost": 50000,
     "cost_increase": 1.5,
-    "rate": 50,
-    "image": "http://placekitten.com/64/64"
+    "rate": 50
   },
   {
     "name": "Tenured Professors",
     "description": "They bring their own group along and are able to get a lot of work done.",
     "cost": 1000000,
     "cost_increase": 1.6,
-    "rate": 100,
-    "image": "http://placekitten.com/64/64"
+    "rate": 100
   },
   {
     "name": "Nobel Prize Winners",
     "description": "Hell Yeah.",
     "cost": 50000000,
     "cost_increase": 1.8,
-    "rate": 500,
-    "image": "http://placekitten.com/64/64"
+    "rate": 500
   },
   {
     "name": "Summer Students",
     "description": "They are AWESOME. They best ideas come between two parties.",
     "cost": 99999999,
     "cost_increase": 3,
-    "rate": 1000,
-    "image": "http://placekitten.com/64/64"
+    "rate": 1000
   }
 ]

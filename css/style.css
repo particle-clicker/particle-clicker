@@ -77,18 +77,6 @@ h1 br {
   font-size: 14px; font-weight: bold;
 }
 
-#HR .media-object,
-#Upgrades .media-object {
-  display: none;
-}
-
-@media screen and (min-width: 1400px) {
-  #HR .media-object,
-  #Upgrades .media-object {
-    display: block;
-  }
-}
-
 #Status {
   font-size: x-large;
 }

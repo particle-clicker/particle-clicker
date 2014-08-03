@@ -68,7 +68,6 @@
         <hr>
         <ul class="media-list">
           <li class="media" ng-repeat="w in hrc.workers" ng-show="w.is_visible()">
-            <img style="display: none" class="pull-left media-object" src="{{ w.image }}" alt="">
             <div class="media-body">
               <h4 class="media-heading">{{ w.name }} <span ng-show="w.hired > 0" class="badge">{{ w.hired | niceNumber }}</span></h4>
               <p ng-show="w.hired > 0">{{ w.description }} They produce {{ w.rate }} data per second.</p>
@@ -83,7 +82,6 @@
         <hr>
         <ul class="media-list">
           <li class="media" ng-repeat="u in uc.upgrades" ng-show="u.is_visible()">
-            <img style="display: none;" class="pull-left media-object visible-lg-*" src="{{ u.image }}" alt="">
             <div class="media-body">
               <h4 class="media-heading">{{ u.name }}</h4>
               <p>{{ u.description }}</p>

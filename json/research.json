@@ -5,7 +5,7 @@
     "reputation": 1,
     "cost": 10,
     "cost_increase": 1.4,
-    "image": "assets/W.png"
+    "info": "html/W.html"
   },
   {
     "name": "Z-Boson",
@@ -13,7 +13,7 @@
     "reputation": 5,
     "cost": 100,
     "cost_increase": 1.45,
-    "image": "assets/Z.png"
+    "info": "html/Z.html"
   },
   {
     "name": "top-Quark",
@@ -21,7 +21,7 @@
     "reputation": 50,
     "cost": 2000,
     "cost_increase": 1.5,
-    "image": "assets/t.png"
+    "info": "html/t.html"
   },
   {
     "name": "Oscillating neutrinos",
@@ -29,7 +29,7 @@
     "reputation": 100,
     "cost": 25000,
     "cost_increase": 1.55,
-    "image": "assets/nu.png"
+    "info": "html/nu.html"
   },
   {
     "name": "Higgs-Boson",
@@ -37,7 +37,8 @@
     "reputation": 200,
     "cost": 50000,
     "cost_increase": 1.6,
-    "image": "assets/H.png"
+    "image": "assets/H.png",
+    "info": "html/H.html"
   },
   {
     "name": "MSSM",
@@ -45,7 +46,8 @@
     "reputation": 1000,
     "cost": 2000000,
     "cost_increase": 2,
-    "image": "assets/chitilde.png"
+    "image": "assets/chitilde.png",
+    "info": "html/mssm.html"
   },
   {
     "name": "Dark matter",
@@ -53,6 +55,7 @@
     "reputation": 5000,
     "cost": 10000000,
     "cost_increase": 2.5,
-    "image": "assets/darkmatter.png"
+    "image": "assets/darkmatter.png",
+    "info": "html/darkmatter.html"
   }
 ]

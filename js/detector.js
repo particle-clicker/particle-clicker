@@ -257,11 +257,22 @@ var detector =
 
     addEvent: function()
     {
-        var num = Math.ceil(10 * Math.random());
+        var num = Math.ceil(20 * Math.random());
 
         for (var i = 0; i < num; i++) {
             var index = Math.round(Math.random() * (detector.tracks.length - 1));
             var event = new ParticleEvent(detector.tracks[index], num);
+            detector.events.list.push(event);
+        }
+    },
+
+    addEventExternal: function()
+    {
+        var num = Math.min(30 * achievements.count.workers / 10, 30);
+
+        for (var i = 0; i < num; i++) {
+            var index = Math.round(Math.random() * (detector.tracks.length - 1));
+            var event = new ParticleEvent(detector.tracks[index], num, true);
             detector.events.list.push(event);
         }
     },

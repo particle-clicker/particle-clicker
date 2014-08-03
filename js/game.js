@@ -214,6 +214,7 @@
         sum += workers[i].hired * workers[i].rate;
       }
       lab.acquire(sum);
+      detector.addEventExternal();
     }, 1000);
   }]);
 

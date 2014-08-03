@@ -1,11 +1,12 @@
-function ParticleEvent(type, count)
+function ParticleEvent(type, count, external)
 {
+    this.work = typeof external !== 'undefined' ? external : false;
     this.type = type;
     this.length = 0;
     this.radius = 0;
     this.direction = 0;
     this.sign = (Math.random() - 0.5 >= 0) ? 1 : -1;
-    this.alpha = 1;
+    this.alpha = this.work ? 0.5 : 1;
     this.count = count;
 
     switch (this.type.name)

@@ -223,7 +223,7 @@
   },
 
   {
-    "name": "Press Release",
+    "name": "Public Relations",
     "description": "Local news stations cover your research of the W-Boson. Future research of the topic yields 1.2 times more reputation.",
     "cost": 1000,
     "used": false,
@@ -235,7 +235,7 @@
     "image": "assets/propaganda.png"
   },
   {
-    "name": "Press Release",
+    "name": "Public Relations",
     "description": "Mainstream press writes about your research of the Z-Boson. Future research yields 1.2 times more reputation.",
     "cost": 5000,
     "used": false,
@@ -247,7 +247,7 @@
     "image": "assets/propaganda.png"
   },
   {
-    "name": "Press Release",
+    "name": "Public Relations",
     "description": "Your research on top-Quarks is featured on national television. Future research yields 1.2 times more reputation.",
     "cost": 100000,
     "used": false,
@@ -259,7 +259,7 @@
     "image": "assets/propaganda.png"
   },
   {
-    "name": "Press Release",
+    "name": "Public Relations",
     "description": "Hollywood makes a movie about the Higgs-Boson. Your future research yields 1.2 times more reputation.",
     "cost": 500000,
     "used": false,
@@ -271,7 +271,7 @@
     "image": "assets/propaganda.png"
   },
   {
-    "name": "Press Release",
+    "name": "Public Relations",
     "description": "Your little daughter writes about your research on MSSM in her homework. Future research yields 1.2 times more reputation.",
     "cost": 5000000,
     "used": false,

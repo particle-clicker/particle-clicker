@@ -1,5 +1,14 @@
 [
   {
+    "name": "CP violation",
+    "description": ":",
+    "reputation": 1,
+    "cost": 1,
+    "cost_increase": 1.4,
+    "image": "assets/CPV.png",
+    "info": "html/CPV.html"
+  },
+  {
     "name": "W-Boson",
     "description": "The W-Boson is the carrier boson of the weak force.",
     "reputation": 1,

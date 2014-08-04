@@ -24,17 +24,17 @@ var UI = (function () {
   };
 
   var showUpdateValue = function(ident, num) {
-    var formatted = Helpers.formatNumberPostfix(num);
     if (num != 0) {
+      var formatted = Helpers.formatNumberPostfix(num);
       var insert;
       if (num > 0) {
         insert = $("<div></div>")
                   .attr("class", "update-plus")
-                  .html("+" + num);
+                  .html("+" + formatted);
       } else {
         insert = $("<div></div>")
                   .attr("class", "update-minus")
-                  .html(num);
+                  .html(formatted);
       }
       showUpdate(ident, insert);
     }

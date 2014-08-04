@@ -80,7 +80,7 @@
         achievements.update('count', 'moneyWorkers', cost);
         achievements.update('workers', worker.name, 1);
         achievements.update('count', 'workers', 1);
-        UI.showUpdateValue("#update-funding", cost);
+        UI.showUpdateValue("#update-funding", -cost);
       }
     };
   });
@@ -102,9 +102,18 @@
     this.achievementsAll = achievements.list;
   });
 
-  // Activate auto-saving every 10 seconds
-  setInterval(function () {
-    GameObjects.saveAll();
-    console.log('The game has been saved.');
-  }, 10000);
+  app.controller('SaveController', ['$scope', '$interval', function($scope, $interval) {
+    $scope.lastSaved = new Date();
+    $scope.saveNow = function() {
+      GameObjects.saveAll();
+      $scope.lastSaved = new Date();
+    };
+    $scope.restart = function() {
+      if (window.confirm('Do you really want to restart the game? All progress will be lost.')) {
+        ObjectStorage.clear();
+        window.location.reload(true);
+      }
+    };
+    $interval($scope.saveNow, 10000);
+  }]);
 })();

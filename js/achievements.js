@@ -74,8 +74,6 @@ var achievements =
                 achievements[type][subtype] >= achievements.list[i].threshold
                )
             {
-                //console.log(achievements.list[i].threshold, achievements[type][subtype]);
-
                 achievements.list[i].completed = true;
                 achievements.displayAchievement(i);
             }

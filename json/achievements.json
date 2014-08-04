@@ -151,13 +151,6 @@
     "target": "data",
     "threshold": 10000000000
   },
-  {
-    "description": "10.0B data collected!",
-    "icon": "glyphicon-hdd",
-    "type": "count",
-    "target": "data",
-    "threshold": 10000000000
-  },
 
   {
     "description": "JTN 100 funding gathered!",
@@ -186,13 +179,6 @@
     "type": "count",
     "target": "money",
     "threshold": 100000000
-  },
-  {
-    "description": "JTN 10.0B funding gathered!",
-    "icon": "glyphicon-usd",
-    "type": "count",
-    "target": "money",
-    "threshold": 10000000000
   },
   {
     "description": "JTN 10.0B funding gathered!",
@@ -238,13 +224,6 @@
     "target": "dataSpent",
     "threshold": 10000000000
   },
-  {
-    "description": "10.0B data processed!",
-    "icon": "glyphicon-hdd",
-    "type": "count",
-    "target": "dataSpent",
-    "threshold": 10000000000
-  },
 
   {
     "description": "JTN 100 funding spent in HR department!",
@@ -281,13 +260,6 @@
     "target": "moneyWorkers",
     "threshold": 10000000000
   },
-  {
-    "description": "JTN 10.0B funding spent in HR department!",
-    "icon": "glyphicon-usd",
-    "type": "count",
-    "target": "moneyWorkers",
-    "threshold": 10000000000
-  },
 
   {
     "description": "JTN 100 funding spent for upgrades!",
@@ -316,19 +288,5 @@
     "type": "count",
     "target": "moneyUpgrades",
     "threshold": 100000000
-  },
-  {
-    "description": "JTN 10.0B funding spent for upgrades!",
-    "icon": "glyphicon-usd",
-    "type": "count",
-    "target": "moneyUpgrades",
-    "threshold": 10000000000
-  },
-  {
-    "description": "JTN 10.0B funding spent for upgrades!",
-    "icon": "glyphicon-usd",
-    "type": "count",
-    "target": "moneyUpgrades",
-    "threshold": 10000000000
   }
 ]

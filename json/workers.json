@@ -29,7 +29,7 @@
   },
   {
     "name": "Nobel Prize Winners",
-    "description": "They received their prize with reason... Why don't you give them more money?.",
+    "description": "They received their prize with reason... Why don't you give them more money?",
     "cost": 50000000,
     "cost_increase": 2,
     "rate": 500

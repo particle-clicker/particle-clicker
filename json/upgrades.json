@@ -12,7 +12,7 @@
   },
   {
     "name": "Extra coffee",
-    "description": "Sleeping is the coffee of the weaks. Your PhD Students will produce 1.3 times more data.",
+    "description": "Sleeping is the coffee of the weak. Your PhD Students will produce 1.3 times more data.",
     "cost": 3000,
     "used": false,
     "type": "hr",
@@ -57,7 +57,7 @@
   },
   {
     "name": "Extra coffee",
-    "description": "Sleeping is the coffee of the weaks. Your Postdocs will produce 1.5 times more data.",
+    "description": "Sleeping is the coffee of the weak. Your Postdocs will produce 1.5 times more data.",
     "cost": 20000,
     "used": false,
     "type": "hr",
@@ -129,7 +129,7 @@
 
   {
     "name": "2. Nobel Prize",
-    "description": "So your Brightest Minds now are demigods... They will produce 1.7 times more data.",
+    "description": "So your Brightest Minds are now demigods... They will produce 1.7 times more data.",
     "cost": 100000000,
     "used": false,
     "type": "hr",
@@ -417,7 +417,7 @@
 
   {
     "name": "Public Relations, lvl 1",
-    "description": "You give lectures about this very important part of the Standard modell! Future research yields 1.2 times more reputation.",
+    "description": "You give lectures about this very important part of the Standard Model! Future research yields 1.2 times more reputation.",
     "cost": 250000,
     "used": false,
     "type": "research",
@@ -429,7 +429,7 @@
 
   {
     "name": "Public Relations, lvl 2",
-    "description": "You give lectures about this very important part of the Standard modell! Future research yields 1.2 times more reputation.",
+    "description": "You give lectures about this very important part of the Standard Model! Future research yields 1.2 times more reputation.",
     "cost": 1000000,
     "used": false,
     "type": "research",
@@ -533,7 +533,7 @@
   },
   {
     "name": "Public Relations, lvl 1",
-    "description": "You've found the last missing element of the Standard Modell! Future research yields 1.2 times more reputation.",
+    "description": "You've found the last missing element of the Standard Model! Future research yields 1.2 times more reputation.",
     "cost": 90000000,
     "used": false,
     "type": "research",
@@ -544,7 +544,7 @@
   },
   {
     "name": "Public Relations, lvl 2",
-    "description": "You've found the last missing element of the Standard Modell! Future research yields 1.2 times more reputation.",
+    "description": "You've found the last missing element of the Standard Model! Future research yields 1.2 times more reputation.",
     "cost": 110000000,
     "used": false,
     "type": "research",

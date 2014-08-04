@@ -5,6 +5,7 @@ var achievements =
     listSummary: [],
 
     startTime: new Date().getTime(),
+    lastSave: new Date().getTime(),
 
     count:
     {
@@ -53,6 +54,7 @@ var achievements =
     restore: function()
     {
         achievements = $.extend({}, achievements, ObjectStorage.load('achievements'));
+        achievements.startTime = new Date().getTime() - (achievements.lastSave - achievements.startTime);
     },
 
     addWorkers: function(list)

@@ -109,6 +109,7 @@
     $scope.saveNow = function() {
       GameObjects.saveAll();
       $scope.lastSaved = new Date();
+      achievements.lastSave = $scope.lastSaved.getTime();
     };
     $scope.restart = function() {
       if (window.confirm('Do you really want to restart the game? All progress will be lost.')) {

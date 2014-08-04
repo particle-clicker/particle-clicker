@@ -12,6 +12,9 @@ var ObjectStorage = (function() {
       },
       load: function(key) {
         return JSON.parse(_s.getItem(key));
+      },
+      clear: function() {
+        _s.clear();
       }
     };
   } catch (e) {
@@ -19,7 +22,8 @@ var ObjectStorage = (function() {
       + ' If you refresh the page, all progress will be lost');
     return {
       save: function(key, item) {},
-      load: function(key) { return null; }
+      load: function(key) { return null; },
+      clear: function() {}
     };
   };
-});
+})();

@@ -1,13 +1,64 @@
-$(function() {
-  var h = $(window).height();
-  $('.scrollable').height(h - 50 + 'px');
+'use strict';
 
-  $(window).resize(function() {
+/** Define UI specific stuff.
+ */
+var UI = (function () {
+  /** Resize the scrollable containers and make sure they are resized whenever
+   * the window is resized. */
+  $(function() {
     var h = $(window).height();
     $('.scrollable').height(h - 50 + 'px');
+    
+    $(window).resize(function() {
+      var h = $(window).height();
+      $('.scrollable').height(h - 50 + 'px');
+    });
   });
-});
 
+  /** Show a bootstrap modal with dynamic content. */
+  var showModal = function(title, text) {
+    var $modal = $('#infoBox');
+    $modal.find('#infoBoxLabel').html(title);
+    $modal.find('.modal-body').html(text);
+    $modal.modal({show: true});
+  };
+
+  var showUpdateValue = function(ident, num) {
+    var formatted = Helpers.formatNumberPostfix(num);
+    if (num != 0) {
+      var insert;
+      if (num > 0) {
+        insert = $("<div></div>")
+                  .attr("class", "update-plus")
+                  .html("+" + num);
+      } else {
+        insert = $("<div></div>")
+                  .attr("class", "update-minus")
+                  .html(num);
+      }
+      showUpdate(ident, insert);
+    }
+  }
+
+  var showUpdate = function(ident, insert) {
+    var elem = $(ident);
+    elem.append(insert);
+    insert.animate({
+      "bottom":"+=30px",
+      "opacity": 0
+    }, { duration: 500, complete: function() {
+      $(this).remove();
+    }});
+  }
+
+  return {
+    showModal: showModal,
+    showUpdateValue: showUpdateValue
+  }
+})();
+
+
+// I don't know what this is for, so I leave it here for the moment...
 (function() {
     var hidden = "hidden";
 
@@ -41,30 +92,3 @@ $(function() {
             detector.visible = !this[hidden];
     }
 })();
-
-function showUpdateValue(ident, num) {
-    if (num != 0) {
-        if (num > 0) {
-            insert = $("<div></div>")
-                .attr("class", "update-plus")
-                .html("+" + num);
-        } else {
-            insert = $("<div></div>")
-                .attr("class", "update-minus")
-                .html(num);
-        }
-        showUpdate(ident, insert);
-    }
-}
-
-function showUpdate(ident, insert) {
-    elem = $(ident);
-    elem.append(insert);
-    insert.animate({
-        "bottom":"+=30px",
-        "opacity": 0
-    }, { duration: 500, complete: function() {
-        $(this).remove();
-    }});
-}
-

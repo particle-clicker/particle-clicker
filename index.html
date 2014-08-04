@@ -47,7 +47,7 @@
               <h4 class="media-heading">{{ r.level > 0 ? r.name : '?????' }} <span ng-show="r.level > 0" class="badge">Level {{ r.level }}</span></h4>
               <p ng-show="r.level > 0">{{ r.description }} Researching it will give you {{ r.reputation }} reputation.</p>
               <div class="btn-group">
-              <button class="btn btn-primary" ng-disabled="!r.is_available()" ng-click="r.research()">Research <small>({{ r.cost | niceNumber }} data)</small></button>
+              <button class="btn btn-primary" ng-disabled="!r.is_available()" ng-click="rc.doResearch(r)">Research <small>({{ r.cost | niceNumber }} data)</small></button>
               <button class="btn btn-info" ng-show="r.level > 0" ng-click="r.showInfo()"><span class="glyphicon glyphicon-exclamation-sign"></span></button>
             </div>
             </div>
@@ -56,7 +56,8 @@
       </div>
 
       <div class="col-xs-5 scrollable" ng-controller="LabController as lc">
-        <h3 id="mylab" contenteditable>{{ lc.lab.name }} <small>Click here to change the name</small></h3> <button class="pull-right btn btn-info achievements-button" data-toggle="modal" data-target="#achievements-modal"><span class="glyphicon glyphicon-thumbs-up"></span></button>
+        <h3 id="mylab" contenteditable>{{ lc.lab.name }} <small>Click here to change the name</small></h3>
+        <button class="pull-right btn btn-info achievements-button" data-toggle="modal" data-target="#achievements-modal"><span class="glyphicon glyphicon-thumbs-up"></span></button>
         <hr>
         <button class="pull-right btn btn-info" ng-click="lc.showDetectorInfo()"><span class="glyphicon glyphicon-info-sign"></span></button>
         <div id="detector" ng-controller="DetectorController as dc">
@@ -97,7 +98,7 @@
             <div class="media-body">
               <h4 class="media-heading">{{ w.name }} <span ng-show="w.hired > 0" class="badge">{{ w.hired | niceNumber }}</span></h4>
               <p ng-show="w.hired > 0">{{ w.description }} They produce {{ w.rate }} data per second.</p>
-              <button class="btn btn-primary" ng-disabled="!w.is_available()" ng-click="w.hire()">Hire <small>({{ w.cost | currency }})</small></button>
+              <button class="btn btn-primary" ng-disabled="!w.is_available()" ng-click="hrc.hire(w)">Hire <small>({{ w.cost | currency }})</small></button>
             </div>
           </li>
         </ul>
@@ -111,7 +112,7 @@
             <div class="media-body">
               <h4 class="media-heading">{{ u.name }}</h4>
               <p>{{ u.description }}</p>
-              <button class="btn btn-primary" ng-disabled="!u.is_available()" ng-click="u.buy()">Buy <small>({{ u.cost | currency }})</small></button>
+              <button class="btn btn-primary" ng-disabled="!u.is_available()" ng-click="uc.upgrade(u)">Buy <small>({{ u.cost | currency }})</small></button>
             </div>
           </li>
         </ul>
@@ -191,6 +192,9 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script src="js/external/retina.js"></script>
 
+    <script src="js/storage.js"></script>
+    <script src="js/helpers.js"></script>
+    <script src="js/gameobjects.js"></script>
     <script src="js/event.js"></script>
     <script src="js/detector.js"></script>
     <script src="js/achievements.js"></script>

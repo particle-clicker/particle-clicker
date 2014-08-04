@@ -8,6 +8,7 @@ var GameObjects = (function() {
   /** Lab
    */
   var labPrototype = {
+    version: '0.2',
     name: 'My Awesome Lab',
     detector: {
       rate: 1

@@ -72,7 +72,11 @@ h1 br {
 
 #achievements-container .alert-text,
 #messages-container .alert-text {
-  font-size: 14px; font-weight: bold;
+  font-size: 14px;
+}
+
+#achievements-container .alert-text {
+  font-weight: bold;
 }
 
 #messages-container .btn {

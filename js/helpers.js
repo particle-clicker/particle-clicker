@@ -37,6 +37,7 @@ var Helpers = (function() {
  
   return {
     loadFile: loadFile,
-    formatNumberPostfix: formatNumberPostfix
+    formatNumberPostfix: formatNumberPostfix,
+    version: '0.2'
   };
 })();

@@ -5,6 +5,8 @@
   var workers = GameObjects.workers;
   var upgrades = GameObjects.upgrades;
 
+  UI.validateVersion(lab.version);
+
   achievements.addResearch(research);
   achievements.addWorkers(workers);
   

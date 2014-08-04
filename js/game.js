@@ -94,12 +94,13 @@
     }
   });
 
+  achievements.setList(Helpers.loadFile('json/achievements.json'));
+  achievements.restore();
+
   app.controller('AchievementsController', function() {
     this.achievements = achievements.listSummary;
     this.achievementsAll = achievements.list;
   });
-
-  achievements.setList(Helpers.loadFile('json/achievements.json'));
 
   // Activate auto-saving every 10 seconds
   setInterval(function () {

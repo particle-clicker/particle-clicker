@@ -175,6 +175,7 @@ var GameObjects = (function() {
     ObjectStorage.save('research', research);
     ObjectStorage.save('workers', workers);
     ObjectStorage.save('upgrades', upgrades);
+    ObjectStorage.save('achievements', achievements);
   };
 
   return {

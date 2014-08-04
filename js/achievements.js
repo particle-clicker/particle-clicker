@@ -4,7 +4,7 @@ var achievements =
     listSpecial: [],
     listSummary: [],
 
-    startTime: new Date(),
+    startTime: new Date().getTime(),
 
     count:
     {
@@ -48,6 +48,11 @@ var achievements =
                 return this.completed;
             };
         });
+    },
+
+    restore: function()
+    {
+        achievements = $.extend({}, achievements, ObjectStorage.load('achievements'));
     },
 
     addWorkers: function(list)
@@ -104,7 +109,7 @@ var achievements =
             achievements.list[i].alerted = true;
 
             var a = $.extend(true, {}, achievements.list[i]);
-            a.time = achievements.timeFormatter(new Date().getTime() - achievements.startTime.getTime());
+            a.time = achievements.timeFormatter(new Date().getTime() - achievements.startTime);
             achievements.listSummary.push(a);
         }
     },

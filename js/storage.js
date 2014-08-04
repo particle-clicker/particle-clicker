@@ -8,7 +8,12 @@ var ObjectStorage = (function() {
     var _s = localStorage;
     return {
       save: function(key, item) {
-        _s.setItem(key, JSON.stringify(item));
+        _s.setItem(key, JSON.stringify(item, function (key, val) {
+          if (key == '$$hashKey') {
+            return undefined;
+          }
+          return val;
+        }));
       },
       load: function(key) {
         return JSON.parse(_s.getItem(key));

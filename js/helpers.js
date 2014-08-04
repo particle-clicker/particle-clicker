@@ -38,6 +38,7 @@ var Helpers = (function() {
   return {
     loadFile: loadFile,
     formatNumberPostfix: formatNumberPostfix,
-    version: '0.2'
+    version: '0.2',
+    analytics: ''
   };
 })();

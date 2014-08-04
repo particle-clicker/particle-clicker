@@ -61,6 +61,7 @@ var GameObjects = (function() {
     research: function() {
       if (lab.research(this.cost, this.reputation)) {
         this.level++;
+        analytics.sendEvent(analytics.events.categoryResearch, analytics.events.actionResearch, this.name, this.level);
         var oldCost = this.cost;
         this.cost = Math.round(this.cost * this.cost_increase);
         return oldCost;
@@ -74,7 +75,7 @@ var GameObjects = (function() {
       return this._info;
     },
     showInfo: function() {
-      Helpers.showModal(this.name, this.getInfo());
+      UI.showModal(this.name, this.getInfo());
     }
   };
   var research = $.extend([], Helpers.loadFile('json/research.json'),
@@ -97,6 +98,7 @@ var GameObjects = (function() {
     hire: function() {
       if (lab.buy(this.cost)) {
         this.hired++;
+        analytics.sendEvent(analytics.events.categoryHR, analytics.events.actionHire, this.name, this.hired);
         var cost = this.cost;
         this.cost = Math.round(this.cost * this.cost_increase);
         return cost;
@@ -153,6 +155,7 @@ var GameObjects = (function() {
     buy: function() {
       if (!this.used && lab.buy(this.cost)) {
         this.used = true;
+        analytics.sendEvent(analytics.events.categoryUpgrades, analytics.events.actionBuy, this.name, 1);
         var rec = this.getReceiver();
         if (rec) {
           rec[this.property] = rec[this.property] * this.factor + this.constant;

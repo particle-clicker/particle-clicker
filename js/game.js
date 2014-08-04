@@ -119,4 +119,7 @@
     };
     $interval($scope.saveNow, 10000);
   }]);
+
+  analytics.init();
+  analytics.sendScreen(analytics.screens.main);
 })();

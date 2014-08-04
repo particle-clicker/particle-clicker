@@ -51,6 +51,21 @@ var UI = (function () {
     }});
   }
 
+  if (typeof $.cookie('cookielaw') === 'undefined') {
+    var alert = '<div id="cookielaw" class="alert alert-info" role="alert">';
+    alert += '<button type="button" class="btn btn-primary">OK</button>';
+    alert += '<span class="glyphicon glyphicon-info-sign alert-glyph"></span> <span class="alert-text">Particle Clicker uses local storage to store your current progress.</span>';
+    alert += '</div>';
+    alert = $(alert);
+    alert.find('button').click(function ()
+    {
+      $.cookie('cookielaw', 'informed', { expires: 365 });
+      $('#cookielaw').slideUp(300, function() { $('#cookielaw').remove(); });
+    })
+
+    $('#messages-container').append(alert);
+  }
+
   return {
     showModal: showModal,
     showUpdateValue: showUpdateValue

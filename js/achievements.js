@@ -101,7 +101,7 @@ var achievements =
             {
                 return function()
                 {
-                    a.slideUp(300);
+                    a.slideUp(300, function() { a.remove(); });
                 };
             };
 

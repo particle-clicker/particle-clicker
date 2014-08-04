@@ -56,16 +56,27 @@ h1 br {
   position: fixed; bottom: 0px; left: 0px;
 }
 
-#achievements-container .alert {
+#messages-container {
+  position: fixed; bottom: 0px; right: 0px;
+}
+
+#achievements-container .alert,
+#messages-container .alert {
   margin-bottom: 10px; position: relative;
 }
 
-#achievements-container .alert-glyph {
+#achievements-container .alert-glyph,
+#messages-container .alert-glyph {
   float:left; font-size: 20px; margin-right: 10px;
 }
 
-#achievements-container .alert-text {
+#achievements-container .alert-text,
+#messages-container .alert-text {
   font-size: 14px; font-weight: bold;
+}
+
+#messages-container .btn {
+  float:right; font-weight: bold;
 }
 
 #Status {

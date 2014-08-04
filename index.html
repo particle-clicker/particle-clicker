@@ -76,7 +76,7 @@
       </div>
 
       <div class="col-xs-5 scrollable" ng-controller="LabController as lc">
-        <h3 id="mylab" contenteditable>{{ lc.lab.name }} <small>Click here to change the name</small></h3>
+        <input id="labname" value="{{ lc.lab.name }}" ng-model="lc.lab.name">
         <hr>
         <button class="pull-right btn btn-info" ng-click="lc.showDetectorInfo()"><span class="glyphicon glyphicon-info-sign"></span></button>
         <div id="detector" ng-controller="DetectorController as dc">

@@ -108,3 +108,13 @@ h1 br {
   right: 5px;
   position: absolute;
 }
+
+#labname {
+  border: 0px;
+  padding: 0 4px;
+  font-size: 24px;
+  margin-top: 20px;
+  font-weight: 500;
+  line-height: 1;
+  width: 99%;
+}

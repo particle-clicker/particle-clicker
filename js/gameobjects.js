@@ -9,7 +9,7 @@ var GameObjects = (function() {
    */
   var labPrototype = {
     version: '0.2',
-    name: 'My Awesome Lab',
+    name: 'Click here to give your lab a catchy name',
     detector: {
       rate: 1
     },

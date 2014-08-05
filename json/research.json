@@ -1,7 +1,7 @@
 [
   {
     "name": "CP violation",
-    "description": "The imbalance of the matter-antimmatter is related to the violation of the CP symmetry.",
+    "description": "CP symmetry is broken!",
     "reputation": 1,
     "cost": 10,
     "cost_increase": 1.4,
@@ -10,7 +10,7 @@
   },
   {
     "name": "J/ψ",
-    "description": "The J/ψ meson consists a c and an anti-c quark.",
+    "description": "The J/ψ meson contains a c and an anti-c quark.",
     "reputation": 5,
     "cost": 200,
     "cost_increase": 1.45,
@@ -55,7 +55,7 @@
   },
   {
     "name": "Antihydrogen",
-    "description": "The lightest anti-atom, it consists and antiproton and a positron.",
+    "description": "The lightest anti-atom, it contains an antiproton and a positron.",
     "reputation": 800,
     "cost": 640000000,
     "cost_increase": 2.1,
@@ -73,7 +73,7 @@
   },
   {
     "name": "Higgs boson",
-    "description": "Spontaeneous symmetry breaking and Goldstone bosons sound familiar to you, right?",
+    "description": "Spontaneous symmetry breaking and Goldstone bosons sound familiar to you, right?",
     "reputation": 3200,
     "cost": 1280000000,
     "cost_increase": 2.3,

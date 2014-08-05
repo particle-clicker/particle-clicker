@@ -56,6 +56,8 @@
         sum += workers[i].hired * workers[i].rate;
       }
       lab.acquire(sum);
+      achievements.update('count', 'data', sum);
+      UI.showUpdateValue("#update-data", sum);
       detector.addEventExternal();
     }, 1000);
   }]);

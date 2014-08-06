@@ -53,7 +53,7 @@ var GameObjects = (function() {
   var researchPrototype = {
     level: 0,
     is_visible: function() {
-      return this.level > 0 || lab.data >= this.cost * .7;
+      return this.level > 0 || lab.data >= this.cost * .5;
     },
     is_available: function() {
       return lab.data >= this.cost;

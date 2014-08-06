@@ -4,8 +4,12 @@
  */
 var UI = (function () {
   /** Resize the scrollable containers and make sure they are resized whenever
-   * the window is resized. */
+   * the window is resized.
+   * Also introduce FastClick for faster clicking on mobile.
+   */
   $(function() {
+    FastClick.apply(document.body);    
+    
     var offset = 0;
     var h = $(window).height();
     $('.scrollable').height(h - offset + 'px');

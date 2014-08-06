@@ -102,7 +102,7 @@
     "threshold": 10000
   },
   {
-    "description": "10.0k0 clicks!",
+    "description": "100.0k clicks!",
     "icon": "glyphicon-hand-up",
     "type": "count",
     "target": "clicks",

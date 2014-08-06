@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="particleClicker">
+  <head>
+    <title>Particle Clicker</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta property="og:title" content="Particle Clicker">
+    <meta property="og:type" content="game">
+    <meta property="og:description" content="An addictive incremental game that was made during the CERN Webfest 2014. It takes the player on a historic journey through modern particle physics.">
+    <meta property="og:image" content="https://avatars2.githubusercontent.com/u/8345868">
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mobile.css">
+
+    <!-- Google Analytics -->
+    <script>
+    //(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    //(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    //m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    //})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    </script>
+    <!-- End Google Analytics -->
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="col-xs-6 scrollable">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="active"><a href="#research" role="tab" data-toggle="tab"><i class="fa fa-cogs"></i></a></li>
+          <li><a href="#hr" role="tab" data-toggle="tab"><i class="fa fa-group"></i></a></li>
+          <li><a href="#upgrades" role="tab" data-toggle="tab"><i class="fa fa-wrench"></i></a></li>
+          <li><a href="#achievements" role="tab" data-toggle="tab"><i class="fa fa-trophy"></i></a></li>
+          <li><a href="#save" role="tab" data-toggle="tab"><i class="fa fa-floppy-o"></i></a></li>
+          <li><a href="#about" role="tab" data-toggle="tab"><i class="fa fa-info"></i></a></li>
+        </ul>
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <!-- Research -->
+          <div class="tab-pane active" id="research" ng-controller="ResearchController as rc">
+            <ul class="media-list">
+              <li class="media" ng-repeat="r in rc.research" ng-show="r.is_visible()">
+                <img ng-show="r.level > 0" class="pull-left" class="media-object" src="{{ r.image }}" alt="">
+                <img ng-hide="r.level > 0" class="pull-left" class="media-object" src="assets/icons/png/unknown.png" alt="">
+                <div class="media-body">
+                  <h4 class="media-heading">{{ r.level > 0 ? r.name : '?????' }} <span ng-show="r.level > 0" class="badge">Level {{ r.level }}</span></h4>
+                  <p ng-show="r.level > 0">{{ r.description }} Researching it will give you {{ r.reputation | niceNumber }} reputation.</p>
+                  <div class="btn-group">
+                  <button class="btn btn-primary" ng-disabled="!r.is_available()" ng-click="rc.doResearch(r)">Research <small>({{ r.cost | niceNumber }} data)</small></button>
+                  <button class="btn btn-info" ng-show="r.level > 0" ng-click="r.showInfo()"><span class="glyphicon glyphicon-exclamation-sign"></span></button>
+                </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <!-- HR -->
+          <div class="tab-pane" id="hr" ng-controller="HRController as hrc">
+            <ul class="media-list">
+              <li class="media" ng-repeat="w in hrc.workers" ng-show="w.is_visible()">
+                <div class="media-body">
+                  <h4 class="media-heading">{{ w.name }} <span ng-show="w.hired > 0" class="badge">{{ w.hired | niceNumber }}</span></h4>
+                  <p ng-show="w.hired > 0">{{ w.description }} They produce {{ w.rate | niceNumber }} data per second.</p>
+                  <button class="btn btn-primary" ng-disabled="!w.is_available()" ng-click="hrc.hire(w)">Hire <small>({{ w.cost | currency }})</small></button>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <!-- Upgrades -->
+          <div class="tab-pane" id="upgrades" ng-controller="UpgradesController as uc">
+            <ul class="media-list">
+              <li class="media" ng-repeat="u in uc.upgrades" ng-show="u.is_visible()">
+                <div class="media-body">
+                  <h4 class="media-heading">{{ u.name }}</h4>
+                  <p>{{ u.description }}</p>
+                  <button class="btn btn-primary" ng-disabled="!u.is_available()" ng-click="uc.upgrade(u)">Buy <small>({{ u.cost | currency }})</small></button>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <!-- Achievements -->
+          <div class="tab-pane" id="achievements" ng-controller="AchievementsController as ac">
+            <ul class="list-group">
+              <li class="list-group-item" ng-repeat="a in ac.achievements | reverse">
+                <span class="glyphicon {{ a.icon }}"></span>
+                  {{ a.description }}
+                <span class="badge">{{ a.time }}</span>
+              </li>
+            </ul>
+          </div>
+          <!-- Save -->
+          <div class="tab-pane" id="save" ng-controller="SaveController">
+            <p>Last saved: {{ lastSaved | date : 'H:mm:ss' }}</p>
+            <p><button class="btn btn-primary" ng-click="saveNow()"><i class="fa fa-floppy-o"></i> Save now!</button></p>
+            <p><button class="btn btn-danger" ng-click="restart()"><i class="fa fa-refresh"></i> Restart</button></p>
+          </div>
+        <!-- About -->
+          <div class="tab-pane" id="about">
+            <h4>Particle Clicker</h4>
+            <p>Particle Clicker is a game that was made during the <a href="https://webfest.web.cern.ch">CERN Webfest 2014</a>. The idea is borrowed from <a href="http://orteil.dashnet.org/cookieclicker/">Cookie Clicker</a>, an amazing and addictive cookie-themed game.</p>
+            <img class="pull-right" width="200" src="http://www.citizencyberscience.net/wiki/images/1/1b/Cernwebfest.png" alt="">
+            <h5>Libraries</h5>
+            <p>This game is realised using a few libraries. Those are</p>
+            <ul>
+              <li><a href="http://angularjs.org">AngularJS</a></li>
+              <li><a href="http://getbootstrap.com/">Bootstrap</a></li>
+              <li><a href="http://fortawesome.github.io/">Fontawesome</a></li>
+              <li><a href="http://jquery.com">jQuery</a></li>
+              <li><a href="http://imulus.github.io/retinajs/">retina.js</a></li>
+            </ul>
+            <h5>Authors</h5>
+            <p>Feel free to get in touch with us via GitHub or by shooting us an email. Our addresses all follow the pattern name.surname@cern.ch.</p>
+            <ul>
+              <li><a href="https://github.com/gbiro">Gabor Biro</a></li>
+              <li><a href="https://github.com/ibab">Igor Babuschkin</a></li>
+              <li><a href="https://github.com/kdungs">Kevin Dungs</a></li>
+              <li><a href="https://github.com/ntadej">Tadej Novak</a></li>
+              <li><a href="https://github.com/zhangjiannan">Jiannan Zhang</a></li>
+            </ul>
+          </div>
+        </div> <!-- .tab-content -->
+      </div> <!-- .col-xs-6 -->
+
+      <div class="col-xs-6 scrollable" ng-controller="LabController as lc">
+        <button class="btn btn-primary btn-sm pull-right"><i class="fa fa-edit"></i></button>
+        <h4>{{ lc.lab.name }}</h4>
+        <hr>
+        <button class="pull-right btn btn-info" ng-click="lc.showDetectorInfo()"><span class="glyphicon glyphicon-info-sign"></span></button>
+        <div id="detector" ng-controller="DetectorController as dc">
+          <canvas id="detector-core" width="400" height="400">
+            Your detector. Click on it to generate events.
+          </canvas>
+          <canvas ng-click="dc.click()" id="detector-events" width="400" height="400">
+            Your detector. Click on it to generate events.
+          </canvas>
+        </div>
+        <div class="row" id="Status">
+          <div class="col-xs-4 text-center">
+            <strong>Data</strong>
+            <br>
+            {{ lc.lab.data | niceNumber }}
+            <div class="update-value" id="update-data"></div>
+          </div>
+          <div class="col-xs-4 text-center">
+            <strong>Reputation</strong>
+            <br>
+            {{ lc.lab.reputation | niceNumber }}
+            <div class="update-value" id="update-reputation"></div>
+          </div>
+          <div class="col-xs-4">
+            <span class="text-center"><strong>Funding</strong></span>
+            <br>
+            {{ lc.lab.money | currency }}
+            <div class="update-value" id="update-funding"></div>
+          </div>
+        </div>
+      </div>
+
+    <div class="modal fade" id="infoBox" tabindex="-1" role="dialog" aria-labelledby="infoBoxLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title" id="infoBoxLabel"></h4>
+          </div>
+          <div class="modal-body"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="achievements-container" class="col-xs-3"></div>
+    <div id="messages-container" class="col-xs-3"></div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.17/angular.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="js/external/jquery.cookie-1.4.1.min.js"></script>
+    <script src="js/external/retina.js"></script>
+
+    <script src="js/storage.js"></script>
+    <script src="js/helpers.js"></script>
+    <script src="js/analytics.js"></script>
+    <script src="js/gameobjects.js"></script>
+    <script src="js/event.js"></script>
+    <script src="js/detector.js"></script>
+    <script src="js/achievements.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/game.js"></script>
+  </body>
+</html>

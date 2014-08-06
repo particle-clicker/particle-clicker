@@ -1,0 +1,11 @@
+.tab-title {
+  display: none;
+}
+
+.active .tab-title {
+  display: block;
+}
+
+.scrollable {
+  margin-top: -25px;
+}

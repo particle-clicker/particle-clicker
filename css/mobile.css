@@ -1,3 +1,8 @@
+.container-fluid {
+  margin: 0;
+  padding: 0;
+}
+
 .tab-title {
   display: none;
 }
@@ -7,5 +12,28 @@
 }
 
 .scrollable {
-  margin-top: -25px;
+  margin: 0;
+  padding: 0;
+}
+
+.butnotscrollable {
+  overflow: hidden;
+}
+
+#Status {
+  font-size: inherit;
+  padding: 10px;
+}
+
+.tab-content {
+  padding: 10px;
+}
+
+.on-top {
+  z-index: 1000;
+}
+
+.thatannoyingbutton {
+  position: absolute;
+  right: 0;
 }

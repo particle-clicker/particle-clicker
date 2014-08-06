@@ -24,6 +24,25 @@
     <!-- End Google Analytics -->
   </head>
   <body>
+    <div id="MobileWarning" class="modal fade bg-warning">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title">Mobile version</h4>
+          </div>
+          <div class="modal-body">
+            <p>You seem to be using a mobile device. The experience with this website might be very unpleasant for you. This is why we made a mobile version of Particle Clicker.
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Understood, but I want to stay here!</button>
+            <a href="mobile.html" class="btn btn-primary">Great, take me there!</a>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+  
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -223,5 +242,6 @@
     <script src="js/achievements.js"></script>
     <script src="js/ui.js"></script>
     <script src="js/game.js"></script>
+    <script src="js/warnmobile.js></script>
   </body>
 </html>

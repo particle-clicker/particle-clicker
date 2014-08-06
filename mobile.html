@@ -10,6 +10,9 @@
     <meta property="og:description" content="An addictive incremental game that was made during the CERN Webfest 2014. It takes the player on a historic journey through modern particle physics.">
     <meta property="og:image" content="https://avatars2.githubusercontent.com/u/8345868">
 
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">    
+
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -83,23 +86,25 @@
           <div class="tab-pane" id="achievements" ng-controller="AchievementsController as ac">
             <ul class="list-group">
               <li class="list-group-item" ng-repeat="a in ac.achievements | reverse">
+                <span class="badge">{{ a.time }}</span>
                 <span class="glyphicon {{ a.icon }}"></span>
                   {{ a.description }}
-                <span class="badge">{{ a.time }}</span>
               </li>
             </ul>
           </div>
           <!-- Save -->
           <div class="tab-pane" id="save" ng-controller="SaveController">
-            <p>Last saved: {{ lastSaved | date : 'H:mm:ss' }}</p>
+            <p class="lead">Last saved: {{ lastSaved | date : 'H:mm:ss' }}</p>
             <p><button class="btn btn-primary" ng-click="saveNow()"><i class="fa fa-floppy-o"></i> Save now!</button></p>
             <p><button class="btn btn-danger" ng-click="restart()"><i class="fa fa-refresh"></i> Restart</button></p>
           </div>
         <!-- About -->
           <div class="tab-pane" id="about">
             <h4>Particle Clicker</h4>
+            <p class="small">Version: 0.2.2.1 (mobile-beta)</p>
+            <p class="small bg-warning">This is a pre-release. If you encounter any bugs please report them using <a href="https://github.com/particle-clicker/particle-clicker/issues"><i class="fa fa-github"></i> GitHub issues</a></p>
             <p>Particle Clicker is a game that was made during the <a href="https://webfest.web.cern.ch">CERN Webfest 2014</a>. The idea is borrowed from <a href="http://orteil.dashnet.org/cookieclicker/">Cookie Clicker</a>, an amazing and addictive cookie-themed game.</p>
-            <img class="pull-right" width="200" src="http://www.citizencyberscience.net/wiki/images/1/1b/Cernwebfest.png" alt="">
+            <img width="200" src="http://www.citizencyberscience.net/wiki/images/1/1b/Cernwebfest.png" alt="">
             <h5>Libraries</h5>
             <p>This game is realised using a few libraries. Those are</p>
             <ul>
@@ -118,24 +123,14 @@
               <li><a href="https://github.com/ntadej">Tadej Novak</a></li>
               <li><a href="https://github.com/zhangjiannan">Jiannan Zhang</a></li>
             </ul>
+            <h5>Source</h5>
+            <p>The source code of this game is freely available on <a href="https://github.com/particle-clicker/particle-clicker"><i class="fa fa-github"></i> GitHub</a> under the terms of an MIT license.</p>
           </div>
         </div> <!-- .tab-content -->
       </div> <!-- .col-xs-6 -->
 
-      <div class="col-xs-6 scrollable" ng-controller="LabController as lc">
-        <button class="btn btn-primary btn-sm pull-right"><i class="fa fa-edit"></i></button>
-        <h4>{{ lc.lab.name }}</h4>
-        <hr>
-        <button class="pull-right btn btn-info" ng-click="lc.showDetectorInfo()"><span class="glyphicon glyphicon-info-sign"></span></button>
-        <div id="detector" ng-controller="DetectorController as dc">
-          <canvas id="detector-core" width="400" height="400">
-            Your detector. Click on it to generate events.
-          </canvas>
-          <canvas ng-click="dc.click()" id="detector-events" width="400" height="400">
-            Your detector. Click on it to generate events.
-          </canvas>
-        </div>
-        <div class="row" id="Status">
+      <div class="col-xs-6 scrollable butnotscrollable" ng-controller="LabController as lc">
+         <div class="row" id="Status">
           <div class="col-xs-4 text-center">
             <strong>Data</strong>
             <br>
@@ -155,6 +150,16 @@
             <div class="update-value" id="update-funding"></div>
           </div>
         </div>
+        <button class="pull-right btn btn-info on-top thatannoyingbutton" ng-click="lc.showDetectorInfo()"><span class="glyphicon glyphicon-info-sign"></span></button>
+        <div id="detector" ng-controller="DetectorController as dc">
+          <canvas id="detector-core" width="400" height="400">
+            Your detector. Click on it to generate events.
+          </canvas>
+          <canvas ng-click="dc.click()" id="detector-events" width="400" height="400">
+            Your detector. Click on it to generate events.
+          </canvas>
+        </div>
+       
       </div>
 
     <div class="modal fade" id="infoBox" tabindex="-1" role="dialog" aria-labelledby="infoBoxLabel" aria-hidden="true">
@@ -169,8 +174,8 @@
       </div>
     </div>
 
-    <div id="achievements-container" class="col-xs-3"></div>
-    <div id="messages-container" class="col-xs-3"></div>
+    <div class="on-top col-xs-6" id="achievements-container"></div>
+    <div class="on-top col-xs-6" id="messages-container"></div>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.17/angular.min.js"></script>

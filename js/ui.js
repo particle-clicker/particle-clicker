@@ -6,12 +6,13 @@ var UI = (function () {
   /** Resize the scrollable containers and make sure they are resized whenever
    * the window is resized. */
   $(function() {
+    var offset = 0;
     var h = $(window).height();
-    $('.scrollable').height(h - 50 + 'px');
+    $('.scrollable').height(h - offset + 'px');
     
     $(window).resize(function() {
       var h = $(window).height();
-      $('.scrollable').height(h - 50 + 'px');
+      $('.scrollable').height(h - offset + 'px');
     });
   });
 

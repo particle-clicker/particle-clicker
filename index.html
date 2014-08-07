@@ -101,7 +101,7 @@
         </ul>
       </div>
 
-      <div class="col-xs-5 scrollable" ng-controller="LabController as lc">
+      <div class="col-xs-5 scrollable prevent-select" ng-controller="LabController as lc">
         <input id="labname" value="{{ lc.lab.name }}" ng-model="lc.lab.name" ng-cloak>
         <hr>
         <button class="pull-right btn btn-info" ng-click="lc.showDetectorInfo()"><span class="glyphicon glyphicon-info-sign"></span></button>

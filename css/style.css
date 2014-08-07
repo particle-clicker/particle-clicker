@@ -100,7 +100,7 @@ h1 br {
   width: 99%;
 }
 
-.col-xs-5 {
+.prevent-select {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;

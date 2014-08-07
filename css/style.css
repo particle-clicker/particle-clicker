@@ -99,3 +99,7 @@ h1 br {
   line-height: 1;
   width: 99%;
 }
+
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none !important;
+}

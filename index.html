@@ -32,7 +32,12 @@
             <h4 class="modal-title">Mobile version</h4>
           </div>
           <div class="modal-body">
-            <p>You seem to be using a mobile device. The experience with this website might be very unpleasant for you. This is why we made a mobile version of Particle Clicker.</p>
+            <p>
+              You seem to be using a mobile device. The experience with this website might be very unpleasant for you. This is why we made a mobile version of Particle Clicker.
+            </p>
+            <p class="bg-warning">
+              This is an early release for you to play with. It's best played in landscape mode. If you find any bugs please report them on our <a href="https://github.com/particle-clicker/particle-clicker/issues"><i class="fa fa-github"></i> issue tracker</a>.
+            </p>
             <p class="small">Hint: If you use the "Save to home screen" function of your browser, you can even play the game in full screen mode.</p>
           </div>
           <div class="modal-footer">
@@ -176,9 +181,10 @@
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            <h4 class="modal-title" id="achievements-label">Achievements <span class="badge">{{ ac.achievements.length }} / {{ ac.achievementsAll.length }}</span></h4>
+            <h4 class="modal-title" id="achievements-label">Achievements</h4>
           </div>
           <div class="modal-body">
+            <p class="text-center"><strong>Progress</strong> <span class="label label-info">{{ ac.achievements.length }} / {{ ac.achievementsAll.length }}</span></p>
             <ul class="list-group">
               <li class="list-group-item" ng-repeat="a in ac.achievements | reverse">
                 <span class="glyphicon {{ a.icon }}"></span>
@@ -202,9 +208,11 @@
             <h4 class="modal-title" id="myModalLabel">Particle Clicker</h4>
           </div>
           <div class="modal-body">
-            <h5>About</h5>
+            <h4>About</h4>
+            <p class="small">Version: 0.3 (mobile-beta)</p>
+            <p class="small bg-warning">This is a pre-release. If you encounter any bugs please report them using <a href="https://github.com/particle-clicker/particle-clicker/issues"><i class="fa fa-github"></i> GitHub issues</a>. This game runs best in landscape mode. Performance of the event display may rely heavily on your hardware.</p>
             <p>Particle Clicker is a game that was made during the <a href="https://webfest.web.cern.ch">CERN Webfest 2014</a>. The idea is borrowed from <a href="http://orteil.dashnet.org/cookieclicker/">Cookie Clicker</a>, an amazing and addictive cookie-themed game.</p>
-            <img class="pull-right" width="200" src="http://www.citizencyberscience.net/wiki/images/1/1b/Cernwebfest.png" alt="">
+            <img width="200" src="http://www.citizencyberscience.net/wiki/images/1/1b/Cernwebfest.png" alt="">
             <h5>Libraries</h5>
             <p>This game is realised using a few libraries. Those are</p>
             <ul>
@@ -224,6 +232,8 @@
               <li><a href="https://github.com/ntadej">Tadej Novak</a></li>
               <li><a href="https://github.com/zhangjiannan">Jiannan Zhang</a></li>
             </ul>
+            <h5>Source</h5>
+            <p>The source code of this game is freely available on <a href="https://github.com/particle-clicker/particle-clicker"><i class="fa fa-github"></i> GitHub</a> under the terms of an MIT license.</p>
           </div>
         </div>
       </div>

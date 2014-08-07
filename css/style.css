@@ -28,25 +28,6 @@ h1 br {
    z-index: 1;
 }
 
-#ResearchHist {
-  margin: 20px;
-}
-
-.bar rect {
-  fill: steelblue;
-  shape-rendering: crispEdges;
-}
-
-.bar text {
-  fill: #fff;
-}
-
-.axis path, .axis line {
-  fill: none;
-  stroke: #000;
-  shape-rendering: crispEdges;
-}
-
 .scrollable {
   overflow: auto;
   padding-top: 50px;

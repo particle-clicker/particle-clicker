@@ -28,10 +28,10 @@ function ParticleEvent(type, count, external)
             break;
     }
 
-    this.draw(true);
+    this.draw(16, true);
 };
 
-ParticleEvent.prototype.draw = function(init)
+ParticleEvent.prototype.draw = function(duration, init)
 {
     init = typeof init !== 'undefined' ? init : false;
 
@@ -57,6 +57,7 @@ ParticleEvent.prototype.draw = function(init)
     ctx.restore();
 
     if (!init) {
-        this.alpha -= 0.02;
+        this.alpha -= 0.02 / 16 * duration;
     }
 };
+

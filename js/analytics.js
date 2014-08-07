@@ -70,6 +70,6 @@ var analytics =
             return;
         }
         
-        ga('send', 'event', category, action, label, value, {'screenName': analytics.screens.main });
+        //ga('send', 'event', category, action, label, value, {'screenName': analytics.screens.main });
     }
 };

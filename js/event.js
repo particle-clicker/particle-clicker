@@ -57,7 +57,7 @@ ParticleEvent.prototype.draw = function(duration, init)
     ctx.restore();
 
     if (!init) {
-        this.alpha -= 0.02 / 16 * duration;
+        this.alpha -= 0.03 / 16 * duration;
     }
 };
 

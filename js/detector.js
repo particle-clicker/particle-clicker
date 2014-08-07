@@ -79,11 +79,8 @@ var detector =
 
     animate: function(time)
     {
-        if (detector.lastRender == 0) {
-            detector.lastRender = typeof performance !== 'undefined' ? performance.now() : new Date().getTime();
-        }
         var duration = typeof time !== 'undefined' ? time - detector.lastRender : 16;
-        detector.lastRender = typeof performance !== 'undefined' ? performance.now() : new Date().getTime();
+        detector.lastRender = time;
 
         requestAnimFrame(detector.animate);
         detector.draw(duration);

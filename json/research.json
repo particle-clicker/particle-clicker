@@ -10,7 +10,7 @@
   },
   {
     "name": "J/ψ",
-    "description": "The J/ψ meson consists a c and an anti-c quark.",
+    "description": "The J/ψ meson consists of a c and an anti-c quark.",
     "reputation": 5,
     "cost": 100,
     "cost_increase": 1.45,
@@ -55,7 +55,7 @@
   },
   {
     "name": "Antihydrogen",
-    "description": "The lightest anti-atom, it consists and antiproton and a positron.",
+    "description": "The lightest anti-atom, it consists of an antiproton and a positron.",
     "reputation": 5000,
     "cost": 10000000,
     "cost_increase": 2.5,

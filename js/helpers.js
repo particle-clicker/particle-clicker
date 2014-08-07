@@ -17,19 +17,37 @@ var Helpers = (function() {
     return res;
   };
 
+  var SI_prefixes = [
+    { exp: 24, label: 'Y' },
+    { exp: 21, label: 'Z' },
+    { exp: 18, label: 'E' },
+    { exp: 15, label: 'P' },
+    { exp: 12, label: 'T' },
+    { exp:  9, label: 'B' },
+    { exp:  6, label: 'M' },
+    { exp:  3, label: 'k' }
+  ];
+
+  // pre-compute SI prefix magnitudes
+  for (var i = 0; i < SI_prefixes.length; i++) {
+    var prefix = SI_prefixes[i];
+    prefix.magnitude = Math.pow(10, prefix.exp);
+  }
+
   /** Format a number with proper postfix.
    */
   var formatNumberPostfix = function(number) {
     var abs = Math.abs(number);
-    if (abs >= Math.pow(10, 12)) {
-      number = (number / Math.pow(10, 12)).toFixed(1) + "T";
-    } else if (abs >= Math.pow(10, 9)) {
-      number = (number / Math.pow(10, 9)).toFixed(1) + "B";
-    } else if (abs >= Math.pow(10, 6)) {
-      number = (number / Math.pow(10, 6)).toFixed(1) + "M";
-    } else if (abs >= Math.pow(10, 3)) {
-      number = (number / Math.pow(10, 3)).toFixed(1) + "k";
-    } else {
+    var truncated = false;
+    for (var i = 0; i < SI_prefixes.length; i++) {
+      var prefix = SI_prefixes[i];
+      if (abs >= prefix.magnitude) {
+        number = (number / prefix.magnitude).toFixed(1) + prefix.label;
+        truncated = true;
+        break;
+      }
+    }
+    if (!truncated) {
       number = number.toFixed(0);
     }
     return number; 

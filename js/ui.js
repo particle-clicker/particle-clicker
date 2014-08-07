@@ -8,7 +8,7 @@ var UI = (function () {
    * Also introduce FastClick for faster clicking on mobile.
    */
   $(function() {
-    FastClick.apply(document.body);    
+    FastClick.attach(document.body);    
     
     var offset = 0;
     var h = $(window).height();

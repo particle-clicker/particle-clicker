@@ -101,6 +101,17 @@
   achievements.setList(Helpers.loadFile('json/achievements.json'));
   achievements.restore();
 
+  app.directive('noSelect', [function() {
+    return {
+      restrict: 'A',
+      link: function(scope, ele) {
+        ele.on('selectstart', function(e) {
+          e.preventDefault();
+        });
+      }
+    };
+  }]);
+
   app.controller('AchievementsController', function() {
     this.achievements = achievements.listSummary;
     this.achievementsAll = achievements.list;

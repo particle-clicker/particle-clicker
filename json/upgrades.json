@@ -441,7 +441,7 @@
 
   {
     "name": "Public Relations, lvl 1",
-    "description": "This is the top your career! Future research yields 1.2 times more reputation.",
+    "description": "This is the top of your career! Future research yields 1.2 times more reputation.",
     "cost": 5000000,
     "used": false,
     "type": "research",
@@ -452,7 +452,7 @@
   },
   {
     "name": "Public Relations, lvl 2",
-    "description": "This is the top your career! Future research yields 1.2 times more reputation.",
+    "description": "This is the top of your career! Future research yields 1.2 times more reputation.",
     "cost": 7500000,
     "used": false,
     "type": "research",

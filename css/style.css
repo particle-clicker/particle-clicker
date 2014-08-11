@@ -112,3 +112,16 @@ h1 br {
 [ng\:cloak], [ng-cloak], .ng-cloak {
   display: none !important;
 }
+
+.blink {
+  animation: blinker 1.0s cubic-bezier(.5, 0, 1, 1) infinite alternate;
+  -webkit-animation: blinker 1.0s cubic-bezier(.5, 0, 1, 1) infinite alternate;
+}
+@keyframes blinker {
+  from { opacity: 1; }
+  to { opacity: 0.25; }
+}
+@-webkit-keyframes blinker {
+  from { opacity: 1; }
+  to { opacity: 0.25; background: #f00; }
+}

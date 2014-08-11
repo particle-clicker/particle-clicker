@@ -21,11 +21,24 @@ var UI = (function () {
   });
 
   /** Show a bootstrap modal with dynamic content. */
-  var showModal = function(title, text) {
+  var showModal = function(title, text, level) {
     var $modal = $('#infoBox');
     $modal.find('#infoBoxLabel').html(title);
     $modal.find('.modal-body').html(text);
     $modal.modal({show: true});
+  };
+
+  /** Display only the elements with data-min-level above a certain
+   * threshold.
+   */
+  var showLevels = function(level) {
+    $('#infoBox').find('[data-min-level]').each(function() {
+      if (level >= $(this).data('min-level')) {
+        $(this).show();
+      } else {
+        $(this).hide();
+      }
+    });
   };
 
   var showUpdateValue = function(ident, num) {
@@ -92,6 +105,7 @@ var UI = (function () {
 
   return {
     showModal: showModal,
+    showLevels: showLevels,
     showUpdateValue: showUpdateValue,
     validateVersion: validateVersion
   }

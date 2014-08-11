@@ -6,7 +6,8 @@
     "cost": 10,
     "cost_increase": 1.4,
     "image": "assets/icons/png/CPV.png",
-    "info": "html/CPV.html"
+    "info": "html/CPV.html",
+    "info_levels": [1, 5, 10, 25]
   },
   {
     "name": "J/ψ",
@@ -15,7 +16,8 @@
     "cost": 100,
     "cost_increase": 1.45,
     "image": "assets/icons/png/Jpsi.png",
-    "info": "html/Jpsi.html"
+    "info": "html/Jpsi.html",
+    "info_levels": [1, 5, 10, 25]
   },
   {
     "name": "τ lepton",
@@ -24,7 +26,8 @@
     "cost": 2000,
     "cost_increase": 1.5,
     "image": "assets/icons/png/tau.png",
-    "info": "html/tau.html"
+    "info": "html/tau.html",
+    "info_levels": [1, 5, 10, 25]
   },
   {
     "name": "Beauty quark",
@@ -33,7 +36,8 @@
     "cost": 25000,
     "cost_increase": 1.55,
     "image": "assets/icons/png/b.png",
-    "info": "html/b.html"
+    "info": "html/b.html",
+    "info_levels": [1, 5, 10, 25]
   },
   {
     "name": "W and Z boson",
@@ -42,7 +46,8 @@
     "cost": 50000,
     "cost_increase": 1.6,
     "image": "assets/icons/png/weak.png",
-    "info": "html/weak.html"
+    "info": "html/weak.html",
+    "info_levels": [1, 5, 10, 25]
   },
   {
     "name": "Top quark",
@@ -51,7 +56,8 @@
     "cost": 2000000,
     "cost_increase": 2,
     "image": "assets/icons/png/t.png",
-    "info": "html/top.html"
+    "info": "html/top.html",
+    "info_levels": [1, 5, 10, 25]
   },
   {
     "name": "Antihydrogen",
@@ -60,7 +66,8 @@
     "cost": 10000000,
     "cost_increase": 2.5,
     "image": "assets/icons/png/antihydrogen.png",
-    "info": "html/antihydrogen.html"
+    "info": "html/antihydrogen.html",
+    "info_levels": [1, 5, 10, 25]
   },
   {
     "name": "B oscillations",
@@ -69,7 +76,8 @@
     "cost": 50000000,
     "cost_increase": 2.5,
     "image": "assets/icons/png/BBbar.png",
-    "info": "html/BBbar.html"
+    "info": "html/BBbar.html",
+    "info_levels": [1, 5, 10, 25]
   },
   {
     "name": "Higgs boson",
@@ -78,6 +86,7 @@
     "cost": 72500000,
     "cost_increase": 3,
     "image": "assets/icons/png/H.png",
-    "info": "html/H.html"
+    "info": "html/H.html",
+    "info_levels": [1, 5, 10, 25]
   }
 ]

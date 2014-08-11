@@ -95,7 +95,7 @@
               <p ng-show="r.level > 0" class="small">Research yields <strong>{{ r.reputation | niceNumber }}</strong> reputation.</p>
               <div class="btn-group">
               <button class="btn btn-primary" ng-disabled="!r.is_available()" ng-click="rc.doResearch(r)">Research <small>({{ r.cost | niceNumber }} data)</small></button>
-              <button class="btn btn-info" ng-show="r.level > 0" ng-click="r.showInfo()"><span class="glyphicon glyphicon-exclamation-sign"></span></button>
+              <button class="btn btn-info {{ r.interesting ? 'blink' : '' }}" ng-show="r.level > 0" ng-click="rc.showInfo(r)"><i class="fa fa-exclamation"></i></button>
             </div>
             </div>
           </li>

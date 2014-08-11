@@ -61,6 +61,7 @@ var GameObjects = (function() {
    */
   var researchPrototype = {
     level: 0,
+    interesting: false,
     is_visible: function() {
       return this.level > 0 || lab.data >= this.cost * .7;
     },
@@ -70,7 +71,10 @@ var GameObjects = (function() {
     research: function() {
       if (lab.research(this.cost, this.reputation)) {
         this.level++;
-        analytics.sendEvent(analytics.events.categoryResearch, analytics.events.actionResearch, this.name, this.level);
+        if (this.info_levels.length > 0 && this.level === this.info_levels[0]) {
+          this.interesting = true;
+          this.info_levels.splice(0, 1);
+        }
         var oldCost = this.cost;
         this.cost = Math.round(this.cost * this.cost_increase);
         return oldCost;
@@ -81,11 +85,9 @@ var GameObjects = (function() {
       if (!this._info) {
         this._info = Helpers.loadFile(this.info);
       }
+      this.interesting = false;
       return this._info;
     },
-    showInfo: function() {
-      UI.showModal(this.name, this.getInfo());
-    }
   };
   var research = $.extend([], Helpers.loadFile('json/research.json'),
                           ObjectStorage.load('research'));

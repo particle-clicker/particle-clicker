@@ -62,7 +62,7 @@
     }, 1000);
   }]);
 
-  app.controller('ResearchController', function() {
+  app.controller('ResearchController', ['$compile', function($compile) {
     this.research = research;
     this.doResearch = function(item) {
       var cost = item.research();
@@ -72,9 +72,19 @@
         achievements.update('research', item.name, 1);
         UI.showUpdateValue("#update-data", -cost);
         UI.showUpdateValue("#update-reputation", item.reputation);
+        analytics.sendEvent(
+          analytics.events.categoryResearch,
+          analytics.events.actionResearch,
+          item.name,
+          item.level
+        );
       }
     };
-  });
+    this.showInfo = function(r) {
+      UI.showModal(r.name, r.getInfo());
+      UI.showLevels(r.level);
+    };
+  }]);
 
   app.controller('HRController', function() {
     this.workers = workers;
@@ -107,7 +117,8 @@
     this.achievementsAll = achievements.list;
   });
 
-  app.controller('SaveController', ['$scope', '$interval', function($scope, $interval) {
+  app.controller('SaveController',
+      ['$scope', '$interval', function($scope, $interval) {
     $scope.lastSaved = new Date();
     $scope.saveNow = function() {
       GameObjects.saveAll();
@@ -115,7 +126,9 @@
       achievements.lastSave = $scope.lastSaved.getTime();
     };
     $scope.restart = function() {
-      if (window.confirm('Do you really want to restart the game? All progress will be lost.')) {
+      if (window.confirm(
+        'Do you really want to restart the game? All progress will be lost.'
+      )) {
         ObjectStorage.clear();
         window.location.reload(true);
       }

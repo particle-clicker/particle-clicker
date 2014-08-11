@@ -76,18 +76,25 @@ h1 br {
   position: relative;
 }
 
+.update-plus, .update-minus {
+  position: absolute;
+  right: 5px;
+  bottom: 0;
+  opacity: 1;
+  transition: all 500ms;
+}
+
 .update-plus {
   color: green;
-  float: left;
-  right: 5px;
-  position: absolute;
 }
 
 .update-minus {
   color: red;
-  float: left;
-  right: 5px;
-  position: absolute;
+}
+
+.rise {
+  bottom: 30px;
+  opacity: 0;
 }
 
 #labname {

@@ -297,7 +297,7 @@ var detector =
             if (detector.events.list[e].alpha > 0) {
                 detector.events.list[e].draw(duration);
             } else {
-                del = detector.events.list[e].count;
+                del = e;
             }
         }
 

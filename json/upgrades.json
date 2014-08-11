@@ -417,7 +417,7 @@
 
   {
     "name": "Public Relations, lvl 1",
-    "description": "You give lectures about this very important part of the Standard Model! Future research yields 1.2 times more reputation.",
+    "description": "You give lectures about the W and Z boson! Future research yields 1.2 times more reputation.",
     "cost": 250000,
     "used": false,
     "type": "research",
@@ -429,7 +429,7 @@
 
   {
     "name": "Public Relations, lvl 2",
-    "description": "You give lectures about this very important part of the Standard Model! Future research yields 1.2 times more reputation.",
+    "description": "You give lectures about the W and Z boson! Future research yields 1.2 times more reputation.",
     "cost": 1000000,
     "used": false,
     "type": "research",
@@ -533,7 +533,7 @@
   },
   {
     "name": "Public Relations, lvl 1",
-    "description": "You've found the last missing element of the Standard Model! Future research yields 1.2 times more reputation.",
+    "description": "You've found the last missing element of the Standard Model, the Higgs Boson! Future research yields 1.2 times more reputation.",
     "cost": 90000000,
     "used": false,
     "type": "research",
@@ -544,7 +544,7 @@
   },
   {
     "name": "Public Relations, lvl 2",
-    "description": "You've found the last missing element of the Standard Model! Future research yields 1.2 times more reputation.",
+    "description": "You've found the last missing element of the Standard Model, the Higgs Boson! Future research yields 1.2 times more reputation.",
     "cost": 110000000,
     "used": false,
     "type": "research",

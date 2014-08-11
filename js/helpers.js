@@ -18,21 +18,15 @@ var Helpers = (function() {
   };
 
   var SI_prefixes = [
-    { exp: 24, label: 'Y' },
-    { exp: 21, label: 'Z' },
-    { exp: 18, label: 'E' },
-    { exp: 15, label: 'P' },
-    { exp: 12, label: 'T' },
-    { exp:  9, label: 'B' },
-    { exp:  6, label: 'M' },
-    { exp:  3, label: 'k' }
+    { magnitude: 1e24, label: 'Y' },
+    { magnitude: 1e21, label: 'Z' },
+    { magnitude: 1e18, label: 'E' },
+    { magnitude: 1e15, label: 'P' },
+    { magnitude: 1e12, label: 'T' },
+    { magnitude:  1e9, label: 'B' },
+    { magnitude:  1e6, label: 'M' },
+    { magnitude:  1e3, label: 'k' }
   ];
-
-  // pre-compute SI prefix magnitudes
-  for (var i = 0; i < SI_prefixes.length; i++) {
-    var prefix = SI_prefixes[i];
-    prefix.magnitude = Math.pow(10, prefix.exp);
-  }
 
   /** Format a number with proper postfix.
    */

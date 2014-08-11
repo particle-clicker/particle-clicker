@@ -23,7 +23,7 @@ var Helpers = (function() {
     { magnitude: 1e18, label: 'E' },
     { magnitude: 1e15, label: 'P' },
     { magnitude: 1e12, label: 'T' },
-    { magnitude:  1e9, label: 'B' },
+    { magnitude:  1e9, label: 'G' },
     { magnitude:  1e6, label: 'M' },
     { magnitude:  1e3, label: 'k' }
   ];

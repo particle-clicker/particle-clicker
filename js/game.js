@@ -94,6 +94,7 @@
     this.upgrade = function(upgrade) {
       if (upgrade.buy()) {
         achievements.update('count', 'moneyUpgrades', upgrade.cost);
+        UI.showUpdateValue("#update-funding", upgrade.cost);
       }
     }
   });

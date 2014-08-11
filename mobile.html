@@ -54,7 +54,8 @@
                 <img ng-hide="r.level > 0" class="pull-left" class="media-object" src="assets/icons/png/unknown.png" alt="">
                 <div class="media-body">
                   <h4 class="media-heading">{{ r.level > 0 ? r.name : '?????' }} <span ng-show="r.level > 0" class="badge">Level {{ r.level }}</span></h4>
-                  <p ng-show="r.level > 0">{{ r.description }} Researching it will give you {{ r.reputation | niceNumber }} reputation.</p>
+                  <p ng-show="r.level > 0">{{ r.description }}</p>
+                  <p ng-show="r.level > 0">Research yields {{ r.reputation | niceNumber }} reputation.</p>
                   <div class="btn-group">
                   <button class="btn btn-primary" ng-disabled="!r.is_available()" ng-click="rc.doResearch(r)">Research <small>({{ r.cost | niceNumber }} data)</small></button>
                   <button class="btn btn-info" ng-show="r.level > 0" ng-click="r.showInfo()"><span class="glyphicon glyphicon-exclamation-sign"></span></button>
@@ -69,7 +70,8 @@
               <li class="media" ng-repeat="w in hrc.workers" ng-show="w.is_visible()">
                 <div class="media-body">
                   <h4 class="media-heading">{{ w.name }} <span ng-show="w.hired > 0" class="badge">{{ w.hired | niceNumber }}</span></h4>
-                  <p ng-show="w.hired > 0">{{ w.description }} They produce {{ w.rate | niceNumber }} data per second.</p>
+                  <p ng-show="w.hired > 0">{{ w.description }}</p>
+                  <p ng-show="w.hired > 0" class="small">Produce {{ w.rate | niceNumber }} data per second.</p>
                   <button class="btn btn-primary" ng-disabled="!w.is_available()" ng-click="hrc.hire(w)">Hire <small>({{ w.cost | currency }})</small></button>
                 </div>
               </li>
@@ -78,11 +80,12 @@
           <!-- Upgrades -->
           <div class="tab-pane" id="upgrades" ng-controller="UpgradesController as uc">
             <ul class="media-list" ng-cloak>
-              <li class="media" ng-repeat="u in uc.upgrades" ng-show="u.is_visible()">
+              <li class="media" ng-repeat="u in uc.upgrades" ng-show="u.isVisible()">
                 <div class="media-body">
-                  <h4 class="media-heading">{{ u.name }}</h4>
+                  <h4 class="media-heading">{{ u.name }} <i class="fa {{ u.icon }}"></i></h4>
                   <p>{{ u.description }}</p>
-                  <button class="btn btn-primary" ng-disabled="!u.is_available()" ng-click="uc.upgrade(u)">Buy <small>({{ u.cost | currency }})</small></button>
+                  <p class="small">{{ u.effect }}</p>
+                  <button class="btn btn-primary" ng-disabled="!u.isAvailable()" ng-click="uc.upgrade(u)">Buy <small>({{ u.cost | currency }})</small></button>
                 </div>
               </li>
             </ul>

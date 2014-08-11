@@ -5,6 +5,14 @@
  * found in the localStorage.
  */
 var GameObjects = (function() {
+  var allObjects = {
+    push: function(key_property, list) {
+      for (var i = 0; i < list.length; i++) {
+        this[list[i][key_property]] = list[i];
+      }
+    }
+  };
+
   /** Lab
    */
   var labPrototype = {
@@ -47,6 +55,7 @@ var GameObjects = (function() {
     }
   };
   var lab = $.extend({}, labPrototype, ObjectStorage.load('lab'));
+  allObjects['lab'] = lab;
 
   /** Research
    */
@@ -83,6 +92,7 @@ var GameObjects = (function() {
   research = research.map(function(item) {
     return $.extend({}, researchPrototype, item);
   });
+  allObjects.push('name', research);
 
 
   /** Workers
@@ -111,58 +121,46 @@ var GameObjects = (function() {
   workers = workers.map(function(worker) {
     return $.extend({}, workersPrototype, worker);
   });
+  allObjects.push('name', workers);
 
 
   /** Upgrades
    */
   var upgradesPrototype = {
-    getReceiver: function() {
-      if (this.type === "detector") {
-        return lab.detector;
-      } else if (this.type === "reputation"){
-        return lab.factor;
-      } else {
-        var context;
-        if (this.type === "research") { context = research; }
-        else if (this.type === "hr") { context = workers; }
-        else { return null; }
-        for (var i = 0; i < context.length; i++) {
-          if (context[i].name === this.receiver) {
-            return context[i];
-          }
+    _visible: false,
+    _used: false,
+    meetsRequirements: function() {
+      for (var i = 0; i < this.requirements.length; i++) {
+        var req = this.requirements[i];
+        if (allObjects[req.key][req.property] < req.threshold) {
+          return false;
         }
-        return null;
       }
+      return true;
     },
-    hasReceiver: function() {
-      if (this.type === "detector" || this.type === "reputation") {
+    isAvailable: function() {
+      if (!this._used && lab.money >= this.cost && this.meetsRequirements()) {
         return true;
-      }
-      var rec = this.getReceiver();
-      if (this.type === "research") {
-        return rec.level > 0;
-      } else if (this.type === "hr") {
-        return rec.hired > 0;
       }
       return false;
     },
-    is_visible: function() {
-      return !this.used && this.hasReceiver() && lab.money >= this.cost * .7;
-    },
-    is_available: function() {
-      return !this.used && this.hasReceiver() && lab.money >= this.cost;
+    isVisible: function() {
+      if (!this._used && (this._visible || lab.money >= this.cost * .7 && this.meetsRequirements())) {
+        this._visible = true;
+        return true;
+      }
+      return false;
     },
     buy: function() {
-      if (!this.used && lab.buy(this.cost)) {
-        this.used = true;
-        analytics.sendEvent(analytics.events.categoryUpgrades, analytics.events.actionBuy, this.name, 1);
-        var rec = this.getReceiver();
-        if (rec) {
-          rec[this.property] = rec[this.property] * this.factor + this.constant;
+      if (!this._used && lab.buy(this.cost)) {
+        for (var i = 0; i < this.targets.length; i++) {
+          var t = this.targets[i];
+          allObjects[t.key][t.property] *= this.factor || 1;
+          allObjects[t.key][t.property] += this.constant || 0;
         }
-        return true;
+        this._used = true;
+        this._visible = false;
       }
-      return false;
     }
   };
   var upgrades = $.extend([], Helpers.loadFile('json/upgrades.json'),
@@ -170,6 +168,7 @@ var GameObjects = (function() {
   upgrades = upgrades.map(function(upgrade) {
     return $.extend({}, upgradesPrototype, upgrade);
   });
+  allObjects.push('name', upgrades);
 
 
   /** Save all the game objects at once.
@@ -187,6 +186,6 @@ var GameObjects = (function() {
     research: research,
     workers: workers,
     upgrades: upgrades,
-    saveAll: saveAll
+    saveAll: saveAll,
   }
 })();

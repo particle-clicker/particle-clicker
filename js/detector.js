@@ -301,7 +301,7 @@ var detector =
             }
         }
 
-        if (del >= 0) {
+        if (del > 0) {
             detector.events.list.splice(0, del);
         }
     }

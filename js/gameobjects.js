@@ -165,7 +165,9 @@ var GameObjects = (function() {
       return false;
     }
   };
-  var upgrades = $.extend([], Helpers.loadFile('json/upgrades.json'),
+  var upgrades_data = Helpers.loadFile('json/upgrades.json')
+  upgrades_data.sort(function(a, b){return a.cost-b.cost})
+  var upgrades = $.extend([], upgrades_data,
                          ObjectStorage.load('upgrades'));
   upgrades = upgrades.map(function(upgrade) {
     return $.extend({}, upgradesPrototype, upgrade);

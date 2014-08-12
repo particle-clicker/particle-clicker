@@ -17,19 +17,31 @@ var Helpers = (function() {
     return res;
   };
 
+  var SI_prefixes = [
+    { magnitude: 1e24, label: 'Y' },
+    { magnitude: 1e21, label: 'Z' },
+    { magnitude: 1e18, label: 'E' },
+    { magnitude: 1e15, label: 'P' },
+    { magnitude: 1e12, label: 'T' },
+    { magnitude:  1e9, label: 'G' },
+    { magnitude:  1e6, label: 'M' },
+    { magnitude:  1e3, label: 'k' }
+  ];
+
   /** Format a number with proper postfix.
    */
   var formatNumberPostfix = function(number) {
     var abs = Math.abs(number);
-    if (abs >= Math.pow(10, 12)) {
-      number = (number / Math.pow(10, 12)).toFixed(1) + "T";
-    } else if (abs >= Math.pow(10, 9)) {
-      number = (number / Math.pow(10, 9)).toFixed(1) + "B";
-    } else if (abs >= Math.pow(10, 6)) {
-      number = (number / Math.pow(10, 6)).toFixed(1) + "M";
-    } else if (abs >= Math.pow(10, 3)) {
-      number = (number / Math.pow(10, 3)).toFixed(1) + "k";
-    } else {
+    var truncated = false;
+    for (var i = 0; i < SI_prefixes.length; i++) {
+      var prefix = SI_prefixes[i];
+      if (abs >= prefix.magnitude) {
+        number = (number / prefix.magnitude).toFixed(1) + prefix.label;
+        truncated = true;
+        break;
+      }
+    }
+    if (!truncated) {
       number = number.toFixed(0);
     }
     return number; 

@@ -113,15 +113,23 @@ h1 br {
   display: none !important;
 }
 
+
+/** Annoying blink effect to get user's attention. */
 .blink {
   animation: blinker 1.0s cubic-bezier(.5, 0, 1, 1) infinite alternate;
   -webkit-animation: blinker 1.0s cubic-bezier(.5, 0, 1, 1) infinite alternate;
 }
+
 @keyframes blinker {
   from { opacity: 1; }
   to { opacity: 0.25; }
 }
+
 @-webkit-keyframes blinker {
   from { opacity: 1; }
-  to { opacity: 0.25; background: #f00; }
+  to {
+    opacity: 0.25;
+    background: #f00;
+    border-color: #900;
+  }
 }

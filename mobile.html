@@ -55,10 +55,10 @@
                 <div class="media-body">
                   <h4 class="media-heading">{{ r.level > 0 ? r.name : '?????' }} <span ng-show="r.level > 0" class="badge">Level {{ r.level }}</span></h4>
                   <p ng-show="r.level > 0">{{ r.description }}</p>
-                  <p ng-show="r.level > 0">Research yields {{ r.reputation | niceNumber }} reputation.</p>
+                  <p ng-show="r.level > 0" class="small">Research yields <strong>{{ r.reputation | niceNumber }}</strong> reputation.</p>
                   <div class="btn-group">
                   <button class="btn btn-primary" ng-disabled="!r.is_available()" ng-click="rc.doResearch(r)">Research <small>({{ r.cost | niceNumber }} data)</small></button>
-                  <button class="btn btn-info" ng-show="r.level > 0" ng-click="r.showInfo()"><span class="glyphicon glyphicon-exclamation-sign"></span></button>
+                  <button class="btn btn-info {{ r.interesting ? 'blink' : '' }}" ng-show="r.level > 0" ng-click="rc.showInfo(r)"><i class="fa fa-exclamation"></i></button>
                 </div>
                 </div>
               </li>
@@ -110,7 +110,13 @@
         <!-- About -->
           <div class="tab-pane" id="about">
             <div class="btn-group pull-right">
-              <a class="btn btn-default" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fcern.ch%2Fparticle-clicker&t=Particle%20Clicker" target="_blank" title="Share on Facebook"><i class="fa fa-facebook"></i></a>
+              <div class="btn-group">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><i class="fa fa-facebook"></i> <span class="caret"></span></button>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="https://www.facebook.com/particleclicker" target="_blank"><i class="fa fa-thumbs-up"></i> Like</a></li>
+                  <li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fcern.ch%2Fparticle-clicker&t=Particle%20Clicker" target="_blank"><i class="fa fa-share"></i> Share</a></li>
+                </ul>
+              </div>
               <a class="btn btn-default" href="https://twitter.com/share?url=http%3A%2F%2Fcern.ch%2Fparticle-clicker&t=Particle%20Clicker&text=Particle%20Clicker%3A%20An%20addictive%20incremental%20game%20that%20was%20made%20during%20the%20CERN%20Webfest%202014.%20%23particleclicker" target="_blank" title="Share on Twitter"><i class="fa fa-twitter"></i></a>
               <a class="btn btn-default" href="https://plus.google.com/share?url=http%3A%2F%2Fcern.ch%2Fparticle-clicker" target="_blank" title="Share on Google+"><i class="fa fa-google-plus"></i></a>
             </div>

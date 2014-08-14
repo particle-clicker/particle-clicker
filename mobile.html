@@ -36,16 +36,15 @@
     <div class="container-fluid">
       <div class="col-xs-6 scrollable">
         <!-- Nav tabs -->
-        <ul class="nav nav-tabs" role="tablist">
+        <ul id="TabList" class="nav nav-tabs" role="tablist">
           <li class="active"><a href="#research" role="tab" data-toggle="tab"><i class="fa fa-cogs"></i></a></li>
           <li><a href="#hr" role="tab" data-toggle="tab"><i class="fa fa-group"></i></a></li>
           <li><a href="#upgrades" role="tab" data-toggle="tab"><i class="fa fa-wrench"></i></a></li>
           <li><a href="#achievements" role="tab" data-toggle="tab"><i class="fa fa-trophy"></i></a></li>
-          <li><a href="#save" role="tab" data-toggle="tab"><i class="fa fa-floppy-o"></i></a></li>
           <li><a href="#about" role="tab" data-toggle="tab"><i class="fa fa-info"></i></a></li>
         </ul>
         <!-- Tab panes -->
-        <div class="tab-content">
+        <div id="TabContent" class="tab-content">
           <!-- Research -->
           <div class="tab-pane active" id="research" ng-controller="ResearchController as rc">
             <ul class="media-list" ng-cloak>
@@ -101,14 +100,16 @@
               </li>
             </ul>
           </div>
-          <!-- Save -->
-          <div class="tab-pane" id="save" ng-controller="SaveController">
-            <p class="lead">Last saved: <span ng-cloak>{{ lastSaved | date : 'H:mm:ss' }}<span></p>
-            <p><button class="btn btn-primary" ng-click="saveNow()"><i class="fa fa-floppy-o"></i> Save now!</button></p>
-            <p><button class="btn btn-danger" ng-click="restart()"><i class="fa fa-refresh"></i> Restart</button></p>
-          </div>
-        <!-- About -->
+          <!-- Save and About -->
           <div class="tab-pane" id="about">
+            <div ng-controller="SaveController">
+              <p class="small">Last saved: <span ng-cloak>{{ lastSaved | date : 'H:mm:ss' }}<span></p>
+              <div class="btn-group">
+                <button class="btn btn-primary btn-sm" ng-click="saveNow()"><i class="fa fa-floppy-o"></i> Save now!</button>
+                <button class="btn btn-danger btn-sm" ng-click="restart()"><i class="fa fa-refresh"></i> Restart</button>
+              </div>
+            </div>
+            <hr>
             <div class="btn-group pull-right">
               <div class="btn-group">
                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><i class="fa fa-facebook"></i> <span class="caret"></span></button>
@@ -158,13 +159,13 @@
             {{ lc.lab.data | niceNumber }}
             <div class="update-value" id="update-data"></div>
           </div>
-          <div class="col-xs-4 text-center">
-            <strong>Reputation</strong>
+          <div class="col-xs-3 text-center">
+            <strong>Rep.</strong>
             <br>
             {{ lc.lab.reputation | niceNumber }}
             <div class="update-value" id="update-reputation"></div>
           </div>
-          <div class="col-xs-4">
+          <div class="col-xs-5">
             <span class="text-center"><strong>Funding</strong></span>
             <br>
             {{ lc.lab.money | currency }}

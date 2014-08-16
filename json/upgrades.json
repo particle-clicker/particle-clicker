@@ -511,7 +511,7 @@
   },
   {
     "name": "Public Relations, lvl 1",
-    "description": "You know more about Top quark than everybody else. Future research yields 1.2 times more reputation.",
+    "description": "You know more about the Top quark than everybody else. Future research yields 1.2 times more reputation.",
     "cost": 50000000,
     "used": false,
     "type": "research",
@@ -522,7 +522,7 @@
   },
   {
     "name": "Public Relations, lvl 2",
-    "description": "You know more about Top quark then everybody else. Future research yields 1.2 times more reputation.",
+    "description": "You know more about the Top quark than everybody else. Future research yields 1.2 times more reputation.",
     "cost": 120000000,
     "used": false,
     "type": "research",

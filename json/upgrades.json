@@ -1,5 +1,6 @@
 [
   {
+    "key": "upgrade-thesissupervision",
     "name": "Thesis supervision",
     "description": "Somebody takes care of your PhD Students.",
     "effect": "PhD Students produce twice as much data per second.",
@@ -11,6 +12,7 @@
     "constant": 0
   },
   {
+    "key": "upgrade-owndesk",
     "name": "Own desk",
     "description": "Not having to share one is a blessing.",
     "effect": "PhD Students produce twice as much data per second.",
@@ -21,6 +23,7 @@
     "factor": 2
   },
   {
+    "key": "upgrade-coffee",
     "name": "Free coffee",
     "description": "Addictively delicious. Also free.",
     "effect": "All workers produce twice as much data per second.",

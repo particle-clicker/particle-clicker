@@ -1,14 +1,13 @@
-'use strict';
-
-/** Define some useful helpers that are used throughout the game.
+/** @module Helpers
+ * Define some useful helpers that are used throughout the game.
  */
 var Helpers = (function() {
+  'use strict';
   /** Load a file (usually JSON).
    */
   var loadFile = function(filename) {
     var res;
     $.ajax({
-      async: false,
       url : filename,
       success : function(data) {
         res = data;

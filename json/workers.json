@@ -1,44 +1,62 @@
 [
   {
+    "key": "workers-phdstudents",
     "name": "PhD Students",
     "description": "Cheap and enthusiastic manpower, they can save you a lot of work.",
-    "cost": 100,
     "cost_increase": 1.4,
-    "rate": 1
+    "state": {
+      "cost": 100,
+      "rate": 1
+    }
   },
   {
+    "key": "workers-postdocs",
     "name": "Postdocs",
     "description": "These brilliant minds are here only to serve your needs.",
-    "cost": 2000,
     "cost_increase": 1.4,
-    "rate": 5
+    "state": {
+      "cost": 2000,
+      "rate": 5
+    }
   },
   {
+    "key": "workers-fellows",
     "name": "Research Fellows",
     "description": "You pay them a lot. They work a lot.",
-    "cost": 50000,
     "cost_increase": 1.5,
-    "rate": 50
+    "state": {
+      "cost": 50000,
+      "rate": 50
+    }
   },
   {
+    "key": "workers-profs",
     "name": "Tenured Professors",
     "description": "They bring their own group along and are able to get a lot of work done.",
-    "cost": 1000000,
     "cost_increase": 1.6,
-    "rate": 100
+    "state": {
+      "cost": 1000000,
+      "rate": 100
+    }
   },
   {
+    "key": "workers-nobel",
     "name": "Nobel Prize Winners",
     "description": "They received their prize for a reason... Why don't you give them more money?",
-    "cost": 50000000,
     "cost_increase": 2,
-    "rate": 500
+    "state": {
+      "cost": 50000000,
+      "rate": 500
+    }
   },
   {
+    "key": "workers-summies",
     "name": "Summer Students",
     "description": "They are AWESOME. Their best ideas come between two parties.",
-    "cost": 99999999,
     "cost_increase": 3,
-    "rate": 1000
+    "state": {
+      "cost": 99999999,
+      "rate": 1000
+    }
   }
 ]

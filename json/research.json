@@ -1,92 +1,119 @@
 [
   {
+    "key": "research-cpv",
     "name": "CP violation",
     "description": "CP symmetry is broken!",
-    "reputation": 1,
-    "cost": 10,
     "cost_increase": 1.4,
     "image": "assets/icons/png/CPV.png",
     "info": "html/CPV.html",
-    "info_levels": [1, 5, 10, 25]
+    "state": {
+      "reputation": 1,
+      "cost": 10,
+      "info_levels": [1, 5, 10, 25]
+    }
   },
   {
+    "key": "research-jpsi",
     "name": "J/ψ",
     "description": "The J/ψ meson consists of a c and an anti-c quark.",
-    "reputation": 5,
-    "cost": 100,
     "cost_increase": 1.45,
     "image": "assets/icons/png/Jpsi.png",
     "info": "html/Jpsi.html",
-    "info_levels": [1, 5, 10, 25]
+    "state": {
+      "reputation": 5,
+      "cost": 100,
+      "info_levels": [1, 5, 10, 25]
+    }
   },
   {
+    "key": "research-tau",
     "name": "τ lepton",
     "description": "The third generation charged lepton.",
-    "reputation": 50,
-    "cost": 2000,
     "cost_increase": 1.5,
     "image": "assets/icons/png/tau.png",
     "info": "html/tau.html",
-    "info_levels": [1, 5, 10, 25]
+    "state": {
+      "reputation": 50,
+      "cost": 2000,
+      "info_levels": [1, 5, 10, 25]
+    }
   },
   {
+    "key": "research-beauty",
     "name": "Beauty quark",
     "description": "The third generation down-type quark.",
-    "reputation": 100,
-    "cost": 25000,
     "cost_increase": 1.55,
     "image": "assets/icons/png/b.png",
     "info": "html/b.html",
-    "info_levels": [1, 5, 10, 25]
+    "state": {
+      "reputation": 100,
+      "cost": 25000,
+      "info_levels": [1, 5, 10, 25]
+    }
   },
   {
+    "key": "research-weak",
     "name": "W and Z boson",
     "description": "The carriers of the weak force.",
-    "reputation": 200,
-    "cost": 50000,
     "cost_increase": 1.6,
     "image": "assets/icons/png/weak.png",
     "info": "html/weak.html",
-    "info_levels": [1, 5, 10, 25]
+    "state": {
+      "reputation": 200,
+      "cost": 50000,
+      "info_levels": [1, 5, 10, 25]
+    }
   },
   {
+    "key": "research-top",
     "name": "Top quark",
     "description": "The heaviest of the quarks.",
-    "reputation": 1000,
-    "cost": 2000000,
     "cost_increase": 2,
     "image": "assets/icons/png/t.png",
     "info": "html/top.html",
-    "info_levels": [1, 5, 10, 25]
+    "state": {
+      "reputation": 1000,
+      "cost": 2000000,
+      "info_levels": [1, 5, 10, 25]
+    }
   },
   {
+    "key": "research-antihydrogen",
     "name": "Antihydrogen",
     "description": "The lightest anti-atom, it consists of an antiproton and a positron.",
-    "reputation": 5000,
-    "cost": 10000000,
     "cost_increase": 2.5,
     "image": "assets/icons/png/antihydrogen.png",
     "info": "html/antihydrogen.html",
-    "info_levels": [1, 5, 10, 25]
+    "state": {
+      "reputation": 5000,
+      "cost": 10000000,
+      "info_levels": [1, 5, 10, 25]
+    }
   },
   {
+    "key": "research-boscillations",
     "name": "B oscillations",
     "description": "B mesons turn into their antiparticles and vice versa!",
-    "reputation": 5000,
-    "cost": 50000000,
     "cost_increase": 2.5,
     "image": "assets/icons/png/BBbar.png",
     "info": "html/BBbar.html",
-    "info_levels": [1, 5, 10, 25]
+    "state": {
+      "reputation": 5000,
+      "cost": 50000000,
+      "info_levels": [1, 5, 10, 25]
+    }
   },
   {
+    "key": "research-higgs",
     "name": "Higgs boson",
     "description": "Spontaneous symmetry breaking and Goldstone bosons sound familiar to you, right?",
-    "reputation": 10000,
-    "cost": 72500000,
     "cost_increase": 3,
     "image": "assets/icons/png/H.png",
     "info": "html/H.html",
-    "info_levels": [1, 5, 10, 25]
+    "state": {
+      "reputation": 10000,
+      "cost": 72500000,
+      "info_levels": [1, 5, 10, 25]
+    }
   }
 ]

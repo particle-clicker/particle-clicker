@@ -1,141 +1,53 @@
-'use strict';
-(function() {
-  var lab = GameObjects.lab;
-  var research = GameObjects.research;
-  var workers = GameObjects.workers;
-  var upgrades = GameObjects.upgrades;
+var Game = (function() {
+  'use strict';
 
-  UI.validateVersion(lab.version);
+  var Game = function() {
+    this.lab = new GameObjects.Lab();
+    this.research = null;
+    this.workers = null;
+    this.upgrades = null;
+    this.allObjects = {lab : this.lab};
+    this.loaded = false;
+  };
 
-  achievements.addResearch(research);
-  achievements.addWorkers(workers);
-  
-  var app = angular.module('particleClicker', []);
-
-  app.filter('niceNumber', ['$filter', function($filter) {
-    return Helpers.formatNumberPostfix;
-  }]);
-
-  app.filter('currency', ['$filter', function($filter) {
-    return function(input) {
-      return 'JTN ' + $filter('niceNumber')(input);
-    };
-  }]);
-
-  app.filter('reverse', ['$filter', function($filter) {
-    return function(items) {
-      return items.slice().reverse();
-    };
-  }]);
-
-  app.controller('DetectorController', function() {
-    this.click = function() {
-      lab.acquire(lab.detector.rate);
-      detector.addEvent();
-      achievements.update('count', 'clicks', 1);
-      achievements.update('count', 'data', lab.detector.rate);
-      UI.showUpdateValue("#update-data", lab.detector.rate);
-      return false;
-    };
-  });
-
-  app.controller('LabController', ['$interval', function($interval) {
-    this.lab = lab;
-    this.showDetectorInfo = function() {
-      if (!this._detectorInfo) {
-        this._detectorInfo = Helpers.loadFile('html/detector.html');
-      }
-      UI.showModal('Detector', this._detectorInfo);
-    };
-    $interval(function() {  // one tick
-      var grant = lab.getGrant();
-      achievements.update('count', 'money', grant);
-      UI.showUpdateValue("#update-funding", grant);
-      var sum = 0;
-      for (var i = 0; i < workers.length; i++) {
-        sum += workers[i].hired * workers[i].rate;
-      }
-      lab.acquire(sum);
-      achievements.update('count', 'data', sum);
-      UI.showUpdateValue("#update-data", sum);
-      detector.addEventExternal();
-    }, 1000);
-  }]);
-
-  app.controller('ResearchController', ['$compile', function($compile) {
-    this.research = research;
-    this.doResearch = function(item) {
-      var cost = item.research();
-      if (cost > 0) {
-        achievements.update('count', 'reputation', item.reputation);
-        achievements.update('count', 'dataSpent', cost);
-        achievements.update('research', item.name, 1);
-        UI.showUpdateValue("#update-data", -cost);
-        UI.showUpdateValue("#update-reputation", item.reputation);
-        analytics.sendEvent(
-          analytics.events.categoryResearch,
-          analytics.events.actionResearch,
-          item.name,
-          item.level
-        );
-      }
-    };
-    this.showInfo = function(r) {
-      UI.showModal(r.name, r.getInfo());
-      UI.showLevels(r.level);
-    };
-  }]);
-
-  app.controller('HRController', function() {
-    this.workers = workers;
-    this.hire = function(worker) {
-      var cost = worker.hire();
-      if (cost > 0) {
-        achievements.update('count', 'moneyWorkers', cost);
-        achievements.update('workers', worker.name, 1);
-        achievements.update('count', 'workers', 1);
-        UI.showUpdateValue("#update-funding", -cost);
-      }
-    };
-  });
-
-  app.controller('UpgradesController', function() {
-    this.upgrades = upgrades;
-    this.upgrade = function(upgrade) {
-      if (upgrade.buy()) {
-        achievements.update('count', 'moneyUpgrades', upgrade.cost);
-        UI.showUpdateValue("#update-funding", upgrade.cost);
-      }
+  Game.prototype.load = function() {
+    if (this.loaded) {
+      return;
     }
-  });
-
-  achievements.setList(Helpers.loadFile('json/achievements.json'));
-  achievements.restore();
-
-  app.controller('AchievementsController', function() {
-    this.achievements = achievements.listSummary;
-    this.achievementsAll = achievements.list;
-  });
-
-  app.controller('SaveController',
-      ['$scope', '$interval', function($scope, $interval) {
-    $scope.lastSaved = new Date();
-    $scope.saveNow = function() {
-      GameObjects.saveAll();
-      $scope.lastSaved = new Date();
-      achievements.lastSave = $scope.lastSaved.getTime();
-    };
-    $scope.restart = function() {
-      if (window.confirm(
-        'Do you really want to restart the game? All progress will be lost.'
-      )) {
-        ObjectStorage.clear();
-        window.location.reload(true);
+    var _this = this;
+    $.when($.get('json/research.json', function(jR) { _this.research = jR; }),
+           $.get('json/workers.json', function(jW) { _this.workers = jW; }),
+           $.get('json/upgrades.json', function(jU) { _this.upgrades = jU; }))
+        .then(function() {
+      // Turn JSON files into actual game objects and fill map of all objects
+      var makeGameObject = function(type, object) {
+        // It's okay to define this function here since load is only called
+        // once anyway...
+        var o = new type(object);
+        _this.allObjects[o.key] = o;
+        return o;
+      };
+      _this.research = _this.research.map(
+          function(r) { return makeGameObject(GameObjects.Research, r); });
+      _this.workers = _this.workers.map(
+          function(w) { return makeGameObject(GameObjects.Worker, w); });
+      _this.upgrades = _this.upgrades.map(
+          function(u) { return makeGameObject(GameObjects.Upgrade, u); });
+      // Load states from local store
+      for (var i = 0; i < _this.allObjects.length; i++) {
+        var o = _this.allObjects[i];
+        o.loadState(ObjectStorage.load(o.key));
       }
-    };
-    $interval($scope.saveNow, 10000);
-  }]);
+      _this.loaded = true;
+    });
+  };
 
-  analytics.init();
-  analytics.sendScreen(analytics.screens.main);
-})();
+  Game.prototype.save = function() {
+    // Save every object's state to local storage
+    for (var i = 0; i < this.allObjects.length; i++) {
+      ObjectStorage.save(this.allObjects[i].state);
+    }
+  };
+
+  return {Game : Game};
+}());

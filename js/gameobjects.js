@@ -28,7 +28,12 @@ var GameObjects = (function() {
                                factor : 5,
                                data : 0,
                                money : 0,
-                               reputation : 0
+                               reputation : 0,
+                               clicks : 0,
+                               moneyCollected : 0,
+                               moneySpent : 0,
+                               dataCollected : 0,
+                               dataSpent : 0
                              }
                            }]);
   };
@@ -40,14 +45,19 @@ var GameObjects = (function() {
   Lab.prototype.getGrant = function() {
     var addition = this.state.reputation * this.state.factor;
     this.state.money += addition;
+    this.state.moneyCollected += addition;
     return addition;
   };
 
-  Lab.prototype.acquireData = function(amount) { this.state.data += amount; };
+  Lab.prototype.acquireData = function(amount) {
+    this.state.data += amount;
+    this.state.dataCollected += amount;
+  };
 
   Lab.prototype.research = function(cost, reputation) {
     if (this.state.data >= cost) {
       this.state.data -= cost;
+      this.state.dataSpent += cost;
       this.state.reputation += reputation;
       return true;
     }
@@ -57,6 +67,7 @@ var GameObjects = (function() {
   Lab.prototype.buy = function(cost) {
     if (this.state.money >= cost) {
       this.state.money -= cost;
+      this.state.moneySpent += cost;
       return true;
     }
     return false;
@@ -208,6 +219,41 @@ var GameObjects = (function() {
     }
   };
 
+
+  /** @class Achievement
+   */
+  var Achievement = function(obj) {
+    GameObject.apply(this,
+                     [$.extend({}, obj, {state : {dateAchieved : null}})]);
+    this._allObjects = {};
+  };
+
+  Achievement.prototype = Object.create(GameObject.prototype);
+
+  Achievement.prototype.setRefAllGameObjects = function (allGameObjects) {
+    this._allObjects = allGameObjects;
+  };
+
+  Achievement.prototype.isAchieved = function() {
+    if (this.state.dateAchieved) {
+      return true;
+    }
+    if (this._allObjects.hasOwnProperty(this.targetKey) &&
+        this._allObjects[this.targetKey].state.hasOwnProperty(
+            this.targetProperty)) {
+      this.state.dateAchieved = new Date();
+      return true;
+    }
+    return false;
+  };
+
+
   // Expose classes in module.
-  return {Lab : Lab, Research : Research, Worker : Worker, Upgrade : Upgrade};
+  return {
+    Lab : Lab,
+    Research : Research,
+    Worker : Worker,
+    Upgrade : Upgrade,
+    Achievement : Achievement
+  };
 }());

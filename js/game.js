@@ -6,6 +6,7 @@ var Game = (function() {
     this.research = null;
     this.workers = null;
     this.upgrades = null;
+    this.achivements = null;
     this.allObjects = {lab : this.lab};
     this.loaded = false;
   };
@@ -17,8 +18,9 @@ var Game = (function() {
     var _this = this;
     $.when($.get('json/research.json', function(jR) { _this.research = jR; }),
            $.get('json/workers.json', function(jW) { _this.workers = jW; }),
-           $.get('json/upgrades.json', function(jU) { _this.upgrades = jU; }))
-        .then(function() {
+           $.get('json/upgrades.json', function(jU) { _this.upgrades = jU; }),
+           $.get('json/achievements.json',
+                 function(jA) { _this.achivements = jA; })).then(function() {
       // Turn JSON files into actual game objects and fill map of all objects
       var makeGameObject = function(type, object) {
         // It's okay to define this function here since load is only called
@@ -33,6 +35,11 @@ var Game = (function() {
           function(w) { return makeGameObject(GameObjects.Worker, w); });
       _this.upgrades = _this.upgrades.map(
           function(u) { return makeGameObject(GameObjects.Upgrade, u); });
+      _this.achivements = _this.achivements.map(function(a) {
+        var _a = makeGameObject(GameObjects.Achievement, a);
+        _a.setRefAllGameObjects(_this.allObjects);
+        return _a;
+      });
       // Load states from local store
       for (var i = 0; i < _this.allObjects.length; i++) {
         var o = _this.allObjects[i];

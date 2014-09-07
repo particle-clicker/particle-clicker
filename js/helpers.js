@@ -21,7 +21,7 @@ var Helpers = (function() {
    */
   var formatNumberPostfix = function(number) {
     if (typeof number !== "number") {
-      return -123;
+      return 0;
     }
     var abs = Math.abs(number);
     if (abs >= Math.pow(10, 12)) {

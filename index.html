@@ -87,16 +87,16 @@
         <h3><i class="fa fa-cogs"></i> Research</h3>
         <hr>
         <ul class="media-list" ng-cloak>
-          <li class="media" ng-repeat="r in rc.research" ng-show="r.is_visible()">
-            <img ng-show="r.level > 0" class="pull-left media-object" src="{{ r.image }}" alt="">
-            <img ng-hide="r.level > 0" class="pull-left media-object" src="assets/icons/png/unknown.png" alt="">
+          <li class="media" ng-repeat="r in rc.research" ng-show="rc.isVisible(r)">
+            <img ng-show="r.state.level > 0" class="pull-left media-object" src="{{ r.image }}" alt="">
+            <img ng-hide="r.state.level > 0" class="pull-left media-object" src="assets/icons/png/unknown.png" alt="">
             <div class="media-body">
-              <h4 class="media-heading">{{ r.level > 0 ? r.name : '?????' }} <span ng-show="r.level > 0" class="badge">Level {{ r.level }}</span></h4>
+              <h4 class="media-heading">{{ r.state.level > 0 ? r.name : '?????' }} <span ng-show="r.state.level > 0" class="badge">Level {{ r.state.level }}</span></h4>
               <p ng-show="r.level > 0">{{ r.description }}</p>
-              <p ng-show="r.level > 0" class="small">Research yields <strong>{{ r.reputation | niceNumber }}</strong> reputation.</p>
+              <p ng-show="r.level > 0" class="small">Research yields <strong>{{ r.state.reputation | niceNumber }}</strong> reputation.</p>
               <div class="btn-group">
-              <button class="btn btn-primary" ng-disabled="!r.is_available()" ng-click="rc.doResearch(r)">Research <small>({{ r.cost | niceNumber }} data)</small></button>
-              <button class="btn btn-info {{ r.interesting ? 'blink' : '' }}" ng-show="r.level > 0" ng-click="rc.showInfo(r)"><i class="fa fa-exclamation"></i></button>
+              <button class="btn btn-primary" ng-disabled="!rc.isAvailable(r)" ng-click="rc.doResearch(r)">Research <small>({{ r.state.cost | niceNumber }} data)</small></button>
+              <button class="btn btn-info {{ r.state.interesting ? 'blink' : '' }}" ng-show="r.state.level > 0" ng-click="rc.showInfo(r)"><i class="fa fa-exclamation"></i></button>
             </div>
             </div>
           </li>
@@ -104,7 +104,7 @@
       </div>
 
       <div class="col-xs-5 scrollable" ng-controller="LabController as lc">
-        <input id="labname" value="{{ lc.lab.name }}" ng-model="lc.lab.name" ng-cloak>
+        <input id="labname" value="{{ lc.lab.state.name }}" ng-model="lc.lab.state.name" ng-cloak>
         <hr>
         <button class="pull-right btn btn-info" ng-click="lc.showDetectorInfo()"><span class="glyphicon glyphicon-info-sign"></span></button>
         <div id="detector" ng-controller="DetectorController as dc">
@@ -119,19 +119,19 @@
           <div class="col-xs-4 text-center">
             <strong>Data</strong>
             <br>
-            {{ lc.lab.data | niceNumber }}
+            {{ lc.lab.state.data | niceNumber }}
             <div class="update-value" id="update-data"></div>
           </div>
           <div class="col-xs-4 text-center">
             <strong>Reputation</strong>
             <br>
-            {{ lc.lab.reputation | niceNumber }}
+            {{ lc.lab.state.reputation | niceNumber }}
             <div class="update-value" id="update-reputation"></div>
           </div>
           <div class="col-xs-4">
             <span class="text-center"><strong>Funding</strong></span>
             <br>
-            {{ lc.lab.money | currency }}
+            {{ lc.lab.state.money | currency }}
             <div class="update-value" id="update-funding"></div>
           </div>
         </div>
@@ -141,12 +141,12 @@
         <h3><i class="fa fa-users"></i> HR</h3>
         <hr>
         <ul class="media-list" ng-cloak>
-          <li class="media" ng-repeat="w in hrc.workers" ng-show="w.is_visible()">
+          <li class="media" ng-repeat="w in hrc.workers" ng-show="hrc.isVisible(w)">
             <div class="media-body">
-              <h4 class="media-heading">{{ w.name }} <span ng-show="w.hired > 0" class="badge">{{ w.hired | niceNumber }}</span></h4>
-              <p ng-show="w.hired > 0">{{ w.description }}</p>
-              <p ng-show="w.hired > 0" class="small">Produce <strong>{{ w.rate | niceNumber }}</strong> data per second.</p>
-              <button class="btn btn-primary" ng-disabled="!w.is_available()" ng-click="hrc.hire(w)">Hire <small>({{ w.cost | currency }})</small></button>
+              <h4 class="media-heading">{{ w.name }} <span ng-show="w.state.hired > 0" class="badge">{{ w.state.hired | niceNumber }}</span></h4>
+              <p ng-show="w.state.hired > 0">{{ w.description }}</p>
+              <p ng-show="w.state.hired > 0" class="small">Produce <strong>{{ w.state.rate | niceNumber }}</strong> data per second.</p>
+              <button class="btn btn-primary" ng-disabled="!hrc.isAvailable(w)" ng-click="hrc.hire(w)">Hire <small>({{ w.state.cost | currency }})</small></button>
             </div>
           </li>
         </ul>
@@ -156,12 +156,12 @@
         <h3><i class="fa fa-wrench"></i> Upgrades</h3>
         <hr>
         <ul class="media-list" ng-cloak>
-          <li class="media" ng-repeat="u in uc.upgrades" ng-show="u.isVisible()">
+          <li class="media" ng-repeat="u in uc.upgrades" ng-show="uc.isVisible(u)">
             <div class="media-body">
               <h4 class="media-heading">{{ u.name }} <i class="fa {{ u.icon }} media-object"></i></h4>
               <p>{{ u.description }}</p>
               <p class="small">{{ u.effect }}</p>
-              <button class="btn btn-primary" ng-disabled="!u.isAvailable()" ng-click="uc.upgrade(u)">Buy <small>({{ u.cost | currency }})</small></button>
+              <button class="btn btn-primary" ng-disabled="!uc.isAvailable(u)" ng-click="uc.upgrade(u)">Buy <small>({{ u.cost | currency }})</small></button>
             </div>
           </li>
         </ul>
@@ -180,7 +180,7 @@
       </div>
     </div>
 
-    <div class="modal fade" id="achievements-modal" tabindex="-1" role="dialog" aria-labelledby="achievements-label" aria-hidden="true" ng-controller="AchievementsController as ac">
+    <div class="modal fade" id="achievements-modal" tabindex="-1" role="dialog" aria-labelledby="achievements-label" aria-hidden="true" ng-controller="AchievementsController">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -188,12 +188,12 @@
             <h4 class="modal-title" id="achievements-label">Achievements</h4>
           </div>
           <div class="modal-body">
-            <p class="text-center"><strong>Progress</strong> <span class="label label-info">{{ ac.achievements.length }} / {{ ac.achievementsAll.length }}</span></p>
+            <p class="text-center"><strong>Progress</strong> <span class="label label-info">{{ progress() }} / {{ achievements.length }}</span></p>
             <ul class="list-group">
-              <li class="list-group-item" ng-repeat="a in ac.achievements | reverse">
-                <span class="glyphicon {{ a.icon }}"></span>
+              <li class="list-group-item" ng-repeat="a in achievements | reverse" ng-show="a.isAchieved()">
+                <i class="fa {{ a.icon }}"></i>
                 {{ a.description }}
-                <span class="badge">{{ a.time }}</span>
+                <span class="badge">{{ a.state.dateAchieved | date }}</span>
               </li>
             </ul>
           </div>
@@ -256,7 +256,6 @@
     <script src="js/gameobjects.js"></script>
     <script src="js/event.js"></script>
     <script src="js/detector.js"></script>
-    <script src="js/achievements.js"></script>
     <script src="js/ui.js"></script>
     <script src="js/game.js"></script>
     <script src="js/warnmobile.js"></script>

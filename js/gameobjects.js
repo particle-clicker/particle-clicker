@@ -76,8 +76,9 @@ var GameObjects = (function() {
   /** @class Research
    */
   var Research = function(obj) {
-    GameObject.apply(
-        this, [$.extend({}, obj, {state : {level : 0, interesting : false}})]);
+    GameObject.apply(this, [obj]);
+    this.state.level = 0;
+    this.state.interesting = false;
   };
 
   Research.prototype = Object.create(GameObject.prototype);
@@ -126,7 +127,8 @@ var GameObjects = (function() {
    * Implement an auto-clicker in the game.
    */
   var Worker = function(obj) {
-    GameObject.apply(this, [$.extend({}, obj, {state : {hired : 0}})]);
+    GameObject.apply(this, [obj]);
+    this.state.hired = 0;
   };
 
   Worker.prototype = Object.create(GameObject.prototype);
@@ -149,7 +151,7 @@ var GameObjects = (function() {
   };
 
   Worker.prototype.hire = function(lab) {
-    if (lab && lab.buy(this.cost)) {
+    if (lab && lab.buy(this.state.cost)) {
       this.state.hired++;
       var cost = this.state.cost;
       this.state.cost = Math.round(cost * this.cost_increase);
@@ -164,8 +166,9 @@ var GameObjects = (function() {
   /** @class Upgrade
    */
   var Upgrade = function(obj) {
-    GameObject.apply(
-        this, [$.extend({}, obj, {state : {visible : false, used : false}})]);
+    GameObject.apply(this, [obj]);
+    this.state.visible = false;
+    this.state.used = false;
   };
 
   Upgrade.prototype = Object.create(GameObject.prototype);
@@ -223,8 +226,8 @@ var GameObjects = (function() {
   /** @class Achievement
    */
   var Achievement = function(obj) {
-    GameObject.apply(this,
-                     [$.extend({}, obj, {state : {dateAchieved : null}})]);
+    GameObject.apply(this, [obj]);
+    this.state.dateAchieved = null;
     this._allObjects = {};
   };
 

@@ -6,7 +6,7 @@ var Game = (function() {
     this.research = null;
     this.workers = null;
     this.upgrades = null;
-    this.achivements = null;
+    this.achievements = null;
     this.allObjects = {lab : this.lab};
     this.loaded = false;
   };
@@ -15,44 +15,48 @@ var Game = (function() {
     if (this.loaded) {
       return;
     }
+
+    // I know synchronous requests are bad as they will block the browser.
+    // However, I don't see any other reasonable way to do this in order to
+    // make it work with Angular. If you know a way, let me know, and I'll
+    // give you a beer. - Kevin
+    this.research = Helpers.loadFile('json/research.json');
+    this.workers = Helpers.loadFile('json/workers.json');
+    this.upgrades = Helpers.loadFile('json/upgrades.json');
+    this.achievements = Helpers.loadFile('json/achievements.json');
+
+    // Turn JSON files into actual game objects and fill map of all objects
     var _this = this;
-    $.when($.get('json/research.json', function(jR) { _this.research = jR; }),
-           $.get('json/workers.json', function(jW) { _this.workers = jW; }),
-           $.get('json/upgrades.json', function(jU) { _this.upgrades = jU; }),
-           $.get('json/achievements.json',
-                 function(jA) { _this.achivements = jA; })).then(function() {
-      // Turn JSON files into actual game objects and fill map of all objects
-      var makeGameObject = function(type, object) {
-        // It's okay to define this function here since load is only called
-        // once anyway...
-        var o = new type(object);
-        _this.allObjects[o.key] = o;
-        return o;
-      };
-      _this.research = _this.research.map(
-          function(r) { return makeGameObject(GameObjects.Research, r); });
-      _this.workers = _this.workers.map(
-          function(w) { return makeGameObject(GameObjects.Worker, w); });
-      _this.upgrades = _this.upgrades.map(
-          function(u) { return makeGameObject(GameObjects.Upgrade, u); });
-      _this.achivements = _this.achivements.map(function(a) {
-        var _a = makeGameObject(GameObjects.Achievement, a);
-        _a.setRefAllGameObjects(_this.allObjects);
-        return _a;
-      });
-      // Load states from local store
-      for (var i = 0; i < _this.allObjects.length; i++) {
-        var o = _this.allObjects[i];
-        o.loadState(ObjectStorage.load(o.key));
-      }
-      _this.loaded = true;
+    var makeGameObject = function(type, object) {
+      // It's okay to define this function here since load is only called
+      // once anyway...
+      var o = new type(object);
+      _this.allObjects[o.key] = o;
+      return o;
+    };
+    this.research = this.research.map(
+        function(r) { return makeGameObject(GameObjects.Research, r); });
+    this.workers = this.workers.map(
+        function(w) { return makeGameObject(GameObjects.Worker, w); });
+    this.upgrades = this.upgrades.map(
+        function(u) { return makeGameObject(GameObjects.Upgrade, u); });
+    this.achievements = this.achievements.map(function(a) {
+      var _a = makeGameObject(GameObjects.Achievement, a);
+      _a.setRefAllGameObjects(_this.allObjects);
+      return _a;
     });
+    // Load states from local store
+    for (var key in this.allObjects) {
+      var o = this.allObjects[key];
+      o.loadState(ObjectStorage.load(key));
+    }
+    this.loaded = true;
   };
 
   Game.prototype.save = function() {
     // Save every object's state to local storage
-    for (var i = 0; i < this.allObjects.length; i++) {
-      ObjectStorage.save(this.allObjects[i].state);
+    for (var key in this.allObjects) {
+      ObjectStorage.save(key, this.allObjects[key].state);
     }
   };
 

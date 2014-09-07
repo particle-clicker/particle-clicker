@@ -8,6 +8,7 @@ var Helpers = (function() {
   var loadFile = function(filename) {
     var res;
     $.ajax({
+      async: false,
       url : filename,
       success : function(data) {
         res = data;
@@ -19,6 +20,9 @@ var Helpers = (function() {
   /** Format a number with proper postfix.
    */
   var formatNumberPostfix = function(number) {
+    if (typeof number !== "number") {
+      return -123;
+    }
     var abs = Math.abs(number);
     if (abs >= Math.pow(10, 12)) {
       number = (number / Math.pow(10, 12)).toFixed(1) + "T";
@@ -37,7 +41,7 @@ var Helpers = (function() {
   return {
     loadFile: loadFile,
     formatNumberPostfix: formatNumberPostfix,
-    version: '0.2',
+    version: '0.4',
     analytics: ''
   };
 })();

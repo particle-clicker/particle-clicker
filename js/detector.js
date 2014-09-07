@@ -273,13 +273,13 @@ var detector =
         }
     },
 
-    addEventExternal: function()
+    addEventExternal: function(numWorkers)
     {
         if (!detector.visible) {
             return;
         }
 
-        var num = Math.min(20 * achievements.count.workers / 10, 20);
+        var num = Math.min(20 * numWorkers / 10, 20);
 
         for (var i = 0; i < num; i++) {
             var index = Math.round(Math.random() * (detector.tracks.length - 1));

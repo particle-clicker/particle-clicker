@@ -48,7 +48,7 @@ h1 br {
 
 #achievements-container .alert-glyph,
 #messages-container .alert-glyph {
-  float:left; font-size: 20px; margin-right: 10px;
+  float:left; font-size: 30px; margin-right: 20px;
 }
 
 #achievements-container .alert-text,
@@ -77,7 +77,7 @@ h1 br {
 }
 
 .update-plus {
-  color: green;
+  color: red;
   float: left;
   right: 5px;
   position: absolute;
@@ -106,7 +106,7 @@ h1 br {
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  user-select: none;
+  user-select: 1;
 }
 
 [ng\:cloak], [ng-cloak], .ng-cloak {

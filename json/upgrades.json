@@ -12,7 +12,7 @@
   },
   {
     "name": "Extra coffee",
-    "description": "Sleeping is the coffee of the weak. Your PhD Students will produce 1.3 times more data.",
+    "description": "Sleeping is the coffee of the weak. Your PhD Students will produce an additional 30% more data.",
     "cost": 3000,
     "used": false,
     "type": "hr",
@@ -23,7 +23,7 @@
   },
   {
     "name": "Motivation",
-    "description": "There are other, you know... more diligent Students... Your PhD Students will produce 2 times more data.",
+    "description": "There are other, you know... more diligent Students... Your PhD Students will produce an additional 100% more data.",
     "cost": 10000,
     "used": false,
     "type": "hr",
@@ -57,7 +57,7 @@
   },
   {
     "name": "Extra coffee",
-    "description": "Sleeping is the coffee of the weak. Your Postdocs will produce 1.5 times more data.",
+    "description": "Sleeping is the coffee of the weak. Your Postdocs will produce an additional 50% more data.",
     "cost": 20000,
     "used": false,
     "type": "hr",
@@ -69,7 +69,7 @@
 
   {
     "name": "Motivation",
-    "description": "There are other, you know... more diligent Postdocs... Your Postdocs will produce 2 times more data.",
+    "description": "There are other, you know... more diligent Postdocs... Your Postdocs will produce an additional 100% more data.",
     "cost": 500000,
     "used": false,
     "type": "hr",
@@ -105,7 +105,7 @@
 
   {
     "name": "New gadgets",
-    "description": "Your Research Fellows receive new techs. They will produce 1.2 times more data.",
+    "description": "Your Research Fellows receive new techs. They will produce an additional 20% more data.",
     "cost": 800000,
     "used": false,
     "type": "hr",
@@ -129,7 +129,7 @@
 
   {
     "name": "2. Nobel Prize",
-    "description": "So your Brightest Minds are now demigods... They will produce 1.7 times more data.",
+    "description": "So your Brightest Minds are now demigods... They will produce an additional 70% more data.",
     "cost": 100000000,
     "used": false,
     "type": "hr",
@@ -141,7 +141,7 @@
 
   {
     "name": "Accelerator upgrade",
-    "description": "Increases the luminosity (you get 3 times more data with clicks).",
+    "description": "Increases the luminosity (data gained from clicks is tripled).",
     "cost": 1000,
     "used": false,
     "type": "detector",
@@ -153,7 +153,7 @@
 
   {
     "name": "Accelerator upgrade 2",
-    "description": "Increases the luminosity (you get 3 times more data with clicks).",
+    "description": "Increases the luminosity (data gained from clicks is tripleds).",
     "cost": 10000,
     "used": false,
     "type": "detector",
@@ -165,7 +165,7 @@
 
   {
     "name": "Accelerator upgrade 3",
-    "description": "Increases the luminosity (you get 3 times more data with clicks).",
+    "description": "Increases the luminosity (data gained from clicks is tripled).",
     "cost": 100000,
     "used": false,
     "type": "detector",
@@ -213,7 +213,7 @@
 
   {
     "name": "Public Relations, lvl 1",
-    "description": "Mainstream press writes about your research of the CP violation. Future research yields 1.2 times more reputation.",
+    "description": "Mainstream press writes about your research of the CP violation. Future research yields an additional 20% reputation.",
     "cost": 5000,
     "used": false,
     "type": "research",
@@ -225,7 +225,7 @@
 
   {
     "name": "Science is cool!! lvl 1",
-    "description": "Because your science is so popular, you get 1.1 times more money for your reputation.",
+    "description": "Because your science is so popular, you get an additional 10% more money for your reputation.",
     "cost": 700,
     "used": false,
     "type": "reputation",
@@ -237,7 +237,7 @@
 
   {
     "name": "Science is cool!! lvl 2",
-    "description": "Because your science is so popular, you get 1.1 times more money for your reputation.",
+    "description": "Because your science is so popular, you get an additional 10% more money for your reputation.",
     "cost": 50000,
     "used": false,
     "type": "reputation",
@@ -249,7 +249,7 @@
 
   {
     "name": "Science is cool!! lvl 3",
-    "description": "Because your science is so popular, you get 1.1 times more money for your reputation.",
+    "description": "Because your science is so popular, you get an additional 10% more money for your reputation.",
     "cost": 200000,
     "used": false,
     "type": "reputation",
@@ -261,7 +261,7 @@
 
   {
     "name": "Science is cool!! lvl 4",
-    "description": "Because your science is so popular, you get 1.1 times more money for your reputation.",
+    "description": "Because your science is so popular, you get an additional 10% more money for your reputation.",
     "cost": 800000,
     "used": false,
     "type": "reputation",
@@ -273,7 +273,7 @@
 
   {
     "name": "Science is cool!! lvl 5",
-    "description": "Because your science is so popular, you get 1.1 times more money for your reputation.",
+    "description": "Because your science is so popular, you get an additional 10% more money for your reputation.",
     "cost": 1200000,
     "used": false,
     "type": "reputation",
@@ -285,7 +285,7 @@
 
   {
     "name": "Science is cool!! lvl 6",
-    "description": "Because your science is so popular, you get 1.1 times more money for your reputation.",
+    "description": "Because your science is so popular, you get an additional 10% more money for your reputation.",
     "cost": 1800000,
     "used": false,
     "type": "reputation",
@@ -297,7 +297,7 @@
 
   {
     "name": "Science is cool!! lvl 7",
-    "description": "Because your science is so popular, you get 1.1 times more money for your reputation.",
+    "description": "Because your science is so popular, you get an additional 10% more money for your reputation.",
     "cost": 3000000,
     "used": false,
     "type": "reputation",
@@ -309,7 +309,7 @@
 
   {
     "name": "Science is cool!! lvl 8",
-    "description": "Because your science is so popular, you get 1.1 times more money for your reputation.",
+    "description": "Because your science is so popular, you get an additional 10% more money for your reputation.",
     "cost": 10000000,
     "used": false,
     "type": "reputation",
@@ -321,7 +321,7 @@
 
   {
     "name": "Public Relations, lvl 1",
-    "description": "Mainstream press writes about your research of the CP violation. Future research yields 1.2 times more reputation.",
+    "description": "Mainstream press writes about your research of the CP violation. Future research yields an additional 20% more reputation.",
     "cost": 5000,
     "used": false,
     "type": "research",
@@ -333,7 +333,7 @@
 
   {
     "name": "Public Relations, lvl 2",
-    "description": "Mainstream press writes about your research of the CP violation. Future research yields 1.2 times more reputation.",
+    "description": "Mainstream press writes about your research of the CP violation. Future research yields an additional 20% more reputation.",
     "cost": 100000,
     "used": false,
     "type": "research",
@@ -345,7 +345,7 @@
 
   {
     "name": "Public Relations, lvl 1",
-    "description": "Your research on J/ψ is featured on national television. Future research yields 1.2 times more reputation.",
+    "description": "Your research on J/ψ is featured on national television. Future research yields an additional 20% more reputation.",
     "cost": 40000,
     "used": false,
     "type": "research",
@@ -357,7 +357,7 @@
 
   {
     "name": "Public Relations, lvl 2",
-    "description": "Your research on J/ψ is featured on national television. Future research yields 1.2 times more reputation.",
+    "description": "Your research on J/ψ is featured on national television. Future research yields an additional 20% more reputation.",
     "cost": 130000,
     "used": false,
     "type": "research",
@@ -369,7 +369,7 @@
 
   {
     "name": "Public Relations, lvl 1",
-    "description": "In a scientific documentary you speak about the τ lepton. Future research yields 1.2 times more reputation.",
+    "description": "In a scientific documentary you speak about the τ lepton. Future research yields an additional 20% more reputation.",
     "cost": 100000,
     "used": false,
     "type": "research",
@@ -381,7 +381,7 @@
 
   {
     "name": "Public Relations, lvl 2",
-    "description": "In a scientific documentary you speak about the τ lepton. Future research yields 1.2 times more reputation.",
+    "description": "In a scientific documentary you speak about the τ lepton. Future research yields an additional 20% more reputation.",
     "cost": 250000,
     "used": false,
     "type": "research",
@@ -393,7 +393,7 @@
 
   {
     "name": "Public Relations, lvl 1",
-    "description": "You just discovered the most beautiful quark ever! Future research yields 1.2 times more reputation.",
+    "description": "You just discovered the most beautiful quark ever! Future research yields an additional 20% more reputation.",
     "cost": 100000,
     "used": false,
     "type": "research",
@@ -405,7 +405,7 @@
 
   {
     "name": "Public Relations, lvl 2",
-    "description": "You discovered the most beautiful quark ever! Future research yields 1.2 times more reputation.",
+    "description": "You discovered the most beautiful quark ever! Future research yields an additional 20% more reputation.",
     "cost": 500000,
     "used": false,
     "type": "research",
@@ -417,7 +417,7 @@
 
   {
     "name": "Public Relations, lvl 1",
-    "description": "You give lectures about this very important part of the Standard Model! Future research yields 1.2 times more reputation.",
+    "description": "You give lectures about this very important part of the Standard Model! Future research yields an additional 20% more reputation.",
     "cost": 250000,
     "used": false,
     "type": "research",
@@ -429,7 +429,7 @@
 
   {
     "name": "Public Relations, lvl 2",
-    "description": "You give lectures about this very important part of the Standard Model! Future research yields 1.2 times more reputation.",
+    "description": "You give lectures about this very important part of the Standard Model! Future research yields an additional 20% more reputation.",
     "cost": 1000000,
     "used": false,
     "type": "research",
@@ -441,7 +441,7 @@
 
   {
     "name": "Public Relations, lvl 1",
-    "description": "This is the top of your career! Future research yields 1.2 times more reputation.",
+    "description": "This is the top of your career! Future research yields an additional 20% more reputation.",
     "cost": 5000000,
     "used": false,
     "type": "research",
@@ -452,7 +452,7 @@
   },
   {
     "name": "Public Relations, lvl 2",
-    "description": "This is the top of your career! Future research yields 1.2 times more reputation.",
+    "description": "This is the top of your career! Future research yields an additional 20% reputation.",
     "cost": 7500000,
     "used": false,
     "type": "research",
@@ -464,7 +464,7 @@
 
   {
     "name": "Public Relations, lvl 1",
-    "description": "Hollywood makes a movie about the antihydrogen. Your future research yields 1.2 times more reputation.",
+    "description": "Hollywood makes a movie about the antihydrogen. Your future research yields an additional 20% more reputation.",
     "cost": 22500000,
     "used": false,
     "type": "research",
@@ -476,7 +476,7 @@
 
   {
     "name": "Public Relations, lvl 2",
-    "description": "Hollywood makes a movie about the antihydrogen. Your future research yields 1.2 times more reputation.",
+    "description": "Hollywood makes a movie about the antihydrogen. Your future research yields an additional 20% more reputation.",
     "cost": 40000000,
     "used": false,
     "type": "research",
@@ -488,7 +488,7 @@
 
   {
     "name": "Public Relations, lvl 1",
-    "description": "Your little daughter writes about your research on B oscillations in her homework. Future research yields 1.2 times more reputation.",
+    "description": "Your little daughter writes about your research on B oscillations in her homework. Future research yields an additional 20% more reputation.",
     "cost": 75000000,
     "used": false,
     "type": "research",
@@ -500,7 +500,7 @@
 
   {
     "name": "Public Relations, lvl 2",
-    "description": "Your little daughter writes about your research on B oscillations in her homework. Future research yields 1.2 times more reputation.",
+    "description": "Your little daughter writes about your research on B oscillations in her homework. Future research yields an additional 20% more reputation.",
     "cost": 90000000,
     "used": false,
     "type": "research",
@@ -511,7 +511,7 @@
   },
   {
     "name": "Public Relations, lvl 1",
-    "description": "You know more about Top quark than everybody else. Future research yields 1.2 times more reputation.",
+    "description": "You know more about Top quark than everybody else. Future research yields an additional 20% more reputation.",
     "cost": 50000000,
     "used": false,
     "type": "research",
@@ -522,7 +522,7 @@
   },
   {
     "name": "Public Relations, lvl 2",
-    "description": "You know more about Top quark then everybody else. Future research yields 1.2 times more reputation.",
+    "description": "You know more about Top quark then everybody else. Future research yields an additional 20% more reputation.",
     "cost": 120000000,
     "used": false,
     "type": "research",
@@ -533,7 +533,7 @@
   },
   {
     "name": "Public Relations, lvl 1",
-    "description": "You've found the last missing element of the Standard Model! Future research yields 1.2 times more reputation.",
+    "description": "You've found the last missing element of the Standard Model! Future research yields an additional 20% more reputation.",
     "cost": 90000000,
     "used": false,
     "type": "research",
@@ -544,7 +544,7 @@
   },
   {
     "name": "Public Relations, lvl 2",
-    "description": "You've found the last missing element of the Standard Model! Future research yields 1.2 times more reputation.",
+    "description": "You've found the last missing element of the Standard Model! Future research yields an additional 20% more reputation.",
     "cost": 110000000,
     "used": false,
     "type": "research",

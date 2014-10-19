@@ -95,7 +95,7 @@
               <p ng-show="r.state.level > 0">{{ r.description }}</p>
               <p ng-show="r.state.level > 0" class="small">Research yields <strong>{{ r.state.reputation | niceNumber }}</strong> reputation.</p>
               <div class="btn-group">
-              <button class="btn btn-primary" ng-disabled="!rc.isAvailable(r)" ng-click="rc.doResearch(r)">Research <small>({{ r.state.cost | niceNumber }} data)</small></button>
+                <button class="btn btn-primary" ng-disabled="!rc.isAvailable(r)" ng-click="rc.doResearch(r)"><i class="fa fa-cogs"></i> <small>{{ r.state.cost | niceNumber }} data</small></button>
               <button class="btn btn-info {{ r.state.interesting ? 'blink' : '' }}" ng-show="r.state.level > 0" ng-click="rc.showInfo(r)"><i class="fa fa-exclamation"></i></button>
             </div>
             </div>
@@ -106,7 +106,7 @@
       <div class="col-xs-5 scrollable" ng-controller="LabController as lc">
         <input id="labname" value="{{ lc.lab.state.name }}" ng-model="lc.lab.state.name" ng-cloak>
         <hr>
-        <button class="pull-right btn btn-info" ng-click="lc.showDetectorInfo()"><span class="glyphicon glyphicon-info-sign"></span></button>
+        <button class="pull-right btn btn-info" ng-click="lc.showDetectorInfo()"><i class="fa fa-exclamation"></i></button>
         <div id="detector" ng-controller="DetectorController as dc">
           <canvas id="detector-core" width="400" height="400">
             Your detector. Click on it to generate events.
@@ -146,7 +146,7 @@
               <h4 class="media-heading">{{ w.name }} <span ng-show="w.state.hired > 0" class="badge">{{ w.state.hired | niceNumber }}</span></h4>
               <p ng-show="w.state.hired > 0">{{ w.description }}</p>
               <p ng-show="w.state.hired > 0" class="small">Produce <strong>{{ w.state.rate | niceNumber }}</strong> data per second.</p>
-              <button class="btn btn-primary" ng-disabled="!hrc.isAvailable(w)" ng-click="hrc.hire(w)">Hire <small>({{ w.state.cost | currency }})</small></button>
+              <button class="btn btn-primary" ng-disabled="!hrc.isAvailable(w)" ng-click="hrc.hire(w)"><i class="fa fa-user"></i/> <small>{{ w.state.cost | currency }}</small></button>
             </div>
           </li>
         </ul>
@@ -161,7 +161,7 @@
               <h4 class="media-heading">{{ u.name }} <i class="fa {{ u.icon }} media-object"></i></h4>
               <p>{{ u.description }}</p>
               <p class="small">{{ u.effect }}</p>
-              <button class="btn btn-primary" ng-disabled="!uc.isAvailable(u)" ng-click="uc.upgrade(u)">Buy <small>({{ u.cost | currency }})</small></button>
+              <button class="btn btn-primary" ng-disabled="!uc.isAvailable(u)" ng-click="uc.upgrade(u)"><i class="fa fa-money"></i> <small>{{ u.cost | currency }}</small></button>
             </div>
           </li>
         </ul>

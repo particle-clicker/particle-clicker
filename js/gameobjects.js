@@ -188,22 +188,22 @@ var GameObjects = (function() {
     return true;
   };
 
-  Upgrade.prototype.isAvailable = function(lab) {
-    if (!lab) {
+  Upgrade.prototype.isAvailable = function(lab, allObjects) {
+    if (!lab || !allObjects) {
       return false;
     }
     return !this.state.used && lab.state.money >= this.cost &&
-           this.meetsRequirements();
+           this.meetsRequirements(allObjects);
   };
 
-  Upgrade.prototype.isVisible = function(lab) {
-    if (!lab) {
+  Upgrade.prototype.isVisible = function(lab, allObjects) {
+    if (!lab || !allObjects) {
       return false;
     }
     if (!this.state.used &&
         (this.state.visible ||
          lab.state.money >= this.cost * GLOBAL_VISIBILITY_THRESHOLD &&
-             this.meetsRequirements())) {
+             this.meetsRequirements(allObjects))) {
       this._visible = true;
       return true;
     }

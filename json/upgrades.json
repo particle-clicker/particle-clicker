@@ -6,8 +6,8 @@
     "effect": "PhD Students produce twice as much data per second.",
     "icon": "fa-group",
     "cost": 100,
-    "targets": [{"key": "PhD Students", "property": "rate"}],
-    "requirements": [{"key": "PhD Students", "property": "hired", "threshold": 1}],
+    "targets": [{"key": "workers-phdstudents", "property": "rate"}],
+    "requirements": [{"key": "workers-phdstudents", "property": "hired", "threshold": 1}],
     "factor": 2,
     "constant": 0
   },
@@ -18,8 +18,8 @@
     "effect": "PhD Students produce twice as much data per second.",
     "icon": "fa-group",
     "cost": 10000,
-    "targets": [{"key": "PhD Students", "property": "rate"}],
-    "requirements": [{"key": "Thesis supervision", "property": "_used", "threshold": 1}],
+    "targets": [{"key": "workers-phdstudents", "property": "rate"}],
+    "requirements": [{"key": "upgrade-thesissupervision", "property": "_used", "threshold": 1}],
     "factor": 2
   },
   {
@@ -30,12 +30,12 @@
     "icon": "fa-group",
     "cost": 1e6,
     "targets": [
-      {"key": "PhD Students", "property": "rate"},
-      {"key": "Postdocs", "property": "rate"},
-      {"key": "Research Fellows", "property": "rate"},
-      {"key": "Tenured Professors", "property": "rate"},
-      {"key": "Nobel Prize Winners", "property": "rate"},
-      {"key": "Summer Students", "property": "rate"}
+      {"key": "workers-phdstudents", "property": "rate"},
+      {"key": "workers-postdocs", "property": "rate"},
+      {"key": "workers-fellows", "property": "rate"},
+      {"key": "workers-profs", "property": "rate"},
+      {"key": "workers-nobel", "property": "rate"},
+      {"key": "workers-summies", "property": "rate"}
     ],
     "requirements": [],
     "factor": 2

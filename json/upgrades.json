@@ -3,13 +3,12 @@
     "key": "upgrade-thesissupervision",
     "name": "Thesis supervision",
     "description": "Somebody takes care of your PhD Students.",
-    "effect": "PhD Students produce twice as much data per second.",
+    "effect": "PhD Students produce an additional 3 data per second.",
     "icon": "fa-group",
-    "cost": 100,
+    "cost": 1000,
     "targets": [{"key": "workers-phdstudents", "property": "rate"}],
-    "requirements": [{"key": "workers-phdstudents", "property": "hired", "threshold": 1}],
-    "factor": 2,
-    "constant": 0
+    "requirements": [{"key": "workers-phdstudents", "property": "hired", "threshold": 5}],
+    "constant": 3
   },
   {
     "key": "upgrade-owndesk",
@@ -19,9 +18,90 @@
     "icon": "fa-group",
     "cost": 10000,
     "targets": [{"key": "workers-phdstudents", "property": "rate"}],
-    "requirements": [{"key": "upgrade-thesissupervision", "property": "_used", "threshold": 1}],
+    "requirements": [
+      {"key": "upgrade-thesissupervision", "property": "_used", "threshold": 1},
+      {"key": "workers-postdocs", "property": "hired", "threshold": 1}
+    ],
     "factor": 2
   },
+  {
+    "key": "upgrade-mentoring",
+    "name": "Mentoring",
+    "description": "Weekly counseling with a professional physicist.",
+    "effect": "PhD Students produce twice as much data per second.",
+    "icon": "fa-group",
+    "cost": 100000,
+    "targets": [{"key": "workers-phdstudents", "property": "rate"}],
+    "requirements": [
+      {"key": "upgrade-owndesk", "property": "_used", "threshold": 1},
+      {"key": "workers-fellows", "property": "hired", "threshold": 1}
+    ],
+    "factor": 2
+  },
+  {
+    "key": "upgrade-studentassistant",
+    "name": "Student Assistant",
+    "description": "A personal assistant that takes care of boring tasks.",
+    "effect": "PhD Students produce twice as much data per second.",
+    "icon": "fa-group",
+    "cost": 1000000,
+    "targets": [{"key": "workers-phdstudents", "property": "rate"}],
+    "requirements": [
+      {"key": "upgrade-mentoring", "property": "_used", "threshold": 1},
+    ],
+    "factor": 2
+  },
+  {
+    "key": "upgrade-summerlectures",
+    "name": "Summer Lectures",
+    "description": "Interesting lectures given by the best in the field.",
+    "effect": "Summmer Students produce an additional 3 data per second.",
+    "icon": "fa-group",
+    "cost": 1000,
+    "targets": [{"key": "workers-summies", "property": "rate"}],
+    "requirements": [{"key": "workers-summies", "property": "hired", "threshold": 5}],
+    "constant": 3
+  },
+  {
+    "key": "upgrade-postersessions",
+    "name": "Poster Sessions",
+    "description": "Have your Summies prepare interesting posters and explain them to their peers.",
+    "effect": "Summer Students produce twice as much data per second.",
+    "icon": "fa-group",
+    "cost": 10000,
+    "targets": [{"key": "workers-summies", "property": "rate"}],
+    "requirements": [
+      {"key": "upgrade-summerlectures", "property": "_used", "threshold": 1},
+    ],
+    "factor": 2
+  },
+  {
+    "key": "upgrade-bbqs",
+    "name": "Barbecue",
+    "description": "A nice get-together to increase morale in the group.",
+    "effect": "Summer Students produce twice as much data per second.",
+    "icon": "fa-group",
+    "cost": 100000,
+    "targets": [{"key": "workers-summies", "property": "rate"}],
+    "requirements": [
+      {"key": "upgrade-postersessions", "property": "_used", "threshold": 1},
+    ],
+    "factor": 2
+  },
+  {
+    "key": "upgrade-parties",
+    "name": "Pump Hall Parties",
+    "description": "Awesome parties in the CERN pump hall. Sure the hangover does not increase productivity but your morale gets a huge boost.",
+    "effect": "Summer Students produce twice as much data per second.",
+    "icon": "fa-group",
+    "cost": 1000000,
+    "targets": [{"key": "workers-summies", "property": "rate"}],
+    "requirements": [
+      {"key": "upgrade-bbqs", "property": "_used", "threshold": 1},
+    ],
+    "factor": 2
+  },
+
   {
     "key": "upgrade-coffee",
     "name": "Free coffee",
@@ -37,7 +117,14 @@
       {"key": "workers-nobel", "property": "rate"},
       {"key": "workers-summies", "property": "rate"}
     ],
-    "requirements": [],
+    "requirements": [
+      {"key": "workers-phdstudents", "property": "hired", "threshold": 1},
+      {"key": "workers-postdocs", "property": "hired", "threshold": 1},
+      {"key": "workers-fellows", "property": "hired", "threshold": 1},
+      {"key": "workers-profs", "property": "hired", "threshold": 1},
+      {"key": "workers-nobel", "property": "hired", "threshold": 1},
+      {"key": "workers-summies", "property": "hired", "threshold": 1}
+    ],
     "factor": 2
   }
 ]

@@ -181,7 +181,7 @@
     "cost": 500,
     "used": false,
     "type": "detector",
-    "receiver": "detector",
+    "receiver": "",
     "property": "rate",
     "factor": 1,
     "constant": 4
@@ -205,22 +205,10 @@
     "cost": 50000,
     "used": false,
     "type": "detector",
-    "receiver": "detector",
+    "receiver": "",
     "property": "rate",
     "factor": 1,
     "constant": 42
-  },
-
-  {
-    "name": "Public Relations, lvl 1",
-    "description": "Mainstream press writes about your research of the CP violation. Future research yields 1.2 times more reputation.",
-    "cost": 5000,
-    "used": false,
-    "type": "research",
-    "receiver": "CP violation",
-    "property": "reputation",
-    "factor": 1.2,
-    "constant": 1
   },
 
   {

@@ -212,18 +212,6 @@
   },
 
   {
-    "name": "Public Relations, lvl 1",
-    "description": "Mainstream press writes about your research of the CP violation. Future research yields 1.2 times more reputation.",
-    "cost": 5000,
-    "used": false,
-    "type": "research",
-    "receiver": "CP violation",
-    "property": "reputation",
-    "factor": 1.2,
-    "constant": 1
-  },
-
-  {
     "name": "Science is cool!! lvl 1",
     "description": "Because your science is so popular, you get 1.1 times more money for your reputation.",
     "cost": 700,

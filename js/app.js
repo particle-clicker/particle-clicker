@@ -32,7 +32,7 @@
 
   app.controller('DetectorController', function() {
     this.click = function() {
-      lab.acquireData(lab.state.detector);
+      lab.clickDetector();
       detector.addEvent();
       UI.showUpdateValue("#update-data", lab.state.detector);
       return false;
@@ -145,6 +145,16 @@
     };
     $interval($scope.saveNow, 10000);
   }]);
+
+  app.controller('StatsController', function($scope) {
+    $scope.stats = {
+      clicks: lab.state.clicks,
+      moneyCollected: lab.state.moneyCollected,
+      moneySpent: lab.state.moneySpent,
+      dataCollected: lab.state.dataCollected,
+      dataSpent: lab.state.dataSpent
+    };
+  });
 
   analytics.init();
   analytics.sendScreen(analytics.screens.main);

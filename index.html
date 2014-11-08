@@ -11,7 +11,7 @@
     <meta property="og:image" content="https://avatars2.githubusercontent.com/u/8345868">
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/png" href="assets/favicon.png" />
 
@@ -53,12 +53,13 @@
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#" data-toggle="modal" data-target="#myModal">Particle Clicker</a>
+          <a class="navbar-brand pc-icon" href="#" data-toggle="modal" data-target="#myModal"> Particle Clicker</a>
         </div>
         <ul class="nav navbar-nav navbar-left">
           <li><a href="#" data-toggle="modal" data-target="#achievements-modal"><i class="fa fa-trophy"></i> Achievements</a></li>
+          <li><a href="#" data-toggle="modal" data-target="#stats-modal"><i class="fa fa-bar-chart"></i> Statistics</a></li>
           <li class="dropdown" ng-controller="SaveController">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Last saved: <span ng-cloak>{{ lastSaved | date : 'H:mm:ss' }}</span><span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-floppy-o"></i> Saved: <span ng-cloak>{{ lastSaved | date : 'H:mm' }}</span> <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
               <li><a href="#" ng-click="saveNow()"><i class="fa fa-save"></i> Save now</a></li>
               <li class="divider"></li>              
@@ -185,7 +186,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            <h4 class="modal-title" id="achievements-label">Achievements</h4>
+            <h4 class="modal-title" id="achievements-label"><i class="fa fa-trophy"></i> Achievements</h4>
           </div>
           <div class="modal-body">
             <p class="text-center"><strong>Progress</strong> <span class="label label-info">{{ progress() }} / {{ achievements.length }}</span></p>
@@ -195,6 +196,24 @@
                 {{ a.description }}
                 <span class="badge">{{ a.state.dateAchieved | date }}</span>
               </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="stats-modal" tabindex="-1" role="dialog" aria-labelledby="stats-label" aria-hidden="true" ng-controller="StatsController">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title" id="achievements-label"><i class="fa fa-bar-chart"></i> Statistics</h4>
+          </div>
+          <div class="modal-body">
+            <ul class="list-group">
+              <li class="list-group-item"><i class="fa fa-location-arrow"></i> : <strong>{{ stats.clicks | niceNumber }}</strong></li>
+              <li class="list-group-item"><i class="fa fa-database"></i> : <strong>{{ stats.dataSpent | niceNumber }}</strong> used / <strong>{{ stats.dataCollected | niceNumber }}</strong> collected</li>
+              <li class="list-group-item"><i class="fa fa-money"></i> : <strong>{{ stats.moneySpent | niceNumber }}</strong> spent / <strong>{{ stats.moneyCollected | niceNumber }}</strong> gathered</li>
             </ul>
           </div>
         </div>
@@ -213,7 +232,7 @@
           </div>
           <div class="modal-body">
             <h4>About</h4>
-            <p class="small">Version: 0.3.1 (mobile-beta)</p>
+            <p class="small">Version: 0.9</p>
             <p class="small bg-warning">This is a pre-release. If you encounter any bugs please report them using <a href="https://github.com/particle-clicker/particle-clicker/issues"><i class="fa fa-github"></i> GitHub issues</a>. This game runs best in landscape mode. Performance of the event display may rely heavily on your hardware.</p>
             <p>Particle Clicker is a game that was made during the <a href="https://webfest.web.cern.ch">CERN Webfest 2014</a>. The idea is borrowed from <a href="http://orteil.dashnet.org/cookieclicker/">Cookie Clicker</a>, an amazing and addictive cookie-themed game.</p>
             <img width="200" src="http://www.citizencyberscience.net/wiki/images/1/1b/Cernwebfest.png" alt="">

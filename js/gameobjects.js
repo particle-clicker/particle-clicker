@@ -54,6 +54,11 @@ var GameObjects = (function() {
     this.state.dataCollected += amount;
   };
 
+  Lab.prototype.clickDetector = function() {
+    this.state.clicks += 1;
+    this.acquireData(this.state.detector);
+  };
+
   Lab.prototype.research = function(cost, reputation) {
     if (this.state.data >= cost) {
       this.state.data -= cost;

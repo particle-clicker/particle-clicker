@@ -6,6 +6,15 @@ h1 br {
   display: none;
 }
 
+.pc-icon {
+  background: url('../assets/pc32sw.png') no-repeat 10px center;
+  padding-left: 50px;
+}
+
+.pc-icon:hover {
+  background-image: url('../assets/pc32.png');
+}
+
 #detector {
   cursor: pointer;
   margin: 0 auto;

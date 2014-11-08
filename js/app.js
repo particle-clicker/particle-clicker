@@ -86,7 +86,7 @@
     };
     this.showInfo = function(r) {
       UI.showModal(r.name, r.getInfo());
-      UI.showLevels(r.level);
+      UI.showLevels(r.state.level);
     };
   }]);
 

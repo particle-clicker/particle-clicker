@@ -39,6 +39,11 @@
     };
   });
 
+  // Hack to prevent text highlighting
+  document.getElementById('detector').addEventListener('mousedown', function(e) {
+    e.preventDefault();
+  });
+
   app.controller('LabController', ['$interval', function($interval) {
     this.lab = lab;
     this.showDetectorInfo = function() {

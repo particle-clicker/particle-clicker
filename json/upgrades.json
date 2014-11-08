@@ -19,7 +19,7 @@
     "cost": 10000,
     "targets": [{"key": "workers-phdstudents", "property": "rate"}],
     "requirements": [
-      {"key": "upgrade-thesissupervision", "property": "_used", "threshold": 1},
+      {"key": "upgrade-thesissupervision", "property": "used", "threshold": 1},
       {"key": "workers-postdocs", "property": "hired", "threshold": 1}
     ],
     "factor": 2
@@ -33,7 +33,7 @@
     "cost": 100000,
     "targets": [{"key": "workers-phdstudents", "property": "rate"}],
     "requirements": [
-      {"key": "upgrade-owndesk", "property": "_used", "threshold": 1},
+      {"key": "upgrade-owndesk", "property": "used", "threshold": 1},
       {"key": "workers-fellows", "property": "hired", "threshold": 1}
     ],
     "factor": 2
@@ -47,7 +47,7 @@
     "cost": 1000000,
     "targets": [{"key": "workers-phdstudents", "property": "rate"}],
     "requirements": [
-      {"key": "upgrade-mentoring", "property": "_used", "threshold": 1},
+      {"key": "upgrade-mentoring", "property": "used", "threshold": 1}
     ],
     "factor": 2
   },
@@ -71,7 +71,7 @@
     "cost": 10000,
     "targets": [{"key": "workers-summies", "property": "rate"}],
     "requirements": [
-      {"key": "upgrade-summerlectures", "property": "_used", "threshold": 1},
+      {"key": "upgrade-summerlectures", "property": "used", "threshold": 1}
     ],
     "factor": 2
   },
@@ -84,7 +84,7 @@
     "cost": 100000,
     "targets": [{"key": "workers-summies", "property": "rate"}],
     "requirements": [
-      {"key": "upgrade-postersessions", "property": "_used", "threshold": 1},
+      {"key": "upgrade-postersessions", "property": "used", "threshold": 1}
     ],
     "factor": 2
   },
@@ -97,7 +97,7 @@
     "cost": 1000000,
     "targets": [{"key": "workers-summies", "property": "rate"}],
     "requirements": [
-      {"key": "upgrade-bbqs", "property": "_used", "threshold": 1},
+      {"key": "upgrade-bbqs", "property": "used", "threshold": 1}
     ],
     "factor": 2
   },

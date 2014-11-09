@@ -52,6 +52,56 @@
     "factor": 2
   },
   {
+    "key": "upgrade-postdocs1",
+    "name": "Postdocs 1",
+    "description": "",
+    "effect": "Postdocs produce an additional 30 data per second.",
+    "icon": "fa-group",
+    "cost": 10000,
+    "targets": [{"key": "workers-postdocs", "property": "rate"}],
+    "requirements": [{"key": "workers-postdocs", "property": "hired", "threshold": 5}],
+    "constant": 30
+  },
+  {
+    "key": "upgrade-postdocs2",
+    "name": "Postdocs 2",
+    "description": "",
+    "effect": "Postdocs produce twice as much data per second.",
+    "icon": "fa-group",
+    "cost": 10000,
+    "targets": [{"key": "workers-postdocs", "property": "rate"}],
+    "requirements": [
+      {"key": "upgrade-postdocs1", "property": "used", "threshold": 1}
+    ],
+    "factor": 2
+  },
+  {
+    "key": "upgrade-postdocs3",
+    "name": "Postdocs 3",
+    "description": "",
+    "effect": "Postdocs produce twice as much data per second.",
+    "icon": "fa-group",
+    "cost": 100000,
+    "targets": [{"key": "workers-postdocs", "property": "rate"}],
+    "requirements": [
+      {"key": "upgrade-postdocs2", "property": "used", "threshold": 1}
+    ],
+    "factor": 2
+  },
+  {
+    "key": "upgrade-postdocs4",
+    "name": "Postdocs 4",
+    "description": "",
+    "effect": "Postdocs produce twice as much data per second.",
+    "icon": "fa-group",
+    "cost": 1000000,
+    "targets": [{"key": "workers-postdocs", "property": "rate"}],
+    "requirements": [
+      {"key": "upgrade-postdocs3", "property": "used", "threshold": 1}
+    ],
+    "factor": 2
+  },
+  {
     "key": "upgrade-summerlectures",
     "name": "Summer Lectures",
     "description": "Interesting lectures given by the best in the field.",
@@ -101,18 +151,18 @@
     ],
     "factor": 2
   },
-
   {
     "key": "upgrade-coffee",
     "name": "Free coffee",
     "description": "Addictively delicious. Also free.",
     "effect": "All workers produce twice as much data per second.",
-    "icon": "fa-group",
+    "icon": "fa-coffee",
     "cost": 1e6,
     "targets": [
       {"key": "workers-phdstudents", "property": "rate"},
       {"key": "workers-postdocs", "property": "rate"},
       {"key": "workers-fellows", "property": "rate"},
+      {"key": "workers-permanent", "property": "rate"},
       {"key": "workers-profs", "property": "rate"},
       {"key": "workers-nobel", "property": "rate"},
       {"key": "workers-summies", "property": "rate"}
@@ -121,9 +171,47 @@
       {"key": "workers-phdstudents", "property": "hired", "threshold": 1},
       {"key": "workers-postdocs", "property": "hired", "threshold": 1},
       {"key": "workers-fellows", "property": "hired", "threshold": 1},
+      {"key": "workers-permanent", "property": "hired", "threshold": 1},
       {"key": "workers-profs", "property": "hired", "threshold": 1},
       {"key": "workers-nobel", "property": "hired", "threshold": 1},
       {"key": "workers-summies", "property": "hired", "threshold": 1}
+    ],
+    "factor": 2
+  },
+  {
+    "key": "upgrade-energy1",
+    "name": "√s = 1 GeV",
+    "description": "Increased centre-of-mass energy.",
+    "effect": "Double the amount of data per click.",
+    "icon": "fa-bolt",
+    "cost": 10,
+    "targets": [{"key": "lab", "property": "detector"}],
+    "requirements": [],
+    "factor": 2
+  },
+  {
+    "key": "upgrade-energy2",
+    "name": "√s = 10 GeV",
+    "description": "Increased centre-of-mass energy.",
+    "effect": "Double the amount of data per click.",
+    "icon": "fa-bolt",
+    "cost": 100,
+    "targets": [{"key": "lab", "property": "detector"}],
+    "requirements": [
+      {"key": "upgrade-energy1", "property": "used", "threshold": 1}
+    ],
+    "factor": 2
+  },
+  {
+    "key": "upgrade-energy3",
+    "name": "√s = 100 GeV",
+    "description": "Increased centre-of-mass energy.",
+    "effect": "Double the amount of data per click.",
+    "icon": "fa-bolt",
+    "cost": 1000,
+    "targets": [{"key": "lab", "property": "detector"}],
+    "requirements": [
+      {"key": "upgrade-energy2", "property": "used", "threshold": 1}
     ],
     "factor": 2
   }

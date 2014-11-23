@@ -86,7 +86,7 @@
       var cost = item.research(lab);
       if (cost > 0) {
         UI.showUpdateValue("#update-data", -cost);
-        UI.showUpdateValue("#update-reputation", item.reputation);
+        UI.showUpdateValue("#update-reputation", item.state.reputation);
       }
     };
     this.showInfo = function(r) {

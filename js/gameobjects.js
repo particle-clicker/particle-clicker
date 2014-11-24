@@ -225,7 +225,9 @@ var GameObjects = (function() {
       }
       this.state.used = true; // How about actually REMOVING used upgrades?
       this.state.visible = false;
+      return this.cost;
     }
+    return -1;
   };
 
 

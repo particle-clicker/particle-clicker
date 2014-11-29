@@ -69,6 +69,26 @@ var UI = (function () {
     }});
   }
 
+  var showAchievement = function(obj) {
+    var alert = '<div class="alert alert-success alert-dismissible" role="alert">';
+    alert += '<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>';
+    alert += '<span class="fa ' + obj.icon + ' alert-glyph"></span> <span class="alert-text">' + obj.description + '</span>';
+    alert += '</div>';
+
+    alert = $(alert);
+
+    $('#achievements-container').prepend(alert);
+    var remove = function(a)
+    {
+      return function()
+      {
+        a.slideUp(300, function() { a.remove(); });
+      };
+    };
+
+    window.setTimeout(remove(alert), 2000);
+  }
+
   var validateVersion = function(version) {
     if (version != Helpers.version) {
       var alert = '<div id="outofdate" class="alert alert-info alert-dismissible" role="alert">';
@@ -104,6 +124,7 @@ var UI = (function () {
   }
 
   return {
+    showAchievement: showAchievement,
     showModal: showModal,
     showLevels: showLevels,
     showUpdateValue: showUpdateValue,

@@ -124,7 +124,7 @@
   app.controller('AchievementsController', function($scope) {
     $scope.achievements = achievements;
     $scope.progress = function() {
-      return achievements.filter(function(a) { a.isAchieved(); }).length;
+      return achievements.filter(function(a) { return a.isAchieved(); }).length;
     };
   });
 

@@ -247,9 +247,10 @@ var GameObjects = (function() {
       return true;
     }
     if (this._allObjects.hasOwnProperty(this.targetKey) &&
-        this._allObjects[this.targetKey].state.hasOwnProperty(
-            this.targetProperty)) {
-      this.state.dateAchieved = new Date();
+        this._allObjects[this.targetKey].state.hasOwnProperty(this.targetProperty) &&
+        this._allObjects[this.targetKey].state[this.targetProperty] >= this.threshold) {
+      this.state.dateAchieved = new Date().getTime();
+      UI.showAchievement(this);
       return true;
     }
     return false;

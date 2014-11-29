@@ -10,7 +10,7 @@
     <meta property="og:description" content="An addictive incremental game that was made during the CERN Webfest 2014. It takes the player on a historic journey through modern particle physics.">
     <meta property="og:image" content="https://avatars2.githubusercontent.com/u/8345868">
 
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
     
@@ -95,28 +95,8 @@
     </nav>
 
 
-    <div class="container-fluid">
-      <div class="col-xs-3 scrollable" id="Research" ng-controller="ResearchController as rc">
-        <h3><i class="fa fa-cogs"></i> Research</h3>
-        <hr>
-        <ul class="media-list" ng-cloak>
-          <li class="media" ng-repeat="r in rc.research" ng-show="rc.isVisible(r)">
-            <img ng-show="r.state.level > 0" class="pull-left media-object" ng-src="{{ r.image }}" alt="">
-            <img ng-hide="r.state.level > 0" class="pull-left media-object" src="assets/icons/png/unknown.png" alt="">
-            <div class="media-body">
-              <h4 class="media-heading">{{ r.state.level > 0 ? r.name : '?????' }} <span ng-show="r.state.level > 0" class="badge">Level {{ r.state.level }}</span></h4>
-              <p ng-show="r.state.level > 0">{{ r.description }}</p>
-              <p ng-show="r.state.level > 0" class="small">Research yields <strong>{{ r.state.reputation | niceNumber }}</strong> reputation.</p>
-              <div class="btn-group">
-                <button class="btn btn-primary" ng-disabled="!rc.isAvailable(r)" ng-click="rc.doResearch(r)"><i class="fa fa-cogs"></i> <small>{{ r.state.cost | niceNumber }} data</small></button>
-              <button class="btn btn-info {{ r.state.interesting ? 'blink' : '' }}" ng-show="r.state.level > 0" ng-click="rc.showInfo(r)"><i class="fa fa-exclamation"></i></button>
-            </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-
-      <div class="col-xs-5 scrollable" ng-controller="LabController as lc">
+    <div id="main-content" class="container-fluid">
+      <div class="col-sm-6 col-md-push-3" ng-controller="LabController as lc">
         <input id="labname" value="{{ lc.lab.state.name }}" ng-model="lc.lab.state.name" ng-cloak>
         <hr>
         <button class="pull-right btn btn-info" ng-click="lc.showDetectorInfo()"><i class="fa fa-exclamation"></i></button>
@@ -129,7 +109,7 @@
           </canvas>
         </div>
         <div class="row" id="Status" ng-cloak>
-          <div class="col-xs-4 text-center">
+          <div class="col-sm-4 text-center">
             <strong>Data</strong>
             <br>
             {{ lc.lab.state.data | niceNumber }}
@@ -148,36 +128,87 @@
             <div class="update-value" id="update-funding"></div>
           </div>
         </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingUpgrades">
+              <h4 class="panel-title">
+                <a href="#Upgrades" aria-expanded="true" aria-controls="Upgrades">
+                  <i class="fa fa-wrench"></i> Upgrades
+                </a>
+              </h4>
+            </div>
+            <div class="panel-collapse collapse in" id="Upgrades" role="tabpanel" aria-labelledby="headingUpgrades" ng-controller="UpgradesController as uc">
+              <div class="panel-body scrollable">
+                <ul class="media-list" ng-cloak>
+                  <li class="media" ng-repeat="u in uc.upgrades" ng-show="uc.isVisible(u)">
+                    <div class="media-body">
+                      <h4 class="media-heading">{{ u.name }} <i class="fa {{ u.icon }} media-object"></i></h4>
+                      <p>{{ u.description }}</p>
+                      <p class="small">{{ u.effect }}</p>
+                      <button class="btn btn-primary" ng-disabled="!uc.isAvailable(u)" ng-click="uc.upgrade(u)"><i class="fa fa-money"></i> <small>{{ u.cost | currency }}</small></button>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
       </div>
 
-      <div class="col-xs-2 scrollable" id="HR" ng-controller="HRController as hrc">
-        <h3><i class="fa fa-users"></i> HR</h3>
-        <hr>
-        <ul class="media-list" ng-cloak>
-          <li class="media" ng-repeat="w in hrc.workers" ng-show="hrc.isVisible(w)">
-            <div class="media-body">
-              <h4 class="media-heading">{{ w.name }} <span ng-show="w.state.hired > 0" class="badge">{{ w.state.hired | niceNumber }}</span></h4>
-              <p ng-show="w.state.hired > 0">{{ w.description }}</p>
-              <p ng-show="w.state.hired > 0" class="small">Produce <strong>{{ w.state.rate | niceNumber }}</strong> data per second.</p>
-              <button class="btn btn-primary" ng-disabled="!hrc.isAvailable(w)" ng-click="hrc.hire(w)"><i class="fa fa-user"></i/> <small>{{ w.state.cost | currency }}</small></button>
+      <div class="col-xs-6 col-md-3 col-md-pull-6">
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingResearch">
+            <h4 class="panel-title">
+              <a href="#Research" aria-expanded="true" aria-controls="Research">
+                <i class="fa fa-cogs"></i> Research
+              </a>
+            </h4>
+          </div>
+          <div class="panel-collapse collapse in" role="tabpanel" id="Research" aria-labelledby="headingResearch" ng-controller="ResearchController as rc">
+            <div class="panel-body scrollable">
+              <ul class="media-list" ng-cloak>
+                <li class="media" ng-repeat="r in rc.research" ng-show="rc.isVisible(r)">
+                  <img ng-show="r.state.level > 0" class="pull-left media-object" ng-src="{{ r.image }}" alt="">
+                  <img ng-hide="r.state.level > 0" class="pull-left media-object" src="assets/icons/png/unknown.png" alt="">
+                  <div class="media-body">
+                    <h4 class="media-heading">{{ r.state.level > 0 ? r.name : '?????' }} <span ng-show="r.state.level > 0" class="badge">Level {{ r.state.level }}</span></h4>
+                    <p ng-show="r.state.level > 0">{{ r.description }}</p>
+                    <p ng-show="r.state.level > 0" class="small">Research yields <strong>{{ r.state.reputation | niceNumber }}</strong> reputation.</p>
+                    <div class="btn-group">
+                      <button class="btn btn-primary" ng-disabled="!rc.isAvailable(r)" ng-click="rc.doResearch(r)"><i class="fa fa-cogs"></i> <small>{{ r.state.cost | niceNumber }} data</small></button>
+                    <button class="btn btn-info {{ r.state.interesting ? 'blink' : '' }}" ng-show="r.state.level > 0" ng-click="rc.showInfo(r)"><i class="fa fa-exclamation"></i></button>
+                  </div>
+                  </div>
+                </li>
+              </ul>
             </div>
-          </li>
-        </ul>
+          </div>
+        </div>
       </div>
 
-      <div class="col-xs-2 scrollable" id="Upgrades" ng-controller="UpgradesController as uc">
-        <h3><i class="fa fa-wrench"></i> Upgrades</h3>
-        <hr>
-        <ul class="media-list" ng-cloak>
-          <li class="media" ng-repeat="u in uc.upgrades" ng-show="uc.isVisible(u)">
-            <div class="media-body">
-              <h4 class="media-heading">{{ u.name }} <i class="fa {{ u.icon }} media-object"></i></h4>
-              <p>{{ u.description }}</p>
-              <p class="small">{{ u.effect }}</p>
-              <button class="btn btn-primary" ng-disabled="!uc.isAvailable(u)" ng-click="uc.upgrade(u)"><i class="fa fa-money"></i> <small>{{ u.cost | currency }}</small></button>
+      <div class="col-xs-6 col-md-3">
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingHR">
+            <h4 class="panel-title">
+              <a href="#HR" aria-expanded="true" aria-controls="HR">
+                <i class="fa fa-users"></i> HR
+              </a>
+            </h4>
+          </div>
+          <div class="panel-collapse collapse in" role="tabpanel" id="HR" aria-labelledby="headingHR" ng-controller="HRController as hrc">
+            <div class="panel-body scrollable">
+              <ul class="media-list" ng-cloak>
+                <li class="media" ng-repeat="w in hrc.workers" ng-show="hrc.isVisible(w)">
+                  <div class="media-body">
+                    <h4 class="media-heading">{{ w.name }} <span ng-show="w.state.hired > 0" class="badge">{{ w.state.hired | niceNumber }}</span></h4>
+                    <p ng-show="w.state.hired > 0">{{ w.description }}</p>
+                    <p ng-show="w.state.hired > 0" class="small">Produce <strong>{{ w.state.rate | niceNumber }}</strong> data per second.</p>
+                    <button class="btn btn-primary" ng-disabled="!hrc.isAvailable(w)" ng-click="hrc.hire(w)"><i class="fa fa-user"></i/> <small>{{ w.state.cost | currency }}</small></button>
+                  </div>
+                </li>
+              </ul>
             </div>
-          </li>
-        </ul>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -276,7 +307,7 @@
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.17/angular.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <script src="js/external/jquery.cookie-1.4.1.min.js"></script>
     <script src="js/external/retina.js"></script>
     <script src="js/external/fastclick.js"></script>

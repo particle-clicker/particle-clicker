@@ -1,3 +1,7 @@
+body {
+  padding-top: 50px;
+}
+
 * {
   border-radius: 0 !important;
 }
@@ -39,7 +43,6 @@ h1 br {
 
 .scrollable {
   overflow: auto;
-  padding-top: 50px;
 }
 
 #achievements-container {

@@ -10,14 +10,14 @@ var UI = (function () {
   $(function() {
     FastClick.attach(document.body);    
     
-    var offset = 0;
+    /*var offset = 0;
     var h = $(window).height();
     $('.scrollable').height(h - offset + 'px');
     
     $(window).resize(function() {
       var h = $(window).height();
       $('.scrollable').height(h - offset + 'px');
-    });
+    });*/
   });
 
   /** Show a bootstrap modal with dynamic content. */

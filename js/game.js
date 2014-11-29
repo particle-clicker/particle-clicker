@@ -40,11 +40,8 @@ var Game = (function() {
         function(w) { return makeGameObject(GameObjects.Worker, w); });
     this.upgrades = this.upgrades.map(
         function(u) { return makeGameObject(GameObjects.Upgrade, u); });
-    this.achievements = this.achievements.map(function(a) {
-      var _a = makeGameObject(GameObjects.Achievement, a);
-      _a.setRefAllGameObjects(_this.allObjects);
-      return _a;
-    });
+    this.achievements = this.achievements.map(
+        function(a) { return makeGameObject(GameObjects.Achievement, a); });
     // Load states from local store
     for (var key in this.allObjects) {
       var o = this.allObjects[key];

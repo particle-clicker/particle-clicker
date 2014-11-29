@@ -203,10 +203,10 @@
           <div class="modal-body">
             <p class="text-center"><strong>Progress</strong> <span class="label label-info">{{ progress() }} / {{ achievements.length }}</span></p>
             <ul class="list-group">
-              <li class="list-group-item" ng-repeat="a in achievements | orderBy:'state.dateAchieved' | reverse" ng-show="a.isAchieved()">
+              <li class="list-group-item" ng-repeat="a in achievements | orderBy:'state.timeAchieved' | reverse" ng-show="a.isAchieved()">
                 <i class="fa {{ a.icon }}"></i>
                 {{ a.description }}
-                <span class="badge">{{ a.state.dateAchieved | date }}</span>
+                <span class="badge">{{ a.state.timeAchieved | niceTime }}</span>
               </li>
             </ul>
           </div>

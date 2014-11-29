@@ -37,10 +37,36 @@ var Helpers = (function() {
     }
     return number; 
   }
+
+  var formatTime = function(msec) {
+    var totals = Math.ceil(msec / 1000);
+    var days = Math.floor(totals / (24 * 60 * 60));
+    var hours = Math.floor((totals % (24 * 60 * 60)) / (60 * 60));
+    var totalmin = (totals % (24 * 60 * 60)) % (60 * 60);
+    var mins = Math.floor(totalmin / 60);
+    var secs = totalmin % 60;
+
+    var str = [];
+    if (days > 0) {
+      str.push(days + ' day' + (days % 100 == 1 ? '' : 's'));
+    }
+    if (hours > 0) {
+      str.push(hours + ' h');
+    }
+    if (mins > 0) {
+      str.push(mins + ' min');
+    }
+    if (secs > 0) {
+      str.push(secs + ' s');
+    }
+
+    return str.join(', ');
+  }
  
   return {
     loadFile: loadFile,
     formatNumberPostfix: formatNumberPostfix,
+    formatTime: formatTime,
     version: '0.4',
     analytics: ''
   };

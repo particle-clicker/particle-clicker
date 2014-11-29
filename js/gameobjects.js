@@ -33,7 +33,8 @@ var GameObjects = (function() {
                                moneyCollected : 0,
                                moneySpent : 0,
                                dataCollected : 0,
-                               dataSpent : 0
+                               dataSpent : 0,
+                               time: 0
                              }
                            }]);
   };
@@ -232,28 +233,31 @@ var GameObjects = (function() {
    */
   var Achievement = function(obj) {
     GameObject.apply(this, [obj]);
-    this.state.dateAchieved = null;
-    this._allObjects = {};
+    this.state.timeAchieved = null;
   };
 
   Achievement.prototype = Object.create(GameObject.prototype);
 
-  Achievement.prototype.setRefAllGameObjects = function (allGameObjects) {
-    this._allObjects = allGameObjects;
-  };
-
-  Achievement.prototype.isAchieved = function() {
-    if (this.state.dateAchieved) {
+  Achievement.prototype.validate = function(lab, allObjects, saveTime) {
+    if (this.state.timeAchieved) {
       return true;
     }
-    if (this._allObjects.hasOwnProperty(this.targetKey) &&
-        this._allObjects[this.targetKey].state.hasOwnProperty(this.targetProperty) &&
-        this._allObjects[this.targetKey].state[this.targetProperty] >= this.threshold) {
-      this.state.dateAchieved = new Date().getTime();
+    if (allObjects.hasOwnProperty(this.targetKey) &&
+        allObjects[this.targetKey].state.hasOwnProperty(this.targetProperty) &&
+        allObjects[this.targetKey].state[this.targetProperty] >= this.threshold) {
+      this.state.timeAchieved = lab.state.time + new Date().getTime() - saveTime;
       UI.showAchievement(this);
       return true;
     }
     return false;
+  };
+
+  Achievement.prototype.isAchieved = function() {
+    if (this.state.timeAchieved) {
+      return true;
+    } else {
+      return false;
+    }
   };
 
 

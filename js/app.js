@@ -9,6 +9,7 @@
   var upgrades = game.upgrades;
   var achievements = game.achievements;
   var allObjects = game.allObjects;
+  var lastSaved;
 
   UI.validateVersion(lab.version);
 
@@ -16,6 +17,10 @@
 
   app.filter('niceNumber', ['$filter', function($filter) {
       return Helpers.formatNumberPostfix;
+  }]);
+
+  app.filter('niceTime', ['$filter', function($filter) {
+      return Helpers.formatTime;
   }]);
 
   app.filter('currency', ['$filter', function($filter) {
@@ -124,16 +129,20 @@
   app.controller('AchievementsController', function($scope) {
     $scope.achievements = achievements;
     $scope.progress = function() {
-      return achievements.filter(function(a) { return a.isAchieved(); }).length;
+      return achievements.filter(function(a) { return a.validate(lab, allObjects, lastSaved); }).length;
     };
   });
 
   app.controller('SaveController',
       ['$scope', '$interval', function($scope, $interval) {
-    $scope.lastSaved = new Date();
+    lastSaved = new Date().getTime();
+    $scope.lastSaved = lastSaved;
     $scope.saveNow = function() {
+      var saveTime = new Date().getTime();
+      game.lab.state.time += saveTime - lastSaved;
       game.save();
-      $scope.lastSaved = new Date();
+      lastSaved = saveTime;
+      $scope.lastSaved = lastSaved;
     };
     $scope.restart = function() {
       if (window.confirm(

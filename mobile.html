@@ -94,7 +94,7 @@
           <div class="tab-pane" id="achievements" ng-controller="AchievementsController as ac">
             <p class="text-center"><strong>Progress</strong> <span class="label label-info">{{ ac.achievements.length }} / {{ ac.achievementsAll.length }}</span></p>
             <ul class="list-group">
-              <li class="list-group-item" ng-repeat="a in achievements | orderBy:'state.dateAchieved' | reverse">
+              <li class="list-group-item" ng-repeat="a in achievements | orderBy:'state.timeAchieved' | reverse">
                 <span class="badge">{{ a.time }}</span>
                 <span class="glyphicon {{ a.icon }}"></span>
                   {{ a.description }}

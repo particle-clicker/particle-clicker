@@ -93,7 +93,7 @@ var UI = (function () {
     if (version != Helpers.version) {
       var alert = '<div id="outofdate" class="alert alert-info alert-dismissible" role="alert">';
       alert += '<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>';
-      alert += '<span class="glyphicon glyphicon-info-sign alert-glyph"></span> <span class="alert-text">Your saved state out of date. <a href="#"><strong>Restart</strong></a> to use latest version of the game.</span>';
+      alert += '<span class="glyphicon glyphicon-info-sign alert-glyph"></span> <span class="alert-text">Your saved state is out of date. <a href="#"><strong>Restart</strong></a> to use latest version of the game.</span>';
       alert += '</div>';
       alert = $(alert);
       alert.find('a').click(function ()

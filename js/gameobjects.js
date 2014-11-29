@@ -21,7 +21,7 @@ var GameObjects = (function() {
   var Lab = function() {
     GameObject.apply(this, [{
                              key : 'lab',
-                             version : 0.4,
+                             version : 0.9,
                              state : {
                                name : 'Give your lab an awesome name!',
                                detector : 1,

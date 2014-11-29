@@ -1,11 +1,11 @@
 /** @module Helpers
  * Define some useful helpers that are used throughout the game.
  */
-var Helpers = (function() {
+var Helpers = (function () {
   'use strict';
   /** Load a file (usually JSON).
    */
-  var loadFile = function(filename) {
+  var loadFile = function (filename) {
     var res;
     $.ajax({
       async: false,
@@ -19,26 +19,32 @@ var Helpers = (function() {
 
   /** Format a number with proper postfix.
    */
-  var formatNumberPostfix = function(number) {
+  var formatNumberPostfix = function (number) {
     if (typeof number !== "number") {
       return 0;
     }
+
+    var prefixes = [
+      { magnitude: 1e24, label: 'Y' },
+      { magnitude: 1e21, label: 'Z' },
+      { magnitude: 1e18, label: 'E' },
+      { magnitude: 1e15, label: 'P' },
+      { magnitude: 1e12, label: 'T' },
+      { magnitude:  1e9, label: 'B' },
+      { magnitude:  1e6, label: 'M' },
+      { magnitude:  1e3, label: 'k' }
+    ];
+
     var abs = Math.abs(number);
-    if (abs >= Math.pow(10, 12)) {
-      number = (number / Math.pow(10, 12)).toFixed(1) + "T";
-    } else if (abs >= Math.pow(10, 9)) {
-      number = (number / Math.pow(10, 9)).toFixed(1) + "B";
-    } else if (abs >= Math.pow(10, 6)) {
-      number = (number / Math.pow(10, 6)).toFixed(1) + "M";
-    } else if (abs >= Math.pow(10, 3)) {
-      number = (number / Math.pow(10, 3)).toFixed(1) + "k";
-    } else {
-      number = number.toFixed(0);
+    for (var prefix in prefixes) {
+      if (abs >= prefix.magnitude) {
+        return (number / prefix.magnitude).toFixed(1) + prefix.label;
+      }
     }
     return number; 
   }
 
-  var formatTime = function(msec) {
+  var formatTime = function (msec) {
     var totals = Math.ceil(msec / 1000);
     var days = Math.floor(totals / (24 * 60 * 60));
     var hours = Math.floor((totals % (24 * 60 * 60)) / (60 * 60));
@@ -61,13 +67,13 @@ var Helpers = (function() {
     }
 
     return str.join(', ');
-  }
+  };
  
   return {
     loadFile: loadFile,
     formatNumberPostfix: formatNumberPostfix,
     formatTime: formatTime,
-    version: '0.4',
+    version: '0.9',
     analytics: ''
   };
 })();

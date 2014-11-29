@@ -214,5 +214,31 @@
       {"key": "upgrade-energy2", "property": "used", "threshold": 1}
     ],
     "factor": 2
+  },
+  {
+    "key": "upgrade-energy4",
+    "name": "√s = 1 TeV",
+    "description": "Increased centre-of-mass energy.",
+    "effect": "Double the amount of data per click.",
+    "icon": "fa-bolt",
+    "cost": 10000,
+    "targets": [{"key": "lab", "property": "detector"}],
+    "requirements": [
+      {"key": "upgrade-energy3", "property": "used", "threshold": 1}
+    ],
+    "factor": 2
+  },
+  {
+    "key": "upgrade-energy5",
+    "name": "√s = 2 TeV",
+    "description": "Increased centre-of-mass energy.",
+    "effect": "Double the amount of data per click.",
+    "icon": "fa-bolt",
+    "cost": 100000,
+    "targets": [{"key": "lab", "property": "detector"}],
+    "requirements": [
+      {"key": "upgrade-energy4", "property": "used", "threshold": 1}
+    ],
+    "factor": 2
   }
 ]

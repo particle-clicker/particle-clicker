@@ -36,9 +36,9 @@ var Helpers = (function () {
     ];
 
     var abs = Math.abs(number);
-    for (var prefix in prefixes) {
-      if (abs >= prefix.magnitude) {
-        return (number / prefix.magnitude).toFixed(1) + prefix.label;
+    for (var i = 0; i < prefixes.length; i++) {
+      if (abs >= prefixes[i].magnitude) {
+        return (number / prefixes[i].magnitude).toFixed(1) + prefixes[i].label;
       }
     }
     return number; 

@@ -90,6 +90,7 @@ var detector =
     {
         detector.core.canvas = document.getElementById('detector-core');
         detector.core.ctx = detector.core.canvas.getContext('2d');
+        //detector.core.ctx = new C2S(400,400);
 
         detector.events.canvas = document.getElementById('detector-events');
         detector.events.ctx = detector.events.canvas.getContext('2d');
@@ -180,9 +181,8 @@ var detector =
             ctx.lineTo(cx + detector.radius.mucal * Math.cos(Math.PI * i * muSplit) * detector.ratio, cy + detector.radius.mucal * Math.sin(Math.PI * i * muSplit) * detector.ratio);
         }
         ctx.stroke();
-        ctx.globalCompositeOperation = 'destination-out';
+        ctx.fillStyle = '#FFFFFF';
         ctx.fill();
-        ctx.globalCompositeOperation = 'source-over';
 
 
         ctx.beginPath();
@@ -193,10 +193,9 @@ var detector =
         ctx.stroke();
 
         ctx.beginPath();
-        ctx.globalCompositeOperation = 'destination-out';
+        ctx.fillStyle = '#FFFFFF';
         ctx.arc(cx, cy, detector.radius.lightRingSpace * detector.ratio, 0, Math.PI * 2, true);
         ctx.fill();
-        ctx.globalCompositeOperation = 'source-over';
 
         ctx.beginPath();
         ctx.strokeStyle = detector.colors.lightRingLine;
@@ -206,10 +205,9 @@ var detector =
         ctx.stroke();
 
         ctx.beginPath();
-        ctx.globalCompositeOperation = 'destination-out';
+        ctx.fillStyle = '#FFFFFF';
         ctx.arc(cx, cy, detector.radius.darkRing1Space * detector.ratio, 0, Math.PI * 2, true);
         ctx.fill();
-        ctx.globalCompositeOperation = 'source-over';
 
         ctx.beginPath();
         ctx.strokeStyle = detector.colors.darkRingLine
@@ -219,10 +217,9 @@ var detector =
         ctx.stroke();
 
         ctx.beginPath();
-        ctx.globalCompositeOperation = 'destination-out';
+        ctx.fillStyle = '#FFFFFF';
         ctx.arc(cx, cy, detector.radius.ecal * detector.ratio, 0, Math.PI * 2, true);
         ctx.fill();
-        ctx.globalCompositeOperation = 'source-over';
 
 
         ctx.strokeStyle = detector.colors.hcalLine;
@@ -234,6 +231,7 @@ var detector =
             ctx.lineTo(cx + detector.radius.hcal * Math.cos(Math.PI * i / calSplit) * detector.ratio, cy + detector.radius.hcal * Math.sin(Math.PI * i / calSplit) * detector.ratio);
             ctx.arc(cx, cy, detector.radius.hcal * detector.ratio, Math.PI * i / calSplit, Math.PI * (i+1) / calSplit, false);
             ctx.lineTo(cx + detector.radius.ecal * Math.cos(Math.PI * (i+1) / calSplit) * detector.ratio, cy + detector.radius.ecal * Math.sin(Math.PI * (i+1) / calSplit) * detector.ratio);
+            ctx.lineTo(cx + detector.radius.ecal * Math.cos(Math.PI * i / calSplit) * detector.ratio, cy + detector.radius.ecal * Math.sin(Math.PI * i / calSplit) * detector.ratio);
             ctx.closePath();
             ctx.fill();
             ctx.stroke();
@@ -323,3 +321,5 @@ window.requestAnimFrame = (function(){
                window.setTimeout(callback, 1000 / 60);
            };
 })();
+
+(function() { detector.init(400); })();

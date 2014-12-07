@@ -77,7 +77,7 @@
                 <li><a href="#" ng-click="restart()"><i class="fa fa-refresh"></i> Restart</a></li>
               </ul>
             </li>
-            <li><a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-users"></i> About</a></li>
+            <!--<li><a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-users"></i> About</a></li>-->
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="https://github.com/particle-clicker/particle-clicker/" target="_blank"><i class="fa fa-github"></i> GitHub</a></li>
@@ -94,9 +94,8 @@
       </div>
     </nav>
 
-
     <div id="main-content" class="container-fluid">
-      <div class="col-sm-6 col-md-push-3" ng-controller="LabController as lc">
+      <div class="col-xs-6 col-md-push-3" ng-controller="LabController as lc">
         <input id="labname" value="{{ lc.lab.state.name }}" ng-model="lc.lab.state.name" ng-cloak>
         <hr>
         <button class="pull-right btn btn-info" ng-click="lc.showDetectorInfo()"><i class="fa fa-exclamation"></i></button>
@@ -129,42 +128,38 @@
           </div>
         </div>
 
-        <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingUpgrades">
-              <h4 class="panel-title">
-                <a href="#Upgrades" aria-expanded="true" aria-controls="Upgrades">
-                  <i class="fa fa-wrench"></i> Upgrades
-                </a>
-              </h4>
-            </div>
-            <div class="panel-collapse collapse in" id="Upgrades" role="tabpanel" aria-labelledby="headingUpgrades" ng-controller="UpgradesController as uc">
-              <div class="panel-body scrollable">
-                <ul class="media-list" ng-cloak>
-                  <li class="media" ng-repeat="u in uc.upgrades" ng-show="uc.isVisible(u)">
-                    <div class="media-body">
-                      <h4 class="media-heading">{{ u.name }} <i class="fa {{ u.icon }} media-object"></i></h4>
-                      <p>{{ u.description }}</p>
-                      <p class="small">{{ u.effect }}</p>
-                      <button class="btn btn-primary" ng-disabled="!uc.isAvailable(u)" ng-click="uc.upgrade(u)"><i class="fa fa-money"></i> <small>{{ u.cost | currency }}</small></button>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-      </div>
-
-      <div class="col-xs-6 col-md-3 col-md-pull-6">
-        <div class="panel panel-default">
-          <div class="panel-heading" role="tab" id="headingResearch">
+        <div class="panel panel-default hidden-xs hidden-sm">
+          <div class="panel-heading">
             <h4 class="panel-title">
-              <a href="#Research" aria-expanded="true" aria-controls="Research">
-                <i class="fa fa-cogs"></i> Research
-              </a>
+              <i class="fa fa-wrench"></i> Upgrades
             </h4>
           </div>
-          <div class="panel-collapse collapse in" role="tabpanel" id="Research" aria-labelledby="headingResearch" ng-controller="ResearchController as rc">
-            <div class="panel-body scrollable">
+          <div class="panel-body" id="upgradesLarge">
+            <div id="upgradesContent">
+              <ul class="media-list" ng-cloak>
+                <li class="media" ng-repeat="u in uc.upgrades" ng-show="uc.isVisible(u)">
+                  <div class="media-body">
+                    <h4 class="media-heading">{{ u.name }} <i class="fa {{ u.icon }} media-object"></i></h4>
+                    <p>{{ u.description }}</p>
+                    <p class="small">{{ u.effect }}</p>
+                    <button class="btn btn-primary" ng-disabled="!uc.isAvailable(u)" ng-click="uc.upgrade(u)"><i class="fa fa-money"></i> <small>{{ u.cost | currency }}</small></button>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-md-pull-6 visible-md-block visible-lg-block">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <i class="fa fa-cogs"></i> Research
+            </h4>
+          </div>
+          <div class="panel-body scrollable large" id="researchLarge" ng-controller="ResearchController as rc">
+            <div id="researchContent" ng-controller="ResearchController as rc">
               <ul class="media-list" ng-cloak>
                 <li class="media" ng-repeat="r in rc.research" ng-show="rc.isVisible(r)">
                   <img ng-show="r.state.level > 0" class="pull-left media-object" ng-src="{{ r.image }}" alt="">
@@ -185,28 +180,48 @@
         </div>
       </div>
 
-      <div class="col-xs-6 col-md-3">
+      <div class="col-xs-6 col-md-3 visible-md-block visible-lg-block">
         <div class="panel panel-default">
-          <div class="panel-heading" role="tab" id="headingHR">
+          <div class="panel-heading">
             <h4 class="panel-title">
-              <a href="#HR" aria-expanded="true" aria-controls="HR">
-                <i class="fa fa-users"></i> HR
-              </a>
+              <i class="fa fa-users"></i> HR
             </h4>
           </div>
-          <div class="panel-collapse collapse in" role="tabpanel" id="HR" aria-labelledby="headingHR" ng-controller="HRController as hrc">
-            <div class="panel-body scrollable">
+          <div class="panel-body scrollable large" id="hrLarge">
+            <div id="hrContent" ng-controller="HRController as hrc">
               <ul class="media-list" ng-cloak>
                 <li class="media" ng-repeat="w in hrc.workers" ng-show="hrc.isVisible(w)">
                   <div class="media-body">
                     <h4 class="media-heading">{{ w.name }} <span ng-show="w.state.hired > 0" class="badge">{{ w.state.hired | niceNumber }}</span></h4>
                     <p ng-show="w.state.hired > 0">{{ w.description }}</p>
                     <p ng-show="w.state.hired > 0" class="small">Produce <strong>{{ w.state.rate | niceNumber }}</strong> data per second.</p>
-                    <button class="btn btn-primary" ng-disabled="!hrc.isAvailable(w)" ng-click="hrc.hire(w)"><i class="fa fa-user"></i/> <small>{{ w.state.cost | currency }}</small></button>
+                    <button class="btn btn-primary" ng-disabled="!hrc.isAvailable(w)" ng-click="hrc.hire(w)"><i class="fa fa-user"></i> <small>{{ w.state.cost | currency }}</small></button>
                   </div>
                 </li>
               </ul>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-6 visible-xs-block visible-sm-block">
+        <!-- Nav tabs -->
+        <ul id="TabList" class="nav nav-tabs" role="tablist">
+          <li class="active"><a href="#research" role="tab" data-toggle="tab"><i class="fa fa-cogs"></i> Research</a></li>
+          <li><a href="#hr" role="tab" data-toggle="tab"><i class="fa fa-users"></i> HR</a></li>
+          <li><a href="#upgrades" role="tab" data-toggle="tab"><i class="fa fa-wrench"></i> Upgrades</a></li>
+        </ul>
+        <!-- Tab panes -->
+        <div id="TabContent" class="tab-content">
+          <!-- Research -->
+          <div class="tab-pane active scrollable" id="research">
+
+          </div>
+          <div class="tab-pane scrollable" id="hr">
+
+          </div>
+          <div class="tab-pane scrollable" id="upgrades">
+
           </div>
         </div>
       </div>

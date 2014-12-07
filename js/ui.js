@@ -10,14 +10,36 @@ var UI = (function () {
   $(function() {
     FastClick.attach(document.body);    
     
-    /*var offset = 0;
-    var h = $(window).height();
-    $('.scrollable').height(h - offset + 'px');
-    
-    $(window).resize(function() {
+    var offset = 150;
+    var resize = function() {
       var h = $(window).height();
       $('.scrollable').height(h - offset + 'px');
-    });*/
+
+      if ($(window).width() < 992) {
+        if ($('#researchContent').parent().attr('id') == 'researchLarge') {
+          $('#researchContent').detach().appendTo('#research');
+        }
+        if ($('#hrContent').parent().attr('id') == 'hrLarge') {
+          $('#hrContent').detach().appendTo('#hr');
+        }
+        if ($('#upgradesContent').parent().attr('id') == 'upgradesLarge') {
+          $('#upgradesContent').detach().appendTo('#upgrades');
+        }
+      } else {
+        if ($('#researchContent').parent().attr('id') != 'researchLarge') {
+          $('#researchContent').detach().appendTo('#researchLarge');
+        }
+        if ($('#hrContent').parent().attr('id') != 'hrLarge') {
+          $('#hrContent').detach().appendTo('#hrLarge');
+        }
+        if ($('#upgradesContent').parent().attr('id') != 'upgradesLarge') {
+          $('#upgradesContent').detach().appendTo('#upgradesLarge');
+        }
+      }
+    }
+    
+    $(window).resize(resize);
+    resize();
   });
 
   /** Show a bootstrap modal with dynamic content. */

@@ -136,9 +136,6 @@ var detector =
             detector.events.ctx.scale(ratio, ratio);
         }
 
-        // detector.core.ctx.scale(detector.ratio, detector.ratio);
-        // detector.events.ctx.scale(detector.ratio, detector.ratio);
-
         detector.coreDraw();
         detector.animate();
     },
@@ -294,7 +291,7 @@ var detector =
 
     draw: function(duration)
     {
-        detector.events.ctx.clearRect(0, 0, 400, 400);
+        detector.events.ctx.clearRect(0, 0, detector.width, detector.height);
 
         var del = -1;
         for (var e in detector.events.list) {
@@ -322,4 +319,4 @@ window.requestAnimFrame = (function(){
            };
 })();
 
-(function() { detector.init(400); })();
+(function() { detector.init(400); $('#detector').width(400).height(400); })();

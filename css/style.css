@@ -19,12 +19,15 @@ h1 br {
   background-image: url('../assets/pc32.png');
 }
 
+#detector-holder {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
 #detector {
   cursor: pointer;
   margin: 0 auto;
   position: relative;
-  width: 400px;
-  height: 400px;
 }
 
 #detector canvas {
@@ -76,11 +79,7 @@ h1 br {
   float:right; font-weight: bold;
 }
 
-#Status {
-  font-size: x-large;
-}
-
-#Status strong {
+.status strong {
   color: #666;
 }
 
@@ -110,6 +109,10 @@ h1 br {
   font-weight: 500;
   line-height: 1;
   width: 99%;
+}
+
+.panel {
+  margin-bottom: 0;
 }
 
 .prevent-select {
@@ -143,5 +146,50 @@ h1 br {
     opacity: 0.25;
     background: #f00;
     border-color: #900;
+  }
+}
+
+/** Responsive **/
+@media (min-width: 992px) {
+  .col-no-padding {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .panel-stick,
+  .panel-stick .panel-heading,
+  .panel-stick .panel-body {
+    border-right: 0;
+  }
+
+  .status {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .col-no-padding {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .panel-stick,
+  .panel-stick .panel-heading,
+  .panel-stick .panel-body {
+    border-right: 0;
+  }
+
+  .status {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px){
+  .col-md-3s {
+    width:20%;
+  }
+
+  .col-md-5s {
+    width:40%;
   }
 }

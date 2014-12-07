@@ -69,64 +69,8 @@
       </div>
     </nav>
 
-    <div id="main-content" class="container-fluid">
-      <div class="col-xs-6 col-md-push-3" ng-controller="LabController as lc">
-        <input id="labname" value="{{ lc.lab.state.name }}" ng-model="lc.lab.state.name" ng-cloak>
-        <hr>
-        <button class="pull-right btn btn-info" ng-click="lc.showDetectorInfo()"><i class="fa fa-exclamation"></i></button>
-        <div id="detector" ng-controller="DetectorController as dc">
-          <canvas id="detector-core" width="400" height="400">
-            Your detector. Click on it to generate events.
-          </canvas>
-          <canvas ng-click="dc.click()" id="detector-events" width="400" height="400" class="prevent-select">
-            Your detector. Click on it to generate events.
-          </canvas>
-        </div>
-        <div class="row" id="Status" ng-cloak>
-          <div class="col-sm-4 text-center">
-            <strong>Data</strong>
-            <br>
-            {{ lc.lab.state.data | niceNumber }}
-            <div class="update-value" id="update-data"></div>
-          </div>
-          <div class="col-xs-4 text-center">
-            <strong>Reputation</strong>
-            <br>
-            {{ lc.lab.state.reputation | niceNumber }}
-            <div class="update-value" id="update-reputation"></div>
-          </div>
-          <div class="col-xs-4">
-            <span class="text-center"><strong>Funding</strong></span>
-            <br>
-            {{ lc.lab.state.money | currency }}
-            <div class="update-value" id="update-funding"></div>
-          </div>
-        </div>
-
-        <div class="panel panel-default hidden-xs hidden-sm">
-          <div class="panel-heading">
-            <h4 class="panel-title">
-              <i class="fa fa-wrench"></i> Upgrades
-            </h4>
-          </div>
-          <div class="panel-body" id="upgradesLarge">
-            <div id="upgradesContent">
-              <ul class="media-list" ng-cloak>
-                <li class="media" ng-repeat="u in uc.upgrades" ng-show="uc.isVisible(u)">
-                  <div class="media-body">
-                    <h4 class="media-heading">{{ u.name }} <i class="fa {{ u.icon }} media-object"></i></h4>
-                    <p>{{ u.description }}</p>
-                    <p class="small">{{ u.effect }}</p>
-                    <button class="btn btn-primary" ng-disabled="!uc.isAvailable(u)" ng-click="uc.upgrade(u)"><i class="fa fa-money"></i> <small>{{ u.cost | currency }}</small></button>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-3 col-md-pull-6 visible-md-block visible-lg-block">
+    <div id="main-content" class="container-fluid col-no-padding">
+      <div class="col-md-3 col-md-3s col-lg-2 col-no-padding visible-md-block visible-lg-block">
         <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title">
@@ -155,8 +99,49 @@
         </div>
       </div>
 
-      <div class="col-xs-6 col-md-3 visible-md-block visible-lg-block">
-        <div class="panel panel-default">
+      <div class="col-xs-6 col-md-5 col-md-5s col-lg-6" ng-controller="LabController as lc">
+        <input id="labname" value="{{ lc.lab.state.name }}" ng-model="lc.lab.state.name" ng-cloak>
+        <hr>
+        <button class="pull-right btn btn-info" ng-click="lc.showDetectorInfo()"><i class="fa fa-exclamation"></i></button>
+        <div id="detector-holder">
+          <div id="detector" ng-controller="DetectorController as dc">
+            <canvas id="detector-core" width="400" height="400">
+              Your detector. Click on it to generate events.
+            </canvas>
+            <canvas ng-click="dc.click()" id="detector-events" width="400" height="400" class="prevent-select">
+              Your detector. Click on it to generate events.
+            </canvas>
+          </div>
+        </div>
+        <div class="row status" ng-cloak>
+          <div class="col-sm-4 text-center">
+            <strong>Data</strong>
+          </div>
+          <div class="col-xs-4 text-center">
+            <strong>Reputation</strong>
+          </div>
+          <div class="col-xs-4 text-center">
+            <strong>Funding</strong>
+          </div>
+        </div>
+        <div class="row status" ng-cloak>
+          <div class="col-sm-4 text-center">
+            {{ lc.lab.state.data | niceNumber }}
+            <div class="update-value" id="update-data"></div>
+          </div>
+          <div class="col-xs-4 text-center">
+            {{ lc.lab.state.reputation | niceNumber }}
+            <div class="update-value" id="update-reputation"></div>
+          </div>
+          <div class="col-xs-4 text-center">
+            {{ lc.lab.state.money | currency }}
+            <div class="update-value" id="update-funding"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-md-3s col-lg-2 col-no-padding visible-md-block visible-lg-block">
+        <div class="panel panel-default panel-stick">
           <div class="panel-heading">
             <h4 class="panel-title">
               <i class="fa fa-users"></i> HR
@@ -171,6 +156,30 @@
                     <p ng-show="w.state.hired > 0">{{ w.description }}</p>
                     <p ng-show="w.state.hired > 0" class="small">Produce <strong>{{ w.state.rate | niceNumber }}</strong> data per second.</p>
                     <button class="btn btn-primary" ng-disabled="!hrc.isAvailable(w)" ng-click="hrc.hire(w)"><i class="fa fa-user"></i> <small>{{ w.state.cost | currency }}</small></button>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-md-3s col-lg-2 col-no-padding visible-md-block visible-lg-block">
+        <div class="panel panel-default hidden-xs hidden-sm">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <i class="fa fa-wrench"></i> Upgrades
+            </h4>
+          </div>
+          <div class="panel-body scrollable large" id="upgradesLarge">
+            <div id="upgradesContent">
+              <ul class="media-list" ng-cloak>
+                <li class="media" ng-repeat="u in uc.upgrades" ng-show="uc.isVisible(u)">
+                  <div class="media-body">
+                    <h4 class="media-heading">{{ u.name }} <i class="fa {{ u.icon }} media-object"></i></h4>
+                    <p>{{ u.description }}</p>
+                    <p class="small">{{ u.effect }}</p>
+                    <button class="btn btn-primary" ng-disabled="!uc.isAvailable(u)" ng-click="uc.upgrade(u)"><i class="fa fa-money"></i> <small>{{ u.cost | currency }}</small></button>
                   </div>
                 </li>
               </ul>

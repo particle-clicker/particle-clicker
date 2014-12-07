@@ -10,7 +10,7 @@ var UI = (function () {
   $(function() {
     FastClick.attach(document.body);    
     
-    var offset = 150;
+    var offset = 121;
     var resize = function() {
       var h = $(window).height();
       $('.scrollable').height(h - offset + 'px');
@@ -37,12 +37,19 @@ var UI = (function () {
         }
       }
 
-      if ($(window).width() < 992) {
+      if ($(window).width() >= 1200) {
+        if (detector.width != 500) {
+          $('#detector').width(500).height(500);
+          detector.init(500);
+        }
+      } else if ($(window).width() < 992) {
         if (detector.width != 300) {
+          $('#detector').width(300).height(300);
           detector.init(300);
         }
       } else {
         if (detector.width != 400) {
+          $('#detector').width(400).height(400);
           detector.init(400);
         }
       }

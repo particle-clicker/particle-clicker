@@ -36,6 +36,16 @@ var UI = (function () {
           $('#upgradesContent').detach().appendTo('#upgradesLarge');
         }
       }
+
+      if ($(window).width() < 992) {
+        if (detector.width != 300) {
+          detector.init(300);
+        }
+      } else {
+        if (detector.width != 400) {
+          detector.init(400);
+        }
+      }
     }
     
     $(window).resize(resize);

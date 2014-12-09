@@ -10,7 +10,7 @@
     <meta property="og:description" content="An addictive incremental game that was made during the CERN Webfest 2014. It takes the player on a historic journey through modern particle physics.">
     <meta property="og:image" content="https://avatars2.githubusercontent.com/u/8345868">
 
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
     
@@ -99,9 +99,9 @@
         </div>
       </div>
 
-      <div class="col-xs-6 col-md-5 col-md-5s col-lg-6" ng-controller="LabController as lc">
-        <input id="labname" value="{{ lc.lab.state.name }}" ng-model="lc.lab.state.name" ng-cloak>
-        <hr>
+      <div id="column-lab" class="col-xs-6 col-md-5 col-md-5s col-lg-6 col-no-padding-xs" ng-controller="LabController as lc">
+        <input class="hidden-xs" id="labname" value="{{ lc.lab.state.name }}" ng-model="lc.lab.state.name" ng-cloak>
+        <hr class="hidden-xs">
         <button class="pull-right btn btn-info" ng-click="lc.showDetectorInfo()"><i class="fa fa-exclamation"></i></button>
         <div id="detector-holder">
           <div id="detector" ng-controller="DetectorController as dc">
@@ -114,26 +114,18 @@
           </div>
         </div>
         <div class="row status" ng-cloak>
-          <div class="col-sm-4 text-center">
-            <strong>Data</strong>
-          </div>
-          <div class="col-xs-4 text-center">
-            <strong>Reputation</strong>
-          </div>
-          <div class="col-xs-4 text-center">
-            <strong>Funding</strong>
-          </div>
-        </div>
-        <div class="row status" ng-cloak>
-          <div class="col-sm-4 text-center">
+          <div class="col-xs-4 text-center col-no-padding-xs">
+            <strong>Data</strong><br>
             {{ lc.lab.state.data | niceNumber }}
             <div class="update-value" id="update-data"></div>
           </div>
-          <div class="col-xs-4 text-center">
+          <div class="col-xs-4 text-center col-no-padding-xs">
+            <strong>Reputation</strong><br>
             {{ lc.lab.state.reputation | niceNumber }}
             <div class="update-value" id="update-reputation"></div>
           </div>
-          <div class="col-xs-4 text-center">
+          <div class="col-xs-4 text-center col-no-padding-xs">
+            <strong>Funding</strong><br>
             {{ lc.lab.state.money | currency }}
             <div class="update-value" id="update-funding"></div>
           </div>
@@ -188,16 +180,13 @@
         </div>
       </div>
 
-      <div class="col-xs-6 visible-xs-block visible-sm-block">
-        <!-- Nav tabs -->
+      <div id="column-tabs" class="col-xs-6 visible-xs-block visible-sm-block col-no-padding">
         <ul id="TabList" class="nav nav-tabs" role="tablist">
           <li class="active"><a href="#research" role="tab" data-toggle="tab"><i class="fa fa-cogs"></i> Research</a></li>
           <li><a href="#hr" role="tab" data-toggle="tab"><i class="fa fa-users"></i> HR</a></li>
           <li><a href="#upgrades" role="tab" data-toggle="tab"><i class="fa fa-wrench"></i> Upgrades</a></li>
         </ul>
-        <!-- Tab panes -->
         <div id="TabContent" class="tab-content">
-          <!-- Research -->
           <div class="tab-pane active scrollable" id="research">
 
           </div>
@@ -262,8 +251,14 @@
       </div>
     </div>
 
-    <div id="achievements-container" class="col-xs-3"></div>
-    <div id="messages-container" class="col-xs-3"></div>
+    <div id="achievements-container" class="col-xs-6 col-sm-3"></div>
+    <div id="messages-container" class="col-xs-6 col-sm-3"></div>
+
+    <div id="mobile-orientation-container">
+      <div id="mobile-orientation-message">
+        You can only play Particle Clicker on your mobile device in landscape orientation.
+      </div>
+    </div>
 
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">

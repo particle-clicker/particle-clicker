@@ -1,5 +1,5 @@
 body {
-  padding-top: 50px;
+  padding-top: 40px;
 }
 
 * {
@@ -17,11 +17,6 @@ h1 br {
 
 .pc-icon:hover {
   background-image: url('../assets/pc32.png');
-}
-
-#detector-holder {
-  margin-left: -15px;
-  margin-right: -15px;
 }
 
 #detector {
@@ -79,6 +74,22 @@ h1 br {
   float:right; font-weight: bold;
 }
 
+#mobile-orientation-container {
+  position: fixed; top: 0; bottom: 0; left: 0; right: 0;
+  background: #fff;
+  display: none;
+  padding-top: 50%;
+  z-index: 100;
+}
+
+#mobile-orientation-message {
+  text-align: center;
+  margin: auto auto;
+  color: #777;
+  font-size: 18px;
+  padding: 15px;
+}
+
 .status strong {
   color: #666;
 }
@@ -115,6 +126,20 @@ h1 br {
   margin-bottom: 0;
 }
 
+.col-no-padding {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.tab-content {
+  border-left:1px solid #ddd;
+}
+
+.tab-pane.scrollable {
+  padding:15px;
+}
+
+
 .prevent-select {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -150,12 +175,28 @@ h1 br {
 }
 
 /** Responsive **/
-@media (min-width: 992px) {
-  .col-no-padding {
-    padding-right: 0;
-    padding-left: 0;
+@media screen and (orientation:portrait) and (max-width: 767px) {
+  #mobile-orientation-container {
+    display: block;
+  }
+}
+
+@media screen and (orientation:landscape) and (max-width: 767px) {
+  
+}
+
+@media screen and (min-width: 768px) {
+  #detector-holder {
+    margin-left: -15px;
+    margin-right: -15px;
   }
 
+  .status {
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 992px) {
   .panel-stick,
   .panel-stick .panel-heading,
   .panel-stick .panel-body {
@@ -167,29 +208,38 @@ h1 br {
   }
 }
 
-@media (min-width: 1200px) {
-  .col-no-padding {
-    padding-right: 0;
-    padding-left: 0;
-  }
-
-  .panel-stick,
-  .panel-stick .panel-heading,
-  .panel-stick .panel-body {
-    border-right: 0;
-  }
-
+@media screen and (min-width: 1200px) {
   .status {
     font-size: 24px;
   }
 }
 
-@media (min-width: 992px) and (max-width: 1199px){
+@media screen and (min-width: 992px) and (max-width: 1199px){
   .col-md-3s {
     width:20%;
   }
 
   .col-md-5s {
     width:40%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  h4 {
+    font-size: 16px;
+  }
+
+  .col-no-padding-xs {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .col-no-padding-xs .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .status .col-xs-4 {
+    min-width: 75px;
   }
 }

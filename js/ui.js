@@ -10,37 +10,49 @@ var UI = (function () {
   $(function() {
     FastClick.attach(document.body);    
     
-    var offset = 121;
     var resize = function() {
       var h = $(window).height();
+      var offset = 111;
+      if ($(window).width() < 992) {
+        offset = 112;
+      }
       $('.scrollable').height(h - offset + 'px');
 
+      var types = ['research', 'hr', 'upgrades'];
+
       if ($(window).width() < 992) {
-        if ($('#researchContent').parent().attr('id') == 'researchLarge') {
-          $('#researchContent').detach().appendTo('#research');
-        }
-        if ($('#hrContent').parent().attr('id') == 'hrLarge') {
-          $('#hrContent').detach().appendTo('#hr');
-        }
-        if ($('#upgradesContent').parent().attr('id') == 'upgradesLarge') {
-          $('#upgradesContent').detach().appendTo('#upgrades');
+        for (var i = 0; i < types.length; i++) {
+          if ($('#' + types[i] + 'Content').parent().attr('id') == types[i] + 'Large') {
+            $('#' + types[i] + 'Content').detach().appendTo('#' + types[i]);
+          }
         }
       } else {
-        if ($('#researchContent').parent().attr('id') != 'researchLarge') {
-          $('#researchContent').detach().appendTo('#researchLarge');
+        for (var i = 0; i < types.length; i++) {
+          if ($('#' + types[i] + 'Content').parent().attr('id') != types[i] + 'Large') {
+            $('#' + types[i] + 'Content').detach().appendTo('#' + types[i] + 'Large');
+          }
         }
-        if ($('#hrContent').parent().attr('id') != 'hrLarge') {
-          $('#hrContent').detach().appendTo('#hrLarge');
-        }
-        if ($('#upgradesContent').parent().attr('id') != 'upgradesLarge') {
-          $('#upgradesContent').detach().appendTo('#upgradesLarge');
-        }
+      }
+
+      if ($(window).width() < 600) {
+        var newWidth = Math.max($(window).width() - ($(window).height() - 80 + 10), 300);
+        $('#column-lab').width($(window).width() - newWidth);
+        $('#column-tabs').width(newWidth);
+      } else {
+        $('#column-lab').removeAttr('style');
+        $('#column-tabs').removeAttr('style');
       }
 
       if ($(window).width() >= 1200) {
         if (detector.width != 500) {
           $('#detector').width(500).height(500);
           detector.init(500);
+        }
+      } else if ($(window).width() < 768 && $(window).height() - 80 < 300) {
+        var newWidth = $(window).width() - Math.max($(window).width() - ($(window).height() - 80 + 10), 300) - 10;
+        if (detector.width != newWidth) {
+          $('#detector').width(newWidth).height(newWidth);
+          detector.init(newWidth);
         }
       } else if ($(window).width() < 992) {
         if (detector.width != 300) {

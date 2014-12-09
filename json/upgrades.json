@@ -209,7 +209,7 @@
     "description": "Increased centre-of-mass energy.",
     "effect": "Double the amount of data per click.",
     "icon": "fa-bolt",
-    "cost": 1e1,
+    "cost": 2e2,
     "targets": [ { "key": "lab", "property": "detector" } ],
     "requirements": [ ],
     "factor": 2
@@ -220,7 +220,7 @@
     "description": "Increased centre-of-mass energy.",
     "effect": "Double the amount of data per click.",
     "icon": "fa-bolt",
-    "cost": 1e2,
+    "cost": 2e3,
     "targets": [ { "key": "lab", "property": "detector" } ],
     "requirements": [
       { "key": "upgrade-energy1", "property": "used", "threshold": 1 }
@@ -233,7 +233,7 @@
     "description": "Increased centre-of-mass energy.",
     "effect": "Double the amount of data per click.",
     "icon": "fa-bolt",
-    "cost": 1e3,
+    "cost": 2e4,
     "targets": [ { "key": "lab", "property": "detector" } ],
     "requirements": [
       { "key": "upgrade-energy2", "property": "used", "threshold": 1 }
@@ -246,7 +246,7 @@
     "description": "Increased centre-of-mass energy.",
     "effect": "Double the amount of data per click.",
     "icon": "fa-bolt",
-    "cost": 1e4,
+    "cost": 2e5,
     "targets": [ { "key": "lab", "property": "detector" } ],
     "requirements": [
       { "key": "upgrade-energy3", "property": "used", "threshold": 1 }
@@ -259,7 +259,7 @@
     "description": "Increased centre-of-mass energy.",
     "effect": "Double the amount of data per click.",
     "icon": "fa-bolt",
-    "cost": 1e5,
+    "cost": 2e6,
     "targets": [ { "key": "lab", "property": "detector" } ],
     "requirements": [
       { "key": "upgrade-energy4", "property": "used", "threshold": 1 }
@@ -272,7 +272,7 @@
     "description": "Increased centre-of-mass energy.",
     "effect": "Double the amount of data per click.",
     "icon": "fa-bolt",
-    "cost": 1e6,
+    "cost": 2e7,
     "targets": [ { "key": "lab", "property": "detector" } ],
     "requirements": [ 
       { "key": "upgrade-energy5", "property": "used", "threshold": 1 }
@@ -285,7 +285,7 @@
     "description": "Increased centre-of-mass energy.",
     "effect": "Double the amount of data per click.",
     "icon": "fa-bolt",
-    "cost": 1e7,
+    "cost": 2e8,
     "targets": [ { "key": "lab", "property": "detector" } ],
     "requirements": [
       { "key": "upgrade-energy6", "property": "used", "threshold": 1 }
@@ -298,7 +298,7 @@
     "description": "Increased centre-of-mass energy.",
     "effect": "Double the amount of data per click.",
     "icon": "fa-bolt",
-    "cost": 1e8,
+    "cost": 2e9,
     "targets": [ { "key": "lab", "property": "detector" } ],
     "requirements": [
       { "key": "upgrade-energy7", "property": "used", "threshold": 1 }
@@ -311,7 +311,7 @@
     "description": "Increased centre-of-mass energy.",
     "effect": "Double the amount of data per click.",
     "icon": "fa-bolt",
-    "cost": 1e9,
+    "cost": 2e10,
     "targets": [ { "key": "lab", "property": "detector" } ],
     "requirements": [
       { "key": "upgrade-energy8", "property": "used", "threshold": 1 }
@@ -324,7 +324,7 @@
     "description": "Increased centre-of-mass energy.",
     "effect": "Double the amount of data per click.",
     "icon": "fa-bolt",
-    "cost": 1e10,
+    "cost": 2e11,
     "targets": [ { "key": "lab", "property": "detector" } ],
     "requirements": [
       { "key": "upgrade-energy9", "property": "used", "threshold": 1 }
@@ -337,7 +337,7 @@
     "description": "Increased centre-of-mass energy.",
     "effect": "Double the amount of data per click.",
     "icon": "fa-bolt",
-    "cost": 1e11,
+    "cost": 2e12,
     "targets": [ { "key": "lab", "property": "detector" } ],
     "requirements": [
       { "key": "upgrade-energy10", "property": "used", "threshold": 1 }
@@ -350,7 +350,7 @@
     "description": "Increased centre-of-mass energy.",
     "effect": "Double the amount of data per click.",
     "icon": "fa-bolt",
-    "cost": 1e12,
+    "cost": 2e13,
     "targets": [ { "key": "lab", "property": "detector" } ],
     "requirements": [
       { "key": "upgrade-energy11", "property": "used", "threshold": 1 }
@@ -363,7 +363,7 @@
     "description": "A larger particle smasher.",
     "effect": "Ten times the amount of data per click.",
     "icon": "fa-circle-o-notch",
-    "cost": 5e4,
+    "cost": 5e5,
     "targets": [ { "key": "lab", "property": "detector" } ],
     "requirements": [
       { "key": "upgrade-energy4", "property": "used", "threshold": 1 }
@@ -376,7 +376,7 @@
     "description": "A larger particle smasher.",
     "effect": "Ten times the amount of data per click.",
     "icon": "fa-circle-o-notch",
-    "cost": 5e6,
+    "cost": 5e7,
     "targets": [ { "key": "lab", "property": "detector" } ],
     "requirements": [
       { "key": "upgrade-energy4", "property": "used", "threshold": 1 }
@@ -389,7 +389,7 @@
     "description": "A larger particle smasher.",
     "effect": "Ten times the amount of data per click.",
     "icon": "fa-circle-o-notch",
-    "cost": 5e9,
+    "cost": 5e10,
     "targets": [ { "key": "lab", "property": "detector" } ],
     "requirements": [
       { "key": "upgrade-energy4", "property": "used", "threshold": 1 }

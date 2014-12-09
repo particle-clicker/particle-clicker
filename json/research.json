@@ -20,7 +20,7 @@
     "image": "assets/icons/png/Jpsi.png",
     "info": "html/Jpsi.html",
     "state": {
-      "reputation": 1e1,
+      "reputation": 5e0,
       "cost": 4e2,
       "info_levels": [ 1, 5, 10, 25 ]
     }
@@ -33,8 +33,8 @@
     "image": "assets/icons/png/tau.png",
     "info": "html/tau.html",
     "state": {
-      "reputation": 100,
-      "cost": 1000,
+      "reputation": 1e2,
+      "cost": 1e3,
       "info_levels": [ 1, 5, 10, 25 ]
     }
   },
@@ -46,8 +46,8 @@
     "image": "assets/icons/png/b.png",
     "info": "html/b.html",
     "state": {
-      "reputation": 1000,
-      "cost": 10000,
+      "reputation": 1e3,
+      "cost": 1e4,
       "info_levels": [ 1, 5, 10, 25 ]
     }
   },
@@ -59,8 +59,8 @@
     "image": "assets/icons/png/gluons.png",
     "info": "html/gluons.html",
     "state": {
-      "reputation": 1000000,
-      "cost": 10000000,
+      "reputation": 1e4,
+      "cost": 1e5,
       "info_levels": [ 1, 5, 10, 25 ]
     }
   },
@@ -72,8 +72,8 @@
     "image": "assets/icons/png/weak.png",
     "info": "html/weak.html",
     "state": {
-      "reputation": 10000,
-      "cost": 100000,
+      "reputation": 1e5,
+      "cost": 1e6,
       "info_levels": [ 1, 5, 10, 25 ]
     }
   },
@@ -85,8 +85,8 @@
     "image": "assets/icons/png/t.png",
     "info": "html/top.html",
     "state": {
-      "reputation": 100000,
-      "cost": 1000000,
+      "reputation": 1e6,
+      "cost": 1e7,
       "info_levels": [ 1, 5, 10, 25 ]
     }
   },
@@ -98,8 +98,8 @@
     "image": "assets/icons/png/BBbar.png",
     "info": "html/BBbar.html",
     "state": {
-      "reputation": 10000000,
-      "cost": 100000000,
+      "reputation": 1e7,
+      "cost": 1e8,
       "info_levels": [ 1, 5, 10, 25 ]
     }
   },
@@ -111,8 +111,8 @@
     "image": "assets/icons/png/H.png",
     "info": "html/H.html",
     "state": {
-      "reputation": 100000000,
-      "cost": 1000000000,
+      "reputation": 1e8,
+      "cost": 1e9,
       "info_levels": [ 1, 5, 10, 25 ]
     }
   },
@@ -124,8 +124,8 @@
     "image": "assets/icons/png/Dstar_s.png",
     "info": "html/Dstar_s.html",
     "state": {
-      "reputation": 1000000000,
-      "cost": 10000000000000,
+      "reputation": 1e9,
+      "cost": 1e10,
       "info_levels": [ 1, 5, 10, 25 ]
     }
   },
@@ -137,9 +137,23 @@
     "image": "assets/icons/png/Xi_b.png",
     "info": "html/Xi_b.html",
     "state": {
+      "reputation": 1e10,
+      "cost": 1e11,
+      "info_levels": [ 1, 5, 10, 25 ]
+    }
+  },
+  {
+    "key": "research-cheat",
+    "name": "Cheat++",
+    "description": "Just for development.",
+    "cost_increase": 1.0,
+    "image": "assets/icons/png/Xi_b.png",
+    "info": "",
+    "state": {
       "reputation": 10000000000,
-      "cost": 100000000000000,
+      "cost": 1,
       "info_levels": [ 1, 5, 10, 25 ]
     }
   }
+
 ]

@@ -15,7 +15,7 @@
     "description": "They decided to do a PhD. Now they are working hard.",
     "cost_increase": 1.45,
     "state": {
-      "cost": 4e2,
+      "cost": 6e2,
       "rate": 0.8e1
     }
   },
@@ -25,7 +25,7 @@
     "description": "These brilliant minds are here only to serve your needs.",
     "cost_increase": 1.4,
     "state": {
-      "cost": 4e3,
+      "cost": 1e4,
       "rate": 1e2
     }
   },

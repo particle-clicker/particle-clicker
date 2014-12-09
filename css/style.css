@@ -6,6 +6,11 @@ body {
   border-radius: 0 !important;
 }
 
+a, button {
+  transition:all 0.2s;
+  -webkit-transition:all 0.2s; }
+}
+
 h1 br {
   display: none;
 }

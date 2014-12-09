@@ -3,12 +3,12 @@
     "key": "research-cpv",
     "name": "CP violation",
     "description": "CP symmetry is broken!",
-    "cost_increase": 1.4,
+    "cost_increase": 1.8,
     "image": "assets/icons/png/CPV.png",
     "info": "html/CPV.html",
     "state": {
-      "reputation": 1,
-      "cost": 10,
+      "reputation": 1e0,
+      "cost": 1e1,
       "info_levels": [ 1, 5, 10, 25 ]
     }
   },
@@ -16,12 +16,12 @@
     "key": "research-jpsi",
     "name": "J/ψ",
     "description": "The J/ψ meson consists of a c and an anti-c quark.",
-    "cost_increase": 1.45,
+    "cost_increase": 1.7,
     "image": "assets/icons/png/Jpsi.png",
     "info": "html/Jpsi.html",
     "state": {
-      "reputation": 10,
-      "cost": 100,
+      "reputation": 1e1,
+      "cost": 4e2,
       "info_levels": [ 1, 5, 10, 25 ]
     }
   },
@@ -29,7 +29,7 @@
     "key": "research-tau",
     "name": "τ lepton",
     "description": "The third generation charged lepton.",
-    "cost_increase": 1.5,
+    "cost_increase": 1.15,
     "image": "assets/icons/png/tau.png",
     "info": "html/tau.html",
     "state": {
@@ -42,7 +42,7 @@
     "key": "research-beauty",
     "name": "Beauty quark",
     "description": "The third generation down-type quark.",
-    "cost_increase": 1.55,
+    "cost_increase": 1.15,
     "image": "assets/icons/png/b.png",
     "info": "html/b.html",
     "state": {
@@ -55,7 +55,7 @@
     "key": "research-gluons",
     "name": "Gluons",
     "description": "8 almost identical elementary particles that convey the strong force.",
-    "cost_increase": 1.6,
+    "cost_increase": 1.15,
     "image": "assets/icons/png/gluons.png",
     "info": "html/gluons.html",
     "state": {
@@ -68,7 +68,7 @@
     "key": "research-weak",
     "name": "W and Z boson",
     "description": "The carriers of the weak force.",
-    "cost_increase": 1.6,
+    "cost_increase": 1.15,
     "image": "assets/icons/png/weak.png",
     "info": "html/weak.html",
     "state": {
@@ -81,7 +81,7 @@
     "key": "research-top",
     "name": "Top quark",
     "description": "The heaviest of the quarks.",
-    "cost_increase": 1.65,
+    "cost_increase": 1.15,
     "image": "assets/icons/png/t.png",
     "info": "html/top.html",
     "state": {
@@ -94,7 +94,7 @@
     "key": "research-boscillations",
     "name": "B oscillations",
     "description": "B mesons turn into their antiparticles and vice versa!",
-    "cost_increase": 1.75,
+    "cost_increase": 1.15,
     "image": "assets/icons/png/BBbar.png",
     "info": "html/BBbar.html",
     "state": {
@@ -107,7 +107,7 @@
     "key": "research-higgs",
     "name": "Higgs boson",
     "description": "Spontaneous symmetry breaking and Goldstone bosons sound familiar to you, right?",
-    "cost_increase": 1.8,
+    "cost_increase": 1.15,
     "image": "assets/icons/png/H.png",
     "info": "html/H.html",
     "state": {
@@ -120,12 +120,12 @@
     "key": "research-dstars",
     "name": "D*s⁻",
     "description": "The first ever observed heavy flavored spin-3 particle.",
-    "cost_increase": 1.85,
+    "cost_increase": 1.15,
     "image": "assets/icons/png/Dstar_s.png",
     "info": "html/Dstar_s.html",
     "state": {
       "reputation": 1000000000,
-      "cost": 1,
+      "cost": 10000000000000,
       "info_levels": [ 1, 5, 10, 25 ]
     }
   },
@@ -133,12 +133,12 @@
     "key": "research-xib",
     "name": "Ξb'- and Ξb*-",
     "description": "Recently discovered strange beauty baryons. Both differ only in their spin configurations.",
-    "cost_increase": 1.9,
+    "cost_increase": 1.15,
     "image": "assets/icons/png/Xi_b.png",
     "info": "html/Xi_b.html",
     "state": {
       "reputation": 10000000000,
-      "cost": 1,
+      "cost": 100000000000000,
       "info_levels": [ 1, 5, 10, 25 ]
     }
   }

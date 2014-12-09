@@ -39,6 +39,11 @@ h1 br {
    z-index: 1;
 }
 
+#detector-info {
+  z-index: 10;
+  position: absolute;
+}
+
 .scrollable {
   overflow: auto;
 }
@@ -115,7 +120,6 @@ h1 br {
 #labname {
   border: 0px;
   padding: 0 4px;
-  font-size: 24px;
   margin-top: 20px;
   font-weight: 500;
   line-height: 1;
@@ -194,6 +198,14 @@ h1 br {
   .status {
     font-size: 18px;
   }
+
+  #labname {
+    font-size: 22px;
+  }
+
+  #detector-info {
+    top: 85px; right: 15px;
+  }
 }
 
 @media screen and (min-width: 992px) {
@@ -205,6 +217,10 @@ h1 br {
 
   .status {
     font-size: 20px;
+  }
+
+  #labname {
+    font-size: 24px;
   }
 }
 
@@ -241,5 +257,24 @@ h1 br {
 
   .status .col-xs-4 {
     min-width: 75px;
+  }
+
+  #detector-info {
+    top: 15px; right: 15px;
+  }
+}
+
+/* Retina support */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+    only screen and (min-resolution: 1.5dppx),
+    only screen and (min-resolution: 144dpi)
+{
+  .pc-icon {
+    background-image: url('../assets/pc32sw@2x.png');
+    background-size: 32px 32px;
+  }
+
+  .pc-icon:hover {
+    background-image: url('../assets/pc32@2x.png');
   }
 }

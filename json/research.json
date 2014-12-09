@@ -9,7 +9,7 @@
     "state": {
       "reputation": 1,
       "cost": 10,
-      "info_levels": [1, 5, 10, 25]
+      "info_levels": [ 1, 5, 10, 25 ]
     }
   },
   {
@@ -22,7 +22,7 @@
     "state": {
       "reputation": 10,
       "cost": 100,
-      "info_levels": [1, 5, 10, 25]
+      "info_levels": [ 1, 5, 10, 25 ]
     }
   },
   {
@@ -35,7 +35,7 @@
     "state": {
       "reputation": 100,
       "cost": 1000,
-      "info_levels": [1, 5, 10, 25]
+      "info_levels": [ 1, 5, 10, 25 ]
     }
   },
   {
@@ -48,7 +48,20 @@
     "state": {
       "reputation": 1000,
       "cost": 10000,
-      "info_levels": [1, 5, 10, 25]
+      "info_levels": [ 1, 5, 10, 25 ]
+    }
+  },
+    {
+    "key": "research-gluons",
+    "name": "Gluons",
+    "description": "8 almost identical elementary particles that convey the strong force.",
+    "cost_increase": 1.6,
+    "image": "assets/icons/png/gluons.png",
+    "info": "html/gluons.html",
+    "state": {
+      "reputation": 1000000,
+      "cost": 10000000,
+      "info_levels": [ 1, 5, 10, 25 ]
     }
   },
   {
@@ -61,7 +74,7 @@
     "state": {
       "reputation": 10000,
       "cost": 100000,
-      "info_levels": [1, 5, 10, 25]
+      "info_levels": [ 1, 5, 10, 25 ]
     }
   },
   {
@@ -74,20 +87,7 @@
     "state": {
       "reputation": 100000,
       "cost": 1000000,
-      "info_levels": [1, 5, 10, 25]
-    }
-  },
-  {
-    "key": "research-antihydrogen",
-    "name": "Antihydrogen",
-    "description": "The lightest anti-atom, it consists of an antiproton and a positron.",
-    "cost_increase": 1.7,
-    "image": "assets/icons/png/antihydrogen.png",
-    "info": "html/antihydrogen.html",
-    "state": {
-      "reputation": 1000000,
-      "cost": 10000000,
-      "info_levels": [1, 5, 10, 25]
+      "info_levels": [ 1, 5, 10, 25 ]
     }
   },
   {
@@ -100,7 +100,7 @@
     "state": {
       "reputation": 10000000,
       "cost": 100000000,
-      "info_levels": [1, 5, 10, 25]
+      "info_levels": [ 1, 5, 10, 25 ]
     }
   },
   {
@@ -113,7 +113,33 @@
     "state": {
       "reputation": 100000000,
       "cost": 1000000000,
-      "info_levels": [1, 5, 10, 25]
+      "info_levels": [ 1, 5, 10, 25 ]
+    }
+  },
+  {
+    "key": "research-dstars",
+    "name": "D*s⁻",
+    "description": "The first ever observed heavy flavored spin-3 particle.",
+    "cost_increase": 1.85,
+    "image": "assets/icons/png/Dstar_s.png",
+    "info": "html/Dstar_s.html",
+    "state": {
+      "reputation": 1000000000,
+      "cost": 1,
+      "info_levels": [ 1, 5, 10, 25 ]
+    }
+  },
+  {
+    "key": "research-xib",
+    "name": "Ξb'- and Ξb*-",
+    "description": "Recently discovered strange beauty baryons. Both differ only in their spin configurations.",
+    "cost_increase": 1.9,
+    "image": "assets/icons/png/Xi_b.png",
+    "info": "html/Xi_b.html",
+    "state": {
+      "reputation": 10000000000,
+      "cost": 1,
+      "info_levels": [ 1, 5, 10, 25 ]
     }
   }
 ]

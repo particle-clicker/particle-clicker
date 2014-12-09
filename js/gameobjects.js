@@ -1,6 +1,6 @@
 var GameObjects = (function() {
   'use strict';
-  var GLOBAL_VISIBILITY_THRESHOLD = 0.7;
+  var GLOBAL_VISIBILITY_THRESHOLD = 0.5;
 
   /** @class GameObject
    * Base class for all objects in the game. This works together with the
@@ -163,11 +163,11 @@ var GameObjects = (function() {
       this.state.cost = Math.round(cost * this.cost_increase);
       return cost;
     }
-    return -1; // not enough money
+    return -1;  // not enough money
   };
 
   Worker.prototype.getTotal =
-      function() { return this.state.hired * this.state.rate; }
+      function() { return this.state.hired * this.state.rate; };
 
   /** @class Upgrade
    */
@@ -223,7 +223,7 @@ var GameObjects = (function() {
         allObjects[t.key].state[t.property] *= this.factor || 1;
         allObjects[t.key].state[t.property] += this.constant || 0;
       }
-      this.state.used = true; // How about actually REMOVING used upgrades?
+      this.state.used = true;  // How about actually REMOVING used upgrades?
       this.state.visible = false;
       return this.cost;
     }
@@ -265,10 +265,10 @@ var GameObjects = (function() {
 
   // Expose classes in module.
   return {
-    Lab : Lab,
-    Research : Research,
-    Worker : Worker,
-    Upgrade : Upgrade,
-    Achievement : Achievement
+    Lab: Lab,
+    Research: Research,
+    Worker: Worker,
+    Upgrade: Upgrade,
+    Achievement: Achievement
   };
 }());

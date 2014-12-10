@@ -29,7 +29,7 @@ var analytics =
         }
         
         ga('create', Helpers.analytics);
-        ga('set', { 'appName': 'Particle Clicker', 'appId': 'ch.cern.particle-clicker', 'appVersion': '0.3' });
+        ga('set', { 'appName': 'Particle Clicker', 'appId': 'ch.cern.particle-clicker', 'appVersion': '0.9' });
         ga('set', 'anonymizeIp', true);
 
 

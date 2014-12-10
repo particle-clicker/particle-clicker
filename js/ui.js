@@ -35,7 +35,7 @@ var UI = (function () {
       }
 
       if ($(window).width() < 600) {
-        var newWidth = Math.max($(window).width() - ($(window).height() - 80 + 10), 300);
+        var newWidth = Math.max($(window).width() - ($(window).height() - 90 + 10), 300);
         $('#column-lab').width($(window).width() - newWidth);
         $('#column-tabs').width(newWidth);
       } else {
@@ -48,8 +48,8 @@ var UI = (function () {
           $('#detector').width(500).height(500);
           detector.init(500);
         }
-      } else if ($(window).width() < 768 && $(window).height() - 80 < 300) {
-        var newWidth = $(window).width() - Math.max($(window).width() - ($(window).height() - 80 + 10), 300) - 10;
+      } else if ($(window).width() < 768 && $(window).height() - 90 < 300) {
+        var newWidth = $(window).width() - Math.max($(window).width() - ($(window).height() - 90 + 10), 300) - 10;
         if (detector.width != newWidth) {
           $('#detector').width(newWidth).height(newWidth);
           detector.init(newWidth);

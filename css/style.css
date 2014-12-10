@@ -53,6 +53,11 @@ h1 br {
   overflow: auto;
 }
 
+.research-icon {
+  float: left;
+  margin-right: 10px;
+}
+
 #achievements-container {
   position: fixed; bottom: 0px; left: 0px;
 }

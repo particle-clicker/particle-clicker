@@ -242,9 +242,9 @@
           </div>
           <div class="modal-body">
             <ul class="list-group">
-              <li class="list-group-item"><i class="fa fa-location-arrow"></i> : <strong>{{ stats.clicks | niceNumber }}</strong></li>
-              <li class="list-group-item"><i class="fa fa-database"></i> : <strong>{{ stats.dataSpent | niceNumber }}</strong> used / <strong>{{ stats.dataCollected | niceNumber }}</strong> collected</li>
-              <li class="list-group-item"><i class="fa fa-money"></i> : <strong>{{ stats.moneySpent | niceNumber }}</strong> spent / <strong>{{ stats.moneyCollected | niceNumber }}</strong> gathered</li>
+              <li class="list-group-item"><i class="fa fa-location-arrow"></i> : <strong>{{ lab.state.clicks | niceNumber }}</strong></li>
+              <li class="list-group-item"><i class="fa fa-database"></i> : <strong>{{ lab.state.dataSpent | niceNumber }}</strong> used / <strong>{{ lab.state.dataCollected | niceNumber }}</strong> collected</li>
+              <li class="list-group-item"><i class="fa fa-money"></i> : <strong>{{ lab.state.moneySpent | niceNumber }}</strong> spent / <strong>{{ lab.state.moneyCollected | niceNumber }}</strong> gathered</li>
             </ul>
           </div>
         </div>

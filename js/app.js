@@ -156,13 +156,7 @@
   }]);
 
   app.controller('StatsController', function($scope) {
-    $scope.stats = {
-      clicks: lab.state.clicks,
-      moneyCollected: lab.state.moneyCollected,
-      moneySpent: lab.state.moneySpent,
-      dataCollected: lab.state.dataCollected,
-      dataSpent: lab.state.dataSpent
-    };
+    $scope.lab = lab;
   });
 
   analytics.init();

@@ -352,8 +352,8 @@
     "constant": 3
   },
   {
-    "key": "upgrade-lumi1",
-    "name": "L = 1×10³⁰ cm⁻²s⁻¹",
+    "key": "upgrade-lumi2",
+    "name": "L = 2×10³⁰ cm⁻²s⁻¹",
     "description": "Increased instantaneous luminosity.",
     "effect": "+15 data per click.",
     "icon": "fa-bullseye",
@@ -363,6 +363,39 @@
     "constant": 15
   },
   {
+    "key": "upgrade-lumi3",
+    "name": "L = 4×10³⁰ cm⁻²s⁻¹",
+    "description": "Increased instantaneous luminosity.",
+    "effect": "+75 data per click.",
+    "icon": "fa-bullseye",
+    "cost": 8e4,
+    "targets": [{ "key": "lab", "property": "detector" }],
+    "requirements": [{ "key": "upgrade-energy2", "property": "used", "threshold": 1 }],
+    "constant": 75
+  },
+  {
+    "key": "upgrade-lumi4",
+    "name": "L = 6×10³⁰ cm⁻²s⁻¹",
+    "description": "Increased instantaneous luminosity.",
+    "effect": "+375 data per click.",
+    "icon": "fa-bullseye",
+    "cost": 8e4,
+    "targets": [{ "key": "lab", "property": "detector" }],
+    "requirements": [{ "key": "upgrade-energy3", "property": "used", "threshold": 1 }],
+    "constant": 375
+  },
+  {
+    "key": "upgrade-lumi5",
+    "name": "L = 1×10³¹ cm⁻²s⁻¹",
+    "description": "Increased instantaneous luminosity.",
+    "effect": "+1875 data per click.",
+    "icon": "fa-bullseye",
+    "cost": 8e5,
+    "targets": [{ "key": "lab", "property": "detector" }],
+    "requirements": [{ "key": "upgrade-energy4", "property": "used", "threshold": 1 }],
+    "constant": 1875
+  },
+  {
     "key": "upgrade-sps",
     "name": "Super Proton Synchrotron",
     "description": "A larger particle smasher.",
@@ -370,7 +403,10 @@
     "icon": "fa-circle-o-notch",
     "cost": 5e5,
     "targets": [{ "key": "lab", "property": "detector" }],
-    "requirements": [{ "key": "upgrade-energy3", "property": "used", "threshold": 1 }],
+    "requirements": [
+      { "key": "upgrade-energy3", "property": "used", "threshold": 1 },
+      { "key": "upgrade-lumi3", "property": "used", "threshold": 1 }
+    ],
     "factor": 10
   },
   {
@@ -381,7 +417,10 @@
     "icon": "fa-circle-o-notch",
     "cost": 5e7,
     "targets": [{ "key": "lab", "property": "detector" }],
-    "requirements": [{ "key": "upgrade-energy6", "property": "used", "threshold": 1 }],
+    "requirements": [
+      { "key": "upgrade-energy6", "property": "used", "threshold": 1 },
+      { "key": "upgrade-lumi6", "property": "used", "threshold": 1 }
+    ],
     "factor": 10
   },
   {
@@ -392,7 +431,10 @@
     "icon": "fa-circle-o-notch",
     "cost": 5e10,
     "targets": [{ "key": "lab", "property": "detector" }],
-    "requirements": [{ "key": "upgrade-energy9", "property": "used", "threshold": 1 }],
+    "requirements": [
+      { "key": "upgrade-energy9", "property": "used", "threshold": 1 },
+      { "key": "upgrade-lumi9", "property": "used", "threshold": 1 }
+    ],
     "factor": 10
   },
   {

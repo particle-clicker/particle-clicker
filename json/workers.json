@@ -61,7 +61,7 @@
   },
   {
     "key": "workers-nobel",
-    "name": "Nobel Prize Winners",
+    "name": "Nobel Laureates",
     "description": "They received their prize for a reason.",
     "cost_increase": 1.2,
     "state": {

@@ -52,7 +52,6 @@
                 <li><a href="#" ng-click="restart()"><i class="fa fa-refresh"></i> Restart</a></li>
               </ul>
             </li>
-            <li><a target="_blank" href="http://home.web.cern.ch/about/updates/2014/12/take-part-cern-60-public-computing-challenge"><i class="fa fa-arrow-right"></i> Join the CERN 60 computing challenge!</a></li>
             <!--<li><a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-users"></i> About</a></li>-->
           </ul>
           <ul class="nav navbar-nav navbar-right">
@@ -166,10 +165,11 @@
           </div>
           <div class="panel-body scrollable large" id="upgradesLarge">
             <div id="upgradesContent" ng-controller="UpgradesController as uc">
-              <ul class="media-list" ng-cloak>
+              <ul class="media-list media-list-no-margin" ng-cloak>
+                <li class="media" ng-show="false"></li>
                 <li class="media" ng-repeat="u in uc.upgrades" ng-show="uc.isVisible(u)">
                   <div class="media-body">
-                    <h4 class="media-heading">{{ u.name }} <i class="fa {{ u.icon }} media-object"></i></h4>
+                    <h4 class="media-heading"><i class="fa {{ u.icon }} media-object"></i> {{ u.name }}</h4>
                     <p>{{ u.description }}</p>
                     <p class="small">{{ u.effect }}</p>
                     <button class="btn btn-primary" ng-disabled="!uc.isAvailable(u)" ng-click="uc.upgrade(u)"><i class="fa fa-money"></i> <small>{{ u.cost | currency }}</small></button>
@@ -273,7 +273,6 @@
             <p class="small">Version: 0.9</p>
             <p class="small bg-warning">This is a pre-release. If you encounter any bugs please report them using <a href="https://github.com/particle-clicker/particle-clicker/issues"><i class="fa fa-github"></i> GitHub issues</a>. This game runs best in landscape mode. Performance of the event display may rely heavily on your hardware.</p>
             <p>Particle Clicker is a game that was made during the <a href="https://webfest.web.cern.ch">CERN Webfest 2014</a>. The idea is borrowed from <a href="http://orteil.dashnet.org/cookieclicker/">Cookie Clicker</a>, an amazing and addictive cookie-themed game.</p>
-            <img width="200" src="http://www.citizencyberscience.net/wiki/images/1/1b/Cernwebfest.png" alt="">
             <h5>Libraries</h5>
             <p>This game is realised using a few libraries. Those are</p>
             <ul>

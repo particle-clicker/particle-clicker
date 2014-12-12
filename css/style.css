@@ -142,6 +142,10 @@ h1 br {
   margin-bottom: 0;
 }
 
+.media-list-no-margin {
+  margin-top: -15px;
+}
+
 .col-no-padding {
   padding-right: 0;
   padding-left: 0;

@@ -144,7 +144,7 @@ var UI = (function () {
     if (version != Helpers.version) {
       var alert = '<div id="outofdate" class="alert alert-info alert-dismissible" role="alert">';
       alert += '<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>';
-      alert += '<span class="glyphicon glyphicon-info-sign alert-glyph"></span> <span class="alert-text">Your saved state is out of date. <a href="#"><strong>Restart</strong></a> to use latest version of the game.</span>';
+      alert += '<i class="fa fa-info-circle alert-glyph"></i> <span class="alert-text">Your saved state is out of date. <a href="#"><strong>Restart</strong></a> to use latest version of the game.</span>';
       alert += '</div>';
       alert = $(alert);
       alert.find('a').click(function ()
@@ -162,13 +162,28 @@ var UI = (function () {
   if (typeof $.cookie('cookielaw') === 'undefined') {
     var alert = '<div id="cookielaw" class="alert alert-info" role="alert">';
     alert += '<button type="button" class="btn btn-primary">OK</button>';
-    alert += '<span class="glyphicon glyphicon-info-sign alert-glyph"></span> <span class="alert-text">Particle Clicker uses local storage to store your current progress.</span>';
+    alert += '<i class="fa fa-info-circle alert-glyph"></i> <span class="alert-text">Particle Clicker uses local storage to store your current progress.</span>';
     alert += '</div>';
     alert = $(alert);
     alert.find('button').click(function ()
     {
       $.cookie('cookielaw', 'informed', { expires: 365 });
       $('#cookielaw').slideUp(300, function() { $('#cookielaw').remove(); });
+    })
+
+    $('#messages-container').append(alert);
+  }
+
+  if (typeof $.cookie('cern60') === 'undefined') {
+    var alert = '<div id="cern60" class="alert alert-info" role="alert">';
+    alert += '<button type="button" class="btn btn-primary">Close</button>';
+    alert += '<i class="fa fa-area-chart alert-glyph"></i> <span class="alert-text"><a class="alert-link" href="http://home.web.cern.ch/about/updates/2014/12/take-part-cern-60-public-computing-challenge" target="_blank">Join the CERN 60 computing challenge!</a></span>';
+    alert += '</div>';
+    alert = $(alert);
+    alert.find('button').click(function ()
+    {
+      $.cookie('cern60', 'closed', { expires: 365 });
+      $('#cern60').slideUp(300, function() { $('#cern60').remove(); });
     })
 
     $('#messages-container').append(alert);

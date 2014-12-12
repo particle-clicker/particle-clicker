@@ -46,7 +46,7 @@
     "cost_increase": 1.3,
     "state": {
       "cost": 7e5,
-      "rate": 1e4
+      "rate": 9e3
     }
   },
   {
@@ -56,7 +56,7 @@
     "cost_increase": 1.25,
     "state": {
       "cost": 5e6,
-      "rate": 1e5
+      "rate": 1.2e5
     }
   },
   {
@@ -66,7 +66,7 @@
     "cost_increase": 1.2,
     "state": {
       "cost": 3e7,
-      "rate": 1e6
+      "rate": 1.5e6
     }
   },
   {
@@ -76,7 +76,7 @@
     "cost_increase": 1.15,
     "state": {
       "cost": 1.25e8,
-      "rate": 1e9
+      "rate": 2e7
     }
   }
 ]

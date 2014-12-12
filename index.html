@@ -164,7 +164,7 @@
             </h4>
           </div>
           <div class="panel-body scrollable large" id="upgradesLarge">
-            <div id="upgradesContent">
+            <div id="upgradesContent" ng-controller="UpgradesController as uc">
               <ul class="media-list" ng-cloak>
                 <li class="media" ng-repeat="u in uc.upgrades" ng-show="uc.isVisible(u)">
                   <div class="media-body">

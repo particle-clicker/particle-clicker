@@ -115,7 +115,7 @@ var GameObjects = (function() {
         this.state.info_levels.splice(0, 1);
       }
       var old_cost = this.state.cost;
-      this.state.cost = Math.round(this.state.cost * this.cost_increase);
+      this.state.cost = Math.floor(this.state.cost * this.cost_increase);
       return old_cost;
     }
     return -1;
@@ -160,7 +160,7 @@ var GameObjects = (function() {
     if (lab && lab.buy(this.state.cost)) {
       this.state.hired++;
       var cost = this.state.cost;
-      this.state.cost = Math.round(cost * this.cost_increase);
+      this.state.cost = Math.floor(cost * this.cost_increase);
       return cost;
     }
     return -1;  // not enough money

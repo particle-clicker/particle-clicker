@@ -76,7 +76,7 @@
     "cost_increase": 1.15,
     "state": {
       "cost": 1.25e8,
-      "rate": 1e7
+      "rate": 1e9
     }
   }
 ]

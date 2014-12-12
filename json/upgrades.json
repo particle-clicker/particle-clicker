@@ -1,6 +1,6 @@
 [
   {
-    "key": "upgrade-kinderzimmer",
+    "key": "upgrade-masterstudents1",
     "name": "Kinderzimmer",
     "description": "A shared room for all your Master students. Used to be a server room.",
     "effect": "Master Students produce +2 data per second.",
@@ -11,7 +11,7 @@
     "constant": 2
   },
   {
-    "key": "upgrade-owndesk",
+    "key": "upgrade-masterstudents2",
     "name": "Own desk",
     "description": "Not having to share one is a blessing.",
     "effect": "Master Students produce twice as much data per second.",
@@ -25,7 +25,7 @@
     "factor": 2
   },
   {
-    "key": "upgrade-gridaccess",
+    "key": "upgrade-masterstudents3",
     "name": "Grid Access",
     "description": "Give your Master students access to high performance computing resources.",
     "effect": "Master Students produce twice as much data per second.",
@@ -36,7 +36,7 @@
     "factor": 2
   },
   {
-    "key": "upgrade-mentoring",
+    "key": "upgrade-masterstudents4",
     "name": "Mentoring",
     "description": "Weekly counseling with a professional physicist.",
     "effect": "Master Students produce twice as much data per second.",
@@ -47,7 +47,7 @@
     "factor": 2
   },
   {
-    "key": "upgrade-thesissupervision",
+    "key": "upgrade-phdstudents1",
     "name": "Thesis supervision",
     "description": "Somebody takes care of your PhD Students.",
     "effect": "PhD Students produce +16 data per second.",
@@ -58,87 +58,95 @@
     "constant": 16
   },
   {
-    "key": "upgrade-ownoffice",
+    "key": "upgrade-phdstudents2",
     "name": "Own office",
     "description": "Each PhD student gets a quiet place for themselves.",
     "effect": "PhD Students produce twice as much data per second.",
     "icon": "fa-group",
     "cost": 6e4,
     "targets": [{ "key": "workers-phdstudents", "property": "rate" }],
-    "requirements": [
-      { "key": "upgrade-thesissupervision", "property": "used", "threshold": 1 },
-      { "key": "workers-postdocs", "property": "hired", "threshold": 1 }
-    ],
+    "requirements": [{ "key": "upgrade-phdstudents1", "property": "used", "threshold": 1 }],
     "factor": 2
   },
   {
-    "key": "upgrade-researchstay",
+    "key": "upgrade-phdstudents3",
     "name": "Research Abroad",
     "description": "1 year of research stay abroad for your PhD students.",
     "effect": "PhD Students produce twice as much data per second.",
     "icon": "fa-group",
     "cost": 6e5,
     "targets": [{ "key": "workers-phdstudents", "property": "rate" }],
-    "requirements": [{ "key": "upgrade-ownoffice", "property": "used", "threshold": 1 }],
+    "requirements": [{ "key": "upgrade-phdstudents2", "property": "used", "threshold": 1 }],
     "factor": 2
   },
   {
-    "key": "upgrade-studentassistant",
+    "key": "upgrade-phdstudents4",
     "name": "Student Assistant",
     "description": "A personal assistant that takes care of boring tasks.",
     "effect": "PhD Students produce twice as much data per second.",
     "icon": "fa-group",
     "cost": 6e6,
     "targets": [{ "key": "workers-phdstudents", "property": "rate" }],
-    "requirements": [{ "key": "upgrade-researchstay", "property": "used", "threshold": 1 }],
+    "requirements": [{ "key": "upgrade-phdstudents3", "property": "used", "threshold": 1 }],
     "factor": 2
   },
   {
     "key": "upgrade-postdocs1",
-    "name": "Postdocs 1",
-    "description": "",
+    "name": "Project Management Seminar",
+    "description": "Hard work also requires soft skills.",
     "effect": "Postdocs produce +30 data per second.",
     "icon": "fa-group",
-    "cost": 1e5,
+    "cost": 7.5e4,
     "targets": [{ "key": "workers-postdocs", "property": "rate" }],
     "requirements": [{ "key": "workers-postdocs", "property": "hired", "threshold": 5 }],
     "constant": 30
   },
   {
     "key": "upgrade-postdocs2",
-    "name": "Postdocs 2",
-    "description": "",
+    "name": "Higher Travel Allowances",
+    "description": "Let your Postdocs go to more conferences.",
     "effect": "Postdocs produce twice as much data per second.",
     "icon": "fa-group",
-    "cost": 1e6,
+    "cost": 7.5e5,
     "targets": [{ "key": "workers-postdocs", "property": "rate" }],
     "requirements": [{ "key": "upgrade-postdocs1", "property": "used", "threshold": 1 }],
     "factor": 2
   },
   {
     "key": "upgrade-postdocs3",
-    "name": "Postdocs 3",
-    "description": "",
+    "name": "Teaching-free year",
+    "description": "A year without teaching means more productivity.",
     "effect": "Postdocs produce twice as much data per second.",
     "icon": "fa-group",
-    "cost": 1e7,
+    "cost": 7.5e6,
     "targets": [{ "key": "workers-postdocs", "property": "rate" }],
     "requirements": [{ "key": "upgrade-postdocs2", "property": "used", "threshold": 1 }],
     "factor": 2
   },
   {
     "key": "upgrade-postdocs4",
-    "name": "Postdocs 4",
-    "description": "",
+    "name": "Job security",
+    "description": "You wish...",
     "effect": "Postdocs produce twice as much data per second.",
     "icon": "fa-group",
-    "cost": 1e8,
+    "cost": 7.5e7,
     "targets": [{ "key": "workers-postdocs", "property": "rate" }],
     "requirements": [{ "key": "upgrade-postdocs3", "property": "used", "threshold": 1 }],
     "factor": 2
   },
   {
-    "key": "upgrade-summerlectures",
+    "key": "upgrade-fellows1",
+    "name": "",
+    "description": "",
+    "effect": "Fellows produce an additional 3 data per second.",
+    "icon": "fa-group",
+    "cost": 1000,
+    "targets": [{ "key": "workers-summies", "property": "rate" }],
+    "requirements": [{ "key": "workers-summies", "property": "hired", "threshold": 5 }],
+    "constant": 3
+  },
+  {
+    "key": "upgrade-summies1",
     "name": "Summer Lectures",
     "description": "Interesting lectures given by the best in the field.",
     "effect": "Summmer Students produce an additional 3 data per second.",
@@ -149,36 +157,36 @@
     "constant": 3
   },
   {
-    "key": "upgrade-postersessions",
+    "key": "upgrade-summies2",
     "name": "Poster Sessions",
     "description": "Have your Summies prepare interesting posters and explain them to their peers.",
     "effect": "Summer Students produce twice as much data per second.",
     "icon": "fa-group",
     "cost": 10000,
     "targets": [{ "key": "workers-summies", "property": "rate" }],
-    "requirements": [{ "key": "upgrade-summerlectures", "property": "used", "threshold": 1 }],
+    "requirements": [{ "key": "upgrade-summies1", "property": "used", "threshold": 1 }],
     "factor": 2
   },
   {
-    "key": "upgrade-bbqs",
+    "key": "upgrade-summies3",
     "name": "Barbecue",
     "description": "A nice get-together to increase morale in the group.",
     "effect": "Summer Students produce twice as much data per second.",
     "icon": "fa-group",
     "cost": 100000,
     "targets": [{ "key": "workers-summies", "property": "rate" }],
-    "requirements": [{ "key": "upgrade-postersessions", "property": "used", "threshold": 1 }],
+    "requirements": [{ "key": "upgrade-summies2", "property": "used", "threshold": 1 }],
     "factor": 2
   },
   {
-    "key": "upgrade-parties",
+    "key": "upgrade-summies4",
     "name": "Pump Hall Parties",
     "description": "Awesome parties in the CERN pump hall. Sure the hangover does not increase productivity but your morale gets a huge boost.",
     "effect": "Summer Students produce twice as much data per second.",
     "icon": "fa-group",
     "cost": 1000000,
     "targets": [{ "key": "workers-summies", "property": "rate" }],
-    "requirements": [{ "key": "upgrade-bbqs", "property": "used", "threshold": 1 }],
+    "requirements": [{ "key": "upgrade-summies3", "property": "used", "threshold": 1 }],
     "factor": 2
   },
   {

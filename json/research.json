@@ -33,7 +33,7 @@
     "image": "assets/icons/png/tau.png",
     "info": "html/tau.html",
     "state": {
-      "reputation": 4e1,
+      "reputation": 3.3e1,
       "cost": 1e4,
       "info_levels": [ 1, 5, 10, 25 ]
     }
@@ -46,7 +46,7 @@
     "image": "assets/icons/png/b.png",
     "info": "html/b.html",
     "state": {
-      "reputation": 1e3,
+      "reputation": 1.85e2,
       "cost": 2e5,
       "info_levels": [ 1, 5, 10, 25 ]
     }
@@ -59,7 +59,7 @@
     "image": "assets/icons/png/gluons.png",
     "info": "html/gluons.html",
     "state": {
-      "reputation": 1e4,
+      "reputation": 1e3,
       "cost": 3e6,
       "info_levels": [ 1, 5, 10, 25 ]
     }
@@ -72,7 +72,7 @@
     "image": "assets/icons/png/weak.png",
     "info": "html/weak.html",
     "state": {
-      "reputation": 1e5,
+      "reputation": 5.4e3,
       "cost": 3.2e7,
       "info_levels": [ 1, 5, 10, 25 ]
     }
@@ -85,7 +85,7 @@
     "image": "assets/icons/png/t.png",
     "info": "html/top.html",
     "state": {
-      "reputation": 1e6,
+      "reputation": 3e4,
       "cost": 1.28e8,
       "info_levels": [ 1, 5, 10, 25 ]
     }
@@ -98,7 +98,7 @@
     "image": "assets/icons/png/BBbar.png",
     "info": "html/BBbar.html",
     "state": {
-      "reputation": 1e7,
+      "reputation": 1.6e5,
       "cost": 9e8,
       "info_levels": [ 1, 5, 10, 25 ]
     }
@@ -111,7 +111,7 @@
     "image": "assets/icons/png/H.png",
     "info": "html/H.html",
     "state": {
-      "reputation": 1e8,
+      "reputation": 9e5,
       "cost": 5e9,
       "info_levels": [ 1, 5, 10, 25 ]
     }
@@ -124,7 +124,7 @@
     "image": "assets/icons/png/Dstar_s.png",
     "info": "html/Dstar_s.html",
     "state": {
-      "reputation": 1e9,
+      "reputation": 4.75e6,
       "cost": 2.4e10,
       "info_levels": [ 1, 5, 10, 25 ]
     }
@@ -137,7 +137,7 @@
     "image": "assets/icons/png/Xi_b.png",
     "info": "html/Xi_b.html",
     "state": {
-      "reputation": 1e10,
+      "reputation": 2.5e7,
       "cost": 9e10,
       "info_levels": [ 1, 5, 10, 25 ]
     }

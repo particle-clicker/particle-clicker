@@ -142,18 +142,4 @@
       "info_levels": [ 1, 5, 10, 25 ]
     }
   },
-  {
-    "key": "research-cheat",
-    "name": "Cheat++",
-    "description": "Just for development.",
-    "cost_increase": 1.0,
-    "image": "assets/icons/png/Xi_b.png",
-    "info": "",
-    "state": {
-      "reputation": 10000000000,
-      "cost": 1,
-      "info_levels": [ 1, 5, 10, 25 ]
-    }
-  }
-
 ]

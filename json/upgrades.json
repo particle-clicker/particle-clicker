@@ -19,7 +19,7 @@
     "cost": 4e3,
     "targets": [{ "key": "workers-masterstudents", "property": "rate" }],
     "requirements": [
-      { "key": "upgrade-kinderzimmer", "property": "used", "threshold": 1 },
+      { "key": "upgrade-masterstudents1", "property": "used", "threshold": 1 },
       { "key": "workers-phdstudents", "property": "hired", "threshold": 1 }
     ],
     "factor": 2
@@ -32,7 +32,7 @@
     "icon": "fa-group",
     "cost": 4e4,
     "targets": [{ "key": "workers-masterstudents", "property": "rate" }],
-    "requirements": [{ "key": "upgrade-owndesk", "property": "used", "threshold": 1 }],
+    "requirements": [{ "key": "upgrade-masterstudents2", "property": "used", "threshold": 1 }],
     "factor": 2
   },
   {
@@ -43,7 +43,7 @@
     "icon": "fa-group",
     "cost": 4e5,
     "targets": [{ "key": "workers-masterstudents", "property": "rate" }],
-    "requirements": [{ "key": "upgrade-gridaccess", "property": "used", "threshold": 1 }],
+    "requirements": [{ "key": "upgrade-masterstudents3", "property": "used", "threshold": 1 }],
     "factor": 2
   },
   {
@@ -688,12 +688,12 @@
     "factor": 10
   },
   {
-    "key": "upgrade-cpv-1",
-    "name": "CP violation 1",
+    "key": "upgrade-cpv1",
+    "name": "B factories",
     "description": "",
-    "effect": "Future research gives +4 reputation.",
+    "effect": "Future CP violation research gives double the amount of reputation.",
     "icon": "fa-newspaper-o",
-    "cost": 750,
+    "cost": 7500,
     "targets": [{ "key": "research-cpv", "property": "reputation" }],
     "requirements": [{ "key": "research-cpv", "property": "level", "threshold": 5 }],
     "constant": 2

@@ -9,7 +9,7 @@
     "state": {
       "reputation": 1e0,
       "cost": 1e1,
-      "info_levels": [ 1, 5, 10, 25 ]
+      "info_levels": [ 1, 5, 10, 15, 20 ]
     }
   },
   {
@@ -113,7 +113,7 @@
     "state": {
       "reputation": 9e5,
       "cost": 5e9,
-      "info_levels": [ 1, 5, 10, 25 ]
+      "info_levels": [ 1, 5, 10, 15, 20 ]
     }
   },
   {

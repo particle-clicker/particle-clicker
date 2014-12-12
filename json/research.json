@@ -92,7 +92,7 @@
   },
   {
     "key": "research-boscillations",
-    "name": "B oscillations",
+    "name": "B oscillation",
     "description": "B mesons turn into their antiparticles and vice versa!",
     "cost_increase": 1.25,
     "image": "assets/icons/png/BBbar.png",
@@ -106,7 +106,7 @@
   {
     "key": "research-higgs",
     "name": "Higgs boson",
-    "description": "Spontaneous symmetry breaking and Goldstone bosons sound familiar to you, right?",
+    "description": "It only took us 48 years to find this one!",
     "cost_increase": 1.2,
     "image": "assets/icons/png/H.png",
     "info": "html/H.html",

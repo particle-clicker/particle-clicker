@@ -379,7 +379,7 @@
     "description": "Increased instantaneous luminosity.",
     "effect": "+375 data per click.",
     "icon": "fa-bullseye",
-    "cost": 8e4,
+    "cost": 8e5,
     "targets": [{ "key": "lab", "property": "detector" }],
     "requirements": [{ "key": "upgrade-energy3", "property": "used", "threshold": 1 }],
     "constant": 375
@@ -390,10 +390,87 @@
     "description": "Increased instantaneous luminosity.",
     "effect": "+1875 data per click.",
     "icon": "fa-bullseye",
-    "cost": 8e5,
+    "cost": 8e6,
     "targets": [{ "key": "lab", "property": "detector" }],
     "requirements": [{ "key": "upgrade-energy4", "property": "used", "threshold": 1 }],
     "constant": 1875
+  },
+  {
+    "key": "upgrade-lumi6",
+    "name": "L = 2×10³¹ cm⁻²s⁻¹",
+    "description": "Increased instantaneous luminosity.",
+    "effect": "+9.4k data per click.",
+    "icon": "fa-bullseye",
+    "cost": 8e7,
+    "targets": [{ "key": "lab", "property": "detector" }],
+    "requirements": [{ "key": "upgrade-energy5", "property": "used", "threshold": 1 }],
+    "constant": 9400
+  },
+  {
+    "key": "upgrade-lumi7",
+    "name": "L = 4×10³¹ cm⁻²s⁻¹",
+    "description": "Increased instantaneous luminosity.",
+    "effect": "+47k data per click.",
+    "icon": "fa-bullseye",
+    "cost": 8e8,
+    "targets": [{ "key": "lab", "property": "detector" }],
+    "requirements": [{ "key": "upgrade-energy6", "property": "used", "threshold": 1 }],
+    "constant": 47000
+  },
+  {
+    "key": "upgrade-lumi8",
+    "name": "L = 8×10³¹ cm⁻²s⁻¹",
+    "description": "Increased instantaneous luminosity.",
+    "effect": "+235k data per click.",
+    "icon": "fa-bullseye",
+    "cost": 8e9,
+    "targets": [{ "key": "lab", "property": "detector" }],
+    "requirements": [{ "key": "upgrade-energy7", "property": "used", "threshold": 1 }],
+    "constant": 235e3
+  },
+  {
+    "key": "upgrade-lumi9",
+    "name": "L = 1×10³² cm⁻²s⁻¹",
+    "description": "Increased instantaneous luminosity.",
+    "effect": "+1.2M data per click.",
+    "icon": "fa-bullseye",
+    "cost": 8e10,
+    "targets": [{ "key": "lab", "property": "detector" }],
+    "requirements": [{ "key": "upgrade-energy8", "property": "used", "threshold": 1 }],
+    "constant": 1.2e6
+  },
+  {
+    "key": "upgrade-lumi10",
+    "name": "L = 4×10³² cm⁻²s⁻¹",
+    "description": "Increased instantaneous luminosity.",
+    "effect": "+6M data per click.",
+    "icon": "fa-bullseye",
+    "cost": 8e11,
+    "targets": [{ "key": "lab", "property": "detector" }],
+    "requirements": [{ "key": "upgrade-energy9", "property": "used", "threshold": 1 }],
+    "constant": 6e6
+  },
+  {
+    "key": "upgrade-lumi11",
+    "name": "L = 6×10³³ cm⁻²s⁻¹",
+    "description": "Increased instantaneous luminosity.",
+    "effect": "+30M data per click.",
+    "icon": "fa-bullseye",
+    "cost": 8e12,
+    "targets": [{ "key": "lab", "property": "detector" }],
+    "requirements": [{ "key": "upgrade-energy10", "property": "used", "threshold": 1 }],
+    "constant": 3e7
+  },
+  {
+    "key": "upgrade-lumi12",
+    "name": "L = 1×10³⁴ cm⁻²s⁻¹",
+    "description": "Increased instantaneous luminosity.",
+    "effect": "+150M data per click.",
+    "icon": "fa-bullseye",
+    "cost": 8e13,
+    "targets": [{ "key": "lab", "property": "detector" }],
+    "requirements": [{ "key": "upgrade-energy11", "property": "used", "threshold": 1 }],
+    "constant": 1.5e8
   },
   {
     "key": "upgrade-sps",

@@ -68,12 +68,21 @@ var Helpers = (function () {
 
     return str.join(', ');
   };
+
+  var saveVersion =  '1.0';
+  var validateSaveVersion = function () {
+    var ver = ObjectStorage.load('saveVersion');
+    if (typeof ver === 'undefined' || ver != saveVersion) {
+      ObjectStorage.clear();
+      ObjectStorage.save('saveVersion', saveVersion);
+    }
+  };
  
   return {
     loadFile: loadFile,
     formatNumberPostfix: formatNumberPostfix,
     formatTime: formatTime,
-    version: '0.9',
+    validateSaveVersion: validateSaveVersion,
     analytics: ''
   };
 })();

@@ -1,5 +1,7 @@
 'use strict';
 (function() {
+  Helpers.validateSaveVersion();
+
   var game = new Game.Game();
   game.load();
 
@@ -10,8 +12,6 @@
   var achievements = game.achievements;
   var allObjects = game.allObjects;
   var lastSaved;
-
-  UI.validateVersion(lab.version);
 
   var app = angular.module('particleClicker', []);
 

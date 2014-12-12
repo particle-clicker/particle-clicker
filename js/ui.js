@@ -140,25 +140,6 @@ var UI = (function () {
     window.setTimeout(remove(alert), 2000);
   }
 
-  var validateVersion = function(version) {
-    if (version != Helpers.version) {
-      var alert = '<div id="outofdate" class="alert alert-info alert-dismissible" role="alert">';
-      alert += '<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>';
-      alert += '<i class="fa fa-info-circle alert-glyph"></i> <span class="alert-text">Your saved state is out of date. <a href="#"><strong>Restart</strong></a> to use latest version of the game.</span>';
-      alert += '</div>';
-      alert = $(alert);
-      alert.find('a').click(function ()
-      {
-        if (window.confirm('Do you really want to restart the game? All progress will be lost.')) {
-          ObjectStorage.clear();
-          window.location.reload(true);
-        }
-      })
-
-      $('#messages-container').append(alert);
-    }
-  }
-
   if (typeof $.cookie('cookielaw') === 'undefined') {
     var alert = '<div id="cookielaw" class="alert alert-info" role="alert">';
     alert += '<button type="button" class="btn btn-primary">OK</button>';
@@ -193,8 +174,7 @@ var UI = (function () {
     showAchievement: showAchievement,
     showModal: showModal,
     showLevels: showLevels,
-    showUpdateValue: showUpdateValue,
-    validateVersion: validateVersion
+    showUpdateValue: showUpdateValue
   }
 })();
 

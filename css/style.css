@@ -110,7 +110,9 @@ h1 br {
 }
 
 .update-value {
-  position: relative;
+  position: absolute;
+  right: 1em;
+  top: 1.42857em;
 }
 
 .update-plus {

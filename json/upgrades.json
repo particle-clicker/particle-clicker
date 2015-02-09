@@ -268,7 +268,7 @@
   },
   {
     "key": "upgrade-nobel1",
-    "name": "Køtbullar",
+    "name": "Kötbullar",
     "description": "Delicious Swedish Meatballs that are (probably) served at the Nobel Prize ceremony.",
     "effect": "Nobel Laureates produce +3M data per second.",
     "icon": "fa-group",

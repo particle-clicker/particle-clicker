@@ -291,7 +291,7 @@
   {
     "key": "upgrade-nobel3",
     "name": "Summer Vacation",
-    "description": "At this point in their carreer your Nobel Laureates can afford to take a vacation once in a while.",
+    "description": "At this point in their career your Nobel Laureates can afford to take a vacation once in a while.",
     "effect": "Nobel Laureates produce twice as much data per second.",
     "icon": "fa-group",
     "cost": 3e10,

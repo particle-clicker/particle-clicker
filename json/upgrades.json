@@ -696,7 +696,7 @@
     "cost": 7500,
     "targets": [{ "key": "research-cpv", "property": "reputation" }],
     "requirements": [{ "key": "research-cpv", "property": "level", "threshold": 5 }],
-    "constant": 2
+    "factor": 2
   },
   {
     "key": "upgrade-inspire",
@@ -744,6 +744,7 @@
     "requirements": [
       { "key": "research-cpv", "property": "level", "threshold": 15 },
       { "key": "upgrade-lhc", "property": "used", "threshold": 1 }
-    ]
+    ],
+    "constant": 1e6
   }
 ]

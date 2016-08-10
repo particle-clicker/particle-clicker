@@ -112,12 +112,8 @@ var UI = (function () {
   var showUpdate = function(ident, insert) {
     var elem = $(ident);
     elem.append(insert);
-    insert.animate({
-      "bottom":"+=30px",
-      "opacity": 0
-    }, { duration: 500, complete: function() {
-      $(this).remove();
-    }});
+    setTimeout(function() { insert.addClass("rise"); }, 0);
+    setTimeout(function() { insert.remove(); }, 500);
   }
 
   var showAchievement = function(obj) {

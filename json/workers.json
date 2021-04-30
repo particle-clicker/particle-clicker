@@ -3,9 +3,9 @@
     "key": "workers-masterstudents",
     "name": "Master Students",
     "description": "Cheap and enthusiastic workforce, they can save you a lot of work.",
-    "cost_increase": 1.5,
+    "cost_increase": 0,
     "state": {
-      "cost": 4e1,
+      "cost": 0,
       "rate": 1e0
     }
   },
@@ -73,9 +73,9 @@
     "key": "workers-summies",
     "name": "Summer Students",
     "description": "Their best ideas come between two parties.",
-    "cost_increase": 1.15,
+    "cost_increase": 0,
     "state": {
-      "cost": 1.25e8,
+      "cost": 0,
       "rate": 2e7
     }
   }

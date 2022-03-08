@@ -22,7 +22,7 @@
   {
     "key": "workers-postdocs",
     "name": "Postdocs",
-    "description": "These brilliant minds are here only to serve your needs.",
+    "description": "These brilliant minds are here to serve only your needs.",
     "cost_increase": 1.4,
     "state": {
       "cost": 7.5e3,

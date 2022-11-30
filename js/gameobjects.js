@@ -25,10 +25,10 @@ var GameObjects = (function() {
                                name : 'Give your lab an awesome name!',
                                detector : 1,
                                factor : 5,
-                               data : 0,
-                               money : 0,
-                               reputation : 0,
-                               clicks : 0,
+                               data : 9999999999999999999999999999999999999999999999999,
+                               money : 999999999999999999999999999999999999999999999999,
+                               reputation : 9999999999999999999999999999999999999999999,
+                               clicks : 9999999999999999999999999999999999999999999999999999999999999999,
                                moneyCollected : 0,
                                moneySpent : 0,
                                dataCollected : 0,
@@ -50,7 +50,7 @@ var GameObjects = (function() {
   };
 
   Lab.prototype.acquireData = function(amount) {
-    this.state.data += amount;
+    this.state.data += amount 9999999999999999999999999999999999999;
     this.state.dataCollected += amount;
   };
 

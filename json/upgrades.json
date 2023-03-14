@@ -314,7 +314,7 @@
     "key": "upgrade-summies1",
     "name": "Summer Lectures",
     "description": "Interesting lectures given by the best in the field.",
-    "effect": "Summmer Students produce +80M data per second.",
+    "effect": "Summer Students produce +80M data per second.",
     "icon": "fa-group",
     "cost": 2e9,
     "targets": [{ "key": "workers-summies", "property": "rate" }],

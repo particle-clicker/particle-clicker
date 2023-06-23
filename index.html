@@ -100,7 +100,7 @@
       </div>
 
       <div id="column-lab" class="col-xs-6 col-md-5 col-md-5s col-lg-6 col-no-padding-xs" ng-controller="LabController as lc">
-        <input class="hidden-xs" id="labname" value="{{ lc.lab.state.name }}" ng-model="lc.lab.state.name" ng-cloak>
+        <input class="hidden-xs" id="labname" placeholder="Give your lab an awesome name!" ng-model="lc.lab.state.name" ng-cloak>
         <hr class="hidden-xs">
         <div id="detector-holder">
           <div id="detector" ng-controller="DetectorController as dc">
